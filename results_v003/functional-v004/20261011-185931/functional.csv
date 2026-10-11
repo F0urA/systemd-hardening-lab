@@ -1,0 +1,41 @@
+service,profile,check,result,detail
+nginx,P0,start,PASS,
+nginx,P0,reopen-logs,PASS,log_owner_after=labweb
+nginx,P0,reload,PASS,workers=2
+nginx,P0,not-found-404,PASS,http=404
+nginx,P4,start,PASS,
+nginx,P4,reopen-logs,PASS,log_owner_after=root
+nginx,P4,reload,PASS,workers=2
+nginx,P4,not-found-404,PASS,http=404
+nginx,P5,start,PASS,
+nginx,P5,reopen-logs,PASS,log_owner_after=root
+nginx,P5,reload,PASS,workers=2
+nginx,P5,not-found-404,PASS,http=404
+nginx,P6,start,PASS,
+nginx,P6,reopen-logs,PASS,log_owner_after=root
+nginx,P6,reload,PASS,workers=2
+nginx,P6,not-found-404,PASS,http=404
+redis,P0,start,PASS,
+redis,P0,bgsave,PASS,reply=Background saving started status=ok
+redis,P0,bgrewriteaof,PASS,reply=Background append only file rewriting started status=ok
+redis,P0,restart-keeps-value,PASS,
+redis,P4,start,PASS,
+redis,P4,bgsave,PASS,reply=Background saving started status=ok
+redis,P4,bgrewriteaof,PASS,reply=Background append only file rewriting started status=ok
+redis,P4,restart-keeps-value,PASS,
+redis,P6,start,PASS,
+redis,P6,bgsave,PASS,reply=Background saving started status=ok
+redis,P6,bgrewriteaof,PASS,reply=Background append only file rewriting started status=ok
+redis,P6,restart-keeps-value,PASS,
+postgresql,P0,start,PASS,
+postgresql,P0,checkpoint,PASS,
+postgresql,P0,reload,PASS,
+postgresql,P0,query-with-jit,PASS,jit_used=no 
+postgresql,P4,start,PASS,
+postgresql,P4,checkpoint,PASS,
+postgresql,P4,reload,PASS,
+postgresql,P4,query-with-jit,PASS,jit_used=no 
+postgresql,P6,start,PASS,
+postgresql,P6,checkpoint,PASS,
+postgresql,P6,reload,PASS,
+postgresql,P6,query-with-jit,PASS,jit_used=no 

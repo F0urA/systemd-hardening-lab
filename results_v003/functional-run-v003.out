@@ -1,0 +1,98 @@
+
+===== SERVICE=nginx CANDIDATE=P0 =====
+CHECK service=nginx profile=P0 check=start result=PASS detail=
+CHECK service=nginx profile=P0 check=reopen-logs result=PASS detail=master=15962
+CHECK service=nginx profile=P0 check=reload result=PASS detail=workers=2
+CHECK service=nginx profile=P0 check=not-found-404 result=PASS detail=http=404
+
+===== SERVICE=nginx CANDIDATE=P4 =====
+Job for slab-nginx.service failed because the control process exited with error code.
+See "systemctl status slab-nginx.service" and "journalctl -xeu slab-nginx.service" for details.
+CHECK service=nginx profile=P4 check=start result=FAIL detail=candidate does not pass the functional gate
+
+===== SERVICE=nginx CANDIDATE=P5 =====
+Job for slab-nginx.service failed because the control process exited with error code.
+See "systemctl status slab-nginx.service" and "journalctl -xeu slab-nginx.service" for details.
+CHECK service=nginx profile=P5 check=start result=FAIL detail=candidate does not pass the functional gate
+
+===== SERVICE=nginx CANDIDATE=P6 =====
+Job for slab-nginx.service failed because the control process exited with error code.
+See "systemctl status slab-nginx.service" and "journalctl -xeu slab-nginx.service" for details.
+CHECK service=nginx profile=P6 check=start result=FAIL detail=candidate does not pass the functional gate
+
+===== SERVICE=redis CANDIDATE=P0 =====
+CHECK service=redis profile=P0 check=start result=PASS detail=
+CHECK service=redis profile=P0 check=bgsave result=PASS detail=reply=Background saving started status=ok
+CHECK service=redis profile=P0 check=bgrewriteaof result=PASS detail=reply=Background append only file rewriting started status=ok
+CHECK service=redis profile=P0 check=restart-keeps-value result=PASS detail=
+
+===== SERVICE=redis CANDIDATE=P4 =====
+CHECK service=redis profile=P4 check=start result=PASS detail=
+CHECK service=redis profile=P4 check=bgsave result=PASS detail=reply=Background saving started status=ok
+CHECK service=redis profile=P4 check=bgrewriteaof result=PASS detail=reply=Background append only file rewriting started status=ok
+CHECK service=redis profile=P4 check=restart-keeps-value result=PASS detail=
+
+===== SERVICE=redis CANDIDATE=P6 =====
+CHECK service=redis profile=P6 check=start result=PASS detail=
+CHECK service=redis profile=P6 check=bgsave result=PASS detail=reply=Background saving started status=ok
+CHECK service=redis profile=P6 check=bgrewriteaof result=PASS detail=reply=Background append only file rewriting started status=ok
+CHECK service=redis profile=P6 check=restart-keeps-value result=PASS detail=
+
+===== SERVICE=postgresql CANDIDATE=P0 =====
+CHECK service=postgresql profile=P0 check=start result=PASS detail=
+CHECK service=postgresql profile=P0 check=checkpoint result=PASS detail=
+CHECK service=postgresql profile=P0 check=reload result=PASS detail=
+CHECK service=postgresql profile=P0 check=query-with-jit result=PASS detail=jit_used=no 
+
+===== SERVICE=postgresql CANDIDATE=P4 =====
+CHECK service=postgresql profile=P4 check=start result=PASS detail=
+CHECK service=postgresql profile=P4 check=checkpoint result=PASS detail=
+CHECK service=postgresql profile=P4 check=reload result=PASS detail=
+CHECK service=postgresql profile=P4 check=query-with-jit result=PASS detail=jit_used=no 
+
+===== SERVICE=postgresql CANDIDATE=P6 =====
+CHECK service=postgresql profile=P6 check=start result=PASS detail=
+CHECK service=postgresql profile=P6 check=checkpoint result=PASS detail=
+CHECK service=postgresql profile=P6 check=reload result=PASS detail=
+CHECK service=postgresql profile=P6 check=query-with-jit result=PASS detail=jit_used=no 
+
+===== SUMMARY: operation x candidate =====
+nginx       P0   start                PASS
+nginx       P0   reopen-logs          PASS
+nginx       P0   reload               PASS
+nginx       P0   not-found-404        PASS
+nginx       P4   start                FAIL
+nginx       P5   start                FAIL
+nginx       P6   start                FAIL
+redis       P0   start                PASS
+redis       P0   bgsave               PASS
+redis       P0   bgrewriteaof         PASS
+redis       P0   restart-keeps-value  PASS
+redis       P4   start                PASS
+redis       P4   bgsave               PASS
+redis       P4   bgrewriteaof         PASS
+redis       P4   restart-keeps-value  PASS
+redis       P6   start                PASS
+redis       P6   bgsave               PASS
+redis       P6   bgrewriteaof         PASS
+redis       P6   restart-keeps-value  PASS
+postgresql  P0   start                PASS
+postgresql  P0   checkpoint           PASS
+postgresql  P0   reload               PASS
+postgresql  P0   query-with-jit       PASS
+postgresql  P4   start                PASS
+postgresql  P4   checkpoint           PASS
+postgresql  P4   reload               PASS
+postgresql  P4   query-with-jit       PASS
+postgresql  P6   start                PASS
+postgresql  P6   checkpoint           PASS
+postgresql  P6   reload               PASS
+postgresql  P6   query-with-jit       PASS
+
+===== CLEANUP AND RESTORE P4 =====
+Job for slab-nginx.service failed because the control process exited with error code.
+See "systemctl status slab-nginx.service" and "journalctl -xeu slab-nginx.service" for details.
+RESTORE_P4 nginx=FAIL -- inspect the unit and the journal
+RESTORE_P4 redis=PASS
+RESTORE_P4 postgresql=PASS
+RESULT_DIR=/root/systemd-lab-results/functional-v003/20261011-185811

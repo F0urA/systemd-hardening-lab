@@ -1,0 +1,15 @@
+================================================================
+SERVICE nginx: candidates P0 P4 P5 P6
+  RULE A (min Exposure): P4
+         H  admissible               RULE B
+         0  P0 P4 P5 P6              P5
+================================================================
+SERVICE redis: candidates P0 P4 P6
+  RULE A (min Exposure): P4
+         H  admissible               RULE B
+         0  P0 P4 P6                 P6
+================================================================
+SERVICE postgresql: candidates P0 P4 P6
+  RULE A (min Exposure): P4
+         H  admissible               RULE B
+         0  P0 P4 P6                 P6

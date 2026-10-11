@@ -1,0 +1,11 @@
+service,profile,functional,exposure,n_directives
+nginx,P0,1,9.6,0
+nginx,P4,1,2.8,21
+nginx,P5,1,2.8,22
+nginx,P6,1,2.8,23
+redis,P0,1,9.2,0
+redis,P4,1,2.1,21
+redis,P6,1,2.1,23
+postgresql,P0,1,9.2,0
+postgresql,P4,1,2.1,21
+postgresql,P6,1,2.1,23

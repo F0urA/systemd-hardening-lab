@@ -1,0 +1,103 @@
+
+===== SERVICE=nginx CANDIDATE=P0 =====
+FUNCTIONAL=1 EXPOSURE=9.6 DIRECTIVES=0
+RESULT service=nginx goal=G1-replace-document dac=rootown context=worker profile=P0 outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=rootown context=master profile=P0 outcome=ACHIEVED detail=http=200 G_RESULT=ALLOWED uid=0
+RESULT service=nginx goal=G1-replace-document dac=labweb context=worker profile=P0 outcome=ACHIEVED detail=http=200 G_RESULT=ALLOWED uid=984
+RESULT service=nginx goal=G1-replace-document dac=labweb context=master profile=P0 outcome=ACHIEVED detail=http=200 G_RESULT=ALLOWED uid=0
+RESULT service=nginx goal=G2-read-app-secret dac=needed-by-app context=worker profile=P0 outcome=ACHIEVED detail=G_RESULT=ALLOWED uid=984
+RESULT service=nginx goal=G2-read-app-secret dac=needed-by-app context=master profile=P0 outcome=ACHIEVED detail=G_RESULT=ALLOWED uid=0
+
+===== SERVICE=nginx CANDIDATE=P4 =====
+FUNCTIONAL=1 EXPOSURE=2.8 DIRECTIVES=21
+RESULT service=nginx goal=G1-replace-document dac=rootown context=worker profile=P4 outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=rootown context=master profile=P4 outcome=ACHIEVED detail=http=200 G_RESULT=ALLOWED uid=0
+RESULT service=nginx goal=G1-replace-document dac=labweb context=worker profile=P4 outcome=ACHIEVED detail=http=200 G_RESULT=ALLOWED uid=984
+RESULT service=nginx goal=G1-replace-document dac=labweb context=master profile=P4 outcome=ACHIEVED detail=http=200 G_RESULT=ALLOWED uid=984
+RESULT service=nginx goal=G2-read-app-secret dac=needed-by-app context=worker profile=P4 outcome=ACHIEVED detail=G_RESULT=ALLOWED uid=984
+RESULT service=nginx goal=G2-read-app-secret dac=needed-by-app context=master profile=P4 outcome=ACHIEVED detail=G_RESULT=ALLOWED uid=0
+
+===== SERVICE=nginx CANDIDATE=P5 =====
+FUNCTIONAL=1 EXPOSURE=2.8 DIRECTIVES=22
+RESULT service=nginx goal=G1-replace-document dac=rootown context=worker profile=P5 outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=rootown context=master profile=P5 outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=labweb context=worker profile=P5 outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=labweb context=master profile=P5 outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G2-read-app-secret dac=needed-by-app context=worker profile=P5 outcome=ACHIEVED detail=G_RESULT=ALLOWED uid=984
+RESULT service=nginx goal=G2-read-app-secret dac=needed-by-app context=master profile=P5 outcome=ACHIEVED detail=G_RESULT=ALLOWED uid=0
+
+===== SERVICE=nginx CANDIDATE=P6 =====
+FUNCTIONAL=1 EXPOSURE=2.8 DIRECTIVES=23
+RESULT service=nginx goal=G1-replace-document dac=rootown context=worker profile=P6 outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=rootown context=master profile=P6 outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=labweb context=worker profile=P6 outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=labweb context=master profile=P6 outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G2-read-app-secret dac=needed-by-app context=worker profile=P6 outcome=ACHIEVED detail=G_RESULT=ALLOWED uid=984
+RESULT service=nginx goal=G2-read-app-secret dac=needed-by-app context=master profile=P6 outcome=ACHIEVED detail=G_RESULT=ALLOWED uid=0
+RESULT service=redis goal=G1-app-guard dac=- context=server profile=P4 outcome=INFO detail=default refuses CONFIG SET dir: ERR CONFIG SET failed (possibly related to argument 'dir') - can't set protected config
+REDIS_CONF: enable-protected-configs yes added for the duration of the scenario
+
+===== SERVICE=redis CANDIDATE=P0 =====
+FUNCTIONAL=1 EXPOSURE=9.2 DIRECTIVES=0
+RESULT service=redis goal=G1-write-outside-datadir dac=own context=server profile=P0 outcome=ACHIEVED detail=config_set_dir=OK config_set_dbfilename=OK save=OK
+RESULT service=redis goal=G1-write-outside-datadir dac=root context=server profile=P0 outcome=BLOCKED detail=config_set_dir=OK config_set_dbfilename=OK save=ERR
+
+===== SERVICE=redis CANDIDATE=P4 =====
+FUNCTIONAL=1 EXPOSURE=2.1 DIRECTIVES=21
+RESULT service=redis goal=G1-write-outside-datadir dac=own context=server profile=P4 outcome=ACHIEVED detail=config_set_dir=OK config_set_dbfilename=OK save=OK
+RESULT service=redis goal=G1-write-outside-datadir dac=root context=server profile=P4 outcome=BLOCKED detail=config_set_dir=OK config_set_dbfilename=OK save=ERR
+
+===== SERVICE=redis CANDIDATE=P6 =====
+FUNCTIONAL=1 EXPOSURE=2.1 DIRECTIVES=23
+RESULT service=redis goal=G1-write-outside-datadir dac=own context=server profile=P6 outcome=BLOCKED detail=config_set_dir=OK config_set_dbfilename=OK save=ERR
+RESULT service=redis goal=G1-write-outside-datadir dac=root context=server profile=P6 outcome=BLOCKED detail=config_set_dir=OK config_set_dbfilename=OK save=ERR
+
+===== SERVICE=postgresql CANDIDATE=P0 =====
+FUNCTIONAL=1 EXPOSURE=9.2 DIRECTIVES=0
+RESULT service=postgresql goal=G1-write-outside-datadir dac=own context=server profile=P0 outcome=ACHIEVED detail=
+RESULT service=postgresql goal=G1-write-outside-datadir dac=root context=server profile=P0 outcome=BLOCKED detail=ERROR:  could not open file "/var/lib/systemd-lab/pg-g1-v003-root/g1-v003.txt" for writing: Permission denied HINT:  COPY TO instructs the PostgreSQL server process to write a file. You may want a client-side facility such as psql's \copy.
+RESULT service=postgresql goal=G2-run-program dac=needed-by-app context=server profile=P0 outcome=ACHIEVED detail=labpg
+
+===== SERVICE=postgresql CANDIDATE=P4 =====
+FUNCTIONAL=1 EXPOSURE=2.1 DIRECTIVES=21
+RESULT service=postgresql goal=G1-write-outside-datadir dac=own context=server profile=P4 outcome=ACHIEVED detail=
+RESULT service=postgresql goal=G1-write-outside-datadir dac=root context=server profile=P4 outcome=BLOCKED detail=ERROR:  could not open file "/var/lib/systemd-lab/pg-g1-v003-root/g1-v003.txt" for writing: Permission denied HINT:  COPY TO instructs the PostgreSQL server process to write a file. You may want a client-side facility such as psql's \copy.
+RESULT service=postgresql goal=G2-run-program dac=needed-by-app context=server profile=P4 outcome=ACHIEVED detail=labpg
+
+===== SERVICE=postgresql CANDIDATE=P6 =====
+FUNCTIONAL=1 EXPOSURE=2.1 DIRECTIVES=23
+RESULT service=postgresql goal=G1-write-outside-datadir dac=own context=server profile=P6 outcome=BLOCKED detail=ERROR:  could not open file "/var/lib/systemd-lab/pg-g1-v003-own/g1-v003.txt" for writing: Read-only file system
+RESULT service=postgresql goal=G1-write-outside-datadir dac=root context=server profile=P6 outcome=BLOCKED detail=ERROR:  could not open file "/var/lib/systemd-lab/pg-g1-v003-root/g1-v003.txt" for writing: Read-only file system
+RESULT service=postgresql goal=G2-run-program dac=needed-by-app context=server profile=P6 outcome=ACHIEVED detail=labpg
+
+===== GOALS BLOCKED PER CANDIDATE (rows with outcome INFO are not counted) =====
+nginx,P0 blocked=1 of 6 unexpected=0
+nginx,P4 blocked=1 of 6 unexpected=0
+nginx,P5 blocked=4 of 6 unexpected=0
+nginx,P6 blocked=4 of 6 unexpected=0
+postgresql,P0 blocked=1 of 3 unexpected=0
+postgresql,P4 blocked=1 of 3 unexpected=0
+postgresql,P6 blocked=2 of 3 unexpected=0
+redis,P0 blocked=1 of 2 unexpected=0
+redis,P4 blocked=1 of 2 unexpected=0
+redis,P6 blocked=2 of 2 unexpected=0
+
+===== CANDIDATES =====
+service,profile,functional,exposure,n_directives
+nginx,P0,1,9.6,0
+nginx,P4,1,2.8,21
+nginx,P5,1,2.8,22
+nginx,P6,1,2.8,23
+redis,P0,1,9.2,0
+redis,P4,1,2.1,21
+redis,P6,1,2.1,23
+postgresql,P0,1,9.2,0
+postgresql,P4,1,2.1,21
+postgresql,P6,1,2.1,23
+
+===== CLEANUP AND RESTORE P4 =====
+REDIS_CONF_RESTORED
+RESTORE_P4 nginx=PASS
+RESTORE_P4 redis=PASS
+RESTORE_P4 postgresql=PASS
+RESULT_DIR=/root/systemd-lab-results/scenarios-v003/20261011-185726
