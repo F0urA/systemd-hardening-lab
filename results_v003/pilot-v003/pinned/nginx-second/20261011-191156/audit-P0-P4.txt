@@ -1,0 +1,49 @@
+===== BENCHMARK DATA AUDIT v003 =====
+SOURCE=/root/systemd-lab-results/nginx/benchmark-v004/20261011-191156/results.csv
+SHA256=c4a0442cf44e03011fa714ef59216ae78c3602e8848ae3fd02eb53af9be8c796
+CSV_DATA_ROWS=20
+ALL_PROFILES={'P0': 10, 'P4': 10}
+THROUGHPUT_COLUMN=rps
+BASELINE=P0 CANDIDATE=P4
+
+===== EACH PAIRED BLOCK =====
+BLOCK ORDER_P0 ORDER_P4 P0_rps P4_rps D=P4-0.95*P0 CPU_DELTA_PP CPU_PER_OP_RATIO
+    1        2        1    46105.406    45202.504     1402.368       +0.049           1.0205
+    2        2        1    46980.685    42289.640    -2342.011       +0.115           1.1122
+    3        1        2    49048.629    44137.794    -2458.404       +0.563           1.1178
+    4        2        1    48876.166    43186.637    -3245.721       +0.089           1.1328
+    5        1        2    47599.898    44257.773     -962.130       -0.139           1.0740
+    6        1        2    47982.814    43537.278    -2046.395       +0.374           1.1064
+    7        1        2    49704.665    44377.419    -2842.013       +0.780           1.1291
+    8        2        1    48356.001    44792.231    -1145.970       +0.283           1.0827
+    9        2        1    47583.294    44267.119     -937.010       +0.424           1.0797
+   10        2        1    46976.075    46201.969     1574.698       +0.127           1.0181
+
+===== VERIFIED SUMMARY =====
+PAIRS=10
+STUDENT_T_QUANTILES_DF_9=one_sided_95:1.833113 two_sided_95:2.262157
+MEAN_P0_rps=47921.363300
+MEAN_P4_rps=44225.036400
+RATIO_OF_ARITHMETIC_MEANS=0.922866825 (92.28668%)
+PRIMARY_PAIRED_CONTRAST_MEAN=-1300.258735 rps
+PRIMARY_PAIRED_CONTRAST_SD=1666.158164 rps
+STUDENT_T_ONE_SIDED_95_LOWER_FOR_CONTRAST=-2266.099312 rps
+PRIMARY_NONINFERIORITY_95=NOT_ESTABLISHED
+SENSITIVITY_GEOMETRIC_MEAN_PAIRED_RATIO=0.92283660
+SENSITIVITY_GEOMETRIC_RATIO_ONE_SIDED_95_LOWER=0.90321017
+CPU_MEAN_P0=96.544000 %_one_core
+CPU_MEAN_P4=96.810500 %_one_core
+CPU_PAIRED_DELTA_MEAN=+0.266500 percentage_points
+CPU_PAIRED_DELTA_TWO_SIDED_95_CI=[+0.070753,+0.462247] percentage_points
+CPU_PAIRED_DELTA_ONE_SIDED_95_UPPER=+0.425121 percentage_points
+
+===== COST CRITERION: CPU TIME PER OPERATION =====
+COST_SOURCE=cpu_us_per_op column
+CPU_PER_OP_GEOMETRIC_MEAN_INCREASE=+8.6608 %
+CPU_PER_OP_ONE_SIDED_95_UPPER_INCREASE=+11.1047 %
+CPU_BUDGET_H=2%: NOT_ESTABLISHED
+CPU_BUDGET_H=5%: NOT_ESTABLISHED
+CPU_BUDGET_H=10%: NOT_ESTABLISHED
+CPU_BUDGET_H=15%: PASS_CONDITIONAL
+NOTE=One-sided t inference assumes approximately normal, independent block contrasts.
+NOTE=Do not replace source observations, including outliers, in the primary analysis.
