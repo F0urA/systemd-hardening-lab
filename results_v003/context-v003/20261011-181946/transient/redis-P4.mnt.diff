@@ -1,0 +1,4 @@
+/system.slice/slab-redis.service/memory.pressure /sys/fs/cgroup/system.slice/slab-redis.service/memory.pressure rw,nosuid,nodev,noexec,relatime cgroup2
+	/system.slice/slab-v003-redis-p4-5084.service/memory.pressure /sys/fs/cgroup/system.slice/slab-v003-redis-p4-5084.service/memory.pressure rw,nosuid,nodev,noexec,relatime cgroup2
+/systemd/propagate/slab-redis.service /run/systemd/incoming ro,nosuid,relatime tmpfs
+	/systemd/propagate/slab-v003-redis-p4-5084.service /run/systemd/incoming ro,nosuid,relatime tmpfs

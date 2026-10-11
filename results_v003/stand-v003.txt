@@ -1,0 +1,40 @@
+2026-10-11T18:15:08+03:00
+VERSION="11.1"
+PRETTY_NAME="ALT Server 11.1 (Mendelevium)"
+kernel=6.12.74-6.12-alt1
+systemd 257 (257.9-alt1)
+nginx version: nginx/1.30.5
+Redis server v=8.6.6 sha=00000000:0 malloc=jemalloc-5.3.0 bits=64 build=79c2959f7b6ebd5e
+postgres (PostgreSQL) 14.24
+Python 3.12.7
+x86_64-alt-linux-gcc (GCC) 13.2.1 20240128 (ALT Sisyphus 13.2.1-alt3)
+This is ApacheBench, Version 2.3 <$Revision$>
+nproc=4 mem_mb=3919
+cgroup=cgroup2fs
+lsm=lockdown,capability,landlock,yama,safesetid,bpf,kiosk,ima,evm
+kernel.yama.ptrace_scope = 1
+kernel.unprivileged_bpf_disabled = 2
+vm.unprivileged_userfaultfd = 0
+kernel.io_uring_disabled = 0
+net.ipv4.ip_unprivileged_port_start = 1024
+exposure_P4_nginx=2.8
+exposure_P4_redis=2.1
+exposure_P4_postgresql=2.1
+6040d6a0ca899d48f74e2f90211164b3c60403d033320625a3a47cf3e7a90f57  ./conf/nginx.conf
+dcecd2e40aad3d4a37ff796bdd870a4933e6f9f22f1c61907c8bf1f508562874  ./conf/redis.conf
+54eca1d42d3796a574a7740570ec9eec57d9914138cf299e73b347fdd96e8428  ./probes/extended_probe.py
+eaf450808581c54bbc8b0e2c8c80797bf04fc71c48d41432056bbfdac9d55450  ./probes/isolation_probe.py
+5736dbf424d1f24ce1c57f3b48ac66c3b490cc90f3ed06212e091b5f366f71c7  ./probes/lab_target.c
+5f85d32a5ed9d3a1e7213881913519080a62683eaf3c6be73a558ae211a267d2  ./probes/ptrace_seize.py
+a8ff54c30fe746f71ea427918494bb0d0a4fe4c7943f01adbe9c9546d3aa6064  ./probes/uid_helper.c
+8c5569781bbfc2f64b3324c587c74d174e642cd370beac82a74f7d6304e277c7  ./profiles/nginx/P1.conf
+e1e43d00e4b94d11d05d00877222363c23ca86ebb1aac064937169762653b623  ./profiles/nginx/P2.conf
+50c48a9604cbde6cb5eff5eeecfd0a7c95425b91675bb867454c6e9ab0ec86ec  ./profiles/nginx/P3.conf
+a3a33a771f4acc4338d4ea84749132306181eec64b0f43d35bc6d2b8e4400fc6  ./profiles/nginx/P4.conf
+522d398d76cd7d42f1d2bec43db74b178ed0cc21edfb0677cd7ac76ff5813b1d  ./profiles/nginx/P5.conf
+ccae10b60b8a8e08c3cf8f172b9c437a32cc7947f414c97356d97fc66a18dd19  ./profiles/postgresql/P4.conf
+ccae10b60b8a8e08c3cf8f172b9c437a32cc7947f414c97356d97fc66a18dd19  ./profiles/redis/P4.conf
+8d220d256eb92e5a6b1f46784bb20d47bd795107510c68be762efaa522012e86  ./units/lab-proc-target@.service
+5186e7f7b028089b00eed0822834f3f6fd81756b0554ee24fecdc3bf637dc4ab  ./units/slab-nginx.service
+6b65b2b879d8ce35cdafb4d9218c2c792eb42d955894afc475a04fbe7c57ee3c  ./units/slab-postgresql.service
+d6d6dc0d33d7ef6cbfafb53d287381e9276d9d32baa8fa9f2cb032e57939a25d  ./units/slab-redis.service

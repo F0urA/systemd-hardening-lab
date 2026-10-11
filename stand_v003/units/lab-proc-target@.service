@@ -1,0 +1,9 @@
+[Unit]
+Description=systemd hardening same-UID PROC target for %i
+
+[Service]
+Type=simple
+User=%i
+Environment=SYSTEMD_LAB_SECRET=PROC_MARKER
+ExecStart=/usr/local/bin/lab-target
+Restart=no
