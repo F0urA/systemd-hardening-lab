@@ -4,6 +4,14 @@
 # protocol_v003.txt, section 7. They do not enter the functional gate F; the
 # result is reported as a table "operation x candidate".
 # The live profile is changed during the run and P4 is restored at the end.
+#
+# Note on the Nginx error log. After "reopen logs" (USR1) a privileged
+# Nginx master hands the error log over to the worker user; a master without
+# CAP_DAC_OVERRIDE (P4, P5, P6) then cannot open that file and does not start.
+# The script therefore puts the log file back into its initial state (owner
+# root) before each Nginx candidate and at the end, so that every candidate
+# starts from the same state. The first revision of the script did not do
+# this; its run is kept in results as functional-v003/<time>-failed.
 set -Eeuo pipefail
 HERE=$(dirname "$(readlink -f "$0")")
 . "$HERE/slab_common_v003.sh"
@@ -24,6 +32,7 @@ cleanup() {
     set +e
     echo
     echo '===== CLEANUP AND RESTORE P4 ====='
+    reset_nginx_log
     restore_rest_state "${SERVICES[@]}" || status=2
     echo "RESULT_DIR=$OUT"
     exit "$status"
@@ -31,6 +40,11 @@ cleanup() {
 trap cleanup EXIT
 trap 'exit 130' INT
 trap 'exit 143' TERM
+
+NGINX_LOG=/var/log/slab-nginx-error.log
+reset_nginx_log() {
+    if [ -e "$NGINX_LOG" ]; then chown root:root "$NGINX_LOG"; chmod 0644 "$NGINX_LOG"; fi
+}
 
 record() {  # SERVICE PROFILE CHECK RESULT DETAIL
     local detail
@@ -46,7 +60,7 @@ nginx_checks() {  # PROFILE
     main=$(systemctl show slab-nginx.service -p MainPID --value)
     kill -USR1 "$main"; sleep 1
     rc=0; svc_health nginx && kill -0 "$main" || rc=1
-    record nginx "$p" reopen-logs "$(verdict $rc)" "master=$main"
+    record nginx "$p" reopen-logs "$(verdict $rc)" "log_owner_after=$(stat -c %U "$NGINX_LOG")"
     rc=0; systemctl reload slab-nginx.service && sleep 1 && svc_health nginx || rc=1
     n=$(pgrep -P "$main" -u labweb | wc -l)
     [ "$n" -eq 2 ] || rc=1
@@ -111,6 +125,7 @@ for svc in "${SERVICES[@]}"; do
     for profile in $profiles; do
         echo
         echo "===== SERVICE=$svc CANDIDATE=$profile ====="
+        if [ "$svc" = nginx ]; then reset_nginx_log; fi
         if ! svc_apply "$svc" "$profile"; then
             record "$svc" "$profile" start FAIL 'candidate does not pass the functional gate'
             continue

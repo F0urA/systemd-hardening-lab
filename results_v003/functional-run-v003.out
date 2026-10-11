@@ -1,24 +1,27 @@
 
 ===== SERVICE=nginx CANDIDATE=P0 =====
 CHECK service=nginx profile=P0 check=start result=PASS detail=
-CHECK service=nginx profile=P0 check=reopen-logs result=PASS detail=master=15962
+CHECK service=nginx profile=P0 check=reopen-logs result=PASS detail=log_owner_after=labweb
 CHECK service=nginx profile=P0 check=reload result=PASS detail=workers=2
 CHECK service=nginx profile=P0 check=not-found-404 result=PASS detail=http=404
 
 ===== SERVICE=nginx CANDIDATE=P4 =====
-Job for slab-nginx.service failed because the control process exited with error code.
-See "systemctl status slab-nginx.service" and "journalctl -xeu slab-nginx.service" for details.
-CHECK service=nginx profile=P4 check=start result=FAIL detail=candidate does not pass the functional gate
+CHECK service=nginx profile=P4 check=start result=PASS detail=
+CHECK service=nginx profile=P4 check=reopen-logs result=PASS detail=log_owner_after=root
+CHECK service=nginx profile=P4 check=reload result=PASS detail=workers=2
+CHECK service=nginx profile=P4 check=not-found-404 result=PASS detail=http=404
 
 ===== SERVICE=nginx CANDIDATE=P5 =====
-Job for slab-nginx.service failed because the control process exited with error code.
-See "systemctl status slab-nginx.service" and "journalctl -xeu slab-nginx.service" for details.
-CHECK service=nginx profile=P5 check=start result=FAIL detail=candidate does not pass the functional gate
+CHECK service=nginx profile=P5 check=start result=PASS detail=
+CHECK service=nginx profile=P5 check=reopen-logs result=PASS detail=log_owner_after=root
+CHECK service=nginx profile=P5 check=reload result=PASS detail=workers=2
+CHECK service=nginx profile=P5 check=not-found-404 result=PASS detail=http=404
 
 ===== SERVICE=nginx CANDIDATE=P6 =====
-Job for slab-nginx.service failed because the control process exited with error code.
-See "systemctl status slab-nginx.service" and "journalctl -xeu slab-nginx.service" for details.
-CHECK service=nginx profile=P6 check=start result=FAIL detail=candidate does not pass the functional gate
+CHECK service=nginx profile=P6 check=start result=PASS detail=
+CHECK service=nginx profile=P6 check=reopen-logs result=PASS detail=log_owner_after=root
+CHECK service=nginx profile=P6 check=reload result=PASS detail=workers=2
+CHECK service=nginx profile=P6 check=not-found-404 result=PASS detail=http=404
 
 ===== SERVICE=redis CANDIDATE=P0 =====
 CHECK service=redis profile=P0 check=start result=PASS detail=
@@ -61,9 +64,18 @@ nginx       P0   start                PASS
 nginx       P0   reopen-logs          PASS
 nginx       P0   reload               PASS
 nginx       P0   not-found-404        PASS
-nginx       P4   start                FAIL
-nginx       P5   start                FAIL
-nginx       P6   start                FAIL
+nginx       P4   start                PASS
+nginx       P4   reopen-logs          PASS
+nginx       P4   reload               PASS
+nginx       P4   not-found-404        PASS
+nginx       P5   start                PASS
+nginx       P5   reopen-logs          PASS
+nginx       P5   reload               PASS
+nginx       P5   not-found-404        PASS
+nginx       P6   start                PASS
+nginx       P6   reopen-logs          PASS
+nginx       P6   reload               PASS
+nginx       P6   not-found-404        PASS
 redis       P0   start                PASS
 redis       P0   bgsave               PASS
 redis       P0   bgrewriteaof         PASS
@@ -90,9 +102,7 @@ postgresql  P6   reload               PASS
 postgresql  P6   query-with-jit       PASS
 
 ===== CLEANUP AND RESTORE P4 =====
-Job for slab-nginx.service failed because the control process exited with error code.
-See "systemctl status slab-nginx.service" and "journalctl -xeu slab-nginx.service" for details.
-RESTORE_P4 nginx=FAIL -- inspect the unit and the journal
+RESTORE_P4 nginx=PASS
 RESTORE_P4 redis=PASS
 RESTORE_P4 postgresql=PASS
-RESULT_DIR=/root/systemd-lab-results/functional-v003/20261011-185811
+RESULT_DIR=/root/systemd-lab-results/functional-v004/20261011-185931

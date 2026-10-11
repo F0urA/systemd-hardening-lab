@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""slab_heartbeat_v004.py OUTFILE
+"""slab_heartbeat_v003.py OUTFILE
 
 Stall detector for the load series. Sleeps in 20 ms steps and remembers the
 longest overshoot; on SIGTERM writes it to OUTFILE in milliseconds. A stall of

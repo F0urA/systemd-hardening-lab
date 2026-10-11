@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""pool_series_v004.py OUT_CSV RESULTS_CSV RESULTS_CSV [...]
+"""pool_series_v003.py OUT_CSV RESULTS_CSV RESULTS_CSV [...]
 
 Concatenates the results of several series into one file with consecutive
 block numbers, for the 40-block sensitivity calculation described in

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""build_criteria_v003.py --probe DIR --scenarios DIR --bench SERVICE=DIR ... [--out FILE]
+"""build_criteria_v003.py --probe DIR --scenarios DIR [--bench SERVICE=DIR ...] [--conditional] [--out FILE]
 
 Collects the measured criteria of every candidate into one table in the
 format of select_profile_v003.py, so that the way from raw results to the
@@ -17,6 +17,13 @@ Sources:
                              95% bounds, as in audit_benchmark_csv_v003.py;
                              cost_upper is the increase of CPU time per
                              operation over P0, percent
+
+--conditional: a functional candidate without load data is entered
+as admissible (L95 = 1, cost_upper = 0) and marked in the notes. This is the
+conditional application of rule B described in protocol_v003.txt, section 9:
+"which profile would be chosen if every functional candidate passes the
+performance and cost conditions". Without the flag such candidates are not
+admissible.
 """
 import argparse
 import csv
@@ -76,6 +83,8 @@ def main():
     ap.add_argument("--probe", required=True, type=Path)
     ap.add_argument("--scenarios", required=True, type=Path)
     ap.add_argument("--bench", action="append", default=[], metavar="SERVICE=DIR")
+    ap.add_argument("--conditional", action="store_true",
+                    help="treat functional candidates without load data as admissible")
     ap.add_argument("--out", type=Path, default=Path("criteria_v003.csv"))
     args = ap.parse_args()
 
@@ -112,7 +121,11 @@ def main():
                 lower, cost, pairs = bench[service][p]
             else:
                 lower, cost, pairs = -1.0, 0.0, 0
-                if functional:
+                if functional and args.conditional:
+                    lower = 1.0
+                    if p != "P0":
+                        notes.append(f"{service} {p}: no load data, ASSUMED admissible (conditional rule B)")
+                elif functional:
                     notes.append(f"{service} {p}: not benchmarked, L95 set to -1 (not admissible)")
             if service == "nginx":
                 mm = metrics.get(("nginx-master", p))
@@ -145,7 +158,7 @@ def main():
     for n in notes:
         print("NOTE " + n)
     print(f"CSV={args.out}")
-    print(f"NEXT: python3 select_profile_v003.py {args.out}")
+    print(f"NEXT: python3 select_profile_v003.py {args.out} --budgets 0")
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ladder_check_v004.sh -- descriptive check for Nginx (v004), run after the
+# ladder_check_v003.sh -- descriptive check for Nginx (v003), run after the
 # fixed series: the functional gate and Exposure of the ladder profiles
 # P1-P3, and the necessity of each capability returned in P4.
 #   P4c1 = P4 without CAP_NET_BIND_SERVICE
@@ -13,7 +13,7 @@ HERE=$(dirname "$(readlink -f "$0")")
 require_rest_state nginx
 
 DIR=$(svc_profiles nginx)
-OUT="$ROOT/ladder-v004/$(date +%Y%m%d-%H%M%S)"
+OUT="$ROOT/ladder-v003/$(date +%Y%m%d-%H%M%S)"
 CSV="$OUT/ladder.csv"
 LOG=/var/log/slab-nginx-error.log
 mkdir -p "$OUT"
@@ -57,7 +57,7 @@ for profile in P1 P2 P3 P4 P4c1 P4c2 P4c3; do
     dirs=$(grep -Ec '^[A-Za-z].*=' "$DIR/$profile.conf" || true)
     main=$(systemctl show slab-nginx.service -p MainPID --value)
     workers=0
-    if [ -n "$main" ] && [ "$main" != 0 ]; then workers=$(pgrep -P "$main" -u labweb | wc -l); fi
+    if [ -n "$main" ] && [ "$main" != 0 ]; then workers=$(pgrep -P "$main" -u labweb | wc -l || true); fi
     reason=
     if [ "$functional" -ne 1 ]; then
         reason=$( { journalctl -u slab-nginx.service --since "$since" -o cat --no-pager 2>/dev/null; \

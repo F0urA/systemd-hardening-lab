@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""freq_adjust_v004.py HOST_ACTIVITY_CSV END_TIMES_TXT SERIES_DIR [SERIES_DIR ...]
+"""freq_adjust_v003.py HOST_ACTIVITY_CSV END_TIMES_TXT SERIES_DIR [SERIES_DIR ...]
 
 Exploratory analysis, not part of the fixed protocol. The host log shows that
 the frequency of the performance cores changed between measurements; this

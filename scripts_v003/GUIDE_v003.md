@@ -1,6 +1,6 @@
 # Как воспроизвести эксперимент (v003)
 
-Порядок ниже — тот, в котором эксперимент был выполнен 11.10.2026. Что получилось и какие были отклонения, записано в `results_v003/deviations_v003.md`, `deviations_v004.md` и `deviations_v005.md`.
+Порядок ниже — тот, в котором эксперимент был выполнен 11.10.2026. Что получилось, какие были отклонения и находки, записано в `results_v003/report_v003.md`.
 
 ## Что нужно
 
@@ -18,14 +18,14 @@
 | 2. Кандидаты | `./make_candidates_v003.sh`, `./make_ablation_v003.sh` | нет | `P6.conf`, `P4s.conf`, `P4n.conf` в каталогах профилей |
 | 3. Микропроверки | `./probe_all_v003.sh` | нет | `probe-v003/<дата>` |
 | 4. Соответствие модельного процесса реальному | `./context_compare_v003.sh` | да | `context-v003/<дата>` |
-| 5. Пилот нагрузки | `NGINX_N=100000 ./benchmark_v004.sh nginx 10 P4` | да | `nginx/benchmark-v004/<дата>` |
+| 5. Пилот нагрузки | `NGINX_N=100000 ./benchmark_v003.sh nginx 10 P4` | да | `nginx/benchmark-v003/<дата>` |
 | 6. Фиксация протокола | коммит `protocol_v003.txt` и `protocol_load_v003.txt` | — | — |
 | 7. Цели нарушителя | `./scenarios_v003.sh` | да | `scenarios-v003/<дата>` |
-| 8. Расширенная функциональная проверка | `./functional_ext_v004.sh` | да | `functional-v004/<дата>` |
-| 9. Нагрузочные серии | см. ниже | да | `<служба>/benchmark-v004/<дата>` |
-| 10. Причина роста затрат | см. ниже | да | `nginx/benchmark-v004/<дата>` |
+| 8. Расширенная функциональная проверка | `./functional_ext_v003.sh` | да | `functional-v003/<дата>` |
+| 9. Нагрузочные серии | см. ниже | да | `<служба>/benchmark-v003/<дата>` |
+| 10. Причина роста затрат | см. ниже | да | `nginx/benchmark-v003/<дата>` |
 | 11. Таблица критериев и выбор | см. ниже | нет | `criteria_*.csv`, `selection_*.txt` |
-| 12. Лестница профилей | `./ladder_check_v005.sh` | да | `ladder-v005/<дата>` |
+| 12. Лестница профилей | `./ladder_check_v003.sh` | да | `ladder-v003/<дата>` |
 
 Скрипты, меняющие службы, требуют исходного состояния стенда (три службы под сохранённым P4, других drop-in нет) и возвращают его при выходе.
 
@@ -42,9 +42,9 @@ for u in labweb labredis labpg root; do systemctl start lab-proc-target@$u; done
 ### Шаг 9. Нагрузочные серии
 
 ```
-NGINX_N=100000 ./benchmark_v004.sh nginx 20
-REDIS_THREADS=3 REDIS_N=3000000 ./benchmark_v004.sh redis 20
-PG_T=60 ./benchmark_v004.sh postgresql 10
+NGINX_N=100000 ./benchmark_v003.sh nginx 20
+REDIS_THREADS=3 REDIS_N=3000000 ./benchmark_v003.sh redis 20
+PG_T=60 ./benchmark_v003.sh postgresql 10
 ```
 
 В конце каждой серии печатается проверка для каждого кандидата: `PRIMARY_NONINFERIORITY_95` и `CPU_PER_OP_ONE_SIDED_95_UPPER_INCREASE`. Строка `INVALID MEASUREMENTS REPEATED` показывает, сколько измерений повторено из-за пауз виртуальной машины.
@@ -52,7 +52,7 @@ PG_T=60 ./benchmark_v004.sh postgresql 10
 ### Шаг 10. Причина роста затрат
 
 ```
-NGINX_N=100000 ./benchmark_v004.sh nginx 20 P4 P4s P4n
+NGINX_N=100000 ./benchmark_v003.sh nginx 20 P4 P4s P4n
 python3 ablation_report_v003.py <каталог серии>/results.csv
 ```
 
@@ -60,10 +60,10 @@ python3 ablation_report_v003.py <каталог серии>/results.csv
 
 ```
 R=/root/systemd-lab-results
-python3 build_criteria_v004.py --probe $R/probe-v003/<дата> --scenarios $R/scenarios-v003/<дата> \
-  --bench nginx=$R/nginx/benchmark-v004/<дата основной серии> \
-  --bench redis=$R/redis/benchmark-v004/<дата> \
-  --bench postgresql=$R/postgresql/benchmark-v004/<дата> --out $R/criteria.csv
+python3 build_criteria_v003.py --probe $R/probe-v003/<дата> --scenarios $R/scenarios-v003/<дата> \
+  --bench nginx=$R/nginx/benchmark-v003/<дата основной серии> \
+  --bench redis=$R/redis/benchmark-v003/<дата> \
+  --bench postgresql=$R/postgresql/benchmark-v003/<дата> --out $R/criteria.csv
 python3 select_profile_v003.py $R/criteria.csv --budgets 2,5,10,15
 ```
 
@@ -71,9 +71,9 @@ python3 select_profile_v003.py $R/criteria.csv --budgets 2,5,10,15
 
 ## Дополнительные расчёты
 
-- `pool_series_v004.py` — объединяет две серии в один файл с последовательными номерами блоков (расчёт по 40 блокам).
-- `freq_adjust_v004.py` — разведочный расчёт с поправкой на частоту процессора хоста; нужен журнал состояния хоста и время окончания измерений (`results_v003/host-activity-v004`).
+- `pool_series_v003.py` — объединяет две серии в один файл с последовательными номерами блоков (расчёт по 40 блокам).
+- `freq_adjust_v003.py` — разведочный расчёт с поправкой на частоту процессора хоста; нужен журнал состояния хоста и время окончания измерений (`results_v003/host-activity-v003`).
 
-## Версии скриптов
+## Нумерация
 
-Исправленный скрипт получает следующий номер версии, прежний остаётся в каталоге. Действующие версии: `benchmark_v004.sh`, `functional_ext_v004.sh`, `build_criteria_v004.py`, `ladder_check_v005.sh`; остальные — `v003`.
+Все файлы и каталоги имеют один номер версии — v003. Во время эксперимента исправленные скрипты временно получали номера v004 и v005; после завершения они переименованы. Соответствие прежних и нынешних имён приведено в начале `results_v003/report_v003.md`; первые редакции скриптов доступны в истории репозитория.

@@ -2,6 +2,12 @@
 # benchmark_v003.sh SERVICE [BLOCKS] [PROFILE...] -- randomized paired blocks
 # for one service and any set of candidates (v003).
 #
+# Stall detector (protocol_load_v003.txt, section 3): two heartbeat
+# processes run during every measurement, one on the server CPU and one on the
+# generator CPUs. If either sees a pause longer than STALL_MS, the virtual
+# machine was not running for that time: the measurement is invalid whatever
+# the profile, it is written to invalid.csv and repeated at once.
+#
 #   SERVICE   nginx | redis | postgresql
 #   BLOCKS    default 20 (nginx, redis) or 10 (postgresql)
 #   PROFILE   default: P0 P4 P5 P6 (nginx), P0 P4 P6 (redis, postgresql);
@@ -16,6 +22,7 @@
 #   NGINX_N=10000    nginx: requests per generator (two generators run)
 #   REDIS_N=100000   REDIS_THREADS=2
 #   PG_T=60          postgresql: seconds per measurement
+#   STALL_MS=500     longest tolerated pause of the virtual machine, ms
 #
 # CSV columns are compatible with audit_benchmark_csv_v003.py.
 set -Eeuo pipefail
@@ -43,6 +50,7 @@ NGINX_N=${NGINX_N:-10000}
 REDIS_N=${REDIS_N:-100000}
 REDIS_THREADS=${REDIS_THREADS:-2}
 PG_T=${PG_T:-60}
+STALL_MS=${STALL_MS:-500}
 
 UNIT=$(svc_unit "$svc")
 AFFINITY="/etc/systemd/system/$UNIT.d/80-affinity-v003.conf"
@@ -98,7 +106,7 @@ client() { ${CLIENT[@]+"${CLIENT[@]}"} "$@"; }
     systemctl --version | head -n 1
     nproc
     echo "SERVICE=$svc BLOCKS=$BLOCKS PIN=$PIN SERVER_CPU=$SERVER_CPU CLIENT_CPUS=$CLIENT_CPUS"
-    echo "KEEPALIVE=$KEEPALIVE NGINX_N=$NGINX_N REDIS_N=$REDIS_N REDIS_THREADS=$REDIS_THREADS PG_T=$PG_T"
+    echo "KEEPALIVE=$KEEPALIVE NGINX_N=$NGINX_N REDIS_N=$REDIS_N REDIS_THREADS=$REDIS_THREADS PG_T=$PG_T STALL_MS=$STALL_MS"
 } > "$OUT/platform.txt"
 cat "$OUT/platform.txt"
 
@@ -181,7 +189,20 @@ measure_postgresql() {  # TAG
     FAILED=0
 }
 
-echo "block,order,profile,$metric,cpu_pct,cpu_us_per_op,ops,wall_ns,failed" > "$CSV"
+hb_start() {
+    rm -f "$OUT/hb-server" "$OUT/hb-client"
+    taskset -c "$SERVER_CPU" python3 "$HERE/slab_heartbeat_v003.py" "$OUT/hb-server" & HB1=$!
+    taskset -c "$CLIENT_CPUS" python3 "$HERE/slab_heartbeat_v003.py" "$OUT/hb-client" & HB2=$!
+}
+hb_stop() {  # sets GAP_MS to the longest pause seen by either heartbeat
+    kill -TERM "$HB1" "$HB2" 2>/dev/null || true
+    wait "$HB1" "$HB2" 2>/dev/null || true
+    GAP_MS=$(cat "$OUT/hb-server" "$OUT/hb-client" 2>/dev/null | sort -n | tail -n 1)
+    GAP_MS=${GAP_MS:-0}
+}
+
+echo "block,order,profile,$metric,cpu_pct,cpu_us_per_op,ops,wall_ns,failed,max_gap_ms,attempt" > "$CSV"
+echo 'block,order,profile,attempt,throughput,max_gap_ms,reason' > "$OUT/invalid.csv"
 echo "BENCHMARK START: $BLOCKS randomized blocks x (${profiles[*]})"
 for block in $(seq 1 "$BLOCKS"); do
     order=0
@@ -189,24 +210,35 @@ for block in $(seq 1 "$BLOCKS"); do
         order=$((order + 1))
         echo
         echo "===== BLOCK=$block ORDER=$order PROFILE=$profile ====="
-        svc_apply "$svc" "$profile" || { echo "FUNCTIONAL FAILURE: $profile"; exit 1; }
-        "measure_$svc" "B${block}-${profile}"
-        [ "$FAILED" = 0 ] || { echo "FAILED REQUESTS: $FAILED"; exit 1; }
+        attempt=0
+        while :; do
+            attempt=$((attempt + 1))
+            svc_apply "$svc" "$profile" || { echo "FUNCTIONAL FAILURE: $profile"; exit 1; }
+            hb_start
+            "measure_$svc" "B${block}-${profile}-a${attempt}"
+            hb_stop
+            [ "$FAILED" = 0 ] || { echo "FAILED REQUESTS: $FAILED"; exit 1; }
+            if awk -v g="$GAP_MS" -v t="$STALL_MS" 'BEGIN { exit !(g <= t) }'; then break; fi
+            echo "$block,$order,$profile,$attempt,$THROUGHPUT,$GAP_MS,stall" >> "$OUT/invalid.csv"
+            echo "INVALID MEASUREMENT: the virtual machine paused for $GAP_MS ms; repeating"
+            [ "$attempt" -lt 5 ] || { echo 'ERROR: five stalled attempts in a row'; exit 1; }
+        done
         CPU_NS=$((CPU_AFTER - CPU_BEFORE))
         if [ "$WALL_NS" -le 0 ] || [ "$CPU_NS" -lt 0 ] || [ "$OPS" -le 0 ]; then
             echo 'ERROR: invalid CPU/wall/ops values'; exit 1
         fi
         CPU_PCT=$(awk -v c="$CPU_NS" -v w="$WALL_NS" 'BEGIN {printf "%.3f", c / w * 100}')
         CPU_US=$(awk -v c="$CPU_NS" -v o="$OPS" 'BEGIN {printf "%.4f", c / o / 1000}')
-        printf '%s,%s,%s,%s,%s,%s,%s,%s,%s\n' "$block" "$order" "$profile" \
-            "$THROUGHPUT" "$CPU_PCT" "$CPU_US" "$OPS" "$WALL_NS" "$FAILED" >> "$CSV"
-        echo "${metric^^}=$THROUGHPUT CPU_PCT=$CPU_PCT CPU_US_PER_OP=$CPU_US OPS=$OPS"
+        printf '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n' "$block" "$order" "$profile" \
+            "$THROUGHPUT" "$CPU_PCT" "$CPU_US" "$OPS" "$WALL_NS" "$FAILED" "$GAP_MS" "$attempt" >> "$CSV"
+        echo "${metric^^}=$THROUGHPUT CPU_PCT=$CPU_PCT CPU_US_PER_OP=$CPU_US OPS=$OPS MAX_GAP_MS=$GAP_MS ATTEMPT=$attempt"
     done < <(printf '%s\n' "${profiles[@]}" | shuf)
 done
 
 echo
 echo '===== BENCHMARK COMPLETE ====='
 wc -l "$CSV"
+echo "INVALID MEASUREMENTS REPEATED: $(($(wc -l < "$OUT/invalid.csv") - 1))"
 sha256sum "$CSV" | tee "$OUT/sha256-results.txt"
 for profile in "${profiles[@]}"; do
     [ "$profile" != P0 ] || continue
