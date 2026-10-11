@@ -1,0 +1,20 @@
+service    profile  F pairs        L95  cost_up%  g  emicro  expos   n
+nginx      P0       1    20   2193.099     0.000  0   0.000    9.6   0
+nginx      P4       1    20  -4774.955    19.406  0   0.778    2.8  21
+nginx      P5       1    20  -5330.300    21.815  3   0.778    2.8  22
+nginx      P6       1    20  -5699.266    22.808  3   0.778    2.8  23
+redis      P0       1    20   9684.928     0.000  0   0.000    9.2   0
+redis      P4       1    20   5464.344     2.336  0   0.778    2.1  21
+redis      P6       1    20   5987.370     2.239  1   0.778    2.1  23
+postgresql P0       1    10     78.750     0.000  0   0.000    9.2   0
+postgresql P4       1    10     41.480     2.532  0   0.778    2.1  21
+postgresql P6       1    10     37.989     3.377  1   0.778    2.1  23
+
+NOTE nginx: 5 goal cells are achievable under P0
+NOTE nginx P4: master context emicro_36=0.829, required and still allowed: PRIV-1 PRIV-2
+NOTE nginx P5: master context emicro_36=0.829, required and still allowed: PRIV-1 PRIV-2
+NOTE nginx P6: master context emicro_36=0.829, required and still allowed: PRIV-1 PRIV-2
+NOTE redis: 1 goal cells are achievable under P0
+NOTE postgresql: 2 goal cells are achievable under P0
+CSV=/root/systemd-lab-results/criteria_repeat_v004.csv
+NEXT: python3 select_profile_v003.py /root/systemd-lab-results/criteria_repeat_v004.csv --budgets 0

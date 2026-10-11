@@ -1,0 +1,28 @@
+P4c1: CapabilityBoundingSet=CAP_SETUID CAP_SETGID
+P4c2: CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_SETGID
+P4c3: CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_SETUID
+
+===== PROFILE=P1 =====
+FUNCTIONAL=1 EXPOSURE=8.7 WORKERS=2 REASON=
+
+===== PROFILE=P2 =====
+FUNCTIONAL=1 EXPOSURE=7.3 WORKERS=2 REASON=
+
+===== PROFILE=P3 =====
+Job for slab-nginx.service failed because the control process exited with error code.
+See "systemctl status slab-nginx.service" and "journalctl -xeu slab-nginx.service" for details.
+FUNCTIONAL=0 EXPOSURE=2.5 WORKERS=0 REASON=bind() to 127.0.0.1:808 failed (13: Permission denied)
+
+===== PROFILE=P4 =====
+FUNCTIONAL=1 EXPOSURE=2.8 WORKERS=2 REASON=
+
+===== PROFILE=P4c1 =====
+Job for slab-nginx.service failed because the control process exited with error code.
+See "systemctl status slab-nginx.service" and "journalctl -xeu slab-nginx.service" for details.
+FUNCTIONAL=0 EXPOSURE=2.7 WORKERS=0 REASON=bind() to 127.0.0.1:808 failed (13: Permission denied)
+
+===== PROFILE=P4c2 =====
+
+===== CLEANUP AND RESTORE P4 =====
+RESTORE_P4 nginx=PASS
+RESULT_DIR=/root/systemd-lab-results/ladder-v004/20261011-205827

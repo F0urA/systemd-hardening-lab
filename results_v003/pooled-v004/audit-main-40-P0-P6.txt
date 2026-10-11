@@ -1,0 +1,79 @@
+===== BENCHMARK DATA AUDIT v003 =====
+SOURCE=/root/systemd-lab-results/pooled-v004/nginx-main-40.csv
+SHA256=7501ef5d4ce76b4c56466750d5c7247198c2c8518d378596392104f724f1bb6e
+CSV_DATA_ROWS=160
+ALL_PROFILES={'P0': 40, 'P4': 40, 'P5': 40, 'P6': 40}
+THROUGHPUT_COLUMN=rps
+BASELINE=P0 CANDIDATE=P6
+
+===== EACH PAIRED BLOCK =====
+BLOCK ORDER_P0 ORDER_P6 P0_rps P6_rps D=P6-0.95*P0 CPU_DELTA_PP CPU_PER_OP_RATIO
+    1        1        3    45432.940    42604.764     -556.529       -1.562           1.0491
+    2        4        3    46577.400    40885.599    -3362.931       +0.118           1.1406
+    3        1        4    42100.421    42794.358     2798.958       +0.118           0.9850
+    4        1        3    48915.519    42412.399    -4057.344       +0.196           1.1557
+    5        1        2    40489.022    38961.549      496.978       +0.793           1.0478
+    6        2        3    45604.145    42224.640    -1099.298       -0.048           1.0795
+    7        1        2    47130.152    41244.851    -3528.793       +0.395           1.1474
+    8        2        3    49143.295    42207.505    -4478.625       -1.125           1.1507
+    9        2        4    46407.779    40926.996    -3160.394       +0.431           1.1390
+   10        1        4    47907.790    44782.890     -729.510       +0.229           1.0723
+   11        1        2    48534.790    22954.875   -23153.175       -0.718           2.0987
+   12        4        3    48693.730    43343.293    -2915.751       -0.085           1.1225
+   13        4        2    47479.503    42998.849    -2106.679       -0.222           1.1017
+   14        1        4    46167.077    41999.434    -1859.289       -0.424           1.0944
+   15        2        4    46143.347    42696.325    -1139.855       -0.263           1.0778
+   16        2        4    47362.650    38629.667    -6364.851       +0.255           1.2293
+   17        1        4    48427.048    44610.066    -1395.630       +0.338           1.0894
+   18        2        1    34239.774    44918.759    12390.974       +0.900           0.7694
+   19        1        2    46565.875    30429.671   -13807.910       -1.130           1.5124
+   20        1        4    34333.653    42160.677     9543.707       -0.521           0.8099
+   21        3        1    48389.151    36528.453    -9441.240       -0.155           1.3226
+   22        3        4    45318.711    39699.774    -3353.001       -0.121           1.1401
+   23        4        3    35814.535    33867.251     -156.557       +0.197           1.0597
+   24        4        3    45955.263    41668.188    -1989.312       -0.272           1.0998
+   25        2        3    47168.314    39792.885    -5017.013       +0.346           1.1896
+   26        4        2    47518.758    43023.938    -2118.882       -0.102           1.1033
+   27        2        3    38465.211    35343.034    -1198.916       +0.142           1.0899
+   28        2        3    47821.632    44048.601    -1381.949       +0.233           1.0883
+   29        4        2    47619.582    26961.866   -18276.737       -0.025           1.7657
+   30        3        1    43977.218    40462.733    -1315.624       +0.381           1.0911
+   31        2        3    35919.091    44208.582    10085.446       +1.344           0.8240
+   32        2        4    30647.707    41024.450    11909.128       +0.796           0.7532
+   33        4        1    47120.555    25687.267   -19077.260       -0.014           1.8341
+   34        3        2    47724.631    33176.052   -12162.347       +0.398           1.4445
+   35        1        3    47648.616    40632.975    -4633.210       +0.094           1.1738
+   36        2        4    47432.950    42286.351    -2774.951       +0.563           1.1283
+   37        1        3    47635.943    42356.896    -2897.250       +0.118           1.1260
+   38        2        3    46761.861    45056.889      633.121       +0.181           1.0398
+   39        4        3    42369.902    41998.161     1746.754       -0.214           1.0066
+   40        4        1    35930.021    43703.604     9570.084       +0.076           0.8228
+
+===== VERIFIED SUMMARY =====
+PAIRS=40
+STUDENT_T_QUANTILES_DF_39=one_sided_95:1.684875 two_sided_95:2.022691
+MEAN_P0_rps=44622.389050
+MEAN_P6_rps=39882.877925
+RATIO_OF_ARITHMETIC_MEANS=0.893786253 (89.37863%)
+PRIMARY_PAIRED_CONTRAST_MEAN=-2508.391672 rps
+PRIMARY_PAIRED_CONTRAST_SD=7547.062931 rps
+STUDENT_T_ONE_SIDED_95_LOWER_FOR_CONTRAST=-4518.945448 rps
+PRIMARY_NONINFERIORITY_95=NOT_ESTABLISHED
+SENSITIVITY_GEOMETRIC_MEAN_PAIRED_RATIO=0.89015076
+SENSITIVITY_GEOMETRIC_RATIO_ONE_SIDED_95_LOWER=0.84163450
+CPU_MEAN_P0=96.474500 %_one_core
+CPU_MEAN_P6=96.515525 %_one_core
+CPU_PAIRED_DELTA_MEAN=+0.041025 percentage_points
+CPU_PAIRED_DELTA_TWO_SIDED_95_CI=[-0.133491,+0.215541] percentage_points
+CPU_PAIRED_DELTA_ONE_SIDED_95_UPPER=+0.186395 percentage_points
+
+===== COST CRITERION: CPU TIME PER OPERATION =====
+COST_SOURCE=cpu_us_per_op column
+CPU_PER_OP_GEOMETRIC_MEAN_INCREASE=+12.3875 %
+CPU_PER_OP_ONE_SIDED_95_UPPER_INCREASE=+18.7998 %
+CPU_BUDGET_H=2%: NOT_ESTABLISHED
+CPU_BUDGET_H=5%: NOT_ESTABLISHED
+CPU_BUDGET_H=10%: NOT_ESTABLISHED
+CPU_BUDGET_H=15%: NOT_ESTABLISHED
+NOTE=One-sided t inference assumes approximately normal, independent block contrasts.
+NOTE=Do not replace source observations, including outliers, in the primary analysis.
