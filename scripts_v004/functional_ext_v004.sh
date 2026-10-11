@@ -3,11 +3,12 @@
 # check under every candidate (v004). The operations are listed in
 # protocol_v004.txt, section 7. They do not enter the functional gate F; the
 # result is reported as a table "operation x candidate".
+# NGINX_PROFILES lists the Nginx candidates (space separated).
 # The live profile is changed during the run and P4 is restored at the end.
 #
 # Note on the Nginx error log. After "reopen logs" (USR1) a privileged
 # Nginx master hands the error log over to the worker user; a master without
-# CAP_DAC_OVERRIDE (P4, P5, P6) then cannot open that file and does not start.
+# CAP_DAC_OVERRIDE (P1c, P4, P5, P6) then cannot open that file and does not start.
 # The script therefore puts the log file back into its initial state (owner
 # root) before each Nginx candidate and at the end, so that every candidate
 # starts from the same state. The first revision of the script did not do
@@ -119,7 +120,7 @@ pg_checks() {  # PROFILE
 
 for svc in "${SERVICES[@]}"; do
     case "$svc" in
-        nginx) profiles='P0 P4 P5 P6' ;;
+        nginx) profiles=${NGINX_PROFILES:-P0 P1 P2 P1r P1c P4 P5 P6} ;;
         *) profiles='P0 P4 P6' ;;
     esac
     for profile in $profiles; do

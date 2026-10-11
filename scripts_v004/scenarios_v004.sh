@@ -7,18 +7,30 @@
 #                   Linux permissions (DAC): directory owned by root / by
 #                   labweb  x  context worker (labweb) / master (root)
 #               G2  read the application secret (expected residual risk)
-#   Redis       G1  write a file outside the data directory through the real
-#                   server: CONFIG SET dir + SAVE; DAC control as above
-#   PostgreSQL  G1  write a file outside the data directory through the real
-#                   server: COPY ... TO; DAC control as above
+#   Redis       G1  write a file outside the data directory; DAC control as
+#                   above  x  context server (CONFIG SET dir + SAVE through
+#                   the real server) / process (a model process with the
+#                   rights of the service writes the file itself)
+#   PostgreSQL  G1  write a file outside the data directory; DAC control as
+#                   above  x  context server (COPY ... TO) / process
 #               G2  run a program through the real server: COPY FROM PROGRAM
 #
+# A root model process that cannot write directly also tries what a root
+# process can do against a read-only mount (protocol_review_v004.txt,
+# section 3): the same directory through /proc/1/root, and remounting the
+# mount point read-write inside its own mount namespace. The method that
+# worked is written to the detail column (via=...).
+#
+# Candidates: NGINX_PROFILES, REDIS_PROFILES, PG_PROFILES (space separated).
 # The live profile is changed during the run and P4 is restored at the end.
 set -Eeuo pipefail
 HERE=$(dirname "$(readlink -f "$0")")
 . "$HERE/slab_common_v004.sh"
 [ "$(id -u)" -eq 0 ] || { echo 'ERROR: run as root'; exit 1; }
 if [ "$#" -gt 0 ]; then SERVICES=("$@"); else SERVICES=(nginx redis postgresql); fi
+NGINX_PROFILES=${NGINX_PROFILES:-P0 P1 P2 P1r P1c P4 P5 P6}
+REDIS_PROFILES=${REDIS_PROFILES:-P0 P4 P6}
+PG_PROFILES=${PG_PROFILES:-P0 P4 P6}
 for s in "${SERVICES[@]}"; do svc_user "$s" >/dev/null; done
 require_files "$DROPUSER"
 require_rest_state "${SERVICES[@]}"
@@ -83,7 +95,7 @@ candidate() {
     echo
     echo "===== SERVICE=$svc CANDIDATE=$profile ====="
     if [ "$profile" != P0 ] && [ ! -f "$file" ]; then
-        echo "SKIP: $file does not exist (run make_candidates_v004.sh for P6)"
+        echo "SKIP: $file does not exist (run make_candidates_v004.sh)"
         return 1
     fi
     svc_apply "$svc" "$profile" || functional=0
@@ -114,6 +126,80 @@ profile_file() {  # SERVICE PROFILE
     if [ "$2" = P0 ]; then echo P0; else echo "$(svc_profiles "$1")/$2.conf"; fi
 }
 
+# ---------------------------------------------------------- goal helper
+probe_setup() {
+    cat > "$GPROBE" <<'PROBEOF'
+#!/bin/sh
+# Runtime helper of scenarios_v004.sh (removed by its cleanup).
+#   slab-g-probe-v004.sh read FILE
+#   slab-g-probe-v004.sh write DIR [nofallback]   replace DIR/document.txt
+#   slab-g-probe-v004.sh writefile DIR            create DIR/g1-v004-process.txt
+mode=$1
+arg=$2
+nofallback=${3:-}
+uid=$(id -u)
+if [ "$mode" = read ]; then
+    if head -c 1 "$arg" >/dev/null 2>&1; then
+        echo "G_RESULT=ALLOWED uid=$uid"
+    else
+        echo "G_RESULT=BLOCKED uid=$uid"
+    fi
+    exit 0
+fi
+attempt() {  # DIR -- one attempt to reach the goal through this path
+    if [ "$mode" = writefile ]; then
+        printf 'G1_PAYLOAD\n' 2>/dev/null > "$1/g1-v004-process.txt"
+        return
+    fi
+    TEMP=$(mktemp "$1/.g1-XXXXXX" 2>/dev/null) || return 1
+    if printf 'G1_REPLACED_DOCUMENT\n' > "$TEMP" 2>/dev/null && chmod 0644 "$TEMP" 2>/dev/null \
+            && mv -f "$TEMP" "$1/document.txt" 2>/dev/null; then
+        return 0
+    fi
+    rm -f "$TEMP" 2>/dev/null
+    return 1
+}
+via=
+( attempt "$arg" ) 2>/dev/null && via=direct
+if [ -z "$via" ] && [ "$uid" = 0 ] && [ -z "$nofallback" ]; then
+    # What a root process can try against a read-only mount.
+    ( attempt "/proc/1/root$arg" ) 2>/dev/null && via=proc1root
+    mp=$(findmnt -n -o TARGET --target "$arg" 2>/dev/null)
+    opts=$(findmnt -n -o OPTIONS --target "$arg" 2>/dev/null)
+    case ",$opts," in
+        *,ro,*)
+            if [ -n "$mp" ] && mount -o remount,rw,bind "$mp" 2>/dev/null \
+                    && ( attempt "$arg" ) 2>/dev/null; then
+                via=${via:+$via+}remount
+            fi ;;
+    esac
+fi
+if [ -n "$via" ]; then
+    echo "G_RESULT=ALLOWED via=$via uid=$uid"
+    exit 0
+fi
+# A root process that still cannot write tries the identity of the worker
+# user, as a compromised master holding CAP_SETUID could.
+if [ "$mode" = write ] && [ "$uid" = 0 ] && [ -z "$nofallback" ]; then
+    exec /usr/bin/python3 /usr/local/bin/slab_dropuser_v004.py labweb "$0" write "$arg" nofallback
+fi
+echo "G_RESULT=BLOCKED uid=$uid"
+exit 0
+PROBEOF
+    chmod 0755 "$GPROBE"
+}
+
+# process_cell SERVICE PROFILE DAC DIR -- the same goal G1 attempted by a model
+# process with the rights and the profile of the service, without the server.
+process_cell() {
+    local svc=$1 profile=$2 dac=$3 dir=$4 out outcome
+    rm -f "$dir/g1-v004-process.txt"
+    out=$(goal_transient "$(svc_user "$svc")" "$(profile_file "$svc" "$profile")" "$GPROBE" writefile "$dir")
+    if [ -s "$dir/g1-v004-process.txt" ]; then outcome=ACHIEVED; else outcome=BLOCKED; fi
+    rm -f "$dir/g1-v004-process.txt"
+    record "$svc" G1-write-outside-datadir "$dac" process "$profile" "$outcome" "$out"
+}
+
 # ---------------------------------------------------------------- Nginx
 nginx_reset_document() {  # DIR
     rm -f "$1/document.txt" "$1"/.g1-*
@@ -130,38 +216,6 @@ nginx_setup() {
     printf 'LAB_G2_SYNTHETIC_TOKEN_V003\n' > "$N_SECRET_DIR/app-secret.txt"
     chown root:labweb "$N_SECRET_DIR/app-secret.txt"
     chmod 0640 "$N_SECRET_DIR/app-secret.txt"
-    cat > "$GPROBE" <<'PROBEOF'
-#!/bin/sh
-# Runtime helper of scenarios_v004.sh (removed by its cleanup).
-#   slab-g-probe-v004.sh read FILE
-#   slab-g-probe-v004.sh write DIR [nofallback]
-mode=$1
-arg=$2
-nofallback=${3:-}
-if [ "$mode" = read ]; then
-    if head -c 1 "$arg" >/dev/null 2>&1; then
-        echo "G_RESULT=ALLOWED uid=$(id -u)"
-    else
-        echo "G_RESULT=BLOCKED uid=$(id -u)"
-    fi
-    exit 0
-fi
-TEMP=$(mktemp "$arg/.g1-XXXXXX" 2>/dev/null) || TEMP=
-if [ -n "$TEMP" ] && printf 'G1_REPLACED_DOCUMENT\n' > "$TEMP" 2>/dev/null \
-        && chmod 0644 "$TEMP" 2>/dev/null && mv -f "$TEMP" "$arg/document.txt" 2>/dev/null; then
-    echo "G_RESULT=ALLOWED uid=$(id -u)"
-    exit 0
-fi
-[ -z "$TEMP" ] || rm -f "$TEMP" 2>/dev/null
-# A root process that cannot write directly tries the identity of the
-# worker user, as a compromised master holding CAP_SETUID could.
-if [ "$(id -u)" = 0 ] && [ -z "$nofallback" ]; then
-    exec /usr/bin/python3 /usr/local/bin/slab_dropuser_v004.py labweb "$0" write "$arg" nofallback
-fi
-echo "G_RESULT=BLOCKED uid=$(id -u)"
-exit 0
-PROBEOF
-    chmod 0755 "$GPROBE"
 }
 
 nginx_goals() {  # PROFILE
@@ -240,6 +294,7 @@ redis_goals() {  # PROFILE
         rm -f "$target"/g1-v004.rdb "$target"/temp-*.rdb /var/lib/systemd-lab/redis/g1-v004.rdb
         record redis G1-write-outside-datadir "$dac" server "$profile" "$outcome" \
             "config_set_dir=$r1 config_set_dbfilename=$r2 save=$r3"
+        process_cell redis "$profile" "$dac" "$target"
     done
 }
 
@@ -261,6 +316,7 @@ pg_goals() {  # PROFILE
         if [ -s "$target/g1-v004.txt" ]; then outcome=ACHIEVED; else outcome=BLOCKED; fi
         rm -f "$target/g1-v004.txt"
         record postgresql G1-write-outside-datadir "$dac" server "$profile" "$outcome" "$r"
+        process_cell postgresql "$profile" "$dac" "$target"
     done
     r=$(psqlc <<'SQL'
 CREATE TEMP TABLE slab_g2_v004 (line text);
@@ -273,11 +329,12 @@ SQL
 }
 
 # ------------------------------------------------------------------ main
+probe_setup
 for svc in "${SERVICES[@]}"; do
     case "$svc" in
-        nginx) profiles='P0 P4 P5 P6'; nginx_setup ;;
-        redis) profiles='P0 P4 P6'; redis_setup ;;
-        postgresql) profiles='P0 P4 P6'; pg_setup ;;
+        nginx) profiles=$NGINX_PROFILES; nginx_setup ;;
+        redis) profiles=$REDIS_PROFILES; redis_setup ;;
+        postgresql) profiles=$PG_PROFILES; pg_setup ;;
     esac
     for profile in $profiles; do
         if candidate "$svc" "$profile"; then

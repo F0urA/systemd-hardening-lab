@@ -34,7 +34,7 @@ EXTENDED = ["X1", "X2", "X3", "X4"]
 REQUIRED = {"nginx-master": {"PRIV-1", "PRIV-2"}}
 
 LINE_RE = re.compile(r"^([A-Z]+-\d+|X\d)\s+(ALLOWED|BLOCKED|N/A|ERROR)\b")
-PROFILE_ORDER = ["P0", "P1", "P2", "P3", "P4", "P5", "P6"]
+PROFILE_ORDER = ["P0", "P1", "P1r", "P1c", "P2", "P3", "P4", "P5", "P6"]
 
 
 def parse(path):

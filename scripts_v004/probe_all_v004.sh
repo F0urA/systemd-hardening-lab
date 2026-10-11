@@ -4,11 +4,13 @@
 # The live services are not touched: every probe runs in a transient unit
 # whose properties are read from the saved profile file; P0 uses the same
 # launcher with an empty property list (not "su").
+# PROBE_PROFILES lists the profiles; a profile without a saved file is skipped.
 set -Eeuo pipefail
 HERE=$(dirname "$(readlink -f "$0")")
 . "$HERE/slab_common_v004.sh"
 [ "$(id -u)" -eq 0 ] || { echo 'ERROR: run as root'; exit 1; }
 require_files "$PROBE" "$XPROBE" "$FP" "$INSERVICE"
+PROBE_PROFILES=${PROBE_PROFILES:-P0 P1 P1r P1c P2 P3 P4 P5 P6}
 
 OUT="$ROOT/probe-v004/$(date +%Y%m%d-%H%M%S)"
 mkdir -p "$OUT"
@@ -17,7 +19,7 @@ exec > >(tee "$OUT/run.log") 2>&1
 run_context() {  # CONTEXT SERVICE USER
     local ctx=$1 svc=$2 user=$3 dir profile file rc
     dir=$(svc_profiles "$svc")
-    for profile in P0 P1 P2 P3 P4 P5 P6; do
+    for profile in $PROBE_PROFILES; do
         file="$dir/$profile.conf"
         if [ "$profile" = P0 ]; then
             file=P0
