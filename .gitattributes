@@ -4,6 +4,6 @@
 *.conf text eol=lf
 *.service text eol=lf
 *.c text eol=lf
-scripts_v003/*.txt text eol=lf
+scripts_v004/*.txt text eol=lf
 # measured results are stored byte for byte
-results_v003/** -text
+results_v004/** -text
