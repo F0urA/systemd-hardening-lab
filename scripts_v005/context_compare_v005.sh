@@ -2,7 +2,12 @@
 # context_compare_v005.sh -- is the model process equivalent to the process
 # of the real service? (v005)
 #
-# For P0 and P4 of every service the script
+# PROFILES (space separated, default "P0 P4") lists the profiles to compare.
+# Revision v005 runs it with PROFILES="P1 P1r P1c" for Nginx as well
+# (protocol_review2_v005.txt, section 2); Redis and PostgreSQL have no P1r/P1c,
+# so a profile absent for a service is skipped with a note.
+#
+# For each profile of every service the script
 #   1. applies the profile to the real unit and takes the fingerprint of the
 #      real processes (credentials, capabilities incl. CapAmb, NoNewPrivs,
 #      seccomp, namespaces, mount table);
@@ -21,6 +26,7 @@ HERE=$(dirname "$(readlink -f "$0")")
 . "$HERE/slab_common_v005.sh"
 [ "$(id -u)" -eq 0 ] || { echo 'ERROR: run as root'; exit 1; }
 SERVICES=(nginx redis postgresql)
+PROFILES=${PROFILES:-P0 P4}
 require_files "$PROBE" "$XPROBE" "$FP" "$INSERVICE" "$DROPUSER"
 require_rest_state "${SERVICES[@]}"
 
@@ -115,11 +121,17 @@ compare_context() {  # CONTEXT USER REAL_PID PROFILE FILE|P0
 for svc in "${SERVICES[@]}"; do
     unit=$(svc_unit "$svc")
     user=$(svc_user "$svc")
-    for profile in P0 P4; do
+    for profile in $PROFILES; do
         echo
         echo "===== SERVICE=$svc PROFILE=$profile ====="
         file=P0
-        [ "$profile" = P0 ] || file="$(svc_profiles "$svc")/$profile.conf"
+        if [ "$profile" != P0 ]; then
+            file="$(svc_profiles "$svc")/$profile.conf"
+            if [ ! -f "$file" ]; then
+                echo "SKIP: $file does not exist for $svc"
+                continue
+            fi
+        fi
         since=$(date '+%Y-%m-%d %H:%M:%S')
         if [ "$svc" = nginx ]; then
             # Helper processes of the real unit; "-" keeps a probe failure

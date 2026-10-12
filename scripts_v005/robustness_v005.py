@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""robustness_v005.py [--family M] [--delta 0.05] LABEL=RESULTS_CSV [LABEL=RESULTS_CSV ...]
+"""robustness_v005.py [--family M] [--delta 0.05] [--pairs A-B,A-C...] LABEL=RESULTS_CSV [...]
 
 Sensitivity of the admission conditions to the way the bound is computed
-(protocol_review_v005.txt, section 7). For every candidate of every series:
+(protocol_review_v005.txt, section 7; protocol_review2_v005.txt, section 7).
+For every candidate of every series:
 
   status   three outcomes of the comparison with the margin delta, one-sided
            95% Student bounds of the paired contrast d = X(D) - (1-delta)*X(P0):
@@ -20,9 +21,15 @@ Sensitivity of the admission conditions to the way the bound is computed
   cost     one-sided 95% upper bound of the increase of CPU time per
            operation, and the same bound at the level 0.05 / M
 
-The selection rule uses only the uncorrected Student bounds; everything else
-here is reported next to them. Python 3 standard library only; must be
-located next to audit_benchmark_csv_v005.py.
+--pairs gives direct paired contrasts between two restricted candidates in the
+same series, e.g. "P1c-P5,P1c-P6": the mean of X(A) - X(B) per block and its
+two-sided 95% confidence interval. This compares the cost of two protecting
+profiles measured in one randomized series (review remark 12), without going
+through P0.
+
+The selection rule uses only the Student bounds at the level of the protocol;
+everything else here is reported next to them. Python 3 standard library only;
+must be located next to audit_benchmark_csv_v005.py.
 """
 import argparse
 import math
@@ -60,8 +67,10 @@ def main():
     ap = argparse.ArgumentParser(description="Sensitivity of the admission conditions")
     ap.add_argument("--family", type=int, default=0)
     ap.add_argument("--delta", type=float, default=0.05)
+    ap.add_argument("--pairs", default="", help="direct paired contrasts, e.g. P1c-P5,P1c-P6")
     ap.add_argument("series", nargs="+", metavar="LABEL=RESULTS_CSV")
     args = ap.parse_args()
+    pairs = [tuple(p.split("-", 1)) for p in args.pairs.split(",") if "-" in p]
 
     for item in args.series:
         label, _, path = item.partition("=")
@@ -95,6 +104,18 @@ def main():
             print(f"  {p:<5}{100 * st.mean(cand) / st.mean(base):>6.1f}%{mean:>10.1f}{lower:>10.1f}{upper:>10.1f}  "
                   f"{status:<13}{lower_b:>10.1f} {status_b:<13}{boot_l:>10.1f}{boot_u:>10.1f}"
                   f"{min_margin(base, cand, t_one):>9.1f}{pct(cm):>+7.1f}%{pct(cu):>+9.1f}%{pct(cu_b):>+10.1f}%")
+        present = [(a, b) for a, b in pairs if a in profiles and b in profiles]
+        if present:
+            t_two = t_quantile(0.975, n - 1)
+            print("  direct paired contrasts between protecting profiles (A - B per block):")
+            for a, b in present:
+                va = [blocks[k][a]["value"] for k in numbers]
+                vb = [blocks[k][b]["value"] for k in numbers]
+                diff = [x - y for x, y in zip(va, vb)]
+                mean, _, low, high = bounds(diff, t_two)
+                rel = 100 * mean / st.mean(vb)
+                print(f"    {a}-{b}: mean {mean:+.1f} {col} ({rel:+.2f}% of {b}), "
+                      f"two-sided 95% CI [{low:+.1f}, {high:+.1f}]")
     print()
     print("NOTE=L95 > 0 is the admission condition; L95 <= 0 alone does not show that the loss exceeds the margin.")
     print(f"NOTE=bootstrap: {RESAMPLES} resamples of blocks, seed {SEED}.")
