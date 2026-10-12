@@ -81,23 +81,51 @@ powershell -ExecutionPolicy Bypass -File host_activity_v005.ps1 -Out host-activi
 cd /root/systemd-lab-results/nginx/benchmark-v005 && stat -c '%Y <серия> %n' <серия>/ab-*-g1.txt
 ```
 
+## Этап 3 (дополнение `protocol_review2_v005.txt`, рецензия на v004)
+
+Фиксируется коммитом `protocol_review2_v005.txt` и `procedure_v005.txt` **до** запуска. Все шаги, кроме 25, меняют службы и возвращают стенд в исходное состояние при выходе.
+
+| Шаг | Команда | Замечание | Результат |
+|---|---|---|---|
+| 19. Соответствие модельного процесса реальному для лёгких профилей | `PROFILES='P1 P1r P1c' ./context_compare_v005.sh` | 1 | `context-v005/<дата>` |
+| 20. Абляция capabilities P1c | `./cap_ablation_v005.sh`, затем `NGINX_PROFILES='P1r P1c P1cADMIN P1cPTRACE P1cDAC P1cCHROOT' ./scenarios_v005.sh nginx` | 4 | `nginx/profiles/P1c*.conf`, `scenarios-v005/<дата>` |
+| 21. Цели нарушителя, независимые G3/G4 и доп. обходы | `./scenarios_v005.sh` | 2, 3, 5 | `scenarios-v005/<дата>` |
+| 22. Контракт и миграция P0/P1 → P1c | `./functional_ext_v005.sh nginx` (строки `migrate-*`, `contract.csv`) | 6 | `functional-v005/<дата>` |
+| 23. Общая серия Nginx | `NGINX_N=100000 ./benchmark_v005.sh nginx 60 P1c P4 P5 P6` | 12 | `nginx/benchmark-v005/<дата>` |
+| 24. Лестница Redis и PostgreSQL под нагрузкой | `make_candidates_v005.sh` (ступени P1, P2, P1d), затем `./benchmark_v005.sh redis 20 P1 P2 P1d P4 P6` и `postgresql 10 ...` | 14 | `redis/`, `postgresql/benchmark-v005/<дата>` |
+| 25. Ненасыщенная серия | `NGINX_C=<из пилота> ./benchmark_v005.sh nginx 60 P1c P4` при загрузке 40–70 % | 17 | `nginx/benchmark-v005/<дата>` |
+| 26. Третий этап: новая служба | строится на стенде (первая из memcached/unbound/mosquitto), см. `procedure_v005.txt` | 8 | `<служба>/...` |
+
+Прямые парные контрасты между защищающими профилями в общей серии:
+
+```
+python3 robustness_v005.py --pairs P1c-P5,P1c-P6 R1=$R/nginx/benchmark-v005/<серия 23>/results.csv
+```
+
 ## Таблица критериев и выбор
+
+Уровень решения с поправкой на число кандидатов и плановый добор (замечания 9, 10):
 
 ```
 R=/root/systemd-lab-results
 python3 build_criteria_v005.py --probe $R/probe-v005/<дата> --scenarios $R/scenarios-v005/<дата> \
-  --bench nginx=$R/nginx/benchmark-v005/<первая серия>:P0,P4,P5,P6 \
-  --bench nginx=$R/nginx/benchmark-v005/<серия этапа 2>:P1,P2,P1r,P1c \
+  --bench nginx=$R/nginx/benchmark-v005/<общая серия>:P1c,P4,P5,P6 \
+  --bench nginx=$R/nginx/benchmark-v005/<серия P1/P2/P1r>:P1,P2,P1r \
   --bench redis=$R/redis/benchmark-v005/<дата> \
-  --bench postgresql=$R/postgresql/benchmark-v005/<дата> --out $R/criteria.csv
-python3 select_profile_v005.py $R/criteria.csv --budgets 2,5,10,15
+  --bench postgresql=$R/postgresql/benchmark-v005/<дата> \
+  --level 0.05 --family nginx=4 --family redis=4 --family postgresql=4 --looks 2 --out $R/criteria.csv
+# цель-добор серии кандидата с исходом NEEDS_MORE_DATA: повторить серию и объединить
+#   --bench nginx=<серия1>+<серия2>:<кандидат>
+python3 select_profile_v005.py $R/criteria.csv --budgets 2,5,10,15 \
+  --require nginx=G2-read-app-secret   # пример обязательной цели (замечание 5)
+python3 order_sensitivity_v005.py $R/criteria.csv --budgets 2,5,10,15   # замечание 16
 ```
 
-Источник границ для каждого кандидата задаётся в командной строке; серия шага 10 для этого не используется.
+Источник границ для каждого кандидата задаётся в командной строке.
 
 ## Дополнительные расчёты
 
-- `robustness_v005.py` — три статуса кандидата, граница с поправкой Бонферрони, бутстреп-границы, наименьший порог допуска.
+- `robustness_v005.py` — три статуса кандидата, граница с поправкой Бонферрони, бутстреп-границы, наименьший порог допуска; `--pairs A-B` — прямые парные контрасты между защищающими профилями одной серии.
 - `pool_series_v005.py` — объединяет две серии в один файл с последовательными номерами блоков (расчёт по 40 блокам).
 - `freq_adjust_v005.py` — расчёт с нормировкой на частоту процессора хоста; нужен журнал состояния хоста и время окончания измерений. Для серий 11.10.2026 разведочный, для серии этапа 2 заявлен в протоколе заранее.
 

@@ -61,4 +61,30 @@ CAPS=$(sed -n 's/^CapabilityBoundingSet=//p' "$(svc_profiles nginx)/P4.conf")
 [ -n "$CAPS" ] || { echo 'ERROR: no CapabilityBoundingSet in the saved Nginx P4'; exit 1; }
 extend nginx P1 P1r 'v004: P1r = P1 + read-only web directory' "ReadOnlyPaths=$SITE"
 extend nginx P1r P1c 'v004: P1c = P1r + the capability set of P4' "CapabilityBoundingSet=$CAPS"
+
+# v005 (protocol_review2_v005.txt, section 7, review remark 14): the ladder for
+# Redis and PostgreSQL. The ladder groups P1 and P2 are generic (no service
+# path), so they are copied from the saved Nginx ladder; P1d is P1 plus the
+# write-path directive for the data directory of the service.
+copy_step() {  # SERVICE STEP -- copy the generic ladder step from Nginx
+    local svc=$1 step=$2 src dst
+    src="$(svc_profiles nginx)/$step.conf"
+    dst="$(svc_profiles "$svc")/$step.conf"
+    [ -f "$src" ] || { echo "ERROR: $src is missing"; exit 1; }
+    if [ -e "$dst" ]; then
+        echo "KEEP $dst (already exists, not overwritten)"
+    else
+        cp "$src" "$dst"
+        echo "CREATED $dst (copied from the Nginx ladder step $step)"
+    fi
+    sha256sum "$dst"
+}
+for svc in redis postgresql; do
+    copy_step "$svc" P1
+    copy_step "$svc" P2
+done
+extend redis P1 P1d 'v005: P1d = P1 + write path for the data directory' \
+    'ProtectSystem=strict' 'ReadWritePaths=/var/lib/systemd-lab/redis'
+extend postgresql P1 P1d 'v005: P1d = P1 + write path for the data directory' \
+    'ProtectSystem=strict' 'ReadWritePaths=/var/lib/systemd-lab/postgresql'
 echo 'DONE. Candidates are not applied to any service by this script.'
