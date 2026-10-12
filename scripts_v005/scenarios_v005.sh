@@ -7,6 +7,11 @@
 #                   Linux permissions (DAC): directory owned by root / by
 #                   labweb  x  context worker (labweb) / master (root)
 #               G2  read the application secret (expected residual risk)
+#               G3  replace a file in the service-config directory /etc/systemd-lab
+#                   (independent goal, read-only via ProtectSystem=full rather
+#                   than the hand-picked ReadOnlyPaths; master / worker)
+#               G4  write the log directory /var/log (read-only only under
+#                   ProtectSystem=strict; master / worker)
 #   Redis       G1  write a file outside the data directory; DAC control as
 #                   above  x  context server (CONFIG SET dir + SAVE through
 #                   the real server) / process (a model process with the
@@ -16,10 +21,13 @@
 #               G2  run a program through the real server: COPY FROM PROGRAM
 #
 # A root model process that cannot write directly also tries what a root
-# process can do against a read-only mount (protocol_review_v005.txt,
-# section 3): the same directory through /proc/1/root, and remounting the
-# mount point read-write inside its own mount namespace. The method that
-# worked is written to the detail column (via=...).
+# process can do against a read-only mount (protocol_review_v005.txt, section 3;
+# protocol_review2_v005.txt, section 6): the same directory through
+# /proc/1/root, remounting the mount point read-write inside its own mount
+# namespace, and a nested bind mount remounted read-write. The method that
+# worked is written to the detail column (via=...). States that the transient
+# model cannot reproduce (an fd inherited from before the profile applied) are
+# named in the protocol and the conclusion is narrowed accordingly.
 #
 # Candidates: NGINX_PROFILES, REDIS_PROFILES, PG_PROFILES (space separated).
 # The live profile is changed during the run and P4 is restored at the end.
@@ -42,13 +50,21 @@ GPROBE=/usr/local/bin/slab-g-probe-v005.sh
 N_ROOT="$SITE/g1-v005-rootown"
 N_LAB="$SITE/g1-v005-labweb"
 N_SECRET_DIR=/var/lib/systemd-lab/g2-v005-private
+# Independent goals derived from the configuration before the profiles were
+# built (protocol_review2_v005.txt, section 4): G3 writes the service-config
+# directory (read-only through ProtectSystem=full, not the hand-picked
+# ReadOnlyPaths), G4 writes the log directory (read-only only under
+# ProtectSystem=strict).
+N_CONF=/etc/systemd-lab/g3-v005-config
+N_LOGDIR=/var/log/g4-v005-logdir
 R_OWN=/var/lib/systemd-lab/redis-g1-v005-own
 R_ROOT=/var/lib/systemd-lab/redis-g1-v005-root
 P_OWN=/var/lib/systemd-lab/pg-g1-v005-own
 P_ROOT=/var/lib/systemd-lab/pg-g1-v005-root
 REDIS_CONF=/etc/systemd-lab/redis.conf
 REDIS_CONF_BACKUP=
-for p in "$GPROBE" "$N_ROOT" "$N_LAB" "$N_SECRET_DIR" "$R_OWN" "$R_ROOT" "$P_OWN" "$P_ROOT"; do
+for p in "$GPROBE" "$N_ROOT" "$N_LAB" "$N_SECRET_DIR" "$N_CONF" "$N_LOGDIR" \
+         "$R_OWN" "$R_ROOT" "$P_OWN" "$P_ROOT"; do
     [ ! -e "$p" ] || { echo "ERROR: $p already exists; inspect before continuing"; exit 1; }
 done
 
@@ -68,7 +84,7 @@ cleanup() {
         echo 'REDIS_CONF_RESTORED'
     fi
     rm -f "$GPROBE"
-    rm -rf -- "$N_ROOT" "$N_LAB" "$N_SECRET_DIR" "$R_OWN" "$R_ROOT" "$P_OWN" "$P_ROOT"
+    rm -rf -- "$N_ROOT" "$N_LAB" "$N_SECRET_DIR" "$N_CONF" "$N_LOGDIR" "$R_OWN" "$R_ROOT" "$P_OWN" "$P_ROOT"
     rm -f /var/lib/systemd-lab/redis/g1-v005.rdb
     restore_rest_state "${SERVICES[@]}" || status=2
     echo "RESULT_DIR=$OUT"
@@ -173,6 +189,17 @@ if [ -z "$via" ] && [ "$uid" = 0 ] && [ -z "$nofallback" ]; then
                 via=${via:+$via+}remount
             fi ;;
     esac
+    # Nested bind mount: bind the read-only target onto a fresh directory and
+    # remount that read-write (protocol_review2_v005.txt, section 6).
+    if [ -z "$via" ]; then
+        BM=$(mktemp -d 2>/dev/null) || BM=
+        if [ -n "$BM" ] && mount --bind "$arg" "$BM" 2>/dev/null \
+                && mount -o remount,rw,bind "$BM" 2>/dev/null \
+                && ( attempt "$BM" ) 2>/dev/null; then
+            via=${via:+$via+}nestedbind
+        fi
+        [ -z "$BM" ] || { umount "$BM" 2>/dev/null; rmdir "$BM" 2>/dev/null; }
+    fi
 fi
 if [ -n "$via" ]; then
     echo "G_RESULT=ALLOWED via=$via uid=$uid"
@@ -216,6 +243,28 @@ nginx_setup() {
     printf 'LAB_G2_SYNTHETIC_TOKEN_V003\n' > "$N_SECRET_DIR/app-secret.txt"
     chown root:labweb "$N_SECRET_DIR/app-secret.txt"
     chmod 0640 "$N_SECRET_DIR/app-secret.txt"
+    # G3 target in the service-config directory, G4 target in the log directory;
+    # both root-owned, so DAC alone blocks the worker and only the master is of
+    # interest. A synthetic document is used so the live config is never touched.
+    mkdir "$N_CONF" "$N_LOGDIR"
+    chown root:root "$N_CONF" "$N_LOGDIR"; chmod 0755 "$N_CONF" "$N_LOGDIR"
+}
+
+# nginx_write_goal GOAL DIR PROFILE -- G1-style write of DIR/document.txt by the
+# model process in the master and worker contexts, recorded by the probe result
+# (no HTTP check). Used for the independent goals G3 and G4.
+nginx_write_goal() {
+    local goal=$1 dir=$2 profile=$3 file user ctx out result outcome
+    file=$(profile_file nginx "$profile")
+    for user in labweb root; do
+        if [ "$user" = root ]; then ctx=master; else ctx=worker; fi
+        nginx_reset_document "$dir"
+        out=$(goal_transient "$user" "$file" "$GPROBE" write "$dir")
+        result=$(printf '%s\n' "$out" | sed -n 's/^G_RESULT=\([A-Z]*\).*/\1/p' | tail -n 1)
+        if [ "$result" = ALLOWED ]; then outcome=ACHIEVED; else outcome=BLOCKED; fi
+        record nginx "$goal" rootown "$ctx" "$profile" "$outcome" "$out"
+    done
+    nginx_reset_document "$dir"
 }
 
 nginx_goals() {  # PROFILE
@@ -250,6 +299,8 @@ nginx_goals() {  # PROFILE
         record nginx G2-read-app-secret needed-by-app "$ctx" "$profile" "$outcome" "$out"
     done
     rm -f "$body"
+    nginx_write_goal G3-replace-config "$N_CONF" "$profile"
+    nginx_write_goal G4-write-logdir "$N_LOGDIR" "$profile"
 }
 
 # ---------------------------------------------------------------- Redis
