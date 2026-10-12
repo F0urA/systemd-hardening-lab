@@ -1,0 +1,29 @@
+# /etc/systemd/system/slab-nginx.service
+[Unit]
+Description=systemd hardening experiment Nginx
+After=network.target
+
+[Service]
+Type=simple
+ExecStartPre=/usr/sbin/nginx -t -c /etc/systemd-lab/nginx.conf
+ExecStart=/usr/sbin/nginx -c /etc/systemd-lab/nginx.conf -g 'daemon off;'
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGQUIT
+Restart=no
+CPUAccounting=yes
+MemoryAccounting=yes
+
+[Install]
+WantedBy=multi-user.target
+
+# /etc/systemd/system/slab-nginx.service.d/80-affinity-v004.conf
+[Service]
+CPUAffinity=0
+
+# /etc/systemd/system/slab-nginx.service.d/90-hardening.conf
+[Service]
+PrivateTmp=yes
+ProtectHome=yes
+ProtectSystem=full
+NoNewPrivileges=yes
+InaccessiblePaths=/etc/systemd-lab/credential

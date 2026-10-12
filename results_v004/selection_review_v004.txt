@@ -1,0 +1,27 @@
+==============================================================================
+SERVICE nginx: candidates P0 P1 P2 P1r P1c P4 P5 P6
+  throughput non-inferiority not established: P2 P4 P5 P6
+  RULE A (min Exposure, no admission conditions): P4
+       H  admissible restricted     RULE A+         RULE B          RULE B (v003)
+       2  P1 P1c                    P1c             P1c             P1c
+       5  P1 P1r P1c                P1c             P1c             P1c
+      10  P1 P1r P1c                P1c             P1c             P1c
+      15  P1 P1r P1c                P1c             P1c             P1c
+==============================================================================
+SERVICE redis: candidates P0 P4 P6
+  RULE A (min Exposure, no admission conditions): P4
+       H  admissible restricted     RULE A+         RULE B          RULE B (v003)
+       2  -                         NONE            NONE            P0
+       5  P4 P6                     P4              P6              P6
+      10  P4 P6                     P4              P6              P6
+      15  P4 P6                     P4              P6              P6
+==============================================================================
+SERVICE postgresql: candidates P0 P4 P6
+  RULE A (min Exposure, no admission conditions): P4
+       H  admissible restricted     RULE A+         RULE B          RULE B (v003)
+       2  -                         NONE            NONE            P0
+       5  P4 P6                     P4              P6              P6
+      10  P4 P6                     P4              P6              P6
+      15  P4 P6                     P4              P6              P6
+
+NONE = no admissible restricted candidate among those tested.

@@ -24,11 +24,10 @@ nginx_rw_paths() {
 
 # extend SERVICE BASE NEW COMMENT SETTING... -- NEW = saved BASE + settings.
 extend() {
-    local svc=$1 base new dir line
+    local svc=$1 from=$2 comment=$4 base new dir line
     dir=$(svc_profiles "$svc")
     base="$dir/$2.conf"
     new="$dir/$3.conf"
-    local comment=$4
     shift 4
     [ -f "$base" ] || { echo "ERROR: $base is missing"; exit 1; }
     if [ -e "$new" ]; then
@@ -47,7 +46,7 @@ extend() {
     head -c "$(wc -c < "$base")" "$new" | cmp -s "$base" - || {
         echo "ERROR: $new is not an extension of $base"; exit 1;
     }
-    echo "--- appended to $2 in $new:"
+    echo "--- appended to $from in $new:"
     tail -c +"$(( $(wc -c < "$base") + 1 ))" "$new"
     sha256sum "$base" "$new"
     echo

@@ -1,0 +1,4 @@
+service,operations,syscalls,syscalls_per_op,cpu_us_per_op_traced,top_calls
+nginx,20000,282506,14.13,476.85,newfstatat=100000 close=40000 writev=20000 sendfile=20000 accept4=20001 epoll_ctl=22502 
+redis,200000,405364,2.03,23.04,restart_syscall=1 write=200003 read=200172 epoll_wait=4425 openat=118 close=170 
+postgresql,2000,61593,30.80,1421.68,wait4=22 sendto=14409 pread64=2367 fdatasync=1454 recvfrom=15023 lseek=18142 

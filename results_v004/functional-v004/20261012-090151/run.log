@@ -1,0 +1,86 @@
+
+===== SERVICE=nginx CANDIDATE=P0 =====
+CHECK service=nginx profile=P0 check=start result=PASS detail=
+CHECK service=nginx profile=P0 check=reopen-logs result=PASS detail=log_owner_after=labweb
+CHECK service=nginx profile=P0 check=reload result=PASS detail=workers=2
+CHECK service=nginx profile=P0 check=not-found-404 result=PASS detail=http=404
+
+===== SERVICE=nginx CANDIDATE=P1 =====
+CHECK service=nginx profile=P1 check=start result=PASS detail=
+CHECK service=nginx profile=P1 check=reopen-logs result=PASS detail=log_owner_after=labweb
+CHECK service=nginx profile=P1 check=reload result=PASS detail=workers=2
+CHECK service=nginx profile=P1 check=not-found-404 result=PASS detail=http=404
+
+===== SERVICE=nginx CANDIDATE=P2 =====
+CHECK service=nginx profile=P2 check=start result=PASS detail=
+CHECK service=nginx profile=P2 check=reopen-logs result=PASS detail=log_owner_after=labweb
+CHECK service=nginx profile=P2 check=reload result=PASS detail=workers=2
+CHECK service=nginx profile=P2 check=not-found-404 result=PASS detail=http=404
+
+===== SERVICE=nginx CANDIDATE=P1r =====
+CHECK service=nginx profile=P1r check=start result=PASS detail=
+CHECK service=nginx profile=P1r check=reopen-logs result=PASS detail=log_owner_after=labweb
+CHECK service=nginx profile=P1r check=reload result=PASS detail=workers=2
+CHECK service=nginx profile=P1r check=not-found-404 result=PASS detail=http=404
+
+===== SERVICE=nginx CANDIDATE=P1c =====
+CHECK service=nginx profile=P1c check=start result=PASS detail=
+CHECK service=nginx profile=P1c check=reopen-logs result=PASS detail=log_owner_after=root
+CHECK service=nginx profile=P1c check=reload result=PASS detail=workers=2
+CHECK service=nginx profile=P1c check=not-found-404 result=PASS detail=http=404
+
+===== SERVICE=nginx CANDIDATE=P4 =====
+CHECK service=nginx profile=P4 check=start result=PASS detail=
+CHECK service=nginx profile=P4 check=reopen-logs result=PASS detail=log_owner_after=root
+CHECK service=nginx profile=P4 check=reload result=PASS detail=workers=2
+CHECK service=nginx profile=P4 check=not-found-404 result=PASS detail=http=404
+
+===== SERVICE=nginx CANDIDATE=P5 =====
+CHECK service=nginx profile=P5 check=start result=PASS detail=
+CHECK service=nginx profile=P5 check=reopen-logs result=PASS detail=log_owner_after=root
+CHECK service=nginx profile=P5 check=reload result=PASS detail=workers=2
+CHECK service=nginx profile=P5 check=not-found-404 result=PASS detail=http=404
+
+===== SERVICE=nginx CANDIDATE=P6 =====
+CHECK service=nginx profile=P6 check=start result=PASS detail=
+CHECK service=nginx profile=P6 check=reopen-logs result=PASS detail=log_owner_after=root
+CHECK service=nginx profile=P6 check=reload result=PASS detail=workers=2
+CHECK service=nginx profile=P6 check=not-found-404 result=PASS detail=http=404
+
+===== SUMMARY: operation x candidate =====
+nginx       P0   start                PASS
+nginx       P0   reopen-logs          PASS
+nginx       P0   reload               PASS
+nginx       P0   not-found-404        PASS
+nginx       P1   start                PASS
+nginx       P1   reopen-logs          PASS
+nginx       P1   reload               PASS
+nginx       P1   not-found-404        PASS
+nginx       P2   start                PASS
+nginx       P2   reopen-logs          PASS
+nginx       P2   reload               PASS
+nginx       P2   not-found-404        PASS
+nginx       P1r  start                PASS
+nginx       P1r  reopen-logs          PASS
+nginx       P1r  reload               PASS
+nginx       P1r  not-found-404        PASS
+nginx       P1c  start                PASS
+nginx       P1c  reopen-logs          PASS
+nginx       P1c  reload               PASS
+nginx       P1c  not-found-404        PASS
+nginx       P4   start                PASS
+nginx       P4   reopen-logs          PASS
+nginx       P4   reload               PASS
+nginx       P4   not-found-404        PASS
+nginx       P5   start                PASS
+nginx       P5   reopen-logs          PASS
+nginx       P5   reload               PASS
+nginx       P5   not-found-404        PASS
+nginx       P6   start                PASS
+nginx       P6   reopen-logs          PASS
+nginx       P6   reload               PASS
+nginx       P6   not-found-404        PASS
+
+===== CLEANUP AND RESTORE P4 =====
+RESTORE_P4 nginx=PASS
+RESULT_DIR=/root/systemd-lab-results/functional-v004/20261012-090151
