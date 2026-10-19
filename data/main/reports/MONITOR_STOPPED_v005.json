@@ -1,0 +1,14 @@
+{
+  "automation_id": "v005",
+  "name": "Завершение эксперимента v005",
+  "status": "PAUSED",
+  "verified_utc": "2026-10-14T01:03:29.0884085Z",
+  "tool_update_status": "PAUSED",
+  "independent_local_status": "PAUSED",
+  "prompt_and_schedule_preserved": true,
+  "report_verified_before_stop": true,
+  "report_sha256": "14c4d67a4ea8d8fde7ae488b9622fb5ce2d86ad65a80dbc653aefe25eecc699a",
+  "overall_scientific_scope": "INCOMPLETE_SCOPE",
+  "missing_scope": ["R4-nginx-nonsaturated", "memcached-stage3"],
+  "reason": "User-authorized recurring check stopped after saving and verifying the final truthful report. No further series or controllers started."
+}

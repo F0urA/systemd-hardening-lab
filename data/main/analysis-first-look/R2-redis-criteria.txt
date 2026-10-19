@@ -1,0 +1,18 @@
+service    profile  F pairs        L95       U95d  cost_up%  g  s  emicro  expos   n  status          series
+redis      P0       1    20   4413.689   4413.689     0.000  0  0   0.000    9.2   0  BASELINE        20261012-194224
+redis      P1       1    20   2955.321   4756.278     1.585  0  0   0.316    8.4   5  NON_INFERIOR    20261012-194224
+redis      P2       1    20   1232.567   2700.134     3.762  0  0   0.368    6.9   9  NON_INFERIOR    20261012-194224
+redis      P1d      1    20   3068.486   5075.060     1.626  1  2   0.316    8.3   7  NON_INFERIOR    20261012-194224
+redis      P4       1    20   1803.884   3146.433     3.069  0  0   0.789    2.1  21  NON_INFERIOR    20261012-194224
+redis      P6       1    20    831.601   2925.610     4.093  1  2   0.789    2.1  23  NON_INFERIOR    20261012-194224
+
+NOTE mandatory contracts: /root/article-experiment/20261012-v005/post-analysis/raw-vm/functional-v005/20261012-104934/contract.csv supplies 22 verdicts
+NOTE redis: series 20261012-194224 supplies P0 P1 P1d P2 P4 P6 (unless supplied by an earlier series); bounds at the level 0.005
+NOTE redis: 1 goals in 2 scenario cells are achievable under P0
+NOTE redis P1: goals not blocked in every cell: G1-write-outside-datadir
+NOTE redis P2: goals not blocked in every cell: G1-write-outside-datadir
+NOTE redis P1d: goals not blocked in every cell: -
+NOTE redis P4: goals not blocked in every cell: G1-write-outside-datadir
+NOTE redis P6: goals not blocked in every cell: -
+CSV=/root/article-experiment/20261012-v005/post-analysis/analysis-first-look/R2-redis-criteria.csv
+NEXT: python3 select_profile_v005.py /root/article-experiment/20261012-v005/post-analysis/analysis-first-look/R2-redis-criteria.csv --budgets 2,5,10,15

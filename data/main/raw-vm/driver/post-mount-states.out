@@ -1,0 +1,3 @@
+{"planned_cells": 40, "observed_cells": 40, "counts": {"ACHIEVED": 9, "BLOCKED": 7, "NOT_REPRODUCED": 24, "UNEXPECTED": 0, "ERROR": 0}, "complete_cells": true, "selection_input": false, "baseline": "P0+PrivateMounts=yes+MountFlags=slave harness, not primary P0", "status": "COMPLETE"}
+RESTORE_P4 nginx=PASS
+RESULT_DIR=/root/article-experiment/20261012-v005/results_v005/mount-states-v005/20261014-002458-064fbb607ff2b76d

@@ -1,0 +1,8 @@
+unit,initial_active,initial_enabled
+slab-nginx,inactive,disabled
+slab-redis,inactive,disabled
+slab-postgresql,inactive,disabled
+lab-proc-target@root,inactive,static
+lab-proc-target@labweb,inactive,static
+lab-proc-target@labredis,inactive,static
+lab-proc-target@labpg,inactive,static

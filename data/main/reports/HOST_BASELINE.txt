@@ -1,0 +1,6 @@
+Before the first performance pilot, a 3-second Windows process-CPU diagnostic
+showed CCleaner64 using approximately one logical core (101.6% of one core),
+VirtualBoxVM 52.1%, and each remaining listed process below 4% of one core.
+No unrelated application was stopped or reconfigured. Background activity is
+retained as a limitation and recorded continuously in host-activity-v005.csv.
+Measurement admission still requires the predefined pilot CV(P0)<=5%.

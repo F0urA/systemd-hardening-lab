@@ -1,0 +1,9 @@
+VALID_CLOSED_PREFIX_AND_PARENT_BACKUP; no statistical look performed
+STAGE=R3-postgresql-retry RC=0 RESULT_DIR=/root/article-experiment/20261012-v005/results_v005/postgresql/benchmark-v005/20261013-193448
+STAGE=R5-nginx-light RC=0 RESULT_DIR=/root/article-experiment/20261012-v005/results_v005/nginx/benchmark-v005/20261013-204356
+STAGE=R4-pilot-c1 RC=0 RESULT_DIR=/root/article-experiment/20261012-v005/results_v005/nginx/benchmark-v005/20261013-220413
+STAGE=R4-pilot-c2 RC=0 RESULT_DIR=/root/article-experiment/20261012-v005/results_v005/nginx/benchmark-v005/20261013-220630
+STAGE=R4-pilot-c4 RC=0 RESULT_DIR=/root/article-experiment/20261012-v005/results_v005/nginx/benchmark-v005/20261013-220836
+STAGE=R4-pilot-c8 RC=0 RESULT_DIR=/root/article-experiment/20261012-v005/results_v005/nginx/benchmark-v005/20261013-221032
+STAGE=R4-pilot-c16 RC=0 RESULT_DIR=/root/article-experiment/20261012-v005/results_v005/nginx/benchmark-v005/20261013-221223
+PRIMARY_RESUME_FINISHED: original remainder only; formal first look is still pending

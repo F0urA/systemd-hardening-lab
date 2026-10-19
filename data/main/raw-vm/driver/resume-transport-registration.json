@@ -1,0 +1,9 @@
+{
+  "schema": "v005-pg-transport-resume-1",
+  "prior_reserved_ports": "",
+  "reserved_ports": "55432",
+  "scopes": ["R3-postgresql-retry-only", "planned-postgresql-extension-if-requested"],
+  "reason": "Prevent possible automatic-client-port collision; historical socket owner unknown",
+  "persistent_configuration_change": false,
+  "backup_sha256": "58816775bae35a4ff44a217f79b1cccfbe43583318fcb369df21669f5d928b9d"
+}

@@ -1,0 +1,2 @@
+R1-nginx	nginx	60	25	P4 P5 P6
+R3-postgresql	postgresql	10	25	P2 P4 P6

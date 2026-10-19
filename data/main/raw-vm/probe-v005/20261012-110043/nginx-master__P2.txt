@@ -1,0 +1,113 @@
+## BEGIN nginx-master-p2
+## FINGERPRINT
+Uid: 0 0 0 0
+Gid: 0 0 0 0
+Groups:
+CapInh: 0000000000000000
+CapPrm: 000001fbf7fcffff
+CapEff: 000001fbf7fcffff
+CapBnd: 000001fbf7fcffff
+CapAmb: 0000000000000000
+NoNewPrivs: 1
+Seccomp: 2
+Seccomp_filters: 11
+ns_cgroup: cgroup:[4026531835]
+ns_ipc: ipc:[4026531839]
+ns_mnt: mnt:[4026532248]
+ns_net: net:[4026531840]
+ns_pid: pid:[4026531836]
+ns_user: user:[4026531837]
+ns_uts: uts:[4026531838]
+## MOUNTS
+/ / rw,relatime ext4
+/ /dev ro,nosuid,noexec tmpfs
+/ /dev/hugepages rw,nosuid,nodev,relatime hugetlbfs
+/ /dev/mqueue rw,nosuid,nodev,noexec,relatime mqueue
+/ /dev/pts rw,nosuid,noexec,relatime devpts
+/ /dev/shm rw,nosuid,nodev tmpfs
+/ /proc rw,nosuid,nodev,noexec,relatime proc
+/ /proc/sys/fs/binfmt_misc rw,nosuid,relatime autofs
+/ /proc/sys/fs/binfmt_misc rw,nosuid,relatime autofs
+/ /run rw,relatime tmpfs
+/ /sys rw,nosuid,nodev,noexec,relatime sysfs
+/ /sys/fs/bpf ro,nosuid,nodev,noexec,relatime bpf
+/ /sys/fs/cgroup rw,nosuid,nodev,noexec,relatime cgroup2
+/ /sys/fs/fuse/connections rw,nosuid,nodev,noexec,relatime fusectl
+/ /sys/fs/pstore rw,nosuid,nodev,noexec,relatime pstore
+/ /sys/kernel/config rw,nosuid,nodev,noexec,relatime configfs
+/ /sys/kernel/debug ro,nosuid,nodev,noexec,relatime debugfs
+/ /sys/kernel/security rw,nosuid,nodev,noexec,relatime securityfs
+/ /sys/kernel/tracing ro,nosuid,nodev,noexec,relatime tracefs
+/ /tmp rw,nosuid,relatime tmpfs
+/acpi /proc/acpi ro,nosuid,nodev,noexec,relatime proc
+/asound /proc/asound ro,nosuid,nodev,noexec,relatime proc
+/boot /boot ro,nosuid,relatime ext4
+/bus /proc/bus ro,nosuid,nodev,noexec,relatime proc
+/etc /etc ro,nosuid,relatime ext4
+/fs /proc/fs ro,nosuid,nodev,noexec,relatime proc
+/irq /proc/irq ro,nosuid,nodev,noexec,relatime proc
+/latency_stats /proc/latency_stats ro,nosuid,nodev,noexec,relatime proc
+/mtrr /proc/mtrr ro,nosuid,nodev,noexec,relatime proc
+/scsi /proc/scsi ro,nosuid,nodev,noexec,relatime proc
+/sys /proc/sys ro,nosuid,nodev,noexec,relatime proc
+/sysrq-trigger /proc/sysrq-trigger ro,nosuid,nodev,noexec,relatime proc
+/systemd-private-X/tmp /tmp rw,nosuid,relatime tmpfs
+/systemd/inaccessible/dir /home ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/dir /root ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/dir /run/credentials ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/dir /run/user ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/dir /usr/lib/modules ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/reg /etc/systemd-lab/credential ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/reg /proc/kallsyms ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/reg /proc/kcore ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/reg /proc/kmsg ro,nosuid,noexec,relatime tmpfs
+/systemd/propagate/slab-v005-nginx-master-p2-33159.service /run/systemd/incoming ro,nosuid,relatime tmpfs
+/usr /usr ro,nosuid,relatime ext4
+/var/tmp/systemd-private-X/tmp /var/tmp rw,nosuid,relatime ext4
+## ISOLATION
+CONTEXT=nginx-master-p2 UID=0 EUID=0 GID=0 TARGET_PID=3903
+ID	STATUS	DETAIL
+FS-1	BLOCKED	errno=2 No such file or directory
+FS-2	BLOCKED	errno=2 No such file or directory
+FS-3	ALLOWED	/etc/systemd-lab/credential
+FS-4	BLOCKED	errno=30 Read-only file system
+DEV-1	BLOCKED	errno=2 No such file or directory
+DEV-2	BLOCKED	errno=2 No such file or directory
+DEV-3	BLOCKED	errno=2 No such file or directory
+DEV-4	BLOCKED	errno=1 Operation not permitted
+KER-1	BLOCKED	errno=30 Read-only file system
+KER-2	BLOCKED	errno=30 Read-only file system
+KER-3	BLOCKED	errno=1 Operation not permitted
+KER-4	ALLOWED	/sys/module/printk/parameters/time
+PROC-1	ALLOWED	pid=3903
+PROC-2	ALLOWED	pid=3903
+PROC-3	ALLOWED	/proc/3903/environ
+PROC-4	ALLOWED	SCHED_FIFO priority=1
+PRIV-1	ALLOWED	uid=966
+PRIV-2	ALLOWED	gid=936
+PRIV-3	ALLOWED	chroot succeeded
+PRIV-4	N/A	root context already has euid=0
+NS-1	ALLOWED	0x10000000
+NS-2	ALLOWED	0x40000000
+NS-3	ALLOWED	0x20000
+NS-4	ALLOWED	/sys/fs/cgroup/cgroup.procs
+NET-1	ALLOWED	AF_PACKET/SOCK_RAW
+NET-2	ALLOWED	AF_NETLINK/NETLINK_ROUTE
+NET-3	ALLOWED	AF_INET/SOCK_RAW/IPPROTO_ICMP
+NET-4	ALLOWED	AF_INET6/SOCK_STREAM
+ADV-1	ALLOWED	RWX mmap
+ADV-2	ALLOWED	mprotect RW->RX
+ADV-3	ALLOWED	personality 0x0->0x40000
+ADV-4	ALLOWED	mode=4755
+SUMMARY	ALLOWED=21 BLOCKED=10 N/A=1 ERROR=0
+ISOLATION_RC=0
+## EXTENDED
+ARCH=x86_64 UID=0 EUID=0 GID=0
+ID	STATUS	DETAIL
+X1	ALLOWED	BPF_MAP_CREATE fd=3
+X2	ALLOWED	userfaultfd fd=3
+X3	ALLOWED	io_uring fd=3
+X4	ALLOWED	session keyring serial=546747373
+SUMMARY ALLOWED=4 BLOCKED=0 N/A=0 ERROR=0
+EXTENDED_RC=0
+## END nginx-master-p2

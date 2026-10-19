@@ -1,0 +1,162 @@
+{
+  "schema": "v005-windows-collector-1",
+  "run_id": "20261012T210650Z-25452-fa2ef9c0",
+  "phase": "COLLECTED_WITH_LIMITATIONS",
+  "updated_utc": "2026-10-12T21:59:17.7053490Z",
+  "elapsed_seconds": 3147.184,
+  "incomplete": true,
+  "collection_complete": true,
+  "measurement_success_not_asserted": true,
+  "monitor_pid": 15144,
+  "monitor_stop_requested": true,
+  "last_snapshot": {
+    "schema": "v005-queue-snapshot-1",
+    "queue_token": "9f074883504ca3fad3fb4e053c6d45d37adfb81ded650ac073197ae929fd87c6",
+    "identity_ready": true,
+    "identifiers": {
+      "corrected-controller.pid": "50736",
+      "post-primary-controller.pid": "109551",
+      "post-primary-started.txt": "2026-10-12T23:32:38+03:00"
+    },
+    "post_exit_present": true,
+    "post_exit_code": 2,
+    "scan_complete": true,
+    "scan_errors": [],
+    "matching_controllers": [],
+    "recorded_controllers": {
+      "driver_primary_corrected_v005.sh": {
+        "pid": 50736,
+        "status": "EXITED",
+        "start_ticks": null,
+        "cwd": null,
+        "command_sha256": null,
+        "roles": []
+      },
+      "driver_post_primary_v005.sh": {
+        "pid": 109551,
+        "status": "EXITED",
+        "start_ticks": null,
+        "cwd": null,
+        "command_sha256": null,
+        "roles": []
+      }
+    },
+    "terminal": true
+  },
+  "closed_guest": {
+    "schema": "v005-closed-results-1",
+    "ready": true,
+    "queue_token": "9f074883504ca3fad3fb4e053c6d45d37adfb81ded650ac073197ae929fd87c6",
+    "post_exit_code": 2,
+    "manifest": "/root/article-experiment/20261012-v005/results_v005/SHA256-CLOSED-RESULTS.txt",
+    "listed_files": 1827,
+    "derived": [
+      {
+        "name": "analysis-first-look",
+        "present": false,
+        "safe": false
+      },
+      {
+        "name": "analysis-final",
+        "present": false,
+        "safe": false
+      },
+      {
+        "name": "memcached-analysis-first-look",
+        "present": false,
+        "safe": false
+      },
+      {
+        "name": "memcached-analysis-final",
+        "present": false,
+        "safe": false
+      }
+    ],
+    "extension_plan": {
+      "present": false,
+      "safe": false
+    }
+  },
+  "verification": {
+    "manifest": "<OPERATOR_ROOT>\\results\\raw-vm\\SHA256-CLOSED-RESULTS.txt",
+    "root": "<OPERATOR_ROOT>\\results\\raw-vm",
+    "listed_files": 1827,
+    "missing": [],
+    "mismatched": [],
+    "unsafe": [],
+    "unlisted_local_files": [],
+    "verified": true
+  },
+  "controller_births": {
+    "driver_post_primary_v005.sh": 1774949,
+    "driver_primary_corrected_v005.sh": 811514
+  },
+  "final_monitor_guard": {
+    "schema": "v005-queue-snapshot-1",
+    "queue_token": "9f074883504ca3fad3fb4e053c6d45d37adfb81ded650ac073197ae929fd87c6",
+    "identity_ready": true,
+    "identifiers": {
+      "corrected-controller.pid": "50736",
+      "post-primary-controller.pid": "109551",
+      "post-primary-started.txt": "2026-10-12T23:32:38+03:00"
+    },
+    "post_exit_present": true,
+    "post_exit_code": 2,
+    "scan_complete": true,
+    "scan_errors": [],
+    "matching_controllers": [],
+    "recorded_controllers": {
+      "driver_primary_corrected_v005.sh": {
+        "pid": 50736,
+        "status": "EXITED",
+        "start_ticks": null,
+        "cwd": null,
+        "command_sha256": null,
+        "roles": []
+      },
+      "driver_post_primary_v005.sh": {
+        "pid": 109551,
+        "status": "EXITED",
+        "start_ticks": null,
+        "cwd": null,
+        "command_sha256": null,
+        "roles": []
+      }
+    },
+    "terminal": true,
+    "fresh_guard_schema": "v005-monitor-stop-guard-1",
+    "open_writers": [],
+    "writer_scan_errors": []
+  },
+  "copies": [
+    {
+      "source": "results_v005",
+      "status": "DOWNLOADED"
+    },
+    {
+      "source": "analysis-first-look",
+      "status": "NOT_PRODUCED"
+    },
+    {
+      "source": "analysis-final",
+      "status": "NOT_PRODUCED"
+    },
+    {
+      "source": "memcached-analysis-first-look",
+      "status": "NOT_PRODUCED"
+    },
+    {
+      "source": "memcached-analysis-final",
+      "status": "NOT_PRODUCED"
+    },
+    {
+      "source": "extension-plan.json",
+      "status": "NOT_PRODUCED"
+    }
+  ],
+  "connection_errors": [],
+  "unfinished_native_processes": [],
+  "errors": [
+    "Queue ended with terminal exit 2; raw failed results preserved."
+  ]
+}

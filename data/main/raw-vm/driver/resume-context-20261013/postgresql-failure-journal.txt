@@ -1,0 +1,124 @@
+2026-10-12T21:50:30+00:00 SRV postgres[125232]: 2026-10-12 22:50:30.122 IST [125232] LOG:  received fast shutdown request
+2026-10-12T21:50:30+00:00 SRV systemd[1]: Stopping slab-postgresql.service - systemd hardening experiment PostgreSQL...
+2026-10-12T21:50:30+00:00 SRV postgres[125243]: 2026-10-12 22:50:30.123 IST [125243] ERROR:  canceling statement due to user request
+2026-10-12T21:50:30+00:00 SRV postgres[125232]: 2026-10-12 22:50:30.133 IST [125232] LOG:  aborting any active transactions
+2026-10-12T21:50:30+00:00 SRV postgres[125232]: 2026-10-12 22:50:30.135 IST [125232] LOG:  background worker "logical replication launcher" (PID 125243) exited with exit code 1
+2026-10-12T21:50:30+00:00 SRV postgres[125238]: 2026-10-12 22:50:30.145 IST [125238] LOG:  shutting down
+2026-10-12T21:50:30+00:00 SRV postgres[125232]: 2026-10-12 22:50:30.730 IST [125232] LOG:  database system is shut down
+2026-10-12T21:50:30+00:00 SRV systemd[1]: slab-postgresql.service: Deactivated successfully.
+2026-10-12T21:50:30+00:00 SRV systemd[1]: Stopped slab-postgresql.service - systemd hardening experiment PostgreSQL.
+2026-10-12T21:50:30+00:00 SRV systemd[1]: slab-postgresql.service: Consumed 43.941s CPU time, 177.8M memory peak.
+2026-10-12T21:50:30+00:00 SRV systemd[1]: Started slab-postgresql.service - systemd hardening experiment PostgreSQL.
+2026-10-12T21:50:30+00:00 SRV postgres[125429]: 2026-10-12 22:50:30.810 IST [125429] LOG:  starting PostgreSQL 14.24 on x86_64-alt-linux-gnu, compiled by x86_64-alt-linux-gcc (GCC) 13.2.1 20240128 (ALT Sisyphus 13.2.1-alt3), 64-bit
+2026-10-12T21:50:30+00:00 SRV postgres[125429]: 2026-10-12 22:50:30.810 IST [125429] LOG:  listening on IPv4 address "127.0.0.1", port 55432
+2026-10-12T21:50:30+00:00 SRV postgres[125429]: 2026-10-12 22:50:30.818 IST [125429] LOG:  listening on Unix socket "/var/lib/systemd-lab/postgresql/.s.PGSQL.55432"
+2026-10-12T21:50:30+00:00 SRV postgres[125434]: 2026-10-12 22:50:30.828 IST [125434] LOG:  database system was shut down at 2026-10-12 22:50:30 IST
+2026-10-12T21:50:30+00:00 SRV postgres[125429]: 2026-10-12 22:50:30.835 IST [125429] LOG:  database system is ready to accept connections
+2026-10-12T21:51:37+00:00 SRV postgres[125429]: 2026-10-12 22:51:37.307 IST [125429] LOG:  received fast shutdown request
+2026-10-12T21:51:37+00:00 SRV postgres[125440]: 2026-10-12 22:51:37.308 IST [125440] ERROR:  canceling statement due to user request
+2026-10-12T21:51:37+00:00 SRV systemd[1]: Stopping slab-postgresql.service - systemd hardening experiment PostgreSQL...
+2026-10-12T21:51:37+00:00 SRV postgres[125429]: 2026-10-12 22:51:37.312 IST [125429] LOG:  aborting any active transactions
+2026-10-12T21:51:37+00:00 SRV postgres[125429]: 2026-10-12 22:51:37.313 IST [125429] LOG:  background worker "logical replication launcher" (PID 125440) exited with exit code 1
+2026-10-12T21:51:37+00:00 SRV postgres[125435]: 2026-10-12 22:51:37.321 IST [125435] LOG:  shutting down
+2026-10-12T21:51:37+00:00 SRV postgres[125429]: 2026-10-12 22:51:37.842 IST [125429] LOG:  database system is shut down
+2026-10-12T21:51:37+00:00 SRV systemd[1]: slab-postgresql.service: Deactivated successfully.
+2026-10-12T21:51:37+00:00 SRV systemd[1]: Stopped slab-postgresql.service - systemd hardening experiment PostgreSQL.
+2026-10-12T21:51:37+00:00 SRV systemd[1]: slab-postgresql.service: Consumed 42.304s CPU time, 166.6M memory peak.
+2026-10-12T21:51:37+00:00 SRV systemd[1]: Started slab-postgresql.service - systemd hardening experiment PostgreSQL.
+2026-10-12T21:51:38+00:00 SRV postgres[125615]: 2026-10-12 22:51:38.035 IST [125615] LOG:  starting PostgreSQL 14.24 on x86_64-alt-linux-gnu, compiled by x86_64-alt-linux-gcc (GCC) 13.2.1 20240128 (ALT Sisyphus 13.2.1-alt3), 64-bit
+2026-10-12T21:51:38+00:00 SRV postgres[125615]: 2026-10-12 22:51:38.035 IST [125615] LOG:  listening on IPv4 address "127.0.0.1", port 55432
+2026-10-12T21:51:38+00:00 SRV postgres[125615]: 2026-10-12 22:51:38.055 IST [125615] LOG:  listening on Unix socket "/var/lib/systemd-lab/postgresql/.s.PGSQL.55432"
+2026-10-12T21:51:38+00:00 SRV postgres[125620]: 2026-10-12 22:51:38.064 IST [125620] LOG:  database system was shut down at 2026-10-12 22:51:37 IST
+2026-10-12T21:51:38+00:00 SRV postgres[125615]: 2026-10-12 22:51:38.078 IST [125615] LOG:  database system is ready to accept connections
+2026-10-12T21:52:44+00:00 SRV postgres[125615]: 2026-10-12 22:52:44.514 IST [125615] LOG:  received fast shutdown request
+2026-10-12T21:52:44+00:00 SRV systemd[1]: Stopping slab-postgresql.service - systemd hardening experiment PostgreSQL...
+2026-10-12T21:52:44+00:00 SRV postgres[125626]: 2026-10-12 22:52:44.517 IST [125626] ERROR:  canceling statement due to user request
+2026-10-12T21:52:44+00:00 SRV postgres[125615]: 2026-10-12 22:52:44.522 IST [125615] LOG:  aborting any active transactions
+2026-10-12T21:52:44+00:00 SRV postgres[125615]: 2026-10-12 22:52:44.525 IST [125615] LOG:  background worker "logical replication launcher" (PID 125626) exited with exit code 1
+2026-10-12T21:52:44+00:00 SRV postgres[125621]: 2026-10-12 22:52:44.535 IST [125621] LOG:  shutting down
+2026-10-12T21:52:45+00:00 SRV postgres[125615]: 2026-10-12 22:52:45.109 IST [125615] LOG:  database system is shut down
+2026-10-12T21:52:45+00:00 SRV systemd[1]: slab-postgresql.service: Deactivated successfully.
+2026-10-12T21:52:45+00:00 SRV systemd[1]: Stopped slab-postgresql.service - systemd hardening experiment PostgreSQL.
+2026-10-12T21:52:45+00:00 SRV systemd[1]: slab-postgresql.service: Consumed 43.650s CPU time, 178.2M memory peak.
+2026-10-12T21:52:45+00:00 SRV systemd[1]: Started slab-postgresql.service - systemd hardening experiment PostgreSQL.
+2026-10-12T21:52:45+00:00 SRV postgres[125796]: 2026-10-12 22:52:45.196 IST [125796] LOG:  starting PostgreSQL 14.24 on x86_64-alt-linux-gnu, compiled by x86_64-alt-linux-gcc (GCC) 13.2.1 20240128 (ALT Sisyphus 13.2.1-alt3), 64-bit
+2026-10-12T21:52:45+00:00 SRV postgres[125796]: 2026-10-12 22:52:45.196 IST [125796] LOG:  listening on IPv4 address "127.0.0.1", port 55432
+2026-10-12T21:52:45+00:00 SRV postgres[125796]: 2026-10-12 22:52:45.206 IST [125796] LOG:  listening on Unix socket "/var/lib/systemd-lab/postgresql/.s.PGSQL.55432"
+2026-10-12T21:52:45+00:00 SRV postgres[125801]: 2026-10-12 22:52:45.216 IST [125801] LOG:  database system was shut down at 2026-10-12 22:52:45 IST
+2026-10-12T21:52:45+00:00 SRV postgres[125796]: 2026-10-12 22:52:45.225 IST [125796] LOG:  database system is ready to accept connections
+2026-10-12T21:53:51+00:00 SRV postgres[125796]: 2026-10-12 22:53:51.925 IST [125796] LOG:  received fast shutdown request
+2026-10-12T21:53:51+00:00 SRV postgres[125807]: 2026-10-12 22:53:51.926 IST [125807] ERROR:  canceling statement due to user request
+2026-10-12T21:53:51+00:00 SRV systemd[1]: Stopping slab-postgresql.service - systemd hardening experiment PostgreSQL...
+2026-10-12T21:53:51+00:00 SRV postgres[125796]: 2026-10-12 22:53:51.940 IST [125796] LOG:  aborting any active transactions
+2026-10-12T21:53:51+00:00 SRV postgres[125796]: 2026-10-12 22:53:51.942 IST [125796] LOG:  background worker "logical replication launcher" (PID 125807) exited with exit code 1
+2026-10-12T21:53:51+00:00 SRV postgres[125802]: 2026-10-12 22:53:51.950 IST [125802] LOG:  shutting down
+2026-10-12T21:53:53+00:00 SRV postgres[125796]: 2026-10-12 22:53:53.037 IST [125796] LOG:  database system is shut down
+2026-10-12T21:53:53+00:00 SRV systemd[1]: slab-postgresql.service: Deactivated successfully.
+2026-10-12T21:53:53+00:00 SRV systemd[1]: Stopped slab-postgresql.service - systemd hardening experiment PostgreSQL.
+2026-10-12T21:53:53+00:00 SRV systemd[1]: slab-postgresql.service: Consumed 43.217s CPU time, 166.8M memory peak.
+2026-10-12T21:53:53+00:00 SRV systemd[1]: Started slab-postgresql.service - systemd hardening experiment PostgreSQL.
+2026-10-12T21:53:53+00:00 SRV postgres[125978]: 2026-10-12 22:53:53.586 IST [125978] LOG:  starting PostgreSQL 14.24 on x86_64-alt-linux-gnu, compiled by x86_64-alt-linux-gcc (GCC) 13.2.1 20240128 (ALT Sisyphus 13.2.1-alt3), 64-bit
+2026-10-12T21:53:53+00:00 SRV postgres[125978]: 2026-10-12 22:53:53.586 IST [125978] LOG:  listening on IPv4 address "127.0.0.1", port 55432
+2026-10-12T21:53:53+00:00 SRV postgres[125978]: 2026-10-12 22:53:53.594 IST [125978] LOG:  listening on Unix socket "/var/lib/systemd-lab/postgresql/.s.PGSQL.55432"
+2026-10-12T21:53:53+00:00 SRV postgres[125984]: 2026-10-12 22:53:53.607 IST [125984] LOG:  database system was shut down at 2026-10-12 22:53:52 IST
+2026-10-12T21:53:53+00:00 SRV postgres[125978]: 2026-10-12 22:53:53.616 IST [125978] LOG:  database system is ready to accept connections
+2026-10-12T21:55:00+00:00 SRV postgres[125978]: 2026-10-12 22:55:00.059 IST [125978] LOG:  received fast shutdown request
+2026-10-12T21:55:00+00:00 SRV systemd[1]: Stopping slab-postgresql.service - systemd hardening experiment PostgreSQL...
+2026-10-12T21:55:00+00:00 SRV postgres[125990]: 2026-10-12 22:55:00.062 IST [125990] ERROR:  canceling statement due to user request
+2026-10-12T21:55:00+00:00 SRV postgres[125978]: 2026-10-12 22:55:00.065 IST [125978] LOG:  aborting any active transactions
+2026-10-12T21:55:00+00:00 SRV postgres[125978]: 2026-10-12 22:55:00.067 IST [125978] LOG:  background worker "logical replication launcher" (PID 125990) exited with exit code 1
+2026-10-12T21:55:00+00:00 SRV postgres[125985]: 2026-10-12 22:55:00.076 IST [125985] LOG:  shutting down
+2026-10-12T21:55:00+00:00 SRV postgres[125978]: 2026-10-12 22:55:00.645 IST [125978] LOG:  database system is shut down
+2026-10-12T21:55:00+00:00 SRV systemd[1]: slab-postgresql.service: Deactivated successfully.
+2026-10-12T21:55:00+00:00 SRV systemd[1]: Stopped slab-postgresql.service - systemd hardening experiment PostgreSQL.
+2026-10-12T21:55:00+00:00 SRV systemd[1]: slab-postgresql.service: Consumed 43.208s CPU time, 177.5M memory peak.
+2026-10-12T21:55:00+00:00 SRV systemd[1]: Started slab-postgresql.service - systemd hardening experiment PostgreSQL.
+2026-10-12T21:55:00+00:00 SRV postgres[126163]: 2026-10-12 22:55:00.968 IST [126163] LOG:  starting PostgreSQL 14.24 on x86_64-alt-linux-gnu, compiled by x86_64-alt-linux-gcc (GCC) 13.2.1 20240128 (ALT Sisyphus 13.2.1-alt3), 64-bit
+2026-10-12T21:55:00+00:00 SRV postgres[126163]: 2026-10-12 22:55:00.968 IST [126163] LOG:  listening on IPv4 address "127.0.0.1", port 55432
+2026-10-12T21:55:00+00:00 SRV postgres[126163]: 2026-10-12 22:55:00.976 IST [126163] LOG:  listening on Unix socket "/var/lib/systemd-lab/postgresql/.s.PGSQL.55432"
+2026-10-12T21:55:00+00:00 SRV postgres[126172]: 2026-10-12 22:55:00.986 IST [126172] LOG:  database system was shut down at 2026-10-12 22:55:00 IST
+2026-10-12T21:55:00+00:00 SRV postgres[126163]: 2026-10-12 22:55:00.996 IST [126163] LOG:  database system is ready to accept connections
+2026-10-12T21:56:07+00:00 SRV postgres[126163]: 2026-10-12 22:56:07.873 IST [126163] LOG:  received fast shutdown request
+2026-10-12T21:56:07+00:00 SRV postgres[126178]: 2026-10-12 22:56:07.873 IST [126178] ERROR:  canceling statement due to user request
+2026-10-12T21:56:07+00:00 SRV systemd[1]: Stopping slab-postgresql.service - systemd hardening experiment PostgreSQL...
+2026-10-12T21:56:07+00:00 SRV postgres[126163]: 2026-10-12 22:56:07.885 IST [126163] LOG:  aborting any active transactions
+2026-10-12T21:56:07+00:00 SRV postgres[126163]: 2026-10-12 22:56:07.886 IST [126163] LOG:  background worker "logical replication launcher" (PID 126178) exited with exit code 1
+2026-10-12T21:56:07+00:00 SRV postgres[126173]: 2026-10-12 22:56:07.894 IST [126173] LOG:  shutting down
+2026-10-12T21:56:08+00:00 SRV postgres[126163]: 2026-10-12 22:56:08.435 IST [126163] LOG:  database system is shut down
+2026-10-12T21:56:08+00:00 SRV systemd[1]: slab-postgresql.service: Deactivated successfully.
+2026-10-12T21:56:08+00:00 SRV systemd[1]: Stopped slab-postgresql.service - systemd hardening experiment PostgreSQL.
+2026-10-12T21:56:08+00:00 SRV systemd[1]: slab-postgresql.service: Consumed 42.890s CPU time, 167.7M memory peak.
+2026-10-12T21:56:08+00:00 SRV systemd[1]: Started slab-postgresql.service - systemd hardening experiment PostgreSQL.
+2026-10-12T21:56:09+00:00 SRV postgres[126371]: 2026-10-12 22:56:09.054 IST [126371] LOG:  starting PostgreSQL 14.24 on x86_64-alt-linux-gnu, compiled by x86_64-alt-linux-gcc (GCC) 13.2.1 20240128 (ALT Sisyphus 13.2.1-alt3), 64-bit
+2026-10-12T21:56:09+00:00 SRV postgres[126371]: 2026-10-12 22:56:09.054 IST [126371] LOG:  listening on IPv4 address "127.0.0.1", port 55432
+2026-10-12T21:56:09+00:00 SRV postgres[126371]: 2026-10-12 22:56:09.062 IST [126371] LOG:  listening on Unix socket "/var/lib/systemd-lab/postgresql/.s.PGSQL.55432"
+2026-10-12T21:56:09+00:00 SRV postgres[126376]: 2026-10-12 22:56:09.070 IST [126376] LOG:  database system was shut down at 2026-10-12 22:56:08 IST
+2026-10-12T21:56:09+00:00 SRV postgres[126371]: 2026-10-12 22:56:09.078 IST [126371] LOG:  database system is ready to accept connections
+2026-10-12T21:57:15+00:00 SRV postgres[126371]: 2026-10-12 22:57:15.334 IST [126371] LOG:  received fast shutdown request
+2026-10-12T21:57:15+00:00 SRV postgres[126382]: 2026-10-12 22:57:15.335 IST [126382] ERROR:  canceling statement due to user request
+2026-10-12T21:57:15+00:00 SRV systemd[1]: Stopping slab-postgresql.service - systemd hardening experiment PostgreSQL...
+2026-10-12T21:57:15+00:00 SRV postgres[126371]: 2026-10-12 22:57:15.340 IST [126371] LOG:  aborting any active transactions
+2026-10-12T21:57:15+00:00 SRV postgres[126371]: 2026-10-12 22:57:15.342 IST [126371] LOG:  background worker "logical replication launcher" (PID 126382) exited with exit code 1
+2026-10-12T21:57:15+00:00 SRV postgres[126377]: 2026-10-12 22:57:15.350 IST [126377] LOG:  shutting down
+2026-10-12T21:57:15+00:00 SRV postgres[126371]: 2026-10-12 22:57:15.897 IST [126371] LOG:  database system is shut down
+2026-10-12T21:57:15+00:00 SRV systemd[1]: slab-postgresql.service: Deactivated successfully.
+2026-10-12T21:57:15+00:00 SRV systemd[1]: Stopped slab-postgresql.service - systemd hardening experiment PostgreSQL.
+2026-10-12T21:57:15+00:00 SRV systemd[1]: slab-postgresql.service: Consumed 42.377s CPU time, 178.2M memory peak.
+2026-10-12T21:57:16+00:00 SRV systemd[1]: Started slab-postgresql.service - systemd hardening experiment PostgreSQL.
+2026-10-12T21:57:16+00:00 SRV postgres[126555]: 2026-10-12 22:57:16.334 IST [126555] LOG:  starting PostgreSQL 14.24 on x86_64-alt-linux-gnu, compiled by x86_64-alt-linux-gcc (GCC) 13.2.1 20240128 (ALT Sisyphus 13.2.1-alt3), 64-bit
+2026-10-12T21:57:16+00:00 SRV postgres[126555]: 2026-10-12 22:57:16.334 IST [126555] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2026-10-12T21:57:16+00:00 SRV postgres[126555]: 2026-10-12 22:57:16.334 IST [126555] HINT:  Is another postmaster already running on port 55432? If not, wait a few seconds and retry.
+2026-10-12T21:57:16+00:00 SRV postgres[126555]: 2026-10-12 22:57:16.334 IST [126555] WARNING:  could not create listen socket for "127.0.0.1"
+2026-10-12T21:57:16+00:00 SRV postgres[126555]: 2026-10-12 22:57:16.334 IST [126555] FATAL:  could not create any TCP/IP sockets
+2026-10-12T21:57:16+00:00 SRV postgres[126555]: 2026-10-12 22:57:16.337 IST [126555] LOG:  database system is shut down
+2026-10-12T21:57:16+00:00 SRV systemd[1]: slab-postgresql.service: Main process exited, code=exited, status=1/FAILURE
+2026-10-12T21:57:16+00:00 SRV systemd[1]: slab-postgresql.service: Failed with result 'exit-code'.
+2026-10-12T21:58:06+00:00 SRV systemd[1]: Started slab-postgresql.service - systemd hardening experiment PostgreSQL.
+2026-10-12T21:58:07+00:00 SRV postgres[126696]: 2026-10-12 22:58:07.085 IST [126696] LOG:  starting PostgreSQL 14.24 on x86_64-alt-linux-gnu, compiled by x86_64-alt-linux-gcc (GCC) 13.2.1 20240128 (ALT Sisyphus 13.2.1-alt3), 64-bit
+2026-10-12T21:58:07+00:00 SRV postgres[126696]: 2026-10-12 22:58:07.085 IST [126696] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2026-10-12T21:58:07+00:00 SRV postgres[126696]: 2026-10-12 22:58:07.085 IST [126696] HINT:  Is another postmaster already running on port 55432? If not, wait a few seconds and retry.
+2026-10-12T21:58:07+00:00 SRV postgres[126696]: 2026-10-12 22:58:07.085 IST [126696] WARNING:  could not create listen socket for "127.0.0.1"
+2026-10-12T21:58:07+00:00 SRV postgres[126696]: 2026-10-12 22:58:07.085 IST [126696] FATAL:  could not create any TCP/IP sockets
+2026-10-12T21:58:07+00:00 SRV postgres[126696]: 2026-10-12 22:58:07.087 IST [126696] LOG:  database system is shut down
+2026-10-12T21:58:07+00:00 SRV systemd[1]: slab-postgresql.service: Main process exited, code=exited, status=1/FAILURE
+2026-10-12T21:58:07+00:00 SRV systemd[1]: slab-postgresql.service: Failed with result 'exit-code'.

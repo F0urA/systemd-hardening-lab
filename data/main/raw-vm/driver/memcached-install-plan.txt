@@ -1,0 +1,7 @@
+Reading Package Lists...
+Building Dependency Tree...
+The following NEW packages will be installed:
+  memcached
+0 upgraded, 1 newly installed, 0 removed and 450 not upgraded.
+Inst memcached (1.6.42-alt1:p11+418735.100.1.1@1779279920 p11:1789404264/ALT Linux p11)
+Conf memcached (1.6.42-alt1:p11+418735.100.1.1@1779279920 p11:1789404264/ALT Linux p11)

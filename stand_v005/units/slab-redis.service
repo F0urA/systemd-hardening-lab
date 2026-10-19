@@ -1,0 +1,15 @@
+[Unit]
+Description=systemd hardening experiment Redis
+After=network.target
+
+[Service]
+Type=simple
+User=labredis
+Group=labredis
+ExecStart=/usr/sbin/redis-server /etc/systemd-lab/redis.conf
+Restart=no
+CPUAccounting=yes
+MemoryAccounting=yes
+
+[Install]
+WantedBy=multi-user.target

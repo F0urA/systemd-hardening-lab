@@ -1,0 +1,7 @@
+2026-10-12T21:00:18+00:00 SRV chronyd[804]: Selected source 45.138.55.61 (pool.ntp.org)
+2026-10-12T22:02:32+00:00 SRV chronyd[804]: Forward time jump detected!
+2026-10-12T22:02:32+00:00 SRV chronyd[804]: Can't synchronise: no selectable sources (0 unreachable sources)
+2026-10-12T22:04:41+00:00 SRV chronyd[804]: Selected source 149.143.87.22 (pool.ntp.org)
+2026-10-12T22:04:41+00:00 SRV chronyd[804]: System clock wrong by 22887.663115 seconds
+2026-10-12T22:09:15+00:00 SRV chronyd[804]: Forward time jump detected!
+2026-10-12T22:09:15+00:00 SRV chronyd[804]: Can't synchronise: no selectable sources (0 unreachable sources)

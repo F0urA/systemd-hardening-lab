@@ -1,0 +1,1 @@
+{"cell": "nested-P5-labweb-worker", "errno": 1, "message": "[Errno 1] Operation not permitted: '/run/slab-mountstate-v005-064fbb607ff2b76d/nested-P5-labweb-worker/nested-egct7k4l'", "namespace": "mnt:[4026532248]", "phase": "bind", "pid": 238742, "raw_ns": 44315115652569, "result": "DENIED", "state_reproduced": false, "token": "064fbb607ff2b76d", "uid": 969}

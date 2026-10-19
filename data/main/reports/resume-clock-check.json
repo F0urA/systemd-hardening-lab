@@ -1,0 +1,25 @@
+{
+  "schema": "v005-pre-resume-cross-clock-diagnostic-1",
+  "clocksource": "tsc",
+  "host_reference": "Windows Diagnostics.Stopwatch, timestamp on each unbuffered SSH JSON line receipt",
+  "samples": 11,
+  "host_span": 22.510616900020977,
+  "guest_raw_span": 22.588509165998403,
+  "guest_mono_span": 22.589665116000106,
+  "raw_host_ratio": 1.0034602457286435,
+  "data": [
+    {"n":0,"guest_raw":26065.760545662,"guest_mono":26494.676218897,"guest_wall":1791919318.0335498,"host_mono":176143.1414799},
+    {"n":1,"guest_raw":26067.52632026,"guest_mono":26496.442084248,"guest_wall":1791919319.7994082,"host_mono":176144.8301738},
+    {"n":2,"guest_raw":26068.540160943,"guest_mono":26497.455976567,"guest_wall":1791919320.813301,"host_mono":176145.8431837},
+    {"n":3,"guest_raw":26069.548013655,"guest_mono":26498.463880681,"guest_wall":1791919321.8212044,"host_mono":176146.8510352},
+    {"n":4,"guest_raw":26070.563618738,"guest_mono":26499.479537842,"guest_wall":1791919322.8368616,"host_mono":176147.8668703},
+    {"n":5,"guest_raw":26071.567306041,"guest_mono":26500.483276384,"guest_wall":1791919323.8406,"host_mono":176148.870132},
+    {"n":6,"guest_raw":26072.583148904,"guest_mono":26501.499171441,"guest_wall":1791919324.8564954,"host_mono":176149.8863099},
+    {"n":7,"guest_raw":26085.308501103,"guest_mono":26514.225174768,"guest_wall":1791919337.5824988,"host_mono":176162.6116953},
+    {"n":8,"guest_raw":26086.313233536,"guest_mono":26515.229958564,"guest_wall":1791919338.5872824,"host_mono":176163.6163362},
+    {"n":9,"guest_raw":26087.314359968,"guest_mono":26516.231135681,"guest_wall":1791919339.5884595,"host_mono":176164.6171991},
+    {"n":10,"guest_raw":26088.349054828,"guest_mono":26517.265884013,"guest_wall":1791919340.623208,"host_mono":176165.6520968}
+  ],
+  "inference_limit": "Short idle diagnostic, not a calibration certificate or proof of long-run stability; SSH receipt jitter affects host ratio. A 12.725 s gap appears in both clocks and is retained. No performance data or statistical look.",
+  "configuration_mutation": false
+}

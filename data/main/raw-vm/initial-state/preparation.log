@@ -1,0 +1,82 @@
+2026-10-12T10:37:41+00:00
+1
+CREATED /root/article-experiment/20261012-v005/results_v005/nginx/profiles/P6.conf
+--- appended to P4 in /root/article-experiment/20261012-v005/results_v005/nginx/profiles/P6.conf:
+# v003: P6 = P4 + read-only file system with explicit write paths
+ProtectSystem=strict
+ReadWritePaths=/run -/var/log/slab-nginx-error.log -/var/spool/nginx/tmp/client -/var/spool/nginx/tmp/fastcgi -/var/spool/nginx/tmp/proxy -/var/spool/nginx/tmp/scgi -/var/spool/nginx/tmp/uwsgi
+d00059582a770928b74f46cca71c73242c66a874859e6171c29c2d747d1fd574  /root/article-experiment/20261012-v005/results_v005/nginx/profiles/P4.conf
+493bc0f1dc6eca4e25de3cbf5b740b977d0f8958b028d7edd05ee2db26c64da8  /root/article-experiment/20261012-v005/results_v005/nginx/profiles/P6.conf
+
+CREATED /root/article-experiment/20261012-v005/results_v005/redis/profiles/P6.conf
+--- appended to P4 in /root/article-experiment/20261012-v005/results_v005/redis/profiles/P6.conf:
+# v003: P6 = P4 + read-only file system with explicit write paths
+ProtectSystem=strict
+ReadWritePaths=/var/lib/systemd-lab/redis
+d962b34490c610c1d6a0930ee316615608d0f1cdb678c37e5e89229f9296eadd  /root/article-experiment/20261012-v005/results_v005/redis/profiles/P4.conf
+0fc951fb31678527fde99840dc176be6d450d4dfe8e6d83541d591c227d409d0  /root/article-experiment/20261012-v005/results_v005/redis/profiles/P6.conf
+
+CREATED /root/article-experiment/20261012-v005/results_v005/postgresql/profiles/P6.conf
+--- appended to P4 in /root/article-experiment/20261012-v005/results_v005/postgresql/profiles/P6.conf:
+# v003: P6 = P4 + read-only file system with explicit write paths
+ProtectSystem=strict
+ReadWritePaths=/var/lib/systemd-lab/postgresql
+d962b34490c610c1d6a0930ee316615608d0f1cdb678c37e5e89229f9296eadd  /root/article-experiment/20261012-v005/results_v005/postgresql/profiles/P4.conf
+0daf6ffd9b40946b6b39ff48e53bb633566a75aee9d9517411ed3ebbf65f8b83  /root/article-experiment/20261012-v005/results_v005/postgresql/profiles/P6.conf
+
+CREATED /root/article-experiment/20261012-v005/results_v005/nginx/profiles/P1r.conf
+--- appended to P1 in /root/article-experiment/20261012-v005/results_v005/nginx/profiles/P1r.conf:
+# v004: P1r = P1 + read-only web directory
+ReadOnlyPaths=/var/lib/systemd-lab/nginx-www
+8c5569781bbfc2f64b3324c587c74d174e642cd370beac82a74f7d6304e277c7  /root/article-experiment/20261012-v005/results_v005/nginx/profiles/P1.conf
+f0c836a19de59397ada08ebd7c701dcc1658141f86624f73ee828a6eb122ce15  /root/article-experiment/20261012-v005/results_v005/nginx/profiles/P1r.conf
+
+CREATED /root/article-experiment/20261012-v005/results_v005/nginx/profiles/P1c.conf
+--- appended to P1r in /root/article-experiment/20261012-v005/results_v005/nginx/profiles/P1c.conf:
+# v004: P1c = P1r + the capability set of P4
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_SETUID CAP_SETGID
+f0c836a19de59397ada08ebd7c701dcc1658141f86624f73ee828a6eb122ce15  /root/article-experiment/20261012-v005/results_v005/nginx/profiles/P1r.conf
+182e58ffceade3d17ca92d8654602a19b18b6424e6f17d209c143fd12b246c60  /root/article-experiment/20261012-v005/results_v005/nginx/profiles/P1c.conf
+
+CREATED /root/article-experiment/20261012-v005/results_v005/redis/profiles/P1.conf (copied from the Nginx ladder step P1)
+8c5569781bbfc2f64b3324c587c74d174e642cd370beac82a74f7d6304e277c7  /root/article-experiment/20261012-v005/results_v005/redis/profiles/P1.conf
+CREATED /root/article-experiment/20261012-v005/results_v005/redis/profiles/P2.conf (copied from the Nginx ladder step P2)
+e1e43d00e4b94d11d05d00877222363c23ca86ebb1aac064937169762653b623  /root/article-experiment/20261012-v005/results_v005/redis/profiles/P2.conf
+CREATED /root/article-experiment/20261012-v005/results_v005/postgresql/profiles/P1.conf (copied from the Nginx ladder step P1)
+8c5569781bbfc2f64b3324c587c74d174e642cd370beac82a74f7d6304e277c7  /root/article-experiment/20261012-v005/results_v005/postgresql/profiles/P1.conf
+CREATED /root/article-experiment/20261012-v005/results_v005/postgresql/profiles/P2.conf (copied from the Nginx ladder step P2)
+e1e43d00e4b94d11d05d00877222363c23ca86ebb1aac064937169762653b623  /root/article-experiment/20261012-v005/results_v005/postgresql/profiles/P2.conf
+CREATED /root/article-experiment/20261012-v005/results_v005/redis/profiles/P1d.conf
+--- appended to P1 in /root/article-experiment/20261012-v005/results_v005/redis/profiles/P1d.conf:
+# v005: P1d = P1 + write path for the data directory
+ProtectSystem=strict
+ReadWritePaths=/var/lib/systemd-lab/redis
+8c5569781bbfc2f64b3324c587c74d174e642cd370beac82a74f7d6304e277c7  /root/article-experiment/20261012-v005/results_v005/redis/profiles/P1.conf
+8d5dd69997f62590370370129404dae1a8821d79e4a1c3ad5813078980534b04  /root/article-experiment/20261012-v005/results_v005/redis/profiles/P1d.conf
+
+CREATED /root/article-experiment/20261012-v005/results_v005/postgresql/profiles/P1d.conf
+--- appended to P1 in /root/article-experiment/20261012-v005/results_v005/postgresql/profiles/P1d.conf:
+# v005: P1d = P1 + write path for the data directory
+ProtectSystem=strict
+ReadWritePaths=/var/lib/systemd-lab/postgresql
+8c5569781bbfc2f64b3324c587c74d174e642cd370beac82a74f7d6304e277c7  /root/article-experiment/20261012-v005/results_v005/postgresql/profiles/P1.conf
+627fb59087ad6c5c5f3cc313afd20f058e6f0c49594d39989ed87bf17014c88f  /root/article-experiment/20261012-v005/results_v005/postgresql/profiles/P1d.conf
+
+DONE. Candidates are not applied to any service by this script.
+=== capability ablation of P1c (base set = the three capabilities of P4) ===
+CREATED /root/article-experiment/20261012-v005/results_v005/nginx/profiles/P1cADMIN.conf
+  CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_SETUID CAP_SETGID CAP_SYS_ADMIN
+043dc1ff3217b9835244843c56c7662449ed7566d16e50d665824d3271983b94  /root/article-experiment/20261012-v005/results_v005/nginx/profiles/P1cADMIN.conf
+CREATED /root/article-experiment/20261012-v005/results_v005/nginx/profiles/P1cPTRACE.conf
+  CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_SETUID CAP_SETGID CAP_SYS_PTRACE
+f8ab5132628a798b8cab6e41e1bb30dad070254cb7fae310ee3edf4fe0527a8c  /root/article-experiment/20261012-v005/results_v005/nginx/profiles/P1cPTRACE.conf
+CREATED /root/article-experiment/20261012-v005/results_v005/nginx/profiles/P1cDAC.conf
+  CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_SETUID CAP_SETGID CAP_DAC_OVERRIDE
+bdcbcb580f804b66c0b31d2ccc7cc7c8502d1beece683e1017348e5b19a3601e  /root/article-experiment/20261012-v005/results_v005/nginx/profiles/P1cDAC.conf
+CREATED /root/article-experiment/20261012-v005/results_v005/nginx/profiles/P1cCHROOT.conf
+  CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_SETUID CAP_SETGID CAP_SYS_CHROOT
+97eac75a8ee7252618f8c345c145329cdd35aee4f15b8eab817f40fb4c86fea9  /root/article-experiment/20261012-v005/results_v005/nginx/profiles/P1cCHROOT.conf
+
+DONE. Profiles are not applied to any service by this script.
+NEXT: NGINX_PROFILES='P1r P1c P1cADMIN P1cPTRACE P1cDAC P1cCHROOT' ./scenarios_v005.sh nginx
+PREPARATION_COMPLETE

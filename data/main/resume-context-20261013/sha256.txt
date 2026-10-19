@@ -1,0 +1,4 @@
+65cf528d83018166244a874c2fed03d9dfefa1bbb5fee87562f3886cb7eb7dda  current-platform.txt
+cd90651b647bd0c723e37413526b2c25632cf1ce87f1f74c98aeb100bab12cd5  postgresql-failure-journal.txt
+cb1ce9fb27e972b0af130baf35f816f2f4f16654ac1e7ed235eec09308de6601  clock-after-failure-journal.txt
+e0be4fce7b9e26002c322faee9bab9d9263f43906843b356a56fec97a39a5f07  rest-state-verification.txt

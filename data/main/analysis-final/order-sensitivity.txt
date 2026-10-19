@@ -1,0 +1,89 @@
+====================================================================================================
+SERVICE nginx
+  H = 2 %: admitted P1 P2 P1r
+    selected under all 120 orders:  P2 in 60, P1r in 30, P1 in 30
+    first criterion g        : P2 in 12 of 24, P1r in 6 of 24, P1 in 6 of 24
+    first criterion s        : P1r in 24 of 24
+    first criterion emicro   : P2 in 24 of 24
+    first criterion exposure : P2 in 24 of 24
+    first criterion n        : P1 in 24 of 24
+    criterion g does not distinguish the admitted candidates
+  H = 5 %: admitted P1 P2 P1r P1c
+    selected under all 120 orders:  P1c in 72, P2 in 24, P1 in 24
+    first criterion g        : P1c in 24 of 24
+    first criterion s        : P1c in 24 of 24
+    first criterion emicro   : P2 in 24 of 24
+    first criterion exposure : P1c in 24 of 24
+    first criterion n        : P1 in 24 of 24
+  H = 10 %: admitted P1 P2 P1r P1c
+    selected under all 120 orders:  P1c in 72, P2 in 24, P1 in 24
+    first criterion g        : P1c in 24 of 24
+    first criterion s        : P1c in 24 of 24
+    first criterion emicro   : P2 in 24 of 24
+    first criterion exposure : P1c in 24 of 24
+    first criterion n        : P1 in 24 of 24
+  H = 15 %: admitted P1 P2 P1r P1c
+    selected under all 120 orders:  P1c in 72, P2 in 24, P1 in 24
+    first criterion g        : P1c in 24 of 24
+    first criterion s        : P1c in 24 of 24
+    first criterion emicro   : P2 in 24 of 24
+    first criterion exposure : P1c in 24 of 24
+    first criterion n        : P1 in 24 of 24
+====================================================================================================
+SERVICE redis
+  H = 2 %: admitted P1 P1d
+    selected under all 120 orders:  P1d in 90, P1 in 30
+    first criterion g        : P1d in 24 of 24
+    first criterion s        : P1d in 24 of 24
+    first criterion emicro   : P1d in 18 of 24, P1 in 6 of 24
+    first criterion exposure : P1d in 24 of 24
+    first criterion n        : P1 in 24 of 24
+    criterion emicro does not distinguish the admitted candidates
+  H = 5 %: admitted P1 P2 P1d P4 P6
+    selected under all 120 orders:  P6 in 64, P1 in 24, P1d in 16, P4 in 16
+    first criterion g        : P6 in 16 of 24, P1d in 8 of 24
+    first criterion s        : P6 in 16 of 24, P1d in 8 of 24
+    first criterion emicro   : P6 in 16 of 24, P4 in 8 of 24
+    first criterion exposure : P6 in 16 of 24, P4 in 8 of 24
+    first criterion n        : P1 in 24 of 24
+  H = 10 %: admitted P1 P2 P1d P4 P6
+    selected under all 120 orders:  P6 in 64, P1 in 24, P1d in 16, P4 in 16
+    first criterion g        : P6 in 16 of 24, P1d in 8 of 24
+    first criterion s        : P6 in 16 of 24, P1d in 8 of 24
+    first criterion emicro   : P6 in 16 of 24, P4 in 8 of 24
+    first criterion exposure : P6 in 16 of 24, P4 in 8 of 24
+    first criterion n        : P1 in 24 of 24
+  H = 15 %: admitted P1 P2 P1d P4 P6
+    selected under all 120 orders:  P6 in 64, P1 in 24, P1d in 16, P4 in 16
+    first criterion g        : P6 in 16 of 24, P1d in 8 of 24
+    first criterion s        : P6 in 16 of 24, P1d in 8 of 24
+    first criterion emicro   : P6 in 16 of 24, P4 in 8 of 24
+    first criterion exposure : P6 in 16 of 24, P4 in 8 of 24
+    first criterion n        : P1 in 24 of 24
+====================================================================================================
+SERVICE postgresql
+  H = 2 %: admitted P1d
+    fewer than two admitted candidates: the order of the criteria cannot matter
+  H = 5 %: admitted P1 P2 P1d
+    selected under all 120 orders:  P1d in 48, P2 in 48, P1 in 24
+    first criterion g        : P1d in 24 of 24
+    first criterion s        : P1d in 24 of 24
+    first criterion emicro   : P2 in 24 of 24
+    first criterion exposure : P2 in 24 of 24
+    first criterion n        : P1 in 24 of 24
+  H = 10 %: admitted P1 P2 P1d
+    selected under all 120 orders:  P1d in 48, P2 in 48, P1 in 24
+    first criterion g        : P1d in 24 of 24
+    first criterion s        : P1d in 24 of 24
+    first criterion emicro   : P2 in 24 of 24
+    first criterion exposure : P2 in 24 of 24
+    first criterion n        : P1 in 24 of 24
+  H = 15 %: admitted P1 P2 P1d
+    selected under all 120 orders:  P1d in 48, P2 in 48, P1 in 24
+    first criterion g        : P1d in 24 of 24
+    first criterion s        : P1d in 24 of 24
+    first criterion emicro   : P2 in 24 of 24
+    first criterion exposure : P2 in 24 of 24
+    first criterion n        : P1 in 24 of 24
+
+Rule B of the procedure uses g first; the remaining order is the operator's policy.

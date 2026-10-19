@@ -1,0 +1,16 @@
+{
+  "validation": "PASS",
+  "recorded_utc": "2026-10-14T01:01:23Z",
+  "report_sha256": "14c4d67a4ea8d8fde7ae488b9622fb5ce2d86ad65a80dbc653aefe25eecc699a",
+  "links_verified": 34,
+  "bounds_rows_verified": 17,
+  "decision_rows_verified": 12,
+  "csv_hash_rows_verified": 6,
+  "mandatory_functional_matrices_verified": [
+    {"directory": "20261012-104934", "contracts_pass": 22},
+    {"directory": "20261014-002104", "contracts_pass": 9}
+  ],
+  "new_statistical_look": false,
+  "scope": "INCOMPLETE_SCOPE",
+  "measurement_success_not_asserted": true
+}

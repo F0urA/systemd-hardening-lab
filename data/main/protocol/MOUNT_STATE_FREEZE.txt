@@ -1,0 +1,13 @@
+FROZEN ON WINDOWS: 2026-10-12 19:58 UTC (before any mount-state cell).
+Archive: v005-mount-states-frozen.zip
+SHA256: 7100F2B55DE672097FA3CDE4A36B13C3F7094D62D7F956527CF321353DB27DD0
+
+This exploratory, separately labelled matrix was designed after the inherited-FD
+counterexample was known. It cannot restore an absolute E6 claim or modify the
+primary-selection goal set. Native benchmark/profiles/statistical rules unchanged.
+
+Files: mount_state_helper_v005.py, supplement_mount_states_v005.sh,
+protocol_mount_states_v005.md, mount-states-source_v005.sha256, slab_common_v005.sh.
+14 local synthetic tests PASS; AST and GNU Bash syntax checks PASS.
+Kernel/systemd behavior is NOT demonstrated by these local tests.
+No independent public preregistration; no GitHub changes.

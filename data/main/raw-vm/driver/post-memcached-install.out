@@ -1,0 +1,37 @@
+Unit memcached.service does not exist, proceeding anyway.
+Created symlink '/run/systemd/system/memcached.service' -> '/dev/null'.
+Reading Package Lists...
+Building Dependency Tree...
+The following NEW packages will be installed:
+  memcached
+0 upgraded, 1 newly installed, 0 removed and 450 not upgraded.
+Need to get 179kB of archives.
+After unpacking 493kB of additional disk space will be used.
+Get:1 http://ftp.altlinux.org p11/branch/x86_64/classic memcached 1.6.42-alt1:p11+418735.100.1.1@1779279920 [179kB]
+Fetched 179kB in 5s (34.0kB/s)
+Committing changes...
+Preparing...                            ################################# [100%]
+Updating / installing...
+1: memcached-1.6.42-alt1                ################################# [100%]
+Done.
+Created symlink '/etc/systemd/system/memcached.service' -> '/dev/null'.
+Synchronizing state of memcached.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install disable memcached
+Unit /etc/systemd/system/memcached.service is masked, ignoring.
+The unit files have no installation config (WantedBy=, RequiredBy=, UpheldBy=,
+Also=, or Alias= settings in the [Install] section, and DefaultInstance= for
+template units). This means they are not meant to be enabled or disabled using systemctl.
+ 
+Possible reasons for having these kinds of units are:
+* A unit may be statically enabled by being symlinked from another unit's
+  .wants/, .requires/, or .upholds/ directory.
+* A unit's purpose may be to act as a helper for some other unit which has
+  a requirement dependency on it.
+* A unit may be started when needed via activation (socket, path, timer,
+  D-Bus, udev, scripted systemctl call, ...).
+* In case of template units, the unit is meant to be enabled with some
+  instance name specified.
+LoadState=masked
+ActiveState=inactive
+UnitFileState=masked
+memcached-1.6.42-alt1.x86_64

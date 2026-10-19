@@ -1,0 +1,107 @@
+{
+  "schema": "v005-final-read-only-vm-check-1",
+  "utc": "2026-10-14T00:36:25.633560+00:00",
+  "boot_id": "a8cc5a7a-426d-4451-8d4b-95c9b94ee056",
+  "services": {
+    "nginx": {
+      "systemctl": {
+        "rc": 0,
+        "stdout": "MainPID=239212\nActiveState=active\nSubState=running\nDropInPaths=/etc/systemd/system/slab-nginx.service.d/90-hardening.conf",
+        "stderr": ""
+      },
+      "properties": {
+        "MainPID": "239212",
+        "ActiveState": "active",
+        "SubState": "running",
+        "DropInPaths": "/etc/systemd/system/slab-nginx.service.d/90-hardening.conf"
+      },
+      "p4_sha256": "d00059582a770928b74f46cca71c73242c66a874859e6171c29c2d747d1fd574",
+      "live_sha256": "d00059582a770928b74f46cca71c73242c66a874859e6171c29c2d747d1fd574",
+      "dropin_entries": [
+        "/etc/systemd/system/slab-nginx.service.d/90-hardening.conf"
+      ],
+      "exact_p4_active": true
+    },
+    "redis": {
+      "systemctl": {
+        "rc": 0,
+        "stdout": "MainPID=116585\nActiveState=active\nSubState=running\nDropInPaths=/etc/systemd/system/slab-redis.service.d/90-hardening.conf",
+        "stderr": ""
+      },
+      "properties": {
+        "MainPID": "116585",
+        "ActiveState": "active",
+        "SubState": "running",
+        "DropInPaths": "/etc/systemd/system/slab-redis.service.d/90-hardening.conf"
+      },
+      "p4_sha256": "d962b34490c610c1d6a0930ee316615608d0f1cdb678c37e5e89229f9296eadd",
+      "live_sha256": "d962b34490c610c1d6a0930ee316615608d0f1cdb678c37e5e89229f9296eadd",
+      "dropin_entries": [
+        "/etc/systemd/system/slab-redis.service.d/90-hardening.conf"
+      ],
+      "exact_p4_active": true
+    },
+    "postgresql": {
+      "systemctl": {
+        "rc": 0,
+        "stdout": "MainPID=227774\nActiveState=active\nSubState=running\nDropInPaths=/etc/systemd/system/slab-postgresql.service.d/90-hardening.conf",
+        "stderr": ""
+      },
+      "properties": {
+        "MainPID": "227774",
+        "ActiveState": "active",
+        "SubState": "running",
+        "DropInPaths": "/etc/systemd/system/slab-postgresql.service.d/90-hardening.conf"
+      },
+      "p4_sha256": "d962b34490c610c1d6a0930ee316615608d0f1cdb678c37e5e89229f9296eadd",
+      "live_sha256": "d962b34490c610c1d6a0930ee316615608d0f1cdb678c37e5e89229f9296eadd",
+      "dropin_entries": [
+        "/etc/systemd/system/slab-postgresql.service.d/90-hardening.conf"
+      ],
+      "exact_p4_active": true
+    }
+  },
+  "remaining_workloads_or_controllers": [],
+  "proc_scan_errors": [],
+  "remaining_fixture_paths": [],
+  "owned_fixture_mounts": [],
+  "transient_lab_units": {
+    "rc": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "default_memcached": {
+    "rc": 0,
+    "stdout": "LoadState=masked\nActiveState=inactive\nUnitFileState=masked",
+    "stderr": ""
+  },
+  "own_memcached": {
+    "rc": 0,
+    "stdout": "LoadState=not-found\nActiveState=inactive\nUnitFileState=",
+    "stderr": ""
+  },
+  "memcached_user": {
+    "rc": 2,
+    "stdout": "",
+    "stderr": ""
+  },
+  "fixture_tcp_listeners": {
+    "rc": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "memcached_udp_listeners": {
+    "rc": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "reserved_ports": "",
+  "ptrace_helper_comparison": {
+    "installed_sha256": "a94b28a3ad0cc7467132d318343ba175476fd4ab7d086efa7956d65fbbe147e1",
+    "expected_sha256": "5f85d32a5ed9d3a1e7213881913519080a62683eaf3c6be73a558ae211a267d2",
+    "byte_equal": false,
+    "equal_after_crlf_normalization": false
+  },
+  "errors": [],
+  "no_state_changes_performed": true
+}

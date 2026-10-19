@@ -1,0 +1,3 @@
+41840:M 12 Oct 2026 12:09:06.386 * BGSAVE done, 2 keys saved, 0 keys skipped, 157 bytes written.
+41840:M 12 Oct 2026 12:09:06.391 * DB saved on disk
+41840:M 12 Oct 2026 12:09:06.575 # Failed opening the temp RDB file temp-41840.rdb (in server root dir /var/lib/systemd-lab/redis-g1-v005-root) for saving: Permission denied

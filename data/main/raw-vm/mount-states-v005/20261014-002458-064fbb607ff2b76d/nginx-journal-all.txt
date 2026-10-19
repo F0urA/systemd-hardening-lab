@@ -1,0 +1,81 @@
+2026-10-14T00:24:58.997866+00:00 SRV systemd[1]: Stopping slab-nginx.service - systemd hardening experiment Nginx...
+2026-10-14T00:24:59.012931+00:00 SRV systemd[1]: slab-nginx.service: Deactivated successfully.
+2026-10-14T00:24:59.013407+00:00 SRV systemd[1]: Stopped slab-nginx.service - systemd hardening experiment Nginx.
+2026-10-14T00:24:59.062445+00:00 SRV systemd[1]: Starting slab-nginx.service - systemd hardening experiment Nginx...
+2026-10-14T00:24:59.076968+00:00 SRV nginx[236111]: nginx: the configuration file /etc/systemd-lab/nginx.conf syntax is ok
+2026-10-14T00:24:59.077295+00:00 SRV nginx[236111]: nginx: configuration file /etc/systemd-lab/nginx.conf test is successful
+2026-10-14T00:24:59.084866+00:00 SRV systemd[1]: Started slab-nginx.service - systemd hardening experiment Nginx.
+2026-10-14T00:25:06.088173+00:00 SRV systemd[1]: Stopping slab-nginx.service - systemd hardening experiment Nginx...
+2026-10-14T00:25:06.109877+00:00 SRV systemd[1]: slab-nginx.service: Deactivated successfully.
+2026-10-14T00:25:06.110199+00:00 SRV systemd[1]: Stopped slab-nginx.service - systemd hardening experiment Nginx.
+2026-10-14T00:25:06.124767+00:00 SRV systemd[1]: Starting slab-nginx.service - systemd hardening experiment Nginx...
+2026-10-14T00:25:06.138387+00:00 SRV nginx[236409]: nginx: the configuration file /etc/systemd-lab/nginx.conf syntax is ok
+2026-10-14T00:25:06.138771+00:00 SRV nginx[236409]: nginx: configuration file /etc/systemd-lab/nginx.conf test is successful
+2026-10-14T00:25:06.174914+00:00 SRV systemd[1]: Started slab-nginx.service - systemd hardening experiment Nginx.
+2026-10-14T00:25:13.947930+00:00 SRV systemd[1]: Stopping slab-nginx.service - systemd hardening experiment Nginx...
+2026-10-14T00:25:13.976872+00:00 SRV systemd[1]: slab-nginx.service: Deactivated successfully.
+2026-10-14T00:25:13.977277+00:00 SRV systemd[1]: Stopped slab-nginx.service - systemd hardening experiment Nginx.
+2026-10-14T00:25:13.989670+00:00 SRV systemd[1]: Starting slab-nginx.service - systemd hardening experiment Nginx...
+2026-10-14T00:25:14.004291+00:00 SRV nginx[236719]: nginx: the configuration file /etc/systemd-lab/nginx.conf syntax is ok
+2026-10-14T00:25:14.004584+00:00 SRV nginx[236719]: nginx: configuration file /etc/systemd-lab/nginx.conf test is successful
+2026-10-14T00:25:14.010911+00:00 SRV systemd[1]: Started slab-nginx.service - systemd hardening experiment Nginx.
+2026-10-14T00:25:22.246844+00:00 SRV systemd[1]: Stopping slab-nginx.service - systemd hardening experiment Nginx...
+2026-10-14T00:25:22.280569+00:00 SRV systemd[1]: slab-nginx.service: Deactivated successfully.
+2026-10-14T00:25:22.280859+00:00 SRV systemd[1]: Stopped slab-nginx.service - systemd hardening experiment Nginx.
+2026-10-14T00:25:22.315111+00:00 SRV systemd[1]: Starting slab-nginx.service - systemd hardening experiment Nginx...
+2026-10-14T00:25:22.355839+00:00 SRV nginx[237029]: nginx: the configuration file /etc/systemd-lab/nginx.conf syntax is ok
+2026-10-14T00:25:22.356231+00:00 SRV nginx[237029]: nginx: configuration file /etc/systemd-lab/nginx.conf test is successful
+2026-10-14T00:25:22.372537+00:00 SRV systemd[1]: Started slab-nginx.service - systemd hardening experiment Nginx.
+2026-10-14T00:25:30.199074+00:00 SRV systemd[1]: Stopping slab-nginx.service - systemd hardening experiment Nginx...
+2026-10-14T00:25:30.279889+00:00 SRV systemd[1]: slab-nginx.service: Deactivated successfully.
+2026-10-14T00:25:30.280205+00:00 SRV systemd[1]: Stopped slab-nginx.service - systemd hardening experiment Nginx.
+2026-10-14T00:25:30.294711+00:00 SRV systemd[1]: Starting slab-nginx.service - systemd hardening experiment Nginx...
+2026-10-14T00:25:30.333478+00:00 SRV nginx[237339]: nginx: [alert] could not open error log file: open() "/var/log/nginx/nginx.error.log" failed (30: Read-only file system)
+2026-10-14T00:25:30.335448+00:00 SRV nginx[237339]: nginx: the configuration file /etc/systemd-lab/nginx.conf syntax is ok
+2026-10-14T00:25:30.335627+00:00 SRV nginx[237339]: nginx: configuration file /etc/systemd-lab/nginx.conf test is successful
+2026-10-14T00:25:30.351749+00:00 SRV systemd[1]: Started slab-nginx.service - systemd hardening experiment Nginx.
+2026-10-14T00:25:30.396207+00:00 SRV nginx[237341]: nginx: [alert] could not open error log file: open() "/var/log/nginx/nginx.error.log" failed (30: Read-only file system)
+2026-10-14T00:25:38.184978+00:00 SRV systemd[1]: Stopping slab-nginx.service - systemd hardening experiment Nginx...
+2026-10-14T00:25:38.202846+00:00 SRV systemd[1]: slab-nginx.service: Deactivated successfully.
+2026-10-14T00:25:38.203189+00:00 SRV systemd[1]: Stopped slab-nginx.service - systemd hardening experiment Nginx.
+2026-10-14T00:25:38.211954+00:00 SRV systemd[1]: Starting slab-nginx.service - systemd hardening experiment Nginx...
+2026-10-14T00:25:38.234679+00:00 SRV nginx[237649]: nginx: the configuration file /etc/systemd-lab/nginx.conf syntax is ok
+2026-10-14T00:25:38.235020+00:00 SRV nginx[237649]: nginx: configuration file /etc/systemd-lab/nginx.conf test is successful
+2026-10-14T00:25:38.236822+00:00 SRV systemd[1]: Started slab-nginx.service - systemd hardening experiment Nginx.
+2026-10-14T00:25:44.638266+00:00 SRV systemd[1]: Stopping slab-nginx.service - systemd hardening experiment Nginx...
+2026-10-14T00:25:44.659844+00:00 SRV systemd[1]: slab-nginx.service: Deactivated successfully.
+2026-10-14T00:25:44.660159+00:00 SRV systemd[1]: Stopped slab-nginx.service - systemd hardening experiment Nginx.
+2026-10-14T00:25:44.668778+00:00 SRV systemd[1]: Starting slab-nginx.service - systemd hardening experiment Nginx...
+2026-10-14T00:25:44.686327+00:00 SRV nginx[237957]: nginx: the configuration file /etc/systemd-lab/nginx.conf syntax is ok
+2026-10-14T00:25:44.686673+00:00 SRV nginx[237957]: nginx: configuration file /etc/systemd-lab/nginx.conf test is successful
+2026-10-14T00:25:44.700723+00:00 SRV systemd[1]: Started slab-nginx.service - systemd hardening experiment Nginx.
+2026-10-14T00:25:52.701962+00:00 SRV systemd[1]: Stopping slab-nginx.service - systemd hardening experiment Nginx...
+2026-10-14T00:25:52.887806+00:00 SRV systemd[1]: slab-nginx.service: Deactivated successfully.
+2026-10-14T00:25:52.888121+00:00 SRV systemd[1]: Stopped slab-nginx.service - systemd hardening experiment Nginx.
+2026-10-14T00:25:52.899021+00:00 SRV systemd[1]: Starting slab-nginx.service - systemd hardening experiment Nginx...
+2026-10-14T00:25:52.914352+00:00 SRV nginx[238256]: nginx: the configuration file /etc/systemd-lab/nginx.conf syntax is ok
+2026-10-14T00:25:52.914777+00:00 SRV nginx[238256]: nginx: configuration file /etc/systemd-lab/nginx.conf test is successful
+2026-10-14T00:25:52.927705+00:00 SRV systemd[1]: Started slab-nginx.service - systemd hardening experiment Nginx.
+2026-10-14T00:26:00.484869+00:00 SRV systemd[1]: Stopping slab-nginx.service - systemd hardening experiment Nginx...
+2026-10-14T00:26:00.514669+00:00 SRV systemd[1]: slab-nginx.service: Deactivated successfully.
+2026-10-14T00:26:00.514995+00:00 SRV systemd[1]: Stopped slab-nginx.service - systemd hardening experiment Nginx.
+2026-10-14T00:26:00.525816+00:00 SRV systemd[1]: Starting slab-nginx.service - systemd hardening experiment Nginx...
+2026-10-14T00:26:00.569998+00:00 SRV nginx[238568]: nginx: the configuration file /etc/systemd-lab/nginx.conf syntax is ok
+2026-10-14T00:26:00.570320+00:00 SRV nginx[238568]: nginx: configuration file /etc/systemd-lab/nginx.conf test is successful
+2026-10-14T00:26:00.585600+00:00 SRV systemd[1]: Started slab-nginx.service - systemd hardening experiment Nginx.
+2026-10-14T00:26:08.692227+00:00 SRV systemd[1]: Stopping slab-nginx.service - systemd hardening experiment Nginx...
+2026-10-14T00:26:08.712684+00:00 SRV systemd[1]: slab-nginx.service: Deactivated successfully.
+2026-10-14T00:26:08.713055+00:00 SRV systemd[1]: Stopped slab-nginx.service - systemd hardening experiment Nginx.
+2026-10-14T00:26:08.723636+00:00 SRV systemd[1]: Starting slab-nginx.service - systemd hardening experiment Nginx...
+2026-10-14T00:26:08.763467+00:00 SRV nginx[238869]: nginx: [alert] could not open error log file: open() "/var/log/nginx/nginx.error.log" failed (30: Read-only file system)
+2026-10-14T00:26:08.765018+00:00 SRV nginx[238869]: nginx: the configuration file /etc/systemd-lab/nginx.conf syntax is ok
+2026-10-14T00:26:08.765152+00:00 SRV nginx[238869]: nginx: configuration file /etc/systemd-lab/nginx.conf test is successful
+2026-10-14T00:26:08.784527+00:00 SRV systemd[1]: Started slab-nginx.service - systemd hardening experiment Nginx.
+2026-10-14T00:26:08.822837+00:00 SRV nginx[238871]: nginx: [alert] could not open error log file: open() "/var/log/nginx/nginx.error.log" failed (30: Read-only file system)
+2026-10-14T00:26:20.083019+00:00 SRV systemd[1]: Stopping slab-nginx.service - systemd hardening experiment Nginx...
+2026-10-14T00:26:20.116220+00:00 SRV systemd[1]: slab-nginx.service: Deactivated successfully.
+2026-10-14T00:26:20.116781+00:00 SRV systemd[1]: Stopped slab-nginx.service - systemd hardening experiment Nginx.
+2026-10-14T00:26:20.131407+00:00 SRV systemd[1]: Starting slab-nginx.service - systemd hardening experiment Nginx...
+2026-10-14T00:26:20.176794+00:00 SRV nginx[239210]: nginx: the configuration file /etc/systemd-lab/nginx.conf syntax is ok
+2026-10-14T00:26:20.177213+00:00 SRV nginx[239210]: nginx: configuration file /etc/systemd-lab/nginx.conf test is successful
+2026-10-14T00:26:20.192297+00:00 SRV systemd[1]: Started slab-nginx.service - systemd hardening experiment Nginx.

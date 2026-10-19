@@ -1,0 +1,398 @@
+
+===== SERVICE=nginx CANDIDATE=P0 =====
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=contract-initial-P0
+CHECK service=nginx profile=P0 check=start result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P0 check=reopen-logs result=PASS mandatory=1 detail=log_owner_after=labweb
+CHECK service=nginx profile=P0 check=reload result=PASS mandatory=1 detail=workers=2
+CHECK service=nginx profile=P0 check=not-found-404 result=PASS mandatory=1 detail=http=404
+CHECK service=nginx profile=P0 check=restart result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P0 check=crash-recovery result=PASS mandatory=1 detail=killed_pid=4580
+
+===== SERVICE=nginx CANDIDATE=P1 =====
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=contract-initial-P1
+CHECK service=nginx profile=P1 check=start result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P1 check=reopen-logs result=PASS mandatory=1 detail=log_owner_after=labweb
+CHECK service=nginx profile=P1 check=reload result=PASS mandatory=1 detail=workers=2
+CHECK service=nginx profile=P1 check=not-found-404 result=PASS mandatory=1 detail=http=404
+CHECK service=nginx profile=P1 check=restart result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P1 check=crash-recovery result=PASS mandatory=1 detail=killed_pid=4786
+
+===== SERVICE=nginx CANDIDATE=P2 =====
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=contract-initial-P2
+CHECK service=nginx profile=P2 check=start result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P2 check=reopen-logs result=PASS mandatory=1 detail=log_owner_after=labweb
+CHECK service=nginx profile=P2 check=reload result=PASS mandatory=1 detail=workers=2
+CHECK service=nginx profile=P2 check=not-found-404 result=PASS mandatory=1 detail=http=404
+CHECK service=nginx profile=P2 check=restart result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P2 check=crash-recovery result=PASS mandatory=1 detail=killed_pid=5003
+
+===== SERVICE=nginx CANDIDATE=P1r =====
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=contract-initial-P1r
+CHECK service=nginx profile=P1r check=start result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P1r check=reopen-logs result=PASS mandatory=1 detail=log_owner_after=labweb
+CHECK service=nginx profile=P1r check=reload result=PASS mandatory=1 detail=workers=2
+CHECK service=nginx profile=P1r check=not-found-404 result=PASS mandatory=1 detail=http=404
+CHECK service=nginx profile=P1r check=restart result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P1r check=crash-recovery result=PASS mandatory=1 detail=killed_pid=5248
+
+===== SERVICE=nginx CANDIDATE=P1c =====
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=contract-initial-P1c
+CHECK service=nginx profile=P1c check=start result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P1c check=reopen-logs result=PASS mandatory=1 detail=log_owner_after=root
+CHECK service=nginx profile=P1c check=reload result=PASS mandatory=1 detail=workers=2
+CHECK service=nginx profile=P1c check=not-found-404 result=PASS mandatory=1 detail=http=404
+CHECK service=nginx profile=P1c check=restart result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P1c check=crash-recovery result=PASS mandatory=1 detail=killed_pid=5460
+
+===== SERVICE=nginx CANDIDATE=P4 =====
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=contract-initial-P4
+CHECK service=nginx profile=P4 check=start result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P4 check=reopen-logs result=PASS mandatory=1 detail=log_owner_after=root
+CHECK service=nginx profile=P4 check=reload result=PASS mandatory=1 detail=workers=2
+CHECK service=nginx profile=P4 check=not-found-404 result=PASS mandatory=1 detail=http=404
+CHECK service=nginx profile=P4 check=restart result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P4 check=crash-recovery result=PASS mandatory=1 detail=killed_pid=5673
+
+===== SERVICE=nginx CANDIDATE=P5 =====
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=contract-initial-P5
+CHECK service=nginx profile=P5 check=start result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P5 check=reopen-logs result=PASS mandatory=1 detail=log_owner_after=root
+CHECK service=nginx profile=P5 check=reload result=PASS mandatory=1 detail=workers=2
+CHECK service=nginx profile=P5 check=not-found-404 result=PASS mandatory=1 detail=http=404
+CHECK service=nginx profile=P5 check=restart result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P5 check=crash-recovery result=PASS mandatory=1 detail=killed_pid=5899
+
+===== SERVICE=nginx CANDIDATE=P6 =====
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=contract-initial-P6
+CHECK service=nginx profile=P6 check=start result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P6 check=reopen-logs result=PASS mandatory=1 detail=log_owner_after=root
+CHECK service=nginx profile=P6 check=reload result=PASS mandatory=1 detail=workers=2
+CHECK service=nginx profile=P6 check=not-found-404 result=PASS mandatory=1 detail=http=404
+CHECK service=nginx profile=P6 check=restart result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P6 check=crash-recovery result=PASS mandatory=1 detail=killed_pid=6111
+
+===== NGINX MIGRATION TO P1c =====
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-initial-P0-reopen
+CHECK service=nginx profile=P0->P1c check=migrate-reopen-operation result=PASS mandatory=1 detail=initial_profile=P0 main=6255
+Job for slab-nginx.service failed because the control process exited with error code.
+See "systemctl status slab-nginx.service" and "journalctl -xeu slab-nginx.service" for details.
+CHECK service=nginx profile=P0->P1c check=migrate-reopen-without-step result=BLOCKED mandatory=1 detail=log_owner_after_operation=labweb; BLOCKED means target did not start
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-explicit-step-P0-reopen
+CHECK service=nginx profile=P0->P1c check=migrate-reopen-with-step result=PASS mandatory=1 detail=explicit migration: log owner returned to root
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-initial-P0-reload
+CHECK service=nginx profile=P0->P1c check=migrate-reload-operation result=PASS mandatory=1 detail=initial_profile=P0 main=6618
+CHECK service=nginx profile=P0->P1c check=migrate-reload-without-step result=STARTED mandatory=1 detail=log_owner_after_operation=root; BLOCKED means target did not start
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-explicit-step-P0-reload
+CHECK service=nginx profile=P0->P1c check=migrate-reload-with-step result=PASS mandatory=1 detail=explicit migration: log owner returned to root
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-initial-P0-restart
+CHECK service=nginx profile=P0->P1c check=migrate-restart-operation result=PASS mandatory=1 detail=initial_profile=P0 main=6987
+CHECK service=nginx profile=P0->P1c check=migrate-restart-without-step result=STARTED mandatory=1 detail=log_owner_after_operation=root; BLOCKED means target did not start
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-explicit-step-P0-restart
+CHECK service=nginx profile=P0->P1c check=migrate-restart-with-step result=PASS mandatory=1 detail=explicit migration: log owner returned to root
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-initial-P0-crash
+CHECK service=nginx profile=P0->P1c check=migrate-crash-operation result=PASS mandatory=1 detail=initial_profile=P0 main=7356
+CHECK service=nginx profile=P0->P1c check=migrate-crash-without-step result=STARTED mandatory=1 detail=log_owner_after_operation=root; BLOCKED means target did not start
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-explicit-step-P0-crash
+CHECK service=nginx profile=P0->P1c check=migrate-crash-with-step result=PASS mandatory=1 detail=explicit migration: log owner returned to root
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-initial-P1-reopen
+CHECK service=nginx profile=P1->P1c check=migrate-reopen-operation result=PASS mandatory=1 detail=initial_profile=P1 main=7710
+Job for slab-nginx.service failed because the control process exited with error code.
+See "systemctl status slab-nginx.service" and "journalctl -xeu slab-nginx.service" for details.
+CHECK service=nginx profile=P1->P1c check=migrate-reopen-without-step result=BLOCKED mandatory=1 detail=log_owner_after_operation=labweb; BLOCKED means target did not start
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-explicit-step-P1-reopen
+CHECK service=nginx profile=P1->P1c check=migrate-reopen-with-step result=PASS mandatory=1 detail=explicit migration: log owner returned to root
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-initial-P1-reload
+CHECK service=nginx profile=P1->P1c check=migrate-reload-operation result=PASS mandatory=1 detail=initial_profile=P1 main=8063
+CHECK service=nginx profile=P1->P1c check=migrate-reload-without-step result=STARTED mandatory=1 detail=log_owner_after_operation=root; BLOCKED means target did not start
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-explicit-step-P1-reload
+CHECK service=nginx profile=P1->P1c check=migrate-reload-with-step result=PASS mandatory=1 detail=explicit migration: log owner returned to root
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-initial-P1-restart
+CHECK service=nginx profile=P1->P1c check=migrate-restart-operation result=PASS mandatory=1 detail=initial_profile=P1 main=8436
+CHECK service=nginx profile=P1->P1c check=migrate-restart-without-step result=STARTED mandatory=1 detail=log_owner_after_operation=root; BLOCKED means target did not start
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-explicit-step-P1-restart
+CHECK service=nginx profile=P1->P1c check=migrate-restart-with-step result=PASS mandatory=1 detail=explicit migration: log owner returned to root
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-initial-P1-crash
+CHECK service=nginx profile=P1->P1c check=migrate-crash-operation result=PASS mandatory=1 detail=initial_profile=P1 main=8814
+CHECK service=nginx profile=P1->P1c check=migrate-crash-without-step result=STARTED mandatory=1 detail=log_owner_after_operation=root; BLOCKED means target did not start
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-explicit-step-P1-crash
+CHECK service=nginx profile=P1->P1c check=migrate-crash-with-step result=PASS mandatory=1 detail=explicit migration: log owner returned to root
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-cleanup
+
+===== SEPARATE NGINX TLS / LOCAL UPSTREAM VARIANT =====
+===== SEPARATE TLS VARIANT PROFILE=P0 (benchmark port 808 unchanged) =====
+CHECK service=nginx-tls profile=P0 check=tls-start result=PASS mandatory=1 detail=separate unit; ports TLS=8443 upstream=18080
+CHECK service=nginx-tls profile=P0 check=https-proxy-response result=PASS mandatory=1 detail=verified synthetic CA and exact upstream payload
+CHECK service=nginx-tls profile=P0 check=tls-reload result=PASS mandatory=1 detail=workers=2; HTTPS payload rechecked
+===== SEPARATE TLS VARIANT PROFILE=P1c (benchmark port 808 unchanged) =====
+CHECK service=nginx-tls profile=P1c check=tls-start result=PASS mandatory=1 detail=separate unit; ports TLS=8443 upstream=18080
+CHECK service=nginx-tls profile=P1c check=https-proxy-response result=PASS mandatory=1 detail=verified synthetic CA and exact upstream payload
+CHECK service=nginx-tls profile=P1c check=tls-reload result=PASS mandatory=1 detail=workers=2; HTTPS payload rechecked
+TLS_FIXTURE_CLEANUP=PASS
+
+===== SERVICE=redis CANDIDATE=P0 =====
+CHECK service=redis profile=P0 check=start result=PASS mandatory=1 detail=
+CHECK service=redis profile=P0 check=bgsave result=PASS mandatory=1 detail=reply=Background saving started status=ok
+CHECK service=redis profile=P0 check=bgrewriteaof result=PASS mandatory=1 detail=reply=Background append only file rewriting started status=ok
+CHECK service=redis profile=P0 check=restart-keeps-value result=PASS mandatory=1 detail=
+CHECK service=redis profile=P0 check=crash-recovery result=PASS mandatory=0 detail=killed_pid=9717
+
+===== SERVICE=redis CANDIDATE=P1 =====
+CHECK service=redis profile=P1 check=start result=PASS mandatory=1 detail=
+CHECK service=redis profile=P1 check=bgsave result=PASS mandatory=1 detail=reply=Background saving started status=ok
+CHECK service=redis profile=P1 check=bgrewriteaof result=PASS mandatory=1 detail=reply=Background append only file rewriting started status=ok
+CHECK service=redis profile=P1 check=restart-keeps-value result=PASS mandatory=1 detail=
+CHECK service=redis profile=P1 check=crash-recovery result=PASS mandatory=0 detail=killed_pid=9958
+
+===== SERVICE=redis CANDIDATE=P2 =====
+CHECK service=redis profile=P2 check=start result=PASS mandatory=1 detail=
+CHECK service=redis profile=P2 check=bgsave result=PASS mandatory=1 detail=reply=Background saving started status=ok
+CHECK service=redis profile=P2 check=bgrewriteaof result=PASS mandatory=1 detail=reply=Background append only file rewriting started status=ok
+CHECK service=redis profile=P2 check=restart-keeps-value result=PASS mandatory=1 detail=
+CHECK service=redis profile=P2 check=crash-recovery result=PASS mandatory=0 detail=killed_pid=10182
+
+===== SERVICE=redis CANDIDATE=P1d =====
+CHECK service=redis profile=P1d check=start result=PASS mandatory=1 detail=
+CHECK service=redis profile=P1d check=bgsave result=PASS mandatory=1 detail=reply=Background saving started status=ok
+CHECK service=redis profile=P1d check=bgrewriteaof result=PASS mandatory=1 detail=reply=Background append only file rewriting started status=ok
+CHECK service=redis profile=P1d check=restart-keeps-value result=PASS mandatory=1 detail=
+CHECK service=redis profile=P1d check=crash-recovery result=PASS mandatory=0 detail=killed_pid=10406
+
+===== SERVICE=redis CANDIDATE=P4 =====
+CHECK service=redis profile=P4 check=start result=PASS mandatory=1 detail=
+CHECK service=redis profile=P4 check=bgsave result=PASS mandatory=1 detail=reply=Background saving started status=ok
+CHECK service=redis profile=P4 check=bgrewriteaof result=PASS mandatory=1 detail=reply=Background append only file rewriting started status=ok
+CHECK service=redis profile=P4 check=restart-keeps-value result=PASS mandatory=1 detail=
+CHECK service=redis profile=P4 check=crash-recovery result=PASS mandatory=0 detail=killed_pid=10663
+
+===== SERVICE=redis CANDIDATE=P6 =====
+CHECK service=redis profile=P6 check=start result=PASS mandatory=1 detail=
+CHECK service=redis profile=P6 check=bgsave result=PASS mandatory=1 detail=reply=Background saving started status=ok
+CHECK service=redis profile=P6 check=bgrewriteaof result=PASS mandatory=1 detail=reply=Background append only file rewriting started status=ok
+CHECK service=redis profile=P6 check=restart-keeps-value result=PASS mandatory=1 detail=
+CHECK service=redis profile=P6 check=crash-recovery result=PASS mandatory=0 detail=killed_pid=10890
+
+===== SERVICE=postgresql CANDIDATE=P0 =====
+CHECK service=postgresql profile=P0 check=start result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P0 check=checkpoint result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P0 check=reload result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P0 check=query-with-jit result=PASS mandatory=1 detail=jit_used=no 
+CHECK service=postgresql profile=P0 check=restart result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P0 check=crash-recovery result=PASS mandatory=0 detail=killed_pid=11108
+
+===== SERVICE=postgresql CANDIDATE=P1 =====
+CHECK service=postgresql profile=P1 check=start result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P1 check=checkpoint result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P1 check=reload result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P1 check=query-with-jit result=PASS mandatory=1 detail=jit_used=no 
+CHECK service=postgresql profile=P1 check=restart result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P1 check=crash-recovery result=PASS mandatory=0 detail=killed_pid=11311
+
+===== SERVICE=postgresql CANDIDATE=P2 =====
+CHECK service=postgresql profile=P2 check=start result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P2 check=checkpoint result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P2 check=reload result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P2 check=query-with-jit result=PASS mandatory=1 detail=jit_used=no 
+CHECK service=postgresql profile=P2 check=restart result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P2 check=crash-recovery result=PASS mandatory=0 detail=killed_pid=11515
+
+===== SERVICE=postgresql CANDIDATE=P1d =====
+CHECK service=postgresql profile=P1d check=start result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P1d check=checkpoint result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P1d check=reload result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P1d check=query-with-jit result=PASS mandatory=1 detail=jit_used=no 
+CHECK service=postgresql profile=P1d check=restart result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P1d check=crash-recovery result=PASS mandatory=0 detail=killed_pid=11718
+
+===== SERVICE=postgresql CANDIDATE=P4 =====
+CHECK service=postgresql profile=P4 check=start result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P4 check=checkpoint result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P4 check=reload result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P4 check=query-with-jit result=PASS mandatory=1 detail=jit_used=no 
+CHECK service=postgresql profile=P4 check=restart result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P4 check=crash-recovery result=PASS mandatory=0 detail=killed_pid=11922
+
+===== SERVICE=postgresql CANDIDATE=P6 =====
+CHECK service=postgresql profile=P6 check=start result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P6 check=checkpoint result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P6 check=reload result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P6 check=query-with-jit result=PASS mandatory=1 detail=jit_used=no 
+CHECK service=postgresql profile=P6 check=restart result=PASS mandatory=1 detail=
+CHECK service=postgresql profile=P6 check=crash-recovery result=PASS mandatory=0 detail=killed_pid=12125
+
+===== SUMMARY: operation x candidate =====
+nginx       P0     start                  PASS
+nginx       P0     reopen-logs            PASS
+nginx       P0     reload                 PASS
+nginx       P0     not-found-404          PASS
+nginx       P0     restart                PASS
+nginx       P0     crash-recovery         PASS
+nginx       P1     start                  PASS
+nginx       P1     reopen-logs            PASS
+nginx       P1     reload                 PASS
+nginx       P1     not-found-404          PASS
+nginx       P1     restart                PASS
+nginx       P1     crash-recovery         PASS
+nginx       P2     start                  PASS
+nginx       P2     reopen-logs            PASS
+nginx       P2     reload                 PASS
+nginx       P2     not-found-404          PASS
+nginx       P2     restart                PASS
+nginx       P2     crash-recovery         PASS
+nginx       P1r    start                  PASS
+nginx       P1r    reopen-logs            PASS
+nginx       P1r    reload                 PASS
+nginx       P1r    not-found-404          PASS
+nginx       P1r    restart                PASS
+nginx       P1r    crash-recovery         PASS
+nginx       P1c    start                  PASS
+nginx       P1c    reopen-logs            PASS
+nginx       P1c    reload                 PASS
+nginx       P1c    not-found-404          PASS
+nginx       P1c    restart                PASS
+nginx       P1c    crash-recovery         PASS
+nginx       P4     start                  PASS
+nginx       P4     reopen-logs            PASS
+nginx       P4     reload                 PASS
+nginx       P4     not-found-404          PASS
+nginx       P4     restart                PASS
+nginx       P4     crash-recovery         PASS
+nginx       P5     start                  PASS
+nginx       P5     reopen-logs            PASS
+nginx       P5     reload                 PASS
+nginx       P5     not-found-404          PASS
+nginx       P5     restart                PASS
+nginx       P5     crash-recovery         PASS
+nginx       P6     start                  PASS
+nginx       P6     reopen-logs            PASS
+nginx       P6     reload                 PASS
+nginx       P6     not-found-404          PASS
+nginx       P6     restart                PASS
+nginx       P6     crash-recovery         PASS
+nginx       P0->P1c migrate-reopen-operation PASS
+nginx       P0->P1c migrate-reopen-without-step BLOCKED
+nginx       P0->P1c migrate-reopen-with-step PASS
+nginx       P0->P1c migrate-reload-operation PASS
+nginx       P0->P1c migrate-reload-without-step STARTED
+nginx       P0->P1c migrate-reload-with-step PASS
+nginx       P0->P1c migrate-restart-operation PASS
+nginx       P0->P1c migrate-restart-without-step STARTED
+nginx       P0->P1c migrate-restart-with-step PASS
+nginx       P0->P1c migrate-crash-operation PASS
+nginx       P0->P1c migrate-crash-without-step STARTED
+nginx       P0->P1c migrate-crash-with-step PASS
+nginx       P1->P1c migrate-reopen-operation PASS
+nginx       P1->P1c migrate-reopen-without-step BLOCKED
+nginx       P1->P1c migrate-reopen-with-step PASS
+nginx       P1->P1c migrate-reload-operation PASS
+nginx       P1->P1c migrate-reload-without-step STARTED
+nginx       P1->P1c migrate-reload-with-step PASS
+nginx       P1->P1c migrate-restart-operation PASS
+nginx       P1->P1c migrate-restart-without-step STARTED
+nginx       P1->P1c migrate-restart-with-step PASS
+nginx       P1->P1c migrate-crash-operation PASS
+nginx       P1->P1c migrate-crash-without-step STARTED
+nginx       P1->P1c migrate-crash-with-step PASS
+nginx-tls   P0     tls-start              PASS
+nginx-tls   P0     https-proxy-response   PASS
+nginx-tls   P0     tls-reload             PASS
+nginx-tls   P1c    tls-start              PASS
+nginx-tls   P1c    https-proxy-response   PASS
+nginx-tls   P1c    tls-reload             PASS
+redis       P0     start                  PASS
+redis       P0     bgsave                 PASS
+redis       P0     bgrewriteaof           PASS
+redis       P0     restart-keeps-value    PASS
+redis       P0     crash-recovery         PASS
+redis       P1     start                  PASS
+redis       P1     bgsave                 PASS
+redis       P1     bgrewriteaof           PASS
+redis       P1     restart-keeps-value    PASS
+redis       P1     crash-recovery         PASS
+redis       P2     start                  PASS
+redis       P2     bgsave                 PASS
+redis       P2     bgrewriteaof           PASS
+redis       P2     restart-keeps-value    PASS
+redis       P2     crash-recovery         PASS
+redis       P1d    start                  PASS
+redis       P1d    bgsave                 PASS
+redis       P1d    bgrewriteaof           PASS
+redis       P1d    restart-keeps-value    PASS
+redis       P1d    crash-recovery         PASS
+redis       P4     start                  PASS
+redis       P4     bgsave                 PASS
+redis       P4     bgrewriteaof           PASS
+redis       P4     restart-keeps-value    PASS
+redis       P4     crash-recovery         PASS
+redis       P6     start                  PASS
+redis       P6     bgsave                 PASS
+redis       P6     bgrewriteaof           PASS
+redis       P6     restart-keeps-value    PASS
+redis       P6     crash-recovery         PASS
+postgresql  P0     start                  PASS
+postgresql  P0     checkpoint             PASS
+postgresql  P0     reload                 PASS
+postgresql  P0     query-with-jit         PASS
+postgresql  P0     restart                PASS
+postgresql  P0     crash-recovery         PASS
+postgresql  P1     start                  PASS
+postgresql  P1     checkpoint             PASS
+postgresql  P1     reload                 PASS
+postgresql  P1     query-with-jit         PASS
+postgresql  P1     restart                PASS
+postgresql  P1     crash-recovery         PASS
+postgresql  P2     start                  PASS
+postgresql  P2     checkpoint             PASS
+postgresql  P2     reload                 PASS
+postgresql  P2     query-with-jit         PASS
+postgresql  P2     restart                PASS
+postgresql  P2     crash-recovery         PASS
+postgresql  P1d    start                  PASS
+postgresql  P1d    checkpoint             PASS
+postgresql  P1d    reload                 PASS
+postgresql  P1d    query-with-jit         PASS
+postgresql  P1d    restart                PASS
+postgresql  P1d    crash-recovery         PASS
+postgresql  P4     start                  PASS
+postgresql  P4     checkpoint             PASS
+postgresql  P4     reload                 PASS
+postgresql  P4     query-with-jit         PASS
+postgresql  P4     restart                PASS
+postgresql  P4     crash-recovery         PASS
+postgresql  P6     start                  PASS
+postgresql  P6     checkpoint             PASS
+postgresql  P6     reload                 PASS
+postgresql  P6     query-with-jit         PASS
+postgresql  P6     restart                PASS
+postgresql  P6     crash-recovery         PASS
+
+===== MANDATORY CONTRACT PER CANDIDATE (FAIL = excluded by the gate) =====
+service     profile  contract
+nginx       P0       PASS
+nginx       P1       PASS
+nginx       P2       PASS
+nginx       P1r      PASS
+nginx       P1c      PASS
+nginx       P4       PASS
+nginx       P5       PASS
+nginx       P6       PASS
+nginx-tls   P0       PASS
+nginx-tls   P1c      PASS
+redis       P0       PASS
+redis       P1       PASS
+redis       P2       PASS
+redis       P1d      PASS
+redis       P4       PASS
+redis       P6       PASS
+postgresql  P0       PASS
+postgresql  P1       PASS
+postgresql  P2       PASS
+postgresql  P1d      PASS
+postgresql  P4       PASS
+postgresql  P6       PASS
+
+===== CLEANUP AND RESTORE P4 =====
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=cleanup
+RESTORE_P4 nginx=PASS
+RESTORE_P4 redis=PASS
+RESTORE_P4 postgresql=PASS
+RESULT_DIR=/root/article-experiment/20261012-v005/results_v005/functional-v005/20261012-104934

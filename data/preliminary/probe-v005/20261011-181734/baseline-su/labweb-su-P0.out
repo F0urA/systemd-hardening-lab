@@ -1,0 +1,42 @@
+CONTEXT=labweb-su UID=984 EUID=984 GID=963 TARGET_PID=2513
+ID	STATUS	DETAIL
+FS-1	ALLOWED	/home/systemd-lab/marker
+FS-2	BLOCKED	errno=13 Permission denied
+FS-3	ALLOWED	/etc/systemd-lab/credential
+FS-4	ALLOWED	create+unlink
+DEV-1	ALLOWED	/tmp/systemd-lab-marker
+DEV-2	ALLOWED	/var/tmp/systemd-lab-marker
+DEV-3	ALLOWED	/dev/systemd-lab-null
+DEV-4	BLOCKED	errno=1 Operation not permitted
+KER-1	BLOCKED	errno=13 Permission denied
+KER-2	BLOCKED	errno=13 Permission denied
+KER-3	BLOCKED	errno=1 Operation not permitted
+KER-4	BLOCKED	errno=13 Permission denied
+PROC-1	ALLOWED	pid=2513
+PROC-2	ALLOWED	pid=2513
+PROC-3	ALLOWED	/proc/2513/environ
+PROC-4	BLOCKED	errno=1 Operation not permitted
+PRIV-1	BLOCKED	errno=1 Operation not permitted
+PRIV-2	BLOCKED	errno=1 Operation not permitted
+PRIV-3	BLOCKED	errno=1 Operation not permitted
+PRIV-4	ALLOWED	ruid=984 euid=0 rgid=963 egid=963
+NS-1	BLOCKED	errno=1 Operation not permitted
+NS-2	BLOCKED	errno=1 Operation not permitted
+NS-3	BLOCKED	errno=1 Operation not permitted
+NS-4	BLOCKED	errno=13 Permission denied
+NET-1	BLOCKED	errno=1 Operation not permitted
+NET-2	ALLOWED	AF_NETLINK/NETLINK_ROUTE
+NET-3	BLOCKED	errno=1 Operation not permitted
+NET-4	ALLOWED	AF_INET6/SOCK_STREAM
+ADV-1	ALLOWED	RWX mmap
+ADV-2	ALLOWED	mprotect RW->RX
+ADV-3	ALLOWED	personality 0x0->0x40000
+ADV-4	ALLOWED	mode=4755
+SUMMARY	ALLOWED=16 BLOCKED=16 N/A=0 ERROR=0
+ARCH=x86_64 UID=984 EUID=984 GID=963
+ID	STATUS	DETAIL
+X1	BLOCKED	errno=1 Operation not permitted
+X2	BLOCKED	errno=1 Operation not permitted
+X3	ALLOWED	io_uring fd=3
+X4	ALLOWED	session keyring serial=911387135
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0

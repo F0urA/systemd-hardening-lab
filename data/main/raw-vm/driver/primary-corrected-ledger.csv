@@ -1,0 +1,11 @@
+stage,start_guest_utc,end_guest_utc,exit_status,result_directory
+R1-nginx,2026-10-12T17:59:12+00:00,2026-10-12T19:42:24+00:00,0,/root/article-experiment/20261012-v005/results_v005/nginx/benchmark-v005/20261012-175912
+R2-redis,2026-10-12T19:42:24+00:00,2026-10-12T21:02:19+00:00,0,/root/article-experiment/20261012-v005/results_v005/redis/benchmark-v005/20261012-194224
+R3-postgresql,2026-10-12T21:02:20+00:00,2026-10-12T21:58:26+00:00,2,/root/article-experiment/20261012-v005/results_v005/postgresql/benchmark-v005/20261012-210220
+R3-postgresql-retry,2026-10-13T19:34:48+00:00,2026-10-13T20:43:56+00:00,0,/root/article-experiment/20261012-v005/results_v005/postgresql/benchmark-v005/20261013-193448
+R5-nginx-light,2026-10-13T20:43:56+00:00,2026-10-13T22:04:13+00:00,0,/root/article-experiment/20261012-v005/results_v005/nginx/benchmark-v005/20261013-204356
+R4-pilot-c1,2026-10-13T22:04:13+00:00,2026-10-13T22:06:30+00:00,0,/root/article-experiment/20261012-v005/results_v005/nginx/benchmark-v005/20261013-220413
+R4-pilot-c2,2026-10-13T22:06:30+00:00,2026-10-13T22:08:36+00:00,0,/root/article-experiment/20261012-v005/results_v005/nginx/benchmark-v005/20261013-220630
+R4-pilot-c4,2026-10-13T22:08:36+00:00,2026-10-13T22:10:32+00:00,0,/root/article-experiment/20261012-v005/results_v005/nginx/benchmark-v005/20261013-220836
+R4-pilot-c8,2026-10-13T22:10:32+00:00,2026-10-13T22:12:23+00:00,0,/root/article-experiment/20261012-v005/results_v005/nginx/benchmark-v005/20261013-221032
+R4-pilot-c16,2026-10-13T22:12:23+00:00,2026-10-13T22:14:17+00:00,0,/root/article-experiment/20261012-v005/results_v005/nginx/benchmark-v005/20261013-221223

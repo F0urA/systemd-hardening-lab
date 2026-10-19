@@ -1,0 +1,114 @@
+## BEGIN nginx-master-p4
+## FINGERPRINT
+Uid: 0 0 0 0
+Gid: 0 0 0 0
+Groups:
+CapInh: 0000000000000000
+CapPrm: 00000000000004c0
+CapEff: 00000000000004c0
+CapBnd: 00000000000004c0
+CapAmb: 0000000000000000
+NoNewPrivs: 1
+Seccomp: 2
+Seccomp_filters: 28
+ns_cgroup: cgroup:[4026531835]
+ns_ipc: ipc:[4026531839]
+ns_mnt: mnt:[4026532248]
+ns_net: net:[4026531840]
+ns_pid: pid:[4026531836]
+ns_user: user:[4026531837]
+ns_uts: uts:[4026531838]
+## MOUNTS
+/ / rw,relatime ext4
+/ /dev ro,nosuid,noexec tmpfs
+/ /dev/hugepages rw,nosuid,nodev,relatime hugetlbfs
+/ /dev/mqueue rw,nosuid,nodev,noexec,relatime mqueue
+/ /dev/pts rw,nosuid,noexec,relatime devpts
+/ /dev/shm rw,nosuid,nodev tmpfs
+/ /proc rw,nosuid,nodev,noexec,relatime proc
+/ /proc/sys/fs/binfmt_misc rw,nosuid,relatime autofs
+/ /proc/sys/fs/binfmt_misc rw,nosuid,relatime autofs
+/ /run rw,relatime tmpfs
+/ /sys rw,nosuid,nodev,noexec,relatime sysfs
+/ /sys/fs/bpf ro,nosuid,nodev,noexec,relatime bpf
+/ /sys/fs/cgroup ro,nosuid,nodev,noexec,relatime cgroup2
+/ /sys/fs/fuse/connections rw,nosuid,nodev,noexec,relatime fusectl
+/ /sys/fs/pstore rw,nosuid,nodev,noexec,relatime pstore
+/ /sys/kernel/config rw,nosuid,nodev,noexec,relatime configfs
+/ /sys/kernel/debug ro,nosuid,nodev,noexec,relatime debugfs
+/ /sys/kernel/security rw,nosuid,nodev,noexec,relatime securityfs
+/ /sys/kernel/tracing ro,nosuid,nodev,noexec,relatime tracefs
+/ /tmp rw,nosuid,relatime tmpfs
+/acpi /proc/acpi ro,nosuid,nodev,noexec,relatime proc
+/asound /proc/asound ro,nosuid,nodev,noexec,relatime proc
+/boot /boot ro,nosuid,relatime ext4
+/bus /proc/bus ro,nosuid,nodev,noexec,relatime proc
+/etc /etc ro,nosuid,relatime ext4
+/fs /proc/fs ro,nosuid,nodev,noexec,relatime proc
+/irq /proc/irq ro,nosuid,nodev,noexec,relatime proc
+/latency_stats /proc/latency_stats ro,nosuid,nodev,noexec,relatime proc
+/mtrr /proc/mtrr ro,nosuid,nodev,noexec,relatime proc
+/scsi /proc/scsi ro,nosuid,nodev,noexec,relatime proc
+/sys /proc/sys ro,nosuid,nodev,noexec,relatime proc
+/sysrq-trigger /proc/sysrq-trigger ro,nosuid,nodev,noexec,relatime proc
+/system.slice/slab-v005-nginx-master-p4-33159.service/memory.pressure /sys/fs/cgroup/system.slice/slab-v005-nginx-master-p4-33159.service/memory.pressure rw,nosuid,nodev,noexec,relatime cgroup2
+/systemd-private-X/tmp /tmp rw,nosuid,relatime tmpfs
+/systemd/inaccessible/dir /home ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/dir /root ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/dir /run/credentials ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/dir /run/user ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/dir /usr/lib/modules ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/reg /etc/systemd-lab/credential ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/reg /proc/kallsyms ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/reg /proc/kcore ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/reg /proc/kmsg ro,nosuid,noexec,relatime tmpfs
+/systemd/propagate/slab-v005-nginx-master-p4-33159.service /run/systemd/incoming ro,nosuid,relatime tmpfs
+/usr /usr ro,nosuid,relatime ext4
+/var/tmp/systemd-private-X/tmp /var/tmp rw,nosuid,relatime ext4
+## ISOLATION
+CONTEXT=nginx-master-p4 UID=0 EUID=0 GID=0 TARGET_PID=3903
+ID	STATUS	DETAIL
+FS-1	BLOCKED	errno=13 Permission denied
+FS-2	BLOCKED	errno=13 Permission denied
+FS-3	BLOCKED	errno=13 Permission denied
+FS-4	BLOCKED	errno=30 Read-only file system
+DEV-1	BLOCKED	errno=2 No such file or directory
+DEV-2	BLOCKED	errno=2 No such file or directory
+DEV-3	BLOCKED	errno=2 No such file or directory
+DEV-4	BLOCKED	errno=1 Operation not permitted
+KER-1	BLOCKED	errno=30 Read-only file system
+KER-2	BLOCKED	errno=30 Read-only file system
+KER-3	BLOCKED	errno=1 Operation not permitted
+KER-4	ALLOWED	/sys/module/printk/parameters/time
+PROC-1	BLOCKED	errno=1 Operation not permitted
+PROC-2	ALLOWED	pid=3903
+PROC-3	BLOCKED	errno=13 Permission denied
+PROC-4	BLOCKED	errno=1 Operation not permitted
+PRIV-1	ALLOWED	uid=966
+PRIV-2	ALLOWED	gid=936
+PRIV-3	BLOCKED	errno=1 Operation not permitted
+PRIV-4	N/A	root context already has euid=0
+NS-1	BLOCKED	errno=1 Operation not permitted
+NS-2	BLOCKED	errno=1 Operation not permitted
+NS-3	BLOCKED	errno=1 Operation not permitted
+NS-4	BLOCKED	errno=30 Read-only file system
+NET-1	BLOCKED	errno=97 Address family not supported by protocol
+NET-2	BLOCKED	errno=97 Address family not supported by protocol
+NET-3	BLOCKED	errno=1 Operation not permitted
+NET-4	BLOCKED	errno=97 Address family not supported by protocol
+ADV-1	BLOCKED	errno=13 Permission denied
+ADV-2	BLOCKED	errno=13 Permission denied
+ADV-3	BLOCKED	errno=1 Operation not permitted
+ADV-4	BLOCKED	errno=1 Operation not permitted
+SUMMARY	ALLOWED=4 BLOCKED=27 N/A=1 ERROR=0
+ISOLATION_RC=0
+## EXTENDED
+ARCH=x86_64 UID=0 EUID=0 GID=0
+ID	STATUS	DETAIL
+X1	BLOCKED	errno=1 Operation not permitted
+X2	BLOCKED	errno=1 Operation not permitted
+X3	ALLOWED	io_uring fd=3
+X4	ALLOWED	session keyring serial=970180041
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0
+EXTENDED_RC=0
+## END nginx-master-p4

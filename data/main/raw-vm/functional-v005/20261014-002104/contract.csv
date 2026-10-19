@@ -1,0 +1,10 @@
+service,profile,contract
+nginx,P0,PASS
+nginx,P1r,PASS
+nginx,P1c,PASS
+nginx,P1cADMIN,PASS
+nginx,P1cPTRACE,PASS
+nginx,P1cDAC,PASS
+nginx,P1cCHROOT,PASS
+nginx-tls,P0,PASS
+nginx-tls,P1c,PASS

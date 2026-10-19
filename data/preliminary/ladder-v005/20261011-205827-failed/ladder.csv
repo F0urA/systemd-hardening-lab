@@ -1,0 +1,6 @@
+profile,functional,exposure,n_directives,workers,reason
+P1,1,8.7,5,2,
+P2,1,7.3,9,2,
+P3,0,2.5,21,0,bind() to 127.0.0.1:808 failed (13: Permission denied)
+P4,1,2.8,21,2,
+P4c1,0,2.7,21,0,bind() to 127.0.0.1:808 failed (13: Permission denied)

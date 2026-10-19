@@ -1,0 +1,26 @@
+2026-10-12T10:52:49.863061+00:00 SRV systemd[1]: Started slab-nginx-ext-upstream.service - v005 loopback HTTP upstream for the Nginx functional variant.
+2026-10-12T10:52:50.249309+00:00 SRV systemd[1]: Starting slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant...
+2026-10-12T10:52:50.260630+00:00 SRV nginx[9264]: nginx: the configuration file /etc/systemd-lab/nginx-ext-v005/nginx.conf syntax is ok
+2026-10-12T10:52:50.261146+00:00 SRV nginx[9264]: nginx: configuration file /etc/systemd-lab/nginx-ext-v005/nginx.conf test is successful
+2026-10-12T10:52:50.288853+00:00 SRV systemd[1]: Started slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant.
+2026-10-12T10:52:51.397309+00:00 SRV python3[9175]: 127.0.0.1 - - [12/Oct/2026 11:52:51] "GET / HTTP/1.1" 200 -
+2026-10-12T10:52:51.422069+00:00 SRV systemd[1]: Reloading slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant...
+2026-10-12T10:52:51.424899+00:00 SRV systemd[1]: Reloaded slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant.
+2026-10-12T10:52:52.857045+00:00 SRV python3[9175]: 127.0.0.1 - - [12/Oct/2026 11:52:52] "GET / HTTP/1.1" 200 -
+2026-10-12T10:52:53.343471+00:00 SRV systemd[1]: Stopping slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant...
+2026-10-12T10:52:53.361144+00:00 SRV systemd[1]: slab-nginx-ext.service: Deactivated successfully.
+2026-10-12T10:52:53.361611+00:00 SRV systemd[1]: Stopped slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant.
+2026-10-12T10:52:53.371327+00:00 SRV systemd[1]: Starting slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant...
+2026-10-12T10:52:53.394690+00:00 SRV nginx[9404]: nginx: the configuration file /etc/systemd-lab/nginx-ext-v005/nginx.conf syntax is ok
+2026-10-12T10:52:53.395088+00:00 SRV nginx[9404]: nginx: configuration file /etc/systemd-lab/nginx-ext-v005/nginx.conf test is successful
+2026-10-12T10:52:53.401248+00:00 SRV systemd[1]: Started slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant.
+2026-10-12T10:52:53.439686+00:00 SRV python3[9175]: 127.0.0.1 - - [12/Oct/2026 11:52:53] "GET / HTTP/1.1" 200 -
+2026-10-12T10:52:53.463103+00:00 SRV systemd[1]: Reloading slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant...
+2026-10-12T10:52:53.477364+00:00 SRV systemd[1]: Reloaded slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant.
+2026-10-12T10:52:54.499562+00:00 SRV python3[9175]: 127.0.0.1 - - [12/Oct/2026 11:52:54] "GET / HTTP/1.1" 200 -
+2026-10-12T10:52:54.552704+00:00 SRV systemd[1]: Stopping slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant...
+2026-10-12T10:52:54.819777+00:00 SRV systemd[1]: slab-nginx-ext.service: Deactivated successfully.
+2026-10-12T10:52:54.820080+00:00 SRV systemd[1]: Stopped slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant.
+2026-10-12T10:52:54.832159+00:00 SRV systemd[1]: Stopping slab-nginx-ext-upstream.service - v005 loopback HTTP upstream for the Nginx functional variant...
+2026-10-12T10:52:54.834516+00:00 SRV systemd[1]: slab-nginx-ext-upstream.service: Deactivated successfully.
+2026-10-12T10:52:54.834867+00:00 SRV systemd[1]: Stopped slab-nginx-ext-upstream.service - v005 loopback HTTP upstream for the Nginx functional variant.

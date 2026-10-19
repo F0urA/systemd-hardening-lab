@@ -1,0 +1,13 @@
+===== COST ABLATION, CPU TIME PER OPERATION =====
+PAIRS=20  COST_SOURCE=cpu_us_per_op
+contrast    meaning                                mean %  lower %  upper %
+P4s/P0      filter group alone                      +4.30    -4.51   +13.92
+P4n/P0      all other directives alone              +7.34    -3.21   +19.05
+P4/P4n      filter group on top of the others       +4.31    -3.11   +12.30
+P4/P0       full profile                           +11.97    +1.88   +23.07
+
+Throughput, mean rps: P0=43598.0  P4s=41807.5  P4n=40946.1  P4=38812.8
+
+VERDICT=INCONCLUSIVE: neither contrast is separated from zero
+NOTE=Bounds assume approximately normal, independent block contrasts.
+NOTE=Exploratory series; it does not enter the selection rule.

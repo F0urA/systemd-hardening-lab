@@ -1,0 +1,15 @@
+{
+  "schema": "v005-final-host-helper-check-1",
+  "utc": "2026-10-14T00:50:57.7744826Z",
+  "read_only": true,
+  "monitor_pid": 26408,
+  "monitor_process_present": false,
+  "collector_pid": 30072,
+  "collector_process_present": false,
+  "stop_marker": "host-monitor-resume-20261013.stop",
+  "stop_marker_utc": "2026-10-14T00:27:36.7776630Z",
+  "last_host_csv_utc": "2026-10-14T00:27:36Z",
+  "monitor_error_log_empty": true,
+  "permanent_power_settings_changed": false,
+  "note": "The own monitor/collector processes are absent. No process was terminated by this read-only check. The monitor uses per-thread keep-awake and clears it in finally; no permanent power-plan settings were changed."
+}

@@ -1,0 +1,7 @@
+===== BENCHMARK DATA AUDIT v003 =====
+SOURCE=/root/systemd-lab-results/nginx/benchmark-v003/20261011-182130/results.csv
+SHA256=7b18d8a180cbc99da67f4ef5f9a03fae3515f704f35ef42cea07188566ffd9ce
+CSV_DATA_ROWS=10
+ALL_PROFILES={'P0': 2, 'P4': 2, 'P4n': 2, 'P4s': 2, 'P6': 2}
+THROUGHPUT_COLUMN=rps
+BASELINE=P0 CANDIDATE=P4

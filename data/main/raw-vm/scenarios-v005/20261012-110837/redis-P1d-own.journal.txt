@@ -1,0 +1,1 @@
+42474:M 12 Oct 2026 12:09:13.275 # Failed opening the temp RDB file temp-42474.rdb (in server root dir /var/lib/systemd-lab/redis-g1-v005-own) for saving: Read-only file system

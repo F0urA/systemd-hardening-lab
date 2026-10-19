@@ -1,0 +1,41 @@
+service,goal,dac,context,profile,outcome,detail
+nginx,G1-replace-document,rootown,worker,P0,BLOCKED,http=200 G_RESULT=BLOCKED uid=984
+nginx,G1-replace-document,rootown,master,P0,ACHIEVED,http=200 G_RESULT=ALLOWED uid=0
+nginx,G1-replace-document,labweb,worker,P0,ACHIEVED,http=200 G_RESULT=ALLOWED uid=984
+nginx,G1-replace-document,labweb,master,P0,ACHIEVED,http=200 G_RESULT=ALLOWED uid=0
+nginx,G2-read-app-secret,needed-by-app,worker,P0,ACHIEVED,G_RESULT=ALLOWED uid=984
+nginx,G2-read-app-secret,needed-by-app,master,P0,ACHIEVED,G_RESULT=ALLOWED uid=0
+nginx,G1-replace-document,rootown,worker,P4,BLOCKED,http=200 G_RESULT=BLOCKED uid=984
+nginx,G1-replace-document,rootown,master,P4,ACHIEVED,http=200 G_RESULT=ALLOWED uid=0
+nginx,G1-replace-document,labweb,worker,P4,ACHIEVED,http=200 G_RESULT=ALLOWED uid=984
+nginx,G1-replace-document,labweb,master,P4,ACHIEVED,http=200 G_RESULT=ALLOWED uid=984
+nginx,G2-read-app-secret,needed-by-app,worker,P4,ACHIEVED,G_RESULT=ALLOWED uid=984
+nginx,G2-read-app-secret,needed-by-app,master,P4,ACHIEVED,G_RESULT=ALLOWED uid=0
+nginx,G1-replace-document,rootown,worker,P5,BLOCKED,http=200 G_RESULT=BLOCKED uid=984
+nginx,G1-replace-document,rootown,master,P5,BLOCKED,http=200 G_RESULT=BLOCKED uid=984
+nginx,G1-replace-document,labweb,worker,P5,BLOCKED,http=200 G_RESULT=BLOCKED uid=984
+nginx,G1-replace-document,labweb,master,P5,BLOCKED,http=200 G_RESULT=BLOCKED uid=984
+nginx,G2-read-app-secret,needed-by-app,worker,P5,ACHIEVED,G_RESULT=ALLOWED uid=984
+nginx,G2-read-app-secret,needed-by-app,master,P5,ACHIEVED,G_RESULT=ALLOWED uid=0
+nginx,G1-replace-document,rootown,worker,P6,BLOCKED,http=200 G_RESULT=BLOCKED uid=984
+nginx,G1-replace-document,rootown,master,P6,BLOCKED,http=200 G_RESULT=BLOCKED uid=984
+nginx,G1-replace-document,labweb,worker,P6,BLOCKED,http=200 G_RESULT=BLOCKED uid=984
+nginx,G1-replace-document,labweb,master,P6,BLOCKED,http=200 G_RESULT=BLOCKED uid=984
+nginx,G2-read-app-secret,needed-by-app,worker,P6,ACHIEVED,G_RESULT=ALLOWED uid=984
+nginx,G2-read-app-secret,needed-by-app,master,P6,ACHIEVED,G_RESULT=ALLOWED uid=0
+redis,G1-app-guard,-,server,P4,INFO,default refuses CONFIG SET dir: ERR CONFIG SET failed (possibly related to argument 'dir') - can't set protected config
+redis,G1-write-outside-datadir,own,server,P0,ACHIEVED,config_set_dir=OK config_set_dbfilename=OK save=OK
+redis,G1-write-outside-datadir,root,server,P0,BLOCKED,config_set_dir=OK config_set_dbfilename=OK save=ERR
+redis,G1-write-outside-datadir,own,server,P4,ACHIEVED,config_set_dir=OK config_set_dbfilename=OK save=OK
+redis,G1-write-outside-datadir,root,server,P4,BLOCKED,config_set_dir=OK config_set_dbfilename=OK save=ERR
+redis,G1-write-outside-datadir,own,server,P6,BLOCKED,config_set_dir=OK config_set_dbfilename=OK save=ERR
+redis,G1-write-outside-datadir,root,server,P6,BLOCKED,config_set_dir=OK config_set_dbfilename=OK save=ERR
+postgresql,G1-write-outside-datadir,own,server,P0,ACHIEVED,
+postgresql,G1-write-outside-datadir,root,server,P0,BLOCKED,ERROR:  could not open file "/var/lib/systemd-lab/pg-g1-v003-root/g1-v003.txt" for writing: Permission denied HINT:  COPY TO instructs the PostgreSQL server process to write a file. You may want a client-side facility such as psql's \copy.
+postgresql,G2-run-program,needed-by-app,server,P0,ACHIEVED,labpg
+postgresql,G1-write-outside-datadir,own,server,P4,ACHIEVED,
+postgresql,G1-write-outside-datadir,root,server,P4,BLOCKED,ERROR:  could not open file "/var/lib/systemd-lab/pg-g1-v003-root/g1-v003.txt" for writing: Permission denied HINT:  COPY TO instructs the PostgreSQL server process to write a file. You may want a client-side facility such as psql's \copy.
+postgresql,G2-run-program,needed-by-app,server,P4,ACHIEVED,labpg
+postgresql,G1-write-outside-datadir,own,server,P6,BLOCKED,ERROR:  could not open file "/var/lib/systemd-lab/pg-g1-v003-own/g1-v003.txt" for writing: Read-only file system
+postgresql,G1-write-outside-datadir,root,server,P6,BLOCKED,ERROR:  could not open file "/var/lib/systemd-lab/pg-g1-v003-root/g1-v003.txt" for writing: Read-only file system
+postgresql,G2-run-program,needed-by-app,server,P6,ACHIEVED,labpg

@@ -1,0 +1,136 @@
+service,goal,dac,context,profile,outcome,detail
+nginx,G1-replace-document,rootown,worker,P0,BLOCKED,http=200 G_RESULT=BLOCKED uid=969
+nginx,G1-replace-document,rootown,master,P0,ACHIEVED,http=200 G_RESULT=ALLOWED via=direct uid=0
+nginx,G1-replace-document,labweb,worker,P0,ACHIEVED,http=200 G_RESULT=ALLOWED via=direct uid=969
+nginx,G1-replace-document,labweb,master,P0,ACHIEVED,http=200 G_RESULT=ALLOWED via=direct uid=0
+nginx,G2-read-app-secret,needed-by-app,worker,P0,ACHIEVED,G_RESULT=ALLOWED uid=969
+nginx,G2-read-app-secret,needed-by-app,master,P0,ACHIEVED,G_RESULT=ALLOWED uid=0
+nginx,G3-replace-config,rootown,worker,P0,BLOCKED,G_RESULT=BLOCKED uid=969
+nginx,G3-replace-config,rootown,master,P0,ACHIEVED,G_RESULT=ALLOWED via=direct uid=0
+nginx,G4-write-logdir,rootown,worker,P0,BLOCKED,G_RESULT=BLOCKED uid=969
+nginx,G4-write-logdir,rootown,master,P0,ACHIEVED,G_RESULT=ALLOWED via=direct uid=0
+nginx,G1-replace-document,rootown,worker,P1,BLOCKED,http=200 G_RESULT=BLOCKED uid=969
+nginx,G1-replace-document,rootown,master,P1,ACHIEVED,http=200 G_RESULT=ALLOWED via=direct uid=0
+nginx,G1-replace-document,labweb,worker,P1,ACHIEVED,http=200 G_RESULT=ALLOWED via=direct uid=969
+nginx,G1-replace-document,labweb,master,P1,ACHIEVED,http=200 G_RESULT=ALLOWED via=direct uid=0
+nginx,G2-read-app-secret,needed-by-app,worker,P1,ACHIEVED,G_RESULT=ALLOWED uid=969
+nginx,G2-read-app-secret,needed-by-app,master,P1,ACHIEVED,G_RESULT=ALLOWED uid=0
+nginx,G3-replace-config,rootown,worker,P1,BLOCKED,G_RESULT=BLOCKED uid=969
+nginx,G3-replace-config,rootown,master,P1,ACHIEVED,G_RESULT=ALLOWED via=proc1root+remount uid=0
+nginx,G4-write-logdir,rootown,worker,P1,BLOCKED,G_RESULT=BLOCKED uid=969
+nginx,G4-write-logdir,rootown,master,P1,ACHIEVED,G_RESULT=ALLOWED via=direct uid=0
+nginx,G1-replace-document,rootown,worker,P2,BLOCKED,http=200 G_RESULT=BLOCKED uid=969
+nginx,G1-replace-document,rootown,master,P2,ACHIEVED,http=200 G_RESULT=ALLOWED via=direct uid=0
+nginx,G1-replace-document,labweb,worker,P2,ACHIEVED,http=200 G_RESULT=ALLOWED via=direct uid=969
+nginx,G1-replace-document,labweb,master,P2,ACHIEVED,http=200 G_RESULT=ALLOWED via=direct uid=0
+nginx,G2-read-app-secret,needed-by-app,worker,P2,ACHIEVED,G_RESULT=ALLOWED uid=969
+nginx,G2-read-app-secret,needed-by-app,master,P2,ACHIEVED,G_RESULT=ALLOWED uid=0
+nginx,G3-replace-config,rootown,worker,P2,BLOCKED,G_RESULT=BLOCKED uid=969
+nginx,G3-replace-config,rootown,master,P2,ACHIEVED,G_RESULT=ALLOWED via=proc1root+remount uid=0
+nginx,G4-write-logdir,rootown,worker,P2,BLOCKED,G_RESULT=BLOCKED uid=969
+nginx,G4-write-logdir,rootown,master,P2,ACHIEVED,G_RESULT=ALLOWED via=direct uid=0
+nginx,G1-replace-document,rootown,worker,P1r,BLOCKED,http=200 G_RESULT=BLOCKED uid=969
+nginx,G1-replace-document,rootown,master,P1r,ACHIEVED,http=200 G_RESULT=ALLOWED via=proc1root+remount uid=0
+nginx,G1-replace-document,labweb,worker,P1r,BLOCKED,http=200 G_RESULT=BLOCKED uid=969
+nginx,G1-replace-document,labweb,master,P1r,ACHIEVED,http=200 G_RESULT=ALLOWED via=proc1root+remount uid=0
+nginx,G2-read-app-secret,needed-by-app,worker,P1r,ACHIEVED,G_RESULT=ALLOWED uid=969
+nginx,G2-read-app-secret,needed-by-app,master,P1r,ACHIEVED,G_RESULT=ALLOWED uid=0
+nginx,G3-replace-config,rootown,worker,P1r,BLOCKED,G_RESULT=BLOCKED uid=969
+nginx,G3-replace-config,rootown,master,P1r,ACHIEVED,G_RESULT=ALLOWED via=proc1root+remount uid=0
+nginx,G4-write-logdir,rootown,worker,P1r,BLOCKED,G_RESULT=BLOCKED uid=969
+nginx,G4-write-logdir,rootown,master,P1r,ACHIEVED,G_RESULT=ALLOWED via=direct uid=0
+nginx,G1-replace-document,rootown,worker,P1c,BLOCKED,http=200 G_RESULT=BLOCKED uid=969
+nginx,G1-replace-document,rootown,master,P1c,BLOCKED,http=200 G_RESULT=BLOCKED uid=969
+nginx,G1-replace-document,labweb,worker,P1c,BLOCKED,http=200 G_RESULT=BLOCKED uid=969
+nginx,G1-replace-document,labweb,master,P1c,BLOCKED,http=200 G_RESULT=BLOCKED uid=969
+nginx,G2-read-app-secret,needed-by-app,worker,P1c,ACHIEVED,G_RESULT=ALLOWED uid=969
+nginx,G2-read-app-secret,needed-by-app,master,P1c,ACHIEVED,G_RESULT=ALLOWED uid=0
+nginx,G3-replace-config,rootown,worker,P1c,BLOCKED,G_RESULT=BLOCKED uid=969
+nginx,G3-replace-config,rootown,master,P1c,BLOCKED,G_RESULT=BLOCKED uid=969
+nginx,G4-write-logdir,rootown,worker,P1c,BLOCKED,G_RESULT=BLOCKED uid=969
+nginx,G4-write-logdir,rootown,master,P1c,ACHIEVED,G_RESULT=ALLOWED via=direct uid=0
+nginx,G1-replace-document,rootown,worker,P4,BLOCKED,http=200 G_RESULT=BLOCKED uid=969
+nginx,G1-replace-document,rootown,master,P4,ACHIEVED,http=200 G_RESULT=ALLOWED via=direct uid=0
+nginx,G1-replace-document,labweb,worker,P4,ACHIEVED,http=200 G_RESULT=ALLOWED via=direct uid=969
+nginx,G1-replace-document,labweb,master,P4,ACHIEVED,http=200 G_RESULT=ALLOWED via=direct uid=969
+nginx,G2-read-app-secret,needed-by-app,worker,P4,ACHIEVED,G_RESULT=ALLOWED uid=969
+nginx,G2-read-app-secret,needed-by-app,master,P4,ACHIEVED,G_RESULT=ALLOWED uid=0
+nginx,G3-replace-config,rootown,worker,P4,BLOCKED,G_RESULT=BLOCKED uid=969
+nginx,G3-replace-config,rootown,master,P4,BLOCKED,G_RESULT=BLOCKED uid=969
+nginx,G4-write-logdir,rootown,worker,P4,BLOCKED,G_RESULT=BLOCKED uid=969
+nginx,G4-write-logdir,rootown,master,P4,ACHIEVED,G_RESULT=ALLOWED via=direct uid=0
+nginx,G1-replace-document,rootown,worker,P5,BLOCKED,http=200 G_RESULT=BLOCKED uid=969
+nginx,G1-replace-document,rootown,master,P5,BLOCKED,http=200 G_RESULT=BLOCKED uid=969
+nginx,G1-replace-document,labweb,worker,P5,BLOCKED,http=200 G_RESULT=BLOCKED uid=969
+nginx,G1-replace-document,labweb,master,P5,BLOCKED,http=200 G_RESULT=BLOCKED uid=969
+nginx,G2-read-app-secret,needed-by-app,worker,P5,ACHIEVED,G_RESULT=ALLOWED uid=969
+nginx,G2-read-app-secret,needed-by-app,master,P5,ACHIEVED,G_RESULT=ALLOWED uid=0
+nginx,G3-replace-config,rootown,worker,P5,BLOCKED,G_RESULT=BLOCKED uid=969
+nginx,G3-replace-config,rootown,master,P5,BLOCKED,G_RESULT=BLOCKED uid=969
+nginx,G4-write-logdir,rootown,worker,P5,BLOCKED,G_RESULT=BLOCKED uid=969
+nginx,G4-write-logdir,rootown,master,P5,ACHIEVED,G_RESULT=ALLOWED via=direct uid=0
+nginx,G1-replace-document,rootown,worker,P6,BLOCKED,http=200 G_RESULT=BLOCKED uid=969
+nginx,G1-replace-document,rootown,master,P6,BLOCKED,http=200 G_RESULT=BLOCKED uid=969
+nginx,G1-replace-document,labweb,worker,P6,BLOCKED,http=200 G_RESULT=BLOCKED uid=969
+nginx,G1-replace-document,labweb,master,P6,BLOCKED,http=200 G_RESULT=BLOCKED uid=969
+nginx,G2-read-app-secret,needed-by-app,worker,P6,ACHIEVED,G_RESULT=ALLOWED uid=969
+nginx,G2-read-app-secret,needed-by-app,master,P6,ACHIEVED,G_RESULT=ALLOWED uid=0
+nginx,G3-replace-config,rootown,worker,P6,BLOCKED,G_RESULT=BLOCKED uid=969
+nginx,G3-replace-config,rootown,master,P6,BLOCKED,G_RESULT=BLOCKED uid=969
+nginx,G4-write-logdir,rootown,worker,P6,BLOCKED,G_RESULT=BLOCKED uid=969
+nginx,G4-write-logdir,rootown,master,P6,BLOCKED,G_RESULT=BLOCKED uid=969
+redis,G1-app-guard,-,server,P4,INFO,default refuses CONFIG SET dir: ERR CONFIG SET failed (possibly related to argument 'dir') - can't set protected config
+redis,G1-write-outside-datadir,own,server,P0,ACHIEVED,config_set_dir=OK config_set_dbfilename=OK save=OK diagnostic=redis-P0-own.journal.txt server_pid=41840
+redis,G1-write-outside-datadir,own,process,P0,ACHIEVED,G_RESULT=ALLOWED via=direct uid=968
+redis,G1-write-outside-datadir,root,server,P0,BLOCKED,config_set_dir=OK config_set_dbfilename=OK save=ERR diagnostic=redis-P0-root.journal.txt server_pid=41840
+redis,G1-write-outside-datadir,root,process,P0,BLOCKED,G_RESULT=BLOCKED uid=968
+redis,G1-write-outside-datadir,own,server,P1,ACHIEVED,config_set_dir=OK config_set_dbfilename=OK save=OK diagnostic=redis-P1-own.journal.txt server_pid=42046
+redis,G1-write-outside-datadir,own,process,P1,ACHIEVED,G_RESULT=ALLOWED via=direct uid=968
+redis,G1-write-outside-datadir,root,server,P1,BLOCKED,config_set_dir=OK config_set_dbfilename=OK save=ERR diagnostic=redis-P1-root.journal.txt server_pid=42046
+redis,G1-write-outside-datadir,root,process,P1,BLOCKED,G_RESULT=BLOCKED uid=968
+redis,G1-write-outside-datadir,own,server,P2,ACHIEVED,config_set_dir=OK config_set_dbfilename=OK save=OK diagnostic=redis-P2-own.journal.txt server_pid=42260
+redis,G1-write-outside-datadir,own,process,P2,ACHIEVED,G_RESULT=ALLOWED via=direct uid=968
+redis,G1-write-outside-datadir,root,server,P2,BLOCKED,config_set_dir=OK config_set_dbfilename=OK save=ERR diagnostic=redis-P2-root.journal.txt server_pid=42260
+redis,G1-write-outside-datadir,root,process,P2,BLOCKED,G_RESULT=BLOCKED uid=968
+redis,G1-write-outside-datadir,own,server,P1d,BLOCKED,config_set_dir=OK config_set_dbfilename=OK save=ERR diagnostic=redis-P1d-own.journal.txt server_pid=42474
+redis,G1-write-outside-datadir,own,process,P1d,BLOCKED,G_RESULT=BLOCKED uid=968
+redis,G1-write-outside-datadir,root,server,P1d,BLOCKED,config_set_dir=OK config_set_dbfilename=OK save=ERR diagnostic=redis-P1d-root.journal.txt server_pid=42474
+redis,G1-write-outside-datadir,root,process,P1d,BLOCKED,G_RESULT=BLOCKED uid=968
+redis,G1-write-outside-datadir,own,server,P4,ACHIEVED,config_set_dir=OK config_set_dbfilename=OK save=OK diagnostic=redis-P4-own.journal.txt server_pid=42713
+redis,G1-write-outside-datadir,own,process,P4,ACHIEVED,G_RESULT=ALLOWED via=direct uid=968
+redis,G1-write-outside-datadir,root,server,P4,BLOCKED,config_set_dir=OK config_set_dbfilename=OK save=ERR diagnostic=redis-P4-root.journal.txt server_pid=42713
+redis,G1-write-outside-datadir,root,process,P4,BLOCKED,G_RESULT=BLOCKED uid=968
+redis,G1-write-outside-datadir,own,server,P6,BLOCKED,config_set_dir=OK config_set_dbfilename=OK save=ERR diagnostic=redis-P6-own.journal.txt server_pid=42928
+redis,G1-write-outside-datadir,own,process,P6,BLOCKED,G_RESULT=BLOCKED uid=968
+redis,G1-write-outside-datadir,root,server,P6,BLOCKED,config_set_dir=OK config_set_dbfilename=OK save=ERR diagnostic=redis-P6-root.journal.txt server_pid=42928
+redis,G1-write-outside-datadir,root,process,P6,BLOCKED,G_RESULT=BLOCKED uid=968
+postgresql,G1-write-outside-datadir,own,server,P0,ACHIEVED,
+postgresql,G1-write-outside-datadir,own,process,P0,ACHIEVED,G_RESULT=ALLOWED via=direct uid=967
+postgresql,G1-write-outside-datadir,root,server,P0,BLOCKED,ERROR:  could not open file "/var/lib/systemd-lab/pg-g1-v005-root/g1-v005.txt" for writing: Permission denied HINT:  COPY TO instructs the PostgreSQL server process to write a file. You may want a client-side facility such as psql's \copy.
+postgresql,G1-write-outside-datadir,root,process,P0,BLOCKED,G_RESULT=BLOCKED uid=967
+postgresql,G2-run-program,needed-by-app,server,P0,ACHIEVED,labpg
+postgresql,G1-write-outside-datadir,own,server,P1,ACHIEVED,
+postgresql,G1-write-outside-datadir,own,process,P1,ACHIEVED,G_RESULT=ALLOWED via=direct uid=967
+postgresql,G1-write-outside-datadir,root,server,P1,BLOCKED,ERROR:  could not open file "/var/lib/systemd-lab/pg-g1-v005-root/g1-v005.txt" for writing: Permission denied HINT:  COPY TO instructs the PostgreSQL server process to write a file. You may want a client-side facility such as psql's \copy.
+postgresql,G1-write-outside-datadir,root,process,P1,BLOCKED,G_RESULT=BLOCKED uid=967
+postgresql,G2-run-program,needed-by-app,server,P1,ACHIEVED,labpg
+postgresql,G1-write-outside-datadir,own,server,P2,ACHIEVED,
+postgresql,G1-write-outside-datadir,own,process,P2,ACHIEVED,G_RESULT=ALLOWED via=direct uid=967
+postgresql,G1-write-outside-datadir,root,server,P2,BLOCKED,ERROR:  could not open file "/var/lib/systemd-lab/pg-g1-v005-root/g1-v005.txt" for writing: Permission denied HINT:  COPY TO instructs the PostgreSQL server process to write a file. You may want a client-side facility such as psql's \copy.
+postgresql,G1-write-outside-datadir,root,process,P2,BLOCKED,G_RESULT=BLOCKED uid=967
+postgresql,G2-run-program,needed-by-app,server,P2,ACHIEVED,labpg
+postgresql,G1-write-outside-datadir,own,server,P1d,BLOCKED,ERROR:  could not open file "/var/lib/systemd-lab/pg-g1-v005-own/g1-v005.txt" for writing: Read-only file system
+postgresql,G1-write-outside-datadir,own,process,P1d,BLOCKED,G_RESULT=BLOCKED uid=967
+postgresql,G1-write-outside-datadir,root,server,P1d,BLOCKED,ERROR:  could not open file "/var/lib/systemd-lab/pg-g1-v005-root/g1-v005.txt" for writing: Read-only file system
+postgresql,G1-write-outside-datadir,root,process,P1d,BLOCKED,G_RESULT=BLOCKED uid=967
+postgresql,G2-run-program,needed-by-app,server,P1d,ACHIEVED,labpg
+postgresql,G1-write-outside-datadir,own,server,P4,ACHIEVED,
+postgresql,G1-write-outside-datadir,own,process,P4,ACHIEVED,G_RESULT=ALLOWED via=direct uid=967
+postgresql,G1-write-outside-datadir,root,server,P4,BLOCKED,ERROR:  could not open file "/var/lib/systemd-lab/pg-g1-v005-root/g1-v005.txt" for writing: Permission denied HINT:  COPY TO instructs the PostgreSQL server process to write a file. You may want a client-side facility such as psql's \copy.
+postgresql,G1-write-outside-datadir,root,process,P4,BLOCKED,G_RESULT=BLOCKED uid=967
+postgresql,G2-run-program,needed-by-app,server,P4,ACHIEVED,labpg
+postgresql,G1-write-outside-datadir,own,server,P6,BLOCKED,ERROR:  could not open file "/var/lib/systemd-lab/pg-g1-v005-own/g1-v005.txt" for writing: Read-only file system
+postgresql,G1-write-outside-datadir,own,process,P6,BLOCKED,G_RESULT=BLOCKED uid=967
+postgresql,G1-write-outside-datadir,root,server,P6,BLOCKED,ERROR:  could not open file "/var/lib/systemd-lab/pg-g1-v005-root/g1-v005.txt" for writing: Read-only file system
+postgresql,G1-write-outside-datadir,root,process,P6,BLOCKED,G_RESULT=BLOCKED uid=967
+postgresql,G2-run-program,needed-by-app,server,P6,ACHIEVED,labpg

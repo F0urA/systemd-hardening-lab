@@ -1,0 +1,22 @@
+# /etc/systemd/system/slab-redis.service
+[Unit]
+Description=systemd hardening experiment Redis
+After=network.target
+
+[Service]
+Type=simple
+User=labredis
+Group=labredis
+
+ExecStart=/usr/sbin/redis-server /etc/systemd-lab/redis.conf
+Restart=no
+
+CPUAccounting=yes
+MemoryAccounting=yes
+
+[Install]
+WantedBy=multi-user.target
+
+# /etc/systemd/system/slab-redis.service.d/80-affinity-v005.conf
+[Service]
+CPUAffinity=0

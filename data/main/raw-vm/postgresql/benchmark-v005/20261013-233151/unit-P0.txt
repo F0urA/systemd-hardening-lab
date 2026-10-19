@@ -1,0 +1,26 @@
+# /etc/systemd/system/slab-postgresql.service
+[Unit]
+Description=systemd hardening experiment PostgreSQL
+After=network.target
+
+[Service]
+Type=simple
+User=labpg
+Group=labpg
+
+ExecStart=/usr/bin/postgres -D /var/lib/systemd-lab/postgresql
+ExecReload=/bin/kill -HUP $MAINPID
+
+KillSignal=SIGINT
+TimeoutStopSec=60
+Restart=no
+
+CPUAccounting=yes
+MemoryAccounting=yes
+
+[Install]
+WantedBy=multi-user.target
+
+# /etc/systemd/system/slab-postgresql.service.d/80-affinity-v005.conf
+[Service]
+CPUAffinity=0

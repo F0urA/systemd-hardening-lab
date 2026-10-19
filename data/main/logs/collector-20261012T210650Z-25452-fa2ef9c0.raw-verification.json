@@ -1,0 +1,10 @@
+{
+  "manifest": "<OPERATOR_ROOT>\\results\\raw-vm\\SHA256-CLOSED-RESULTS.txt",
+  "root": "<OPERATOR_ROOT>\\results\\raw-vm",
+  "listed_files": 1827,
+  "missing": [],
+  "mismatched": [],
+  "unsafe": [],
+  "unlisted_local_files": [],
+  "verified": true
+}

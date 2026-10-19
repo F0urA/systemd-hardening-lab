@@ -1,0 +1,25 @@
+================================================================
+SERVICE nginx: candidates P0 P4 P5 P6
+  throughput non-inferiority not established: P4 P5 P6
+  RULE A (min Exposure): P4
+         H  admissible               RULE B
+         2  P0                       P0
+         5  P0                       P0
+        10  P0                       P0
+        15  P0                       P0
+================================================================
+SERVICE redis: candidates P0 P4 P6
+  RULE A (min Exposure): P4
+         H  admissible               RULE B
+         2  P0                       P0
+         5  P0 P4 P6                 P6
+        10  P0 P4 P6                 P6
+        15  P0 P4 P6                 P6
+================================================================
+SERVICE postgresql: candidates P0 P4 P6
+  RULE A (min Exposure): P4
+         H  admissible               RULE B
+         2  P0                       P0
+         5  P0 P4 P6                 P6
+        10  P0 P4 P6                 P6
+        15  P0 P4 P6                 P6

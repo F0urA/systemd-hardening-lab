@@ -1,0 +1,28 @@
+STAGE=R1-nginx RC=0 END=2026-10-12T19:42:24+00:00 RESULT_DIR=/root/article-experiment/20261012-v005/results_v005/nginx/benchmark-v005/20261012-175912
+CPU_BUDGET_H=15%: PASS_CONDITIONAL
+NOTE=One-sided t inference assumes approximately normal, independent block contrasts.
+NOTE=Do not replace source observations, including outliers, in the primary analysis.
+
+===== CLEANUP AND RESTORE P4 =====
+RESTORE_P4 nginx=PASS
+RESULT_DIR=/root/article-experiment/20261012-v005/results_v005/nginx/benchmark-v005/20261012-175912
+CSV=/root/article-experiment/20261012-v005/results_v005/nginx/benchmark-v005/20261012-175912/results.csv
+STAGE=R2-redis RC=0 END=2026-10-12T21:02:19+00:00 RESULT_DIR=/root/article-experiment/20261012-v005/results_v005/redis/benchmark-v005/20261012-194224
+CPU_BUDGET_H=15%: PASS_CONDITIONAL
+NOTE=One-sided t inference assumes approximately normal, independent block contrasts.
+NOTE=Do not replace source observations, including outliers, in the primary analysis.
+
+===== CLEANUP AND RESTORE P4 =====
+RESTORE_P4 redis=PASS
+RESULT_DIR=/root/article-experiment/20261012-v005/results_v005/redis/benchmark-v005/20261012-194224
+CSV=/root/article-experiment/20261012-v005/results_v005/redis/benchmark-v005/20261012-194224/results.csv
+STAGE=R3-postgresql RC=2 END=2026-10-12T21:58:26+00:00 RESULT_DIR=/root/article-experiment/20261012-v005/results_v005/postgresql/benchmark-v005/20261012-210220
+
+===== BLOCK=8 ORDER=6 PROFILE=P1d =====
+FUNCTIONAL FAILURE: P1d
+
+===== CLEANUP AND RESTORE P4 =====
+RESTORE_P4 postgresql=FAIL -- inspect the unit and the journal
+RESULT_DIR=/root/article-experiment/20261012-v005/results_v005/postgresql/benchmark-v005/20261012-210220
+CSV=/root/article-experiment/20261012-v005/results_v005/postgresql/benchmark-v005/20261012-210220/results.csv
+ERROR: slab-postgresql.service is not active

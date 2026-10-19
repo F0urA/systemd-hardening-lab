@@ -1,0 +1,21 @@
+service    profile  F pairs        L95       U95d  cost_up%  g  s  emicro  expos   n  status          series
+nginx      P0       1   120    624.386    624.386     0.000  0  0   0.000    9.6   0  BASELINE        20261012-175912+20261013-221436
+nginx      P1c      1    60    384.324    697.303     1.908  2  4   0.316    6.6   7  NON_INFERIOR    20261012-175912
+nginx      P4       1   120   -144.900     29.667     6.661  1  1   0.789    2.8  21  INCONCLUSIVE    20261012-175912+20261013-221436
+nginx      P5       1   120   -242.938    -63.176     7.569  2  4   0.789    2.8  22  LOSS_EXCEEDS    20261012-175912+20261013-221436
+nginx      P6       1   120   -134.741     32.326     6.558  3  5   0.789    2.8  23  INCONCLUSIVE    20261012-175912+20261013-221436
+
+NOTE mandatory contracts: /root/article-experiment/20261012-v005/post-analysis/raw-vm/functional-v005/20261012-104934/contract.csv supplies 22 verdicts
+NOTE nginx: series 20261012-175912+20261013-221436 supplies P0 P4 P5 P6; bounds at the level 0.00625
+NOTE nginx: series 20261012-175912 supplies P0 P1c P4 P5 P6 (unless supplied by an earlier series); bounds at the level 0.00625
+NOTE nginx: 4 goals in 7 scenario cells are achievable under P0
+NOTE nginx P1c: master context emicro_36=0.514, required and still allowed: PRIV-1 PRIV-2
+NOTE nginx P1c: goals not blocked in every cell: G2-read-app-secret G4-write-logdir
+NOTE nginx P4: master context emicro_36=0.829, required and still allowed: PRIV-1 PRIV-2
+NOTE nginx P4: goals not blocked in every cell: G1-replace-document G2-read-app-secret G4-write-logdir
+NOTE nginx P5: master context emicro_36=0.829, required and still allowed: PRIV-1 PRIV-2
+NOTE nginx P5: goals not blocked in every cell: G2-read-app-secret G4-write-logdir
+NOTE nginx P6: master context emicro_36=0.829, required and still allowed: PRIV-1 PRIV-2
+NOTE nginx P6: goals not blocked in every cell: G2-read-app-secret
+CSV=/root/article-experiment/20261012-v005/post-analysis/analysis-final/R1-nginx-criteria.csv
+NEXT: python3 select_profile_v005.py /root/article-experiment/20261012-v005/post-analysis/analysis-final/R1-nginx-criteria.csv --budgets 2,5,10,15

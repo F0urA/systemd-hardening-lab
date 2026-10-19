@@ -1,0 +1,16 @@
+{
+  "schema": "v005-parent-closed-series-check-1",
+  "stage": "R5-nginx-light",
+  "directory": "raw-vm/nginx/benchmark-v005/20261013-204356",
+  "method": "unchanged analyze_v005.validate() called directly, without main()",
+  "status": "PASS_CLOSED_SERIES_VALIDATION",
+  "rows": 240,
+  "accepted_native_records": 240,
+  "completed_requests": 48000000,
+  "native_failed": 0,
+  "native_limitations": [],
+  "results_sha256": "3a0fa4f51e1f65c029b663b39c6042a12796f1061c5d0d72e7638c23ede2ecd7",
+  "invalid_attempts": 16,
+  "formal_statistical_look_executed": false,
+  "whole_queue_sha256_verified": false
+}

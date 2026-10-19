@@ -1,0 +1,150 @@
+2026-10-12T10:37:46+00:00
+NAME="ALT Server"
+VERSION="11.1"
+ID=altlinux
+VERSION_ID=11.1
+PRETTY_NAME="ALT Server 11.1 (Mendelevium)"
+ANSI_COLOR="1;33"
+CPE_NAME="cpe:/o:alt:server:11.1"
+BUILD_ID="ALT Server 11.1"
+ALT_BRANCH_ID="p11"
+HOME_URL="https://basealt.ru/"
+BUG_REPORT_URL="https://bugs.altlinux.org/"
+DOCUMENTATION_URL="https://docs.altlinux.org/"
+SUPPORT_URL="https://support.basealt.ru/"
+VARIANT_ID=edition_server
+VARIANT="ALT Server"
+LOGO=alt-server-logo
+Linux SRV 6.12.74-6.12-alt1 #1 SMP PREEMPT_DYNAMIC Fri Mar  6 13:49:54 UTC 2026 x86_64 GNU/Linux
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           48 bits physical, 48 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  4
+On-line CPU(s) list:                     0-3
+Vendor ID:                               AuthenticAMD
+Model name:                              AMD Ryzen 5 2600 Six-Core Processor
+BIOS Model name:                           CPU @ 0.0GHz
+BIOS CPU family:                         0
+CPU family:                              23
+Model:                                   8
+Thread(s) per core:                      1
+Core(s) per socket:                      4
+Socket(s):                               1
+Stepping:                                2
+BogoMIPS:                                6787.24
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy cr8_legacy abm sse4a misalignsse 3dnowprefetch ssbd vmmcall fsgsbase bmi1 avx2 bmi2 rdseed adx clflushopt sha_ni arat
+Hypervisor vendor:                       KVM
+Virtualization type:                     full
+L1d cache:                               128 KiB (4 instances)
+L1i cache:                               256 KiB (4 instances)
+L2 cache:                                2 MiB (4 instances)
+L3 cache:                                64 MiB (4 instances)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0-3
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Indirect target selection: Not affected
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Not affected
+Vulnerability Mmio stale data:           Not affected
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Mitigation; untrained return thunk; SMT disabled
+Vulnerability Spec rstack overflow:      Vulnerable: Safe RET, no microcode
+Vulnerability Spec store bypass:         Not affected
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; Retpolines; STIBP disabled; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Not affected
+systemd 257 (257.9-alt1)
++PAM +AUDIT +SELINUX -APPARMOR +IMA +IPE +SMACK +SECCOMP +GCRYPT +GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +IPTC +KMOD +LIBCRYPTSETUP +LIBCRYPTSETUP_PLUGINS +LIBFDISK +PCRE2 -PWQUALITY +P11KIT +QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD -BPF_FRAMEWORK -BTF +XKBCOMMON +UTMP +SYSVINIT +LIBARCHIVE
+nginx version: nginx/1.30.4
+Redis server v=8.6.5 sha=00000000:0 malloc=jemalloc-5.3.0 bits=64 build=df6a9179d2b77a85
+postgres (PostgreSQL) 14.24
+Python 3.12.7
+strace -- version 6.19-alt1
+Copyright (c) 1991-2025 The strace developers <https://strace.io>.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Optional features enabled: stack-trace=libdw stack-demangle m32-mpers mx32-mpers secontext
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda2        36G  6.5G   28G  20% /
+/dev/sda2        36G  6.5G   28G  20% /
+  UNIT                             LOAD   ACTIVE SUB     DESCRIPTION
+  accounts-daemon.service          loaded active running Accounts Service
+  ahttpd.service                   loaded active running Alterator WWW frontend server
+  alteratord.service               loaded active running Alterator backend server
+  avahi-daemon.service             loaded active running Avahi mDNS/DNS-SD Stack
+  bind.service                     loaded active running Berkeley Internet Name Domain (DNS)
+  chronyd.service                  loaded active running NTP client/server
+  colord.service                   loaded active running Manage, Install and Generate Color Profiles
+  crond.service                    loaded active running Vixie Cron Daemon
+  cups.service                     loaded active running CUPS Scheduler
+  dbus.service                     loaded active running D-Bus System Message Bus
+  gdm.service                      loaded active running GNOME Display Manager
+  lab-proc-target@labpg.service    loaded active running systemd hardening same-UID PROC target for labpg
+  lab-proc-target@labredis.service loaded active running systemd hardening same-UID PROC target for labredis
+  lab-proc-target@labweb.service   loaded active running systemd hardening same-UID PROC target for labweb
+  lab-proc-target@root.service     loaded active running systemd hardening same-UID PROC target for root
+  multipathd.service               loaded active running Device-Mapper Multipath Device Controller
+  NetworkManager.service           loaded active running Network Manager
+  polkit.service                   loaded active running Authorization Manager
+  postfix.service                  loaded active running Postfix Mail Transport Agent
+  power-profiles-daemon.service    loaded active running Power Profiles daemon
+  rpcbind.service                  loaded active running RPC Bind
+  rtkit-daemon.service             loaded active running RealtimeKit Scheduling Policy Service
+  slab-nginx.service               loaded active running systemd hardening experiment Nginx
+  slab-postgresql.service          loaded active running systemd hardening experiment PostgreSQL
+  slab-redis.service               loaded active running systemd hardening experiment Redis
+  sshd.service                     loaded active running OpenSSH server daemon
+  systemd-journald.service         loaded active running Journal Service
+  systemd-logind.service           loaded active running User Login Management
+  systemd-udevd.service            loaded active running Rule-based Manager for Device Events and Files
+  systemd-userdbd.service          loaded active running User Database Manager
+  upower.service                   loaded active running Daemon for power management
+  user@0.service                   loaded active running User Manager for UID 0
+  user@47.service                  loaded active running User Manager for UID 47
+  wpa_supplicant.service           loaded active running WPA supplicant
+
+Legend: LOAD   -> Reflects whether the unit definition was properly loaded.
+        ACTIVE -> The high-level unit activation state, i.e. generalization of SUB.
+        SUB    -> The low-level unit activation state, values depend on unit type.
+
+34 loaded units listed.
+/root/systemd-lab-results
+/root/systemd-lab-results/postgresql
+/root/systemd-lab-results/postgresql/P4
+/root/systemd-lab-results/postgresql/profiles
+/root/systemd-lab-results/postgresql/benchmark
+/root/systemd-lab-results/postgresql/P0
+/root/systemd-lab-results/attack-scenarios
+/root/systemd-lab-results/attack-scenarios/A2
+/root/systemd-lab-results/attack-scenarios/A1
+/root/systemd-lab-results/attack-scenarios/A2-P5
+/root/systemd-lab-results/selection
+/root/systemd-lab-results/selection/A3-20261008-174342
+/root/systemd-lab-results/audit
+/root/systemd-lab-results/calibration
+/root/systemd-lab-results/validation
+/root/systemd-lab-results/capabilities
+/root/systemd-lab-results/context
+/root/systemd-lab-results/nginx
+/root/systemd-lab-results/nginx/P3
+/root/systemd-lab-results/nginx/P4
+/root/systemd-lab-results/nginx/profiles
+/root/systemd-lab-results/nginx/P1
+/root/systemd-lab-results/nginx/P2
+/root/systemd-lab-results/nginx/P5
+/root/systemd-lab-results/nginx/benchmark
+/root/systemd-lab-results/nginx/P0
+/root/systemd-lab-results/extended
+/root/systemd-lab-results/platform
+/root/systemd-lab-results/redis
+/root/systemd-lab-results/redis/P4
+/root/systemd-lab-results/redis/profiles
+/root/systemd-lab-results/redis/benchmark
+/root/systemd-lab-results/redis/P0

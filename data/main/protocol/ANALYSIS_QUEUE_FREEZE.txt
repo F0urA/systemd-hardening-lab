@@ -1,0 +1,22 @@
+FROZEN ON WINDOWS: 2026-10-12 20:31 UTC, while primary R2 was still running.
+Archive: v005-analysis-queue-frozen.zip
+SHA256: B5EBCB3217ABC81AA3A3FF51A36C03DE634979E603274559C2C92B436A7ACE63
+
+analyze_v005.py:
+0C6B4A18A1A97C34F490020FB1FF6313F7CFB8141FAACA8035DA3F4055D3D238
+driver_extensions_v005.sh:
+4F06DFFCD8EDA0A715F9FA0B1E6BC36FBCAC87A6AC2D35601ADEBEBB815AA43B
+driver_post_primary_v005.sh:
+C5CFA0681E3AA3D80F85B99E2ED5D8AF4942C0751CA78AF9F6740FA340DDB00F
+analyze_memcached_v005.py:
+5D84E138B6D39F3B6CEB9A9DBD380E4754B8AF933FCEF273F083E135273B53BE
+
+15 synthetic orchestration tests PASS; GNU shell syntax and AST PASS.
+7 checksum-verifier tests PASS; closed R1 download: all 966 files matched.
+No analysis of real primary/extension bounds in this freeze. Retrospective archive
+bounds are separate; R1 inspection/descriptive summary was already known.
+First formal look is blocked until the primary queue has its final marker.
+Frozen statistical routines/thresholds unchanged. No CPU extension trigger.
+Quiet native Redis output does not expose a completed-request count; record that
+limitation instead of claiming that assigned OPS independently proves completion.
+No independent public preregistration; no GitHub changes.

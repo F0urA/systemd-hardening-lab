@@ -1,0 +1,13 @@
+======================================================================================================================
+SERIES R1: 60 blocks, rps, margin 5 %, family of 4 candidates, mean P0 12158.7
+  cand   ratio    mean d       L95       U95  status           Bonf L Bonf             boot L    boot U  min d,%    cost  cost U95  cost Bonf
+  P1c    99.4%     540.8     439.3     642.3  NON_INFERIOR      401.1 NON_INFERIOR      442.9     640.9      1.4   +0.6%     +1.4%      +1.8%
+  P4     94.5%     -57.2    -161.3      46.8  INCONCLUSIVE     -200.4 not shown        -158.9      44.0      6.3   +5.9%     +6.8%      +7.2%
+  P5     93.8%    -141.2    -241.3     -41.2  LOSS_EXCEEDS     -278.9 not shown        -238.9     -41.6      7.0   +6.7%     +7.6%      +7.9%
+  P6     94.7%     -35.7    -130.6      59.2  INCONCLUSIVE     -166.4 not shown        -130.1      56.9      6.1   +5.7%     +6.5%      +6.9%
+  direct paired contrasts between protecting profiles (A - B per block):
+    P1c-P5: mean +682.0 rps (+5.98% of P5), two-sided 95% CI [+569.6, +794.4]
+    P1c-P6: mean +576.5 rps (+5.01% of P6), two-sided 95% CI [+454.9, +698.2]
+
+NOTE=L95 > 0 is the admission condition; L95 <= 0 alone does not show that the loss exceeds the margin.
+NOTE=bootstrap: 20000 resamples of blocks, seed 20261011.

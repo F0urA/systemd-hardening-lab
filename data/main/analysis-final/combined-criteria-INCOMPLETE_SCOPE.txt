@@ -1,0 +1,58 @@
+service    profile  F pairs        L95       U95d  cost_up%  g  s  emicro  expos   n  status          series
+nginx      P0       1   120    624.386    624.386     0.000  0  0   0.000    9.6   0  BASELINE        20261012-175912+20261013-221436
+nginx      P1       1    60    505.923    810.561     0.865  0  0   0.316    8.7   5  NON_INFERIOR    20261013-204356
+nginx      P2       1    60    374.467    635.240     1.978  0  0   0.368    7.3   9  NON_INFERIOR    20261013-204356
+nginx      P1r      1    60    465.522    771.165     1.194  0  1   0.316    8.7   6  NON_INFERIOR    20261013-204356
+nginx      P1c      1    60    371.536    710.091     2.018  2  4   0.316    6.6   7  NON_INFERIOR    20261012-175912
+nginx      P4       1   120   -151.824     36.591     6.725  1  1   0.789    2.8  21  INCONCLUSIVE    20261012-175912+20261013-221436
+nginx      P5       1   120   -250.068    -56.046     7.636  2  4   0.789    2.8  22  LOSS_EXCEEDS    20261012-175912+20261013-221436
+nginx      P6       1   120   -141.367     38.952     6.619  3  5   0.789    2.8  23  INCONCLUSIVE    20261012-175912+20261013-221436
+redis      P0       1    20   4413.689   4413.689     0.000  0  0   0.000    9.2   0  BASELINE        20261012-194224
+redis      P1       1    20   2955.321   4756.278     1.585  0  0   0.316    8.4   5  NON_INFERIOR    20261012-194224
+redis      P2       1    20   1232.567   2700.134     3.762  0  0   0.368    6.9   9  NON_INFERIOR    20261012-194224
+redis      P1d      1    20   3068.486   5075.060     1.626  1  2   0.316    8.3   7  NON_INFERIOR    20261012-194224
+redis      P4       1    20   1803.884   3146.433     3.069  0  0   0.789    2.1  21  NON_INFERIOR    20261012-194224
+redis      P6       1    20    831.601   2925.610     4.093  1  2   0.789    2.1  23  NON_INFERIOR    20261012-194224
+postgresql P0       1    20     47.525     47.525     0.000  0  0   0.000    9.2   0  BASELINE        20261013-193448+20261013-233151
+postgresql P1       1    10      2.890    145.608     4.176  0  0   0.316    8.4   5  NON_INFERIOR    20261013-193448
+postgresql P2       1    20      5.043    104.549     2.965  0  0   0.368    6.9   9  NON_INFERIOR    20261013-193448+20261013-233151
+postgresql P1d      1    10     16.817    149.454     1.161  1  2   0.316    8.3   7  NON_INFERIOR    20261013-193448
+postgresql P4       1    20    -77.264    162.669     5.544  0  0   0.789    2.1  21  INCONCLUSIVE    20261013-193448+20261013-233151
+postgresql P6       1    20    -32.467    131.320     2.075  1  2   0.789    2.1  23  INCONCLUSIVE    20261013-193448+20261013-233151
+
+NOTE mandatory contracts: /root/article-experiment/20261012-v005/post-analysis/raw-vm/functional-v005/20261012-104934/contract.csv supplies 22 verdicts
+NOTE nginx: series 20261012-175912+20261013-221436 supplies P0 P4 P5 P6; bounds at the level 0.00357143
+NOTE nginx: series 20261012-175912 supplies P0 P1c; bounds at the level 0.00357143
+NOTE redis: series 20261012-194224 supplies P0 P1 P2 P1d P4 P6; bounds at the level 0.005
+NOTE postgresql: series 20261013-193448+20261013-233151 supplies P0 P2 P4 P6; bounds at the level 0.005
+NOTE postgresql: series 20261013-193448 supplies P0 P1 P1d; bounds at the level 0.005
+NOTE nginx: series 20261013-204356 supplies P0 P1 P2 P1r; bounds at the level 0.00357143
+NOTE nginx: 4 goals in 7 scenario cells are achievable under P0
+NOTE nginx P1: master context emicro_36=0.143, required and still allowed: PRIV-1 PRIV-2
+NOTE nginx P1: goals not blocked in every cell: G1-replace-document G2-read-app-secret G3-replace-config G4-write-logdir
+NOTE nginx P2: master context emicro_36=0.286, required and still allowed: PRIV-1 PRIV-2
+NOTE nginx P2: goals not blocked in every cell: G1-replace-document G2-read-app-secret G3-replace-config G4-write-logdir
+NOTE nginx P1r: master context emicro_36=0.143, required and still allowed: PRIV-1 PRIV-2
+NOTE nginx P1r: goals not blocked in every cell: G1-replace-document G2-read-app-secret G3-replace-config G4-write-logdir
+NOTE nginx P1c: master context emicro_36=0.514, required and still allowed: PRIV-1 PRIV-2
+NOTE nginx P1c: goals not blocked in every cell: G2-read-app-secret G4-write-logdir
+NOTE nginx P4: master context emicro_36=0.829, required and still allowed: PRIV-1 PRIV-2
+NOTE nginx P4: goals not blocked in every cell: G1-replace-document G2-read-app-secret G4-write-logdir
+NOTE nginx P5: master context emicro_36=0.829, required and still allowed: PRIV-1 PRIV-2
+NOTE nginx P5: goals not blocked in every cell: G2-read-app-secret G4-write-logdir
+NOTE nginx P6: master context emicro_36=0.829, required and still allowed: PRIV-1 PRIV-2
+NOTE nginx P6: goals not blocked in every cell: G2-read-app-secret
+NOTE redis: 1 goals in 2 scenario cells are achievable under P0
+NOTE redis P1: goals not blocked in every cell: G1-write-outside-datadir
+NOTE redis P2: goals not blocked in every cell: G1-write-outside-datadir
+NOTE redis P1d: goals not blocked in every cell: -
+NOTE redis P4: goals not blocked in every cell: G1-write-outside-datadir
+NOTE redis P6: goals not blocked in every cell: -
+NOTE postgresql: 2 goals in 3 scenario cells are achievable under P0
+NOTE postgresql P1: goals not blocked in every cell: G1-write-outside-datadir G2-run-program
+NOTE postgresql P2: goals not blocked in every cell: G1-write-outside-datadir G2-run-program
+NOTE postgresql P1d: goals not blocked in every cell: G2-run-program
+NOTE postgresql P4: goals not blocked in every cell: G1-write-outside-datadir G2-run-program
+NOTE postgresql P6: goals not blocked in every cell: G2-run-program
+CSV=/root/article-experiment/20261012-v005/post-analysis/analysis-final/combined-criteria-INCOMPLETE_SCOPE.csv
+NEXT: python3 select_profile_v005.py /root/article-experiment/20261012-v005/post-analysis/analysis-final/combined-criteria-INCOMPLETE_SCOPE.csv --budgets 2,5,10,15

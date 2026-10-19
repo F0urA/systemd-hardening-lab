@@ -1,0 +1,59 @@
+2026-10-13T19:16:56+00:00
+Linux SRV 6.12.74-6.12-alt1 #1 SMP PREEMPT_DYNAMIC Fri Mar  6 13:49:54 UTC 2026 x86_64 GNU/Linux
+NAME="ALT Server"
+VERSION="11.1"
+ID=altlinux
+VERSION_ID=11.1
+PRETTY_NAME="ALT Server 11.1 (Mendelevium)"
+ANSI_COLOR="1;33"
+CPE_NAME="cpe:/o:alt:server:11.1"
+BUILD_ID="ALT Server 11.1"
+ALT_BRANCH_ID="p11"
+HOME_URL="https://basealt.ru/"
+BUG_REPORT_URL="https://bugs.altlinux.org/"
+DOCUMENTATION_URL="https://docs.altlinux.org/"
+SUPPORT_URL="https://support.basealt.ru/"
+VARIANT_ID=edition_server
+VARIANT="ALT Server"
+LOGO=alt-server-logo
+a8cc5a7a-426d-4451-8d4b-95c9b94ee056
+Reference ID    : 00000000 ()
+Stratum         : 0
+Ref time (UTC)  : Thu Jan 01 00:00:00 1970
+System time     : 0.000000001 seconds slow of NTP time
+Last offset     : -0.001973978 seconds
+RMS offset      : 18177.082031250 seconds
+Frequency       : 23.846 ppm slow
+Residual freq   : +0.000 ppm
+Skew            : 0.000 ppm
+Root delay      : 1.000000000 seconds
+Root dispersion : 1.000000000 seconds
+Update interval : 131.1 seconds
+Leap status     : Not synchronised
+net.ipv4.ip_local_port_range = 32768	60999
+net.ipv4.ip_local_reserved_ports = 
+MainPID=96894
+Result=success
+Id=slab-nginx.service
+ActiveState=active
+SubState=running
+
+MainPID=116585
+Result=success
+Id=slab-redis.service
+ActiveState=active
+SubState=running
+
+MainPID=127462
+Result=success
+Id=slab-postgresql.service
+ActiveState=active
+SubState=running
+State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                              
+LISTEN 0      244        127.0.0.1:55432      0.0.0.0:*    users:(("postgres",pid=127462,fd=5))
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda2        36G  6.5G   27G  20% /
+/dev/sda2        36G  6.5G   27G  20% /
+               total        used        free      shared  buff/cache   available
+Mem:            3919         822        1733          16        1609        3096
+Swap:           3917           0        3917

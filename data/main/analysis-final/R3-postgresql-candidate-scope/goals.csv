@@ -1,0 +1,31 @@
+service,goal,dac,context,profile,outcome,detail
+postgresql,G1-write-outside-datadir,own,server,P0,ACHIEVED,
+postgresql,G1-write-outside-datadir,own,process,P0,ACHIEVED,G_RESULT=ALLOWED via=direct uid=967
+postgresql,G1-write-outside-datadir,root,server,P0,BLOCKED,"ERROR:  could not open file ""/var/lib/systemd-lab/pg-g1-v005-root/g1-v005.txt"" for writing: Permission denied HINT:  COPY TO instructs the PostgreSQL server process to write a file. You may want a client-side facility such as psql's \copy."
+postgresql,G1-write-outside-datadir,root,process,P0,BLOCKED,G_RESULT=BLOCKED uid=967
+postgresql,G2-run-program,needed-by-app,server,P0,ACHIEVED,labpg
+postgresql,G1-write-outside-datadir,own,server,P1,ACHIEVED,
+postgresql,G1-write-outside-datadir,own,process,P1,ACHIEVED,G_RESULT=ALLOWED via=direct uid=967
+postgresql,G1-write-outside-datadir,root,server,P1,BLOCKED,"ERROR:  could not open file ""/var/lib/systemd-lab/pg-g1-v005-root/g1-v005.txt"" for writing: Permission denied HINT:  COPY TO instructs the PostgreSQL server process to write a file. You may want a client-side facility such as psql's \copy."
+postgresql,G1-write-outside-datadir,root,process,P1,BLOCKED,G_RESULT=BLOCKED uid=967
+postgresql,G2-run-program,needed-by-app,server,P1,ACHIEVED,labpg
+postgresql,G1-write-outside-datadir,own,server,P2,ACHIEVED,
+postgresql,G1-write-outside-datadir,own,process,P2,ACHIEVED,G_RESULT=ALLOWED via=direct uid=967
+postgresql,G1-write-outside-datadir,root,server,P2,BLOCKED,"ERROR:  could not open file ""/var/lib/systemd-lab/pg-g1-v005-root/g1-v005.txt"" for writing: Permission denied HINT:  COPY TO instructs the PostgreSQL server process to write a file. You may want a client-side facility such as psql's \copy."
+postgresql,G1-write-outside-datadir,root,process,P2,BLOCKED,G_RESULT=BLOCKED uid=967
+postgresql,G2-run-program,needed-by-app,server,P2,ACHIEVED,labpg
+postgresql,G1-write-outside-datadir,own,server,P1d,BLOCKED,"ERROR:  could not open file ""/var/lib/systemd-lab/pg-g1-v005-own/g1-v005.txt"" for writing: Read-only file system"
+postgresql,G1-write-outside-datadir,own,process,P1d,BLOCKED,G_RESULT=BLOCKED uid=967
+postgresql,G1-write-outside-datadir,root,server,P1d,BLOCKED,"ERROR:  could not open file ""/var/lib/systemd-lab/pg-g1-v005-root/g1-v005.txt"" for writing: Read-only file system"
+postgresql,G1-write-outside-datadir,root,process,P1d,BLOCKED,G_RESULT=BLOCKED uid=967
+postgresql,G2-run-program,needed-by-app,server,P1d,ACHIEVED,labpg
+postgresql,G1-write-outside-datadir,own,server,P4,ACHIEVED,
+postgresql,G1-write-outside-datadir,own,process,P4,ACHIEVED,G_RESULT=ALLOWED via=direct uid=967
+postgresql,G1-write-outside-datadir,root,server,P4,BLOCKED,"ERROR:  could not open file ""/var/lib/systemd-lab/pg-g1-v005-root/g1-v005.txt"" for writing: Permission denied HINT:  COPY TO instructs the PostgreSQL server process to write a file. You may want a client-side facility such as psql's \copy."
+postgresql,G1-write-outside-datadir,root,process,P4,BLOCKED,G_RESULT=BLOCKED uid=967
+postgresql,G2-run-program,needed-by-app,server,P4,ACHIEVED,labpg
+postgresql,G1-write-outside-datadir,own,server,P6,BLOCKED,"ERROR:  could not open file ""/var/lib/systemd-lab/pg-g1-v005-own/g1-v005.txt"" for writing: Read-only file system"
+postgresql,G1-write-outside-datadir,own,process,P6,BLOCKED,G_RESULT=BLOCKED uid=967
+postgresql,G1-write-outside-datadir,root,server,P6,BLOCKED,"ERROR:  could not open file ""/var/lib/systemd-lab/pg-g1-v005-root/g1-v005.txt"" for writing: Read-only file system"
+postgresql,G1-write-outside-datadir,root,process,P6,BLOCKED,G_RESULT=BLOCKED uid=967
+postgresql,G2-run-program,needed-by-app,server,P6,ACHIEVED,labpg

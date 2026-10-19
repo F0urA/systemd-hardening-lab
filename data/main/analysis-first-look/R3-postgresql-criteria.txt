@@ -1,0 +1,18 @@
+service    profile  F pairs        L95       U95d  cost_up%  g  s  emicro  expos   n  status          series
+postgresql P0       1    10     44.056     44.056     0.000  0  0   0.000    9.2   0  BASELINE        20261013-193448
+postgresql P1       1    10      2.890    145.608     4.176  0  0   0.316    8.4   5  NON_INFERIOR    20261013-193448
+postgresql P2       1    10    -25.635    136.148     5.414  0  0   0.368    6.9   9  NEEDS_MORE_DATA 20261013-193448
+postgresql P1d      1    10     16.817    149.454     1.161  1  2   0.316    8.3   7  NON_INFERIOR    20261013-193448
+postgresql P4       1    10   -115.064    198.257    11.052  0  0   0.789    2.1  21  NEEDS_MORE_DATA 20261013-193448
+postgresql P6       1    10     -4.507    149.440     3.993  1  2   0.789    2.1  23  NEEDS_MORE_DATA 20261013-193448
+
+NOTE mandatory contracts: /root/article-experiment/20261012-v005/post-analysis/raw-vm/functional-v005/20261012-104934/contract.csv supplies 22 verdicts
+NOTE postgresql: series 20261013-193448 supplies P0 P1 P1d P2 P4 P6 (unless supplied by an earlier series); bounds at the level 0.005
+NOTE postgresql: 2 goals in 3 scenario cells are achievable under P0
+NOTE postgresql P1: goals not blocked in every cell: G1-write-outside-datadir G2-run-program
+NOTE postgresql P2: goals not blocked in every cell: G1-write-outside-datadir G2-run-program
+NOTE postgresql P1d: goals not blocked in every cell: G2-run-program
+NOTE postgresql P4: goals not blocked in every cell: G1-write-outside-datadir G2-run-program
+NOTE postgresql P6: goals not blocked in every cell: G2-run-program
+CSV=/root/article-experiment/20261012-v005/post-analysis/analysis-first-look/R3-postgresql-criteria.csv
+NEXT: python3 select_profile_v005.py /root/article-experiment/20261012-v005/post-analysis/analysis-first-look/R3-postgresql-criteria.csv --budgets 2,5,10,15

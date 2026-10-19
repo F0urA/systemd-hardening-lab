@@ -1,0 +1,15 @@
+elapsed_clock=CLOCK_MONOTONIC_RAW
+wall_clock=UTC_labels_only
+profiles=P0 P1r P1c P5 P6
+modes=late nested
+cells=40
+P0=namespace-harness_not_primary_P0
+PrivateMounts=yes MountFlags=slave_all_models
+Type=exec RuntimeMaxSec=35s TimeoutStopSec=3s KillMode=control-group
+READY_timeout=15s trigger_timeout=20s model_identity=no_UID_fallback
+positive_control=same_mode_same_DAC_same_context_P0_ACHIEVED
+primary_selection_input=no exploratory_after_known_FD_result=yes
+SITE=/var/lib/systemd-lab/nginx-www
+SOURCE=/var/lib/systemd-lab/mountstate-v005
+CONTROL=/run/slab-mountstate-v005-064fbb607ff2b76d
+HOST_NAMESPACE=mnt:[4026531841]

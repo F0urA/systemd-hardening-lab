@@ -1,0 +1,23 @@
+# /etc/systemd/system/slab-nginx-ext.service
+[Unit]
+Description=v005 separate Nginx TLS and local upstream functional variant
+After=slab-nginx-ext-upstream.service
+[Service]
+Type=simple
+ExecStartPre=/usr/sbin/nginx -t -c /etc/systemd-lab/nginx-ext-v005/nginx.conf
+ExecStart=/usr/sbin/nginx -c /etc/systemd-lab/nginx-ext-v005/nginx.conf -g 'daemon off;'
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGQUIT
+Restart=no
+
+# /etc/systemd/system/slab-nginx-ext.service.d/90-hardening.conf
+[Service]
+PrivateTmp=yes
+ProtectHome=yes
+ProtectSystem=full
+NoNewPrivileges=yes
+InaccessiblePaths=/etc/systemd-lab/credential
+# v004: P1r = P1 + read-only web directory
+ReadOnlyPaths=/var/lib/systemd-lab/nginx-www
+# v004: P1c = P1r + the capability set of P4
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_SETUID CAP_SETGID

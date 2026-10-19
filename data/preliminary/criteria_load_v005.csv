@@ -1,0 +1,12 @@
+# built by build_criteria_v004.py; cost_upper: CPU time per operation, % over P0
+service,profile,F,L95,cost_upper,goals_blocked,emicro,exposure,n_directives
+nginx,P0,1,2269.140,0.000,0,0.000,9.6,0
+nginx,P4,1,-7102.033,26.931,0,0.778,2.8,21
+nginx,P5,1,-4991.427,20.617,3,0.778,2.8,22
+nginx,P6,1,-5221.398,21.059,3,0.778,2.8,23
+redis,P0,1,9684.928,0.000,0,0.000,9.2,0
+redis,P4,1,5464.344,2.336,0,0.778,2.1,21
+redis,P6,1,5987.370,2.239,1,0.778,2.1,23
+postgresql,P0,1,78.750,0.000,0,0.000,9.2,0
+postgresql,P4,1,41.480,2.532,0,0.778,2.1,21
+postgresql,P6,1,37.989,3.377,1,0.778,2.1,23

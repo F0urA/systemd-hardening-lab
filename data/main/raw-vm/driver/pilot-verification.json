@@ -1,0 +1,61 @@
+{
+  "directory": "/root/article-experiment/20261012-v005/results_v005/nginx/benchmark-v005/20261012-110140",
+  "profiles": {
+    "P0": {
+      "n": 10,
+      "blocks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mean_throughput": 10726.515800000001,
+      "cv_pct": 2.715530883245902,
+      "mean_cpu_pct": 90.7551,
+      "min_cpu_pct": 90.699,
+      "max_cpu_pct": 90.862,
+      "mean_cpu_us_per_op": 84.66364,
+      "max_gap_ms": 187.4,
+      "failed": 0
+    },
+    "P4": {
+      "n": 10,
+      "blocks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mean_throughput": 10305.5267,
+      "cv_pct": 4.240410961940505,
+      "mean_cpu_pct": 90.8101,
+      "min_cpu_pct": 90.746,
+      "max_cpu_pct": 90.905,
+      "mean_cpu_us_per_op": 88.25582,
+      "max_gap_ms": 386.0,
+      "failed": 0
+    }
+  },
+  "invalid_count": 0,
+  "rows": 20,
+  "platform_lines": {
+    "NAME": "\"ALT Server\"",
+    "VERSION": "\"11.1\"",
+    "PRETTY_NAME": "\"ALT Server 11.1 (Mendelevium)\"",
+    "SERVICE": "nginx BLOCKS=10 PIN=1 SERVER_CPU=0 CLIENT_CPUS=1-3",
+    "KEEPALIVE": "0 NGINX_N=100000 NGINX_C=25 REDIS_N=3000000 REDIS_THREADS=3 PG_T=60 STALL_MS=500"
+  },
+  "audit_errors": []
+}

@@ -1,0 +1,8 @@
+# built by build_criteria_v005.py; cost_upper: CPU time per operation, % over P0
+service,profile,F,contract,L95,cost_upper,goals_blocked,cells_blocked,emicro,exposure,n_directives,U95d,status,goals_full,pairs,source
+postgresql,P0,1,PASS,47.525,0.000,0,0,0.000,9.2,0,47.525,BASELINE,,20,20261013-193448+20261013-233151
+postgresql,P1,1,PASS,2.890,4.176,0,0,0.316,8.4,5,145.608,NON_INFERIOR,,10,20261013-193448
+postgresql,P2,1,PASS,5.043,2.965,0,0,0.368,6.9,9,104.549,NON_INFERIOR,,20,20261013-193448+20261013-233151
+postgresql,P1d,1,PASS,16.817,1.161,1,2,0.316,8.3,7,149.454,NON_INFERIOR,G1-write-outside-datadir,10,20261013-193448
+postgresql,P4,1,PASS,-77.264,5.544,0,0,0.789,2.1,21,162.669,INCONCLUSIVE,,20,20261013-193448+20261013-233151
+postgresql,P6,1,PASS,-32.467,2.075,1,2,0.789,2.1,23,131.320,INCONCLUSIVE,G1-write-outside-datadir,20,20261013-193448+20261013-233151

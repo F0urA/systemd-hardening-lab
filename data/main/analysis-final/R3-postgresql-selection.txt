@@ -1,0 +1,13 @@
+====================================================================================================
+SERVICE postgresql: candidates P0 P1 P2 P1d P4 P6
+  no conclusion at the limit of observations: P4 P6
+  RULE A (min Exposure, no admission conditions): P4
+       H  admitted by F, L95, cost  RULE A+         RULE B            B + policy      RULE B (v003)
+       2  P1d                       P1d             P1d               P1d             P1d
+       5  P1 P2 P1d                 P2              P1d               P1d             P1d
+      10  P1 P2 P1d                 P2              P1d               P1d             P1d
+      15  P1 P2 P1d                 P2              P1d               P1d             P1d
+
+NONE = no admitted restricted candidate among those tested.
+BELOW_REQUIRED = admitted candidates exist, none blocks every required goal.
+B + policy: ties of rule B broken by the operator's order s,emicro,exposure,n.

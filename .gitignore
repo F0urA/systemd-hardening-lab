@@ -1,0 +1,4 @@
+*.docx
+~$*
+__pycache__/
+manuscript_v005/

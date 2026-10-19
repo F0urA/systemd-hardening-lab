@@ -1,0 +1,4 @@
+/system.slice/slab-postgresql.service/memory.pressure /sys/fs/cgroup/system.slice/slab-postgresql.service/memory.pressure rw,nosuid,nodev,noexec,relatime cgroup2
+	/system.slice/slab-v005-postgresql-p4-12562.service/memory.pressure /sys/fs/cgroup/system.slice/slab-v005-postgresql-p4-12562.service/memory.pressure rw,nosuid,nodev,noexec,relatime cgroup2
+/systemd/propagate/slab-postgresql.service /run/systemd/incoming ro,nosuid,relatime tmpfs
+	/systemd/propagate/slab-v005-postgresql-p4-12562.service /run/systemd/incoming ro,nosuid,relatime tmpfs

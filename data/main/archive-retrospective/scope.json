@@ -1,0 +1,14 @@
+{
+  "retrospective": true,
+  "new_measurements": false,
+  "pooled_with_new": false,
+  "family_policy": "Current conservative Nginx=7, Redis/PG=5; old CPU-group diagnostic=3; K=2",
+  "limitations": [
+    "Archive renamed v004 data, not a new v005 stage",
+    "Archive timing/hardware cannot be independently validated now",
+    "No mandatory expanded F gate available in old criteria; no profile recommendation",
+    "UNRESOLVED_ARCHIVE is not a newly permitted additional look"
+  ],
+  "series": 7,
+  "contrasts": 21
+}

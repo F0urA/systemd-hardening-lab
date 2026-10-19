@@ -1,0 +1,4 @@
+stage,start_guest_utc,end_guest_utc,exit_status,result_directory
+R1-nginx,2026-10-12T17:59:12+00:00,2026-10-12T19:42:24+00:00,0,/root/article-experiment/20261012-v005/results_v005/nginx/benchmark-v005/20261012-175912
+R2-redis,2026-10-12T19:42:24+00:00,2026-10-12T21:02:19+00:00,0,/root/article-experiment/20261012-v005/results_v005/redis/benchmark-v005/20261012-194224
+R3-postgresql,2026-10-12T21:02:20+00:00,2026-10-12T21:58:26+00:00,2,/root/article-experiment/20261012-v005/results_v005/postgresql/benchmark-v005/20261012-210220

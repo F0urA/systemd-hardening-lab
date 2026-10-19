@@ -1,0 +1,5 @@
+service,profile,functional,exposure,n_directives
+nginx,P0,1,9.6,0
+nginx,P1,1,8.7,5
+nginx,P2,1,7.3,9
+nginx,P1r,1,8.7,6

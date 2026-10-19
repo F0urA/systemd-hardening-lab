@@ -1,0 +1,130 @@
+RESULT method=inservice profile=P0 dac=rootown context=master outcome=ACHIEVED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P0 dac=rootown context=fd-master outcome=ACHIEVED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P0 dac=rootown context=worker outcome=BLOCKED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P0 dac=rootown context=fd-worker outcome=BLOCKED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P0 dac=labweb context=master outcome=ACHIEVED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P0 dac=labweb context=fd-master outcome=ACHIEVED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P0 dac=labweb context=worker outcome=ACHIEVED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P0 dac=labweb context=fd-worker outcome=ACHIEVED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P1 dac=rootown context=master outcome=ACHIEVED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P1 dac=rootown context=fd-master outcome=ACHIEVED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P1 dac=rootown context=worker outcome=BLOCKED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P1 dac=rootown context=fd-worker outcome=BLOCKED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P1 dac=labweb context=master outcome=ACHIEVED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P1 dac=labweb context=fd-master outcome=ACHIEVED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P1 dac=labweb context=worker outcome=ACHIEVED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P1 dac=labweb context=fd-worker outcome=ACHIEVED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P1r dac=rootown context=master outcome=ACHIEVED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P1r dac=rootown context=fd-master outcome=ACHIEVED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P1r dac=rootown context=worker outcome=BLOCKED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P1r dac=rootown context=fd-worker outcome=BLOCKED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P1r dac=labweb context=master outcome=ACHIEVED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P1r dac=labweb context=fd-master outcome=ACHIEVED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P1r dac=labweb context=worker outcome=BLOCKED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P1r dac=labweb context=fd-worker outcome=ACHIEVED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P1c dac=rootown context=master outcome=BLOCKED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P1c dac=rootown context=fd-master outcome=ACHIEVED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P1c dac=rootown context=worker outcome=BLOCKED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P1c dac=rootown context=fd-worker outcome=BLOCKED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P1c dac=labweb context=master outcome=BLOCKED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P1c dac=labweb context=fd-master outcome=BLOCKED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P1c dac=labweb context=worker outcome=BLOCKED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P1c dac=labweb context=fd-worker outcome=ACHIEVED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P2 dac=rootown context=master outcome=ACHIEVED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P2 dac=rootown context=fd-master outcome=ACHIEVED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P2 dac=rootown context=worker outcome=BLOCKED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P2 dac=rootown context=fd-worker outcome=BLOCKED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P2 dac=labweb context=master outcome=ACHIEVED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P2 dac=labweb context=fd-master outcome=ACHIEVED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P2 dac=labweb context=worker outcome=ACHIEVED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P2 dac=labweb context=fd-worker outcome=ACHIEVED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P4 dac=rootown context=master outcome=ACHIEVED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P4 dac=rootown context=fd-master outcome=ACHIEVED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P4 dac=rootown context=worker outcome=BLOCKED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P4 dac=rootown context=fd-worker outcome=BLOCKED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P4 dac=labweb context=master outcome=ACHIEVED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P4 dac=labweb context=fd-master outcome=BLOCKED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P4 dac=labweb context=worker outcome=ACHIEVED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P4 dac=labweb context=fd-worker outcome=ACHIEVED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P5 dac=rootown context=master outcome=BLOCKED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P5 dac=rootown context=fd-master outcome=ACHIEVED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P5 dac=rootown context=worker outcome=BLOCKED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P5 dac=rootown context=fd-worker outcome=BLOCKED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P5 dac=labweb context=master outcome=BLOCKED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P5 dac=labweb context=fd-master outcome=BLOCKED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P5 dac=labweb context=worker outcome=BLOCKED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P5 dac=labweb context=fd-worker outcome=ACHIEVED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P6 dac=rootown context=master outcome=BLOCKED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P6 dac=rootown context=fd-master outcome=ACHIEVED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P6 dac=rootown context=worker outcome=BLOCKED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P6 dac=rootown context=fd-worker outcome=BLOCKED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P6 dac=labweb context=master outcome=BLOCKED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P6 dac=labweb context=fd-master outcome=BLOCKED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P6 dac=labweb context=worker outcome=BLOCKED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P6 dac=labweb context=fd-worker outcome=ACHIEVED
+FD_LAUNCH_RC=0
+RESTORE_P4 nginx=PASS
+RESULT_DIR=/root/article-experiment/20261012-v005/results_v005/supplement-goals-v005/20261012-105904

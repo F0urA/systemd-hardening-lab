@@ -1,0 +1,34 @@
+INCOMPLETE_SCOPE: conditional diagnostic, not a complete final selection.
+{"scope": "INCOMPLETE_SCOPE", "looks_planned": 2, "combined_nginx_family": 7, "failed_primary": ["R4-nginx-nonsaturated"], "failed_extension": [], "native_count_limitations": {"R2-redis": ["COUNTS_NOT_EXPOSED_BY_QUIET_OUTPUT"], "R3-postgresql": ["PG_FAILED_COUNT_NOT_EXPOSED"]}, "third_look_permitted": false, "failed_extension_policy": "retain first-look bounds/status; terminal NO_VALID_EXTENSION; affected inference unfinished"}
+
+====================================================================================================
+SERVICE nginx: candidates P0 P1 P2 P1r P1c P4 P5 P6
+  loss larger than the margin is shown: P5
+  no conclusion at the limit of observations: P4 P6
+  RULE A (min Exposure, no admission conditions): P4
+       H  admitted by F, L95, cost  RULE A+         RULE B            B + policy      RULE B (v003)
+       2  P1 P2 P1r                 P2              TIE(P1/P2/P1r)    P1r             P1r
+       5  P1 P2 P1r P1c             P1c             P1c               P1c             P1c
+      10  P1 P2 P1r P1c             P1c             P1c               P1c             P1c
+      15  P1 P2 P1r P1c             P1c             P1c               P1c             P1c
+====================================================================================================
+SERVICE redis: candidates P0 P1 P2 P1d P4 P6
+  RULE A (min Exposure, no admission conditions): P4
+       H  admitted by F, L95, cost  RULE A+         RULE B            B + policy      RULE B (v003)
+       2  P1 P1d                    P1d             P1d               P1d             P1d
+       5  P1 P2 P1d P4 P6           P4              TIE(P1d/P6)       P6              P6
+      10  P1 P2 P1d P4 P6           P4              TIE(P1d/P6)       P6              P6
+      15  P1 P2 P1d P4 P6           P4              TIE(P1d/P6)       P6              P6
+====================================================================================================
+SERVICE postgresql: candidates P0 P1 P2 P1d P4 P6
+  no conclusion at the limit of observations: P4 P6
+  RULE A (min Exposure, no admission conditions): P4
+       H  admitted by F, L95, cost  RULE A+         RULE B            B + policy      RULE B (v003)
+       2  P1d                       P1d             P1d               P1d             P1d
+       5  P1 P2 P1d                 P2              P1d               P1d             P1d
+      10  P1 P2 P1d                 P2              P1d               P1d             P1d
+      15  P1 P2 P1d                 P2              P1d               P1d             P1d
+
+NONE = no admitted restricted candidate among those tested.
+BELOW_REQUIRED = admitted candidates exist, none blocks every required goal.
+B + policy: ties of rule B broken by the operator's order s,emicro,exposure,n.

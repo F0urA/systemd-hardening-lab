@@ -1,0 +1,10 @@
+{
+  "manifest": "results\\raw-vm\\nginx\\benchmark-v005\\20261012-175912\\sha256-all-closed.txt",
+  "root": "<OPERATOR_ROOT>\\results\\raw-vm\\nginx\\benchmark-v005\\20261012-175912",
+  "listed_files": 966,
+  "missing": [],
+  "mismatched": [],
+  "unsafe": [],
+  "unlisted_local_files": [],
+  "verified": true
+}

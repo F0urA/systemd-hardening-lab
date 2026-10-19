@@ -1,0 +1,59 @@
+This is ApacheBench, Version 2.3 <$Revision$>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+Completed 10000 requests
+Completed 20000 requests
+Completed 30000 requests
+Completed 40000 requests
+Completed 50000 requests
+Completed 60000 requests
+Completed 70000 requests
+Completed 80000 requests
+Completed 90000 requests
+Completed 100000 requests
+Finished 100000 requests
+
+
+Server Software:        nginx/1.30.4
+Server Hostname:        127.0.0.1
+Server Port:            808
+
+Document Path:          /
+Document Length:        1024 bytes
+
+Concurrency Level:      25
+Time taken for tests:   18.745 seconds
+Complete requests:      100000
+Failed requests:        0
+Total transferred:      125800000 bytes
+HTML transferred:       102400000 bytes
+Requests per second:    5334.75 [#/sec] (mean)
+Time per request:       4.686 [ms] (mean)
+Time per request:       0.187 [ms] (mean, across all concurrent requests)
+Transfer rate:          6553.82 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       1
+Processing:     0    5   1.0      4      86
+Waiting:        0    5   0.9      4      86
+Total:          1    5   1.0      4      86
+WARNING: The median and mean for the processing time are not within a normal deviation
+        These results are probably not that reliable.
+WARNING: The median and mean for the waiting time are not within a normal deviation
+        These results are probably not that reliable.
+WARNING: The median and mean for the total time are not within a normal deviation
+        These results are probably not that reliable.
+
+Percentage of the requests served within a certain time (ms)
+  50%      4
+  66%      5
+  75%      5
+  80%      5
+  90%      5
+  95%      6
+  98%      8
+  99%      9
+ 100%     86 (longest request)

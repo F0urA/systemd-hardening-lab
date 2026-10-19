@@ -1,0 +1,3 @@
+STAGE=R1-nginx-extension RC=0 RESULT_DIR=/root/article-experiment/20261012-v005/results_v005/nginx/benchmark-v005/20261013-221436
+STAGE=R3-postgresql-extension RC=0 RESULT_DIR=/root/article-experiment/20261012-v005/results_v005/postgresql/benchmark-v005/20261013-233151
+EXTENSIONS_FINISHED: no third statistical look is permitted

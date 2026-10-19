@@ -1,0 +1,8 @@
+Primary freeze Windows UTC: 2026-10-12, before first new measurement.
+v005-primary-frozen.zip SHA256:
+04306CCD5D3895CF4420BC9195D1937DC14AF38BEB5A49897DA122BE2C6185A3
+RUN_PROTOCOL.md SHA256:
+5D452A265C8AC2486A118511BD0C7C15087BC0BCE15FBEA781D1CB7544FDEC1E
+Local archive and immutable protocol preserve the actual executed revision.
+11 synthetic functional/criteria regression tests PASS; all Bash sources parse.
+No new measurement data were observed when these primary parameters were frozen.

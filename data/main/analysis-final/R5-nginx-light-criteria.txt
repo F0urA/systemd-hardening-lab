@@ -1,0 +1,17 @@
+service    profile  F pairs        L95       U95d  cost_up%  g  s  emicro  expos   n  status          series
+nginx      P0       1    60    602.701    602.701     0.000  0  0   0.000    9.6   0  BASELINE        20261013-204356
+nginx      P1       1    60    523.574    792.910     0.712  0  0   0.316    8.7   5  NON_INFERIOR    20261013-204356
+nginx      P2       1    60    389.577    620.130     1.847  0  0   0.368    7.3   9  NON_INFERIOR    20261013-204356
+nginx      P1r      1    60    483.232    753.456     1.042  0  1   0.316    8.7   6  NON_INFERIOR    20261013-204356
+
+NOTE mandatory contracts: /root/article-experiment/20261012-v005/post-analysis/raw-vm/functional-v005/20261012-104934/contract.csv supplies 22 verdicts
+NOTE nginx: series 20261013-204356 supplies P0 P1 P1r P2 (unless supplied by an earlier series); bounds at the level 0.00833333
+NOTE nginx: 4 goals in 7 scenario cells are achievable under P0
+NOTE nginx P1: master context emicro_36=0.143, required and still allowed: PRIV-1 PRIV-2
+NOTE nginx P1: goals not blocked in every cell: G1-replace-document G2-read-app-secret G3-replace-config G4-write-logdir
+NOTE nginx P2: master context emicro_36=0.286, required and still allowed: PRIV-1 PRIV-2
+NOTE nginx P2: goals not blocked in every cell: G1-replace-document G2-read-app-secret G3-replace-config G4-write-logdir
+NOTE nginx P1r: master context emicro_36=0.143, required and still allowed: PRIV-1 PRIV-2
+NOTE nginx P1r: goals not blocked in every cell: G1-replace-document G2-read-app-secret G3-replace-config G4-write-logdir
+CSV=/root/article-experiment/20261012-v005/post-analysis/analysis-final/R5-nginx-light-criteria.csv
+NEXT: python3 select_profile_v005.py /root/article-experiment/20261012-v005/post-analysis/analysis-final/R5-nginx-light-criteria.csv --budgets 2,5,10,15

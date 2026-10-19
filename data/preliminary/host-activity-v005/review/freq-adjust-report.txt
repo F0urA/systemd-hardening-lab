@@ -1,0 +1,28 @@
+================================================================================================
+SERIES 20261012-090309: 360 of 360 measurements matched with host samples
+frequency of the busy performance cores, percent of nominal: mean 163, min 112, max 171
+  P0   n=60  corr(frequency, throughput)=+0.51  CV raw   3.4 %  CV of throughput/frequency   2.9 %
+  P1   n=60  corr(frequency, throughput)=+0.38  CV raw   3.3 %  CV of throughput/frequency   3.1 %
+  P1c  n=60  corr(frequency, throughput)=+0.64  CV raw   3.6 %  CV of throughput/frequency   2.9 %
+  P1r  n=60  corr(frequency, throughput)=+0.30  CV raw   2.5 %  CV of throughput/frequency   3.0 %
+  P2   n=60  corr(frequency, throughput)=+0.88  CV raw   6.0 %  CV of throughput/frequency   3.1 %
+  P4   n=60  corr(frequency, throughput)=+0.58  CV raw   3.7 %  CV of throughput/frequency   3.1 %
+  NON-INFERIORITY CONTRAST d = X(D) - 0.95*X(P0), one-sided 95% bounds; X* = X * 100 / f (throughput at the nominal frequency)
+  candidate   n   measured: ratio      L95      U95    normalized: ratio     L95*     U95*
+  P1         60             99.6%     1680     2520                99.9%     1096     1596
+  P1c        60             99.3%     1513     2371                99.9%     1127     1555
+  P1r        60             98.6%     1250     1977                99.2%      957     1348
+  P2         60             96.0%     -225     1149                97.8%      565      997
+  P4         60             91.9%    -1781    -1007                93.0%     -762     -357
+  cost        n   raw cost: mean   lower   upper   adjusted cost: mean   lower   upper
+  P1/P0      60            +0.2%   -0.7%   +1.2%                 -0.0%   -0.9%   +0.9%
+  P1c/P0     60            +0.7%   -0.3%   +1.7%                 +0.1%   -0.7%   +0.9%
+  P1r/P0     60            +1.3%   +0.5%   +2.2%                 +0.7%   -0.0%   +1.5%
+  P2/P0      60            +4.3%   +2.5%   +6.2%                 +2.2%   +1.4%   +3.0%
+  P4/P0      60            +9.0%   +8.0%  +10.0%                 +7.7%   +6.9%   +8.6%
+  P1c/P1r    60            -0.6%   -1.5%   +0.3%                 -0.6%   -1.6%   +0.3%
+  P1r/P1     60            +1.1%   +0.3%   +1.9%                 +0.7%   -0.2%   +1.6%
+  P2/P1      60            +4.1%   +2.3%   +5.8%                 +2.2%   +1.3%   +3.1%
+
+NOTE=The selection rule uses the uncorrected bounds; the corrected ones are a sensitivity analysis.
+NOTE=Bounds are one-sided 95% (together a two-sided 90% interval).

@@ -1,0 +1,173 @@
+
+===== CONTEXT=nginx-worker PROFILE=P0 =====
+TRANSIENT_RC=0
+SUMMARY	ALLOWED=16 BLOCKED=16 N/A=0 ERROR=0
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0
+
+===== CONTEXT=nginx-worker PROFILE=P1 =====
+TRANSIENT_RC=0
+SUMMARY	ALLOWED=10 BLOCKED=22 N/A=0 ERROR=0
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0
+
+===== CONTEXT=nginx-worker PROFILE=P2 =====
+TRANSIENT_RC=0
+SUMMARY	ALLOWED=9 BLOCKED=23 N/A=0 ERROR=0
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0
+
+===== CONTEXT=nginx-worker PROFILE=P3 =====
+TRANSIENT_RC=0
+SUMMARY	ALLOWED=2 BLOCKED=30 N/A=0 ERROR=0
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0
+
+===== CONTEXT=nginx-worker PROFILE=P4 =====
+TRANSIENT_RC=0
+SUMMARY	ALLOWED=2 BLOCKED=30 N/A=0 ERROR=0
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0
+
+===== CONTEXT=nginx-worker PROFILE=P5 =====
+TRANSIENT_RC=0
+SUMMARY	ALLOWED=2 BLOCKED=30 N/A=0 ERROR=0
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0
+
+===== CONTEXT=nginx-worker PROFILE=P6 =====
+TRANSIENT_RC=0
+SUMMARY	ALLOWED=2 BLOCKED=30 N/A=0 ERROR=0
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0
+
+===== CONTEXT=nginx-master PROFILE=P0 =====
+TRANSIENT_RC=0
+SUMMARY	ALLOWED=31 BLOCKED=0 N/A=1 ERROR=0
+SUMMARY ALLOWED=4 BLOCKED=0 N/A=0 ERROR=0
+
+===== CONTEXT=nginx-master PROFILE=P1 =====
+TRANSIENT_RC=0
+SUMMARY	ALLOWED=26 BLOCKED=5 N/A=1 ERROR=0
+SUMMARY ALLOWED=4 BLOCKED=0 N/A=0 ERROR=0
+
+===== CONTEXT=nginx-master PROFILE=P2 =====
+TRANSIENT_RC=0
+SUMMARY	ALLOWED=21 BLOCKED=10 N/A=1 ERROR=0
+SUMMARY ALLOWED=4 BLOCKED=0 N/A=0 ERROR=0
+
+===== CONTEXT=nginx-master PROFILE=P3 =====
+TRANSIENT_RC=0
+SUMMARY	ALLOWED=2 BLOCKED=29 N/A=1 ERROR=0
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0
+
+===== CONTEXT=nginx-master PROFILE=P4 =====
+TRANSIENT_RC=0
+SUMMARY	ALLOWED=4 BLOCKED=27 N/A=1 ERROR=0
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0
+
+===== CONTEXT=nginx-master PROFILE=P5 =====
+TRANSIENT_RC=0
+SUMMARY	ALLOWED=4 BLOCKED=27 N/A=1 ERROR=0
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0
+
+===== CONTEXT=nginx-master PROFILE=P6 =====
+TRANSIENT_RC=0
+SUMMARY	ALLOWED=4 BLOCKED=27 N/A=1 ERROR=0
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0
+
+===== CONTEXT=redis PROFILE=P0 =====
+TRANSIENT_RC=0
+SUMMARY	ALLOWED=16 BLOCKED=16 N/A=0 ERROR=0
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0
+
+===== CONTEXT=redis PROFILE=P4 =====
+TRANSIENT_RC=0
+SUMMARY	ALLOWED=2 BLOCKED=30 N/A=0 ERROR=0
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0
+
+===== CONTEXT=redis PROFILE=P6 =====
+TRANSIENT_RC=0
+SUMMARY	ALLOWED=2 BLOCKED=30 N/A=0 ERROR=0
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0
+
+===== CONTEXT=postgresql PROFILE=P0 =====
+TRANSIENT_RC=0
+SUMMARY	ALLOWED=16 BLOCKED=16 N/A=0 ERROR=0
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0
+
+===== CONTEXT=postgresql PROFILE=P4 =====
+TRANSIENT_RC=0
+SUMMARY	ALLOWED=2 BLOCKED=30 N/A=0 ERROR=0
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0
+
+===== CONTEXT=postgresql PROFILE=P6 =====
+TRANSIENT_RC=0
+SUMMARY	ALLOWED=2 BLOCKED=30 N/A=0 ERROR=0
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0
+
+===== METRICS =====
+========================================================================
+CONTEXT nginx-master
+  required by the service (reported, not hidden): PRIV-1 PRIV-2
+  PROF  ELIG36 BLK36  Emicro36  ELIG32x  BLK32x  Emicro32x  Eiso32x
+  P0        35     0     0.000       29       0      0.000    0.000
+  P1        35     5     0.143       29       5      0.172    0.156
+       still ALLOWED, required: PRIV-1 PRIV-2
+       still ALLOWED, other:    FS-3 DEV-3 DEV-4 KER-1 KER-2 KER-3 KER-4 PROC-1 PROC-2 PROC-3 PROC-4 PRIV-3 NS-1 NS-2 NS-3 NS-4 NET-1 NET-2 NET-3 NET-4 ADV-1 ADV-2 ADV-3 ADV-4 X1 X2 X3 X4
+  P2        35    10     0.286       29      10      0.345    0.312
+       still ALLOWED, required: PRIV-1 PRIV-2
+       still ALLOWED, other:    FS-3 KER-4 PROC-1 PROC-2 PROC-3 PROC-4 PRIV-3 NS-1 NS-2 NS-3 NS-4 NET-1 NET-2 NET-3 NET-4 ADV-1 ADV-2 ADV-3 ADV-4 X1 X2 X3 X4
+  P3        35    31     0.886       29      27      0.931    0.938
+       still ALLOWED, required: -
+       still ALLOWED, other:    KER-4 PROC-2 X3 X4
+  P4        35    29     0.829       29      27      0.931    0.938
+       still ALLOWED, required: PRIV-1 PRIV-2
+       still ALLOWED, other:    KER-4 PROC-2 X3 X4
+  P5        35    29     0.829       29      27      0.931    0.938
+       still ALLOWED, required: PRIV-1 PRIV-2
+       still ALLOWED, other:    KER-4 PROC-2 X3 X4
+  P6        35    29     0.829       29      27      0.931    0.938
+       still ALLOWED, required: PRIV-1 PRIV-2
+       still ALLOWED, other:    KER-4 PROC-2 X3 X4
+========================================================================
+CONTEXT nginx-worker
+  PROF  ELIG36 BLK36  Emicro36  ELIG32x  BLK32x  Emicro32x  Eiso32x
+  P0        18     0     0.000       16       0      0.000    0.000
+  P1        18     6     0.333       16       6      0.375    0.444
+       still ALLOWED, required: -
+       still ALLOWED, other:    DEV-3 PROC-1 PROC-2 PROC-3 NET-2 NET-4 ADV-1 ADV-2 ADV-3 ADV-4 X3 X4
+  P2        18     7     0.389       16       7      0.438    0.500
+       still ALLOWED, required: -
+       still ALLOWED, other:    PROC-1 PROC-2 PROC-3 NET-2 NET-4 ADV-1 ADV-2 ADV-3 ADV-4 X3 X4
+  P3        18    14     0.778       16      14      0.875    0.889
+       still ALLOWED, required: -
+       still ALLOWED, other:    PROC-2 PROC-3 X3 X4
+  P4        18    14     0.778       16      14      0.875    0.889
+       still ALLOWED, required: -
+       still ALLOWED, other:    PROC-2 PROC-3 X3 X4
+  P5        18    14     0.778       16      14      0.875    0.889
+       still ALLOWED, required: -
+       still ALLOWED, other:    PROC-2 PROC-3 X3 X4
+  P6        18    14     0.778       16      14      0.875    0.889
+       still ALLOWED, required: -
+       still ALLOWED, other:    PROC-2 PROC-3 X3 X4
+========================================================================
+CONTEXT postgresql
+  PROF  ELIG36 BLK36  Emicro36  ELIG32x  BLK32x  Emicro32x  Eiso32x
+  P0        18     0     0.000       16       0      0.000    0.000
+  P4        18    14     0.778       16      14      0.875    0.889
+       still ALLOWED, required: -
+       still ALLOWED, other:    PROC-2 PROC-3 X3 X4
+  P6        18    14     0.778       16      14      0.875    0.889
+       still ALLOWED, required: -
+       still ALLOWED, other:    PROC-2 PROC-3 X3 X4
+========================================================================
+CONTEXT redis
+  PROF  ELIG36 BLK36  Emicro36  ELIG32x  BLK32x  Emicro32x  Eiso32x
+  P0        18     0     0.000       16       0      0.000    0.000
+  P4        18    14     0.778       16      14      0.875    0.889
+       still ALLOWED, required: -
+       still ALLOWED, other:    PROC-2 PROC-3 X3 X4
+  P6        18    14     0.778       16      14      0.875    0.889
+       still ALLOWED, required: -
+       still ALLOWED, other:    PROC-2 PROC-3 X3 X4
+
+Legend: 36 = 32 basic + 4 extended probes, nothing excluded;
+        32x = 32 basic probes with service-required operations excluded
+              (the definition used for Emicro/Eiso in the earlier text).
+CSV=/root/systemd-lab-results/probe-v003/20261011-181734/metrics.csv
+RESULT_DIR=/root/systemd-lab-results/probe-v003/20261011-181734

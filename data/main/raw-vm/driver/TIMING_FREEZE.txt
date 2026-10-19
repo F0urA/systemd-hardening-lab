@@ -1,0 +1,8 @@
+Corrected timing freeze Windows UTC: 2026-10-12, after clock correction
+and BEFORE corrected performance pilot/complete primary series.
+v005-timing-frozen.zip SHA256:
+8BE68380CBC070870CE62D2A4F68C0AC71C9A56F49968C33CBAC86FFDF3E6EF6
+CLOCK_CORRECTION.md states observations known at this freeze.
+All workload, validity, statistical and selection parameters remain fixed.
+Includes registered-but-not-yet-executed memcached code/protocol (stage26).
+Old frozen source ZIP and timing-invalid raw measurements are retained.

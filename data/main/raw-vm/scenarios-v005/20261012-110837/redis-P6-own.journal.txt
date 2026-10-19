@@ -1,0 +1,1 @@
+42928:M 12 Oct 2026 12:09:19.774 # Failed opening the temp RDB file temp-42928.rdb (in server root dir /var/lib/systemd-lab/redis-g1-v005-own) for saving: Read-only file system

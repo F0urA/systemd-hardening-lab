@@ -1,0 +1,1 @@
+0e12f0f0a756c14cdc78863e38cb222a53e66066ff0a7357492f6f1a80d4827a  /root/systemd-lab-results/postgresql/profiles/P6.conf
