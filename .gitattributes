@@ -5,6 +5,7 @@
 *.service text eol=lf
 *.c text eol=lf
 scripts_v005/*.txt text eol=lf
-# measured results are stored byte for byte
-results_v005/** -text
 *.ps1 text
+# measured results, logs and executed copies are stored byte for byte:
+# their SHA256 are recorded in the manifests
+data/** -text
