@@ -11,6 +11,7 @@ import os
 import shutil
 import subprocess
 import sys
+import tarfile
 import tempfile
 import unittest
 from pathlib import Path
@@ -149,9 +150,15 @@ class RunStage3Tests(unittest.TestCase):
 
         # seal: the manifest is the one verify_raw_v005.py checks on the host.
         (self.root / 'driver' / 'post-primary-finished.txt').write_text('2026-10-19T00:00:00+00:00\n')
+        final = self.base / 'post-analysis' / 'analysis-final'
+        final.mkdir(parents=True)
+        (final / 'combined-selection.txt').write_text('stub\n')
         result = self.run_phase('seal')
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-        self.assertTrue((self.base / 'results_v005-closed.tar.gz').is_file())
+        with tarfile.open(self.base / 'results_v005-closed.tar.gz') as archive:
+            names = set(archive.getnames())
+        self.assertIn('post-analysis/analysis-final/combined-selection.txt', names)
+        self.assertIn('results_v005/SHA256-CLOSED-RESULTS.txt', names)
         spec = importlib.util.spec_from_file_location('verify_tested', SCRIPTS / 'analysis_v005' / 'verify_raw_v005.py')
         verify = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(verify)

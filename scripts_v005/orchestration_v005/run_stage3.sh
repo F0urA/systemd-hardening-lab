@@ -128,9 +128,9 @@ phase_stand() {
 
 # ---------------------------------------------------------------- preflight
 phase_preflight() {
-    claim preflight
     rest
-    clock_check preflight
+    clock_check preflight   # before the claim: a failed check can simply be repeated
+    claim preflight
     local ledger="$DRIVER/preflight-ledger.csv"
     echo 'stage,start_guest_utc,end_guest_utc,exit_status' > "$ledger"
     pre_stage() {
@@ -189,9 +189,9 @@ run_stage() {  # one complete technical repeat of a failed series, never more
 
 phase_primary() {
     [ -f "$DRIVER/preflight-finished.txt" ] || { echo 'Preflight has not finished'; exit 2; }
-    claim primary
     rest
     clock_check primary
+    claim primary
     sha256sum "$0" "$HERE/benchmark_v005.sh" "$HERE/slab_common_v005.sh" "$HERE/slab_heartbeat_v005.py" \
         "$BASE/inspect_series_v005.py" > "$DRIVER/primary-source-sha256.txt"
 
@@ -408,7 +408,13 @@ for relative in sorted(names, key=lambda n: n.encode()):
         print(f'{hashlib.file_digest(stream, "sha256").hexdigest()}  ./{relative}')
 MANIFEST_PY
     mv "$BASE/SHA256-CLOSED-RESULTS.tmp" "$manifest"
-    tar -czf - -C "$BASE" results_v005 > "$archive"
+    # The analyzers write next to themselves: first look, final analysis, the
+    # plan of the extension and the memcached analysis go into the same archive.
+    local outputs=() path
+    for path in "$ANALYSIS"/analysis-* "$ANALYSIS"/memcached-analysis-* "$ANALYSIS"/extension-plan.json; do
+        [ -e "$path" ] && outputs+=("post-analysis/${path#"$ANALYSIS"/}")
+    done
+    tar -czf - -C "$BASE" results_v005 "${outputs[@]}" > "$archive"
     ( cd "$BASE" && sha256sum "$(basename "$archive")" ) | tee "$archive.sha256"
     echo "SEALED: $(wc -l < "$manifest") files; copy $archive to the host"
 }
