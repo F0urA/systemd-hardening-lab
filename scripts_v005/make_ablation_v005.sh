@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # make_ablation_v005.sh -- two auxiliary Nginx profiles for the cost
-# hypothesis (protocol_ablation_v005.txt):
+# hypothesis (protocol_load_v005.txt, section 6):
 #   P4s = only the directives of P4 that install system-call filters
 #   P4n = P4 without those directives
 # Together with P0 and P4 they form a 2x2 design: filter group on/off  x

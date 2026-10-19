@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""pg_contrasts_v007.py RUN_DIR [--out-csv FILE] [--plot FILE]
+"""pg_contrasts.py RUN_DIR [--out-csv FILE] [--plot FILE]
 
 PostgreSQL of the third stage (results_v005/run-20261012-v005): paired
 block contrasts d_i = X(D, i) - 0.95 X(P0, i) and cost log ratios, their

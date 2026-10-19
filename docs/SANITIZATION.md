@@ -1,4 +1,4 @@
-# Подготовка пакета к публикации (v007)
+# Подготовка пакета к публикации
 
 Пакет собран скриптом из рабочего дерева репозитория. Ниже — что при этом изменено. Всё, что здесь не
 перечислено, совпадает с исходными файлами байт в байт.
@@ -12,12 +12,12 @@
 | `results_v005/run-20261012-v005/` — отчёты и проверки исполнителя (`*.md`, `*.json`, `HOST_BASELINE.txt`) | `data/main/reports/` |
 | `results_v005/run-20261012-v005/` — журналы сборщика и монитора хоста, снимок закрытых результатов | `data/main/logs/` |
 | `results_v005/run-20261012-v005/` — копии скриптов, исполнявшихся на хосте исполнителя (`*.py`, `*.ps1`) | `data/main/executed/` |
-| `results_v005/{pg_contrasts_v007.csv, point_estimates_v005.txt, selection_required_g2_v005.txt}` | `data/derived/` |
+| `results_v005/{pg_contrasts_v007.csv, point_estimates_v005.txt, selection_required_g2_v005.txt}` | `data/derived/` (`pg_contrasts_v007.csv` — под именем `pg_contrasts.csv`, см. ниже) |
 | остальное `results_v005/` (предварительные этапы 1–2) | `data/preliminary/` |
 | `scripts_v005/EXPERIMENTS_v005.md` | `docs/EXPERIMENTS_v005.md` |
 | `HANDOFF_v005.md`, `EXPERIMENT_READINESS.md` | `docs/history/` |
 
-Имена файлов не менялись. Записи фиксации и отчёты исполнителя называют файлы по исходной раскладке:
+Имена файлов не менялись, кроме перечисленных в последнем разделе. Записи фиксации и отчёты исполнителя называют файлы по исходной раскладке:
 каталог `results/` исполнителя — это `data/main/`.
 
 ## 2. Удаление локальных путей
@@ -42,7 +42,7 @@
 хеши, записанные до измерений. Неочищенные оригиналы хранятся у авторов и предоставляются редакции по
 запросу.
 
-`reproduce_v007.py` принимает очищенный архив, только если его хеш «до» совпадает с записью фиксации,
+`reproduce.py` принимает очищенный архив, только если его хеш «до» совпадает с записью фиксации,
 а хеш «после» — с файлом пакета; неизменённые файлы внутри очищенных архивов он сверяет с их
 собственными хешами в записях фиксации.
 
@@ -82,3 +82,18 @@
 | `data/main/protocol/v005-resume-frozen.zip` → `collect_results_resume_v005.ps1` | e618963620db24a92181a5bc5bff3b712091fb30b2319883f0e4f7d336e3a358 | 754ee59227bd7813cc121151c008e5b5b1e5461feaa9c310ad1f31d99297a0b4 | 1 | `data/main/raw-vm/driver/RESUME_FREEZE.txt`, `data/main/protocol/RESUME_FREEZE.txt` |
 | `data/main/protocol/v005-resume-frozen.zip` → `test_primary_resume_v005.py` | 027d9f265ff8c993a2c33470c22dcbc66a97d009aa9998d16514824e2e4dd9ef | 1850e0c086f6132d1123f316a8db839ec7ed672cfb96653db14150aa6d8b9631 | 1 | `data/main/raw-vm/driver/RESUME_FREEZE.txt`, `data/main/protocol/RESUME_FREEZE.txt` |
 | `data/main/protocol/v005-resume-frozen.zip` → `test_collect_results_resume_v005.ps1` | 4db09f0e0f52f194bceb381d8adb95741bdefd6d32a76933eecee36ed7d76abe | 067cfafc593019c9fa26bb513dfb746b3d60d6974b04a65eb9d040bbe8c95dcb | 1 | `data/main/raw-vm/driver/RESUME_FREEZE.txt`, `data/main/protocol/RESUME_FREEZE.txt` |
+
+## Переименования после публикации
+
+19.10.2026 у инструментов, сделанных после эксперимента, убран номер редакции рукописи: в репозитории
+остался один номер, `v005`, — редакция скриптов, которой выполнены измерения и которая под этими именами
+записана в данных и протоколах. Содержимое файлов при этом не менялось, кроме ссылок на новые имена.
+
+| Было | Стало |
+|---|---|
+| `reproduce_v007.py` | `reproduce.py` |
+| `docs/SANITIZATION_v007.md` | `docs/SANITIZATION.md` |
+| `scripts_v005/pg_contrasts_v007.py` | `scripts_v005/pg_contrasts.py` |
+| `data/derived/pg_contrasts_v007.csv` | `data/derived/pg_contrasts.csv` |
+| `scripts_v005/orchestration_v005/run_stage3_v008.sh`, `deploy_stage3_v008.sh` | `run_stage3.sh`, `deploy_stage3.sh` |
+| `scripts_v005/tests_v005/test_run_stage3_v008.py` | `test_run_stage3.py` |

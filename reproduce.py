@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""reproduce_v007.py [--quick]
+"""reproduce.py [--quick]
 
 Recomputes the results of the third stage from the published package, without
 the virtual machine, and compares them with the saved analysis.
@@ -8,7 +8,7 @@ the virtual machine, and compares them with the saved analysis.
                    the closed manifest SHA256-CLOSED-RESULTS.txt (skipped by --quick)
      provenance    the frozen archives of the executed sources against the hashes
                    recorded before the measurements (for the archives whose local paths
-                   were removed, through SANITIZATION_v007.md), and the executed copies
+                   were removed, through SANITIZATION.md), and the executed copies
                    frozen-primary/, frozen-timing/ against the stand manifests
   2. criteria      build_criteria_v005.py with the same arguments the analyzer
                    used on the stand (analysis_v005/analyze_v005.py): the combined
@@ -20,7 +20,7 @@ the virtual machine, and compares them with the saved analysis.
   6. required      selection with required goal G2, then G1, for Nginx
   7. robustness    robustness_v005.py: direct contrasts P1c-P5, P1c-P6 of R1
   8. points        point_estimates_v005.py (point estimates quoted in the text)
-  9. postgresql    pg_contrasts_v007.py: t-bounds against exact permutation bounds
+  9. postgresql    pg_contrasts.py: t-bounds against exact permutation bounds
 
 Every step prints PASS or DIFF; the exit code is 0 only if all steps pass.
 Needs Python 3.9+; step 9 also needs numpy.
@@ -119,7 +119,7 @@ FREEZE_RECORDS = {  # archive of the executed sources -> record written before t
     "v005-collector-frozen.zip": "COLLECTOR_FREEZE.md",
     "v005-resume-frozen.zip": "RESUME_FREEZE.txt",
 }
-SANITIZATION = ROOT / "docs" / "SANITIZATION_v007.md"
+SANITIZATION = ROOT / "docs" / "SANITIZATION.md"
 
 
 def sanitized():
@@ -147,7 +147,7 @@ def step_provenance():
             bad.append(archive)
             continue
         # local paths removed: every file the record names must still match it, or be listed in
-        # SANITIZATION_v007.md with the recorded hash as its hash before the removal
+        # SANITIZATION.md with the recorded hash as its hash before the removal
         named = {n: h.lower() for n, h in re.findall(r"([\w.-]+\.(?:py|sh|ps1|json|md))[`:=\s]*([0-9A-Fa-f]{64})", text)}
         with zipfile.ZipFile(PROTOCOL / archive) as zf:
             for info in zf.infolist():
@@ -157,7 +157,7 @@ def step_provenance():
                     bad.append(f"{archive}:{info.filename}")
         cleaned += 1
     report("frozen source archives against their freeze records", not bad,
-           f"{len(FREEZE_RECORDS)} archives" + (f", {cleaned} with local paths removed (SANITIZATION_v007.md)" if cleaned else ""))
+           f"{len(FREEZE_RECORDS)} archives" + (f", {cleaned} with local paths removed (SANITIZATION.md)" if cleaned else ""))
     for manifest in ("primary-source-sha256.txt", "timing-source-sha256.txt"):
         bad, count = [], 0
         for line in (RAW / "driver" / manifest).read_text(encoding="utf-8").splitlines():
@@ -213,9 +213,9 @@ def step_descriptive():
 
 def step_postgresql(tmp):
     out = tmp / "pg.csv"
-    run([SCRIPTS / "pg_contrasts_v007.py", RUN, "--out-csv", out])
+    run([SCRIPTS / "pg_contrasts.py", RUN, "--out-csv", out])
     report("PostgreSQL t-bounds vs permutation bounds (table 14)",
-           table(out) == table(SAVED / "pg_contrasts_v007.csv"))
+           table(out) == table(SAVED / "pg_contrasts.csv"))
 
 
 def main():

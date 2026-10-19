@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ablation_report_v005.py RESULTS_CSV
 
-Cost hypothesis of protocol_ablation_v005.txt: the rise of CPU time per
+Cost hypothesis of protocol_load_v005.txt, section 6: the rise of CPU time per
 request under P4 comes from the directives that install system-call filters.
 The CSV must contain P0, P4s, P4n and P4 in every block (benchmark_v005.sh
 nginx 20 P4 P4s P4n). Python 3 standard library only; must be located next to

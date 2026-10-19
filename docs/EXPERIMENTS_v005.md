@@ -9,12 +9,12 @@
 Точные версии, которые исполнялись на стенде, лежат в пакете результатов: архивы фиксации
 `data/main/protocol/*-frozen.zip` (их SHA256 записаны в `data/main/protocol/*_FREEZE*` до измерений)
 и их распакованные копии `data/main/frozen-primary/`, `frozen-timing/`, `frozen-mount-states/`,
-`frozen-analysis-queue/`. `python reproduce_v007.py` сверяет их с записями.
+`frozen-analysis-queue/`. `python reproduce.py` сверяет их с записями.
 
 `scripts_v005/` — те же скрипты в переносимой редакции: всё, что было привязано к машине и к
 человеку, проводившему этап (каталог на ВМ, SSH-псевдоним, пути к Python и sh на Windows, раскладка
 папок исполнителя), вынесено в параметры. Логика измерений и анализа не менялась; скрипты анализа,
-которые использует `reproduce_v007.py` (`build_criteria`, `select_profile`, `order_sensitivity`,
+которые использует `reproduce.py` (`build_criteria`, `select_profile`, `order_sensitivity`,
 `robustness`, `audit_benchmark_csv`), не правились вовсе и совпадают с исполнявшимися побайтно.
 
 | Параметр | Значение по умолчанию | Где используется |
@@ -31,8 +31,10 @@
 драйверы `orchestration_v005/*.sh`, `resume_transport_v005.py`, `driver_preflight_v005.sh`,
 `prepare_existing_v005.sh`, `memcached_stage3_v005.sh`, `supplement_mount_states_v005.sh`,
 `analysis_v005/analyze_v005.py`, `check_closed_environment_v005.py`, `recompute_archive_v005.py`,
-`host_v005/collect_results*_v005.ps1` и тесты `tests_v005/*`. Тесты Python (35) проходят из
-репозитория; тесты сборщиков требуют PowerShell 7.
+`host_v005/collect_results*_v005.ps1` и тесты `tests_v005/*`. Тесты Python (35, и ещё 3 в
+`test_run_stage3.py`) проходят из репозитория; тесты сборщиков требуют PowerShell 7. После публикации в
+комментариях `make_ablation_v005.sh` и `ablation_report_v005.py` исправлена ссылка на протокол абляции: он —
+раздел 6 `protocol_load_v005.txt`, отдельного `protocol_ablation_v005.txt` не было.
 
 ## Раскладка на стенде
 
@@ -43,9 +45,15 @@
 | `$BASE/frozen-timing/v005/scripts_v005/` | `scripts_v005/` (основные скрипты) |
 | `$BASE/frozen-timing/v005/stand_v005/` | `stand_v005/` |
 | `$BASE/post-analysis/` | `scripts_v005/analysis_v005/` (`analyze_v005.py`, `analyze_memcached_v005.py`, `inspect_series_v005.py`) |
+| `$BASE/post-analysis/frozen-primary/v005/scripts_v005/`, `$BASE/post-analysis/frozen-timing/v005/scripts_v005/` | `scripts_v005/` (модули, которые импортируют анализаторы) |
+| `$BASE/post-analysis/raw-vm` | ссылка на `$BASE/results_v005` |
 | `$BASE/frozen-mount-states/scripts_v005/` | `scripts_v005/` (`supplement_mount_states_v005.sh`, `mount_state_helper_v005.py`) |
 | `$BASE/` | `scripts_v005/orchestration_v005/` (драйверы очереди) |
 | `$BASE/results_v005/` | `data/main/raw-vm/` |
+
+Эту раскладку из клона репозитория создаёт `orchestration_v005/deploy_stage3.sh` (добавлен после эксперимента), а всю очередь
+этапа 3 на новом стенде запускает `orchestration_v005/run_stage3.sh` — см. `scripts_v005/GUIDE_v005.md`, раздел
+«Повторение этапа 3 с нуля одной очередью».
 
 Подготовка существующего стенда — `prepare_existing_v005.sh` (точечное дооснащение, без
 `setup_stand_v005.sh`), профили-кандидаты строит `make_candidates_v005.sh`, варианты абляции —
@@ -71,8 +79,8 @@
 | 6.7 | Анализ, добор R1д/R3д, окончательный анализ | `analyze_v005.py`, затем `driver_extensions_v005.sh` по `extension-plan.json`, затем `analyze_v005.py --final` (`driver_post_primary_resume_v005.sh`) | `nginx/…/20261013-221436`, `postgresql/…/20261013-233151`; анализ — `data/main/analysis-first-look/`, `data/main/analysis-final/` |
 | 6.9, табл. 16, 17 | Выбор, 24 политики, обязательные цели | `build_criteria_v005.py`, `select_profile_v005.py` (`--require nginx=G2-read-app-secret`), `order_sensitivity_v005.py` | `data/main/analysis-final/`, `data/derived/selection_required_g2_v005.txt` |
 | 6.7 | Точечные оценки | `point_estimates_v005.py data/main` (после эксперимента, только чтение CSV) | `data/derived/point_estimates_v005.txt` |
-| 6.7, рис. 1, табл. 14 | PostgreSQL: распределение контрастов, t-границы и перестановочные границы | `pg_contrasts_v007.py data/main` (после эксперимента) | `data/derived/pg_contrasts_v007.csv` |
-| 7, 8 | Новая служба memcached | `memcached_stage3_v005.sh register/prepare/check/probe/measure`, `memcached_client_v005.py`, `analyze_memcached_v005.py`; протокол `protocol_memcached_v005.txt` | исполнение остановилось на `register` (`driver/post-memcached-register.out`) |
+| 6.7, рис. 1, табл. 14 | PostgreSQL: распределение контрастов, t-границы и перестановочные границы | `pg_contrasts.py data/main` (после эксперимента) | `data/derived/pg_contrasts.csv` |
+| 7, 8 | Новая служба memcached | `memcached_stage3_v005.sh register/prepare/check/probe/measure`, `memcached_client_v005.py`, `analyze_memcached_v005.py`; протокол `protocol_memcached_v005.txt` | исполнение остановилось на `register` (`driver/post-memcached-register.out`): установленный на стенде `/usr/local/bin/ptrace_seize.py` отличался от `stand_v005/probes/ptrace_seize.py` — стенд собирался прежней редакцией; на стенде из `setup_stand_v005.sh` они совпадают, `run_stage3.sh stand` это проверяет |
 | 7 | Системные вызовы на операцию | `syscall_count_v005.sh` — **этап 2**, на этапе 3 не запускался | `data/preliminary/syscalls-v005` |
 
 Пауза ВМ отслеживается `slab_heartbeat_v005.py` (два метронома, CLOCK_MONOTONIC_RAW); проверка CSV —
@@ -98,6 +106,14 @@
   (`raw-vm/driver/orchestration-sha256.txt`, `corrected-orchestration-sha256.txt`). Они вызывали
   `benchmark_v005.sh` с параметрами из таблицы выше; фактические параметры записаны в `platform.txt`
   каждого каталога серии. Файлы нужно запросить у того, кто проводил измерения, и сверить по хешу.
+  Их часть очереди (пилот, R1, R2, R3 с одним техническим повтором) восстановлена по протоколу в
+  `orchestration_v005/run_stage3.sh`; остальные драйверы (`driver_primary_resume_v005.sh`,
+  `driver_post_primary*_v005.sh`, `start_resume_v005.sh`) сверяют архивы и журналы того запуска и на новом
+  стенде намеренно не запускаются.
 - Профили `stand_v005/profiles/*/P4.conf` и `nginx/P5.conf` взяты из ВМ (`raw-vm/*/profiles/`), а
   не из архива фиксации: на стенде действовали сохранённые P4/P5 с теми же директивами и другими
-  комментариями, поэтому их хеш отличается от манифеста.
+  комментариями, поэтому их хеш отличается от манифеста. Все 22 файла `stand_v005/profiles/` побайтно
+  совпадают с профилями, действовавшими на стенде (`raw-vm/initial-state/profile-sha256.txt`).
+- Прежние редакции скриптов и стенда (этапы 1–2) — `docs/history/v003/`, `docs/history/v004/`: состояния
+  тегов `v003` (`f49be6b`) и `v004` (`9c847d7`) прежней истории репозитория, которой после перезаливки на
+  GitHub нет.
