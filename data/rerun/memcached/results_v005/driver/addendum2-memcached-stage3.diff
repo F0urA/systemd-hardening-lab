@@ -1,0 +1,20 @@
+--- /root/systemd-hardening-lab/frozen-timing/v005/scripts_v005/memcached_stage3_v005.sh	2026-10-19 16:40:27.122668624 +0000
++++ /root/systemd-hardening-lab/frozen-memcached-addendum/v005/scripts_v005/memcached_stage3_v005.sh	2026-10-20 03:25:59.633251646 +0000
+@@ -64,7 +64,7 @@
+     VERSION=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["expected_version"])' "$REG/parameters.json")
+     BINARY=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["binary"])' "$REG/parameters.json")
+     SEED=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["randomization_seed"])' "$REG/parameters.json")
+-    [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+[a-zA-Z0-9.-]*$ ]] || die 'invalid registered memcached version'
++    [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+[a-zA-Z0-9._-]*$ ]] || die 'invalid registered memcached version'
+     [[ "$BINARY" == /* ]] && [ -x "$BINARY" ] || die 'registered executable is unavailable'
+ }
+ 
+@@ -148,7 +148,7 @@
+     helpers verify
+     BINARY=$(readlink -f "$(command -v memcached)")
+     VERSION=$("$BINARY" -V 2>&1 | awk '{print $NF}')
+-    [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+[a-zA-Z0-9.-]*$ ]] || die 'cannot identify installed memcached version'
++    [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+[a-zA-Z0-9._-]*$ ]] || die 'cannot identify installed memcached version'
+     SEED=$(python3 -c 'import secrets; print(secrets.token_hex(16))')
+     REG="$REG_BASE/$(date -u +%Y%m%dT%H%M%SZ)-$$"
+     mkdir -p "$REG"

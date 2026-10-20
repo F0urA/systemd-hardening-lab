@@ -1,8 +1,12 @@
 # Карта измерений: раздел статьи → скрипт → данные
 
-Основные измерения (этап 3) выполнены 12–14.10.2026 на ВМ ALT Server 11.1 (хост AMD Ryzen 5 2600).
-Результаты — `data/main/`, сырые файлы — `data/main/raw-vm/`; пути в последнем столбце таблицы ниже
-указаны относительно `data/main/raw-vm/`.
+Этап 3 выполнен дважды на ВМ ALT Server 11.1:
+
+- 12–14.10.2026, хост AMD Ryzen 5 2600 — `data/main/`; этот файл описывает его, пути в последнем
+  столбце таблицы ниже указаны относительно `data/main/raw-vm/`;
+- 19–20.10.2026, хост AMD Ryzen 5 3600, одной очередью `run_stage3.sh` из коммита `6eb755e` —
+  `data/rerun/`, данные статьи. Его каталоги по разделам статьи, хронология и отступления —
+  `data/rerun/README.md`; скрипты и параметры те же, что в таблице ниже, порядок — `run_stage3.sh`.
 
 ## Исполнявшиеся версии и эта редакция
 
@@ -31,7 +35,7 @@
 драйверы `orchestration_v005/*.sh`, `resume_transport_v005.py`, `driver_preflight_v005.sh`,
 `prepare_existing_v005.sh`, `memcached_stage3_v005.sh`, `supplement_mount_states_v005.sh`,
 `analysis_v005/analyze_v005.py`, `check_closed_environment_v005.py`, `recompute_archive_v005.py`,
-`host_v005/collect_results*_v005.ps1` и тесты `tests_v005/*`. Тесты Python (35, и ещё 3 в
+`host_v005/collect_results*_v005.ps1` и тесты `tests_v005/*`. Тесты Python (35, и ещё 6 в
 `test_run_stage3.py`) проходят из репозитория; тесты сборщиков требуют PowerShell 7. После публикации в
 комментариях `make_ablation_v005.sh` и `ablation_report_v005.py` исправлена ссылка на протокол абляции: он —
 раздел 6 `protocol_load_v005.txt`, отдельного `protocol_ablation_v005.txt` не было.
@@ -80,7 +84,7 @@
 | 6.9, табл. 16, 17 | Выбор, 24 политики, обязательные цели | `build_criteria_v005.py`, `select_profile_v005.py` (`--require nginx=G2-read-app-secret`), `order_sensitivity_v005.py` | `data/main/analysis-final/`, `data/derived/selection_required_g2_v005.txt` |
 | 6.7 | Точечные оценки | `point_estimates_v005.py data/main` (после эксперимента, только чтение CSV) | `data/derived/point_estimates_v005.txt` |
 | 6.7, рис. 1, табл. 14 | PostgreSQL: распределение контрастов, t-границы и перестановочные границы | `pg_contrasts.py data/main` (после эксперимента) | `data/derived/pg_contrasts.csv` |
-| 7, 8 | Новая служба memcached | `memcached_stage3_v005.sh register/prepare/check/probe/measure`, `memcached_client_v005.py`, `analyze_memcached_v005.py`; протокол `protocol_memcached_v005.txt` | исполнение остановилось на `register` (`driver/post-memcached-register.out`): установленный на стенде `/usr/local/bin/ptrace_seize.py` отличался от `stand_v005/probes/ptrace_seize.py` — стенд собирался прежней редакцией; на стенде из `setup_stand_v005.sh` они совпадают, `run_stage3.sh stand` это проверяет |
+| 7, 8 | Новая служба memcached | `memcached_stage3_v005.sh register/prepare/check/probe/measure`, `memcached_client_v005.py`, `analyze_memcached_v005.py`; протокол `protocol_memcached_v005.txt` | исполнение остановилось на `register` (`driver/post-memcached-register.out`): установленный на стенде `/usr/local/bin/ptrace_seize.py` отличался от `stand_v005/probes/ptrace_seize.py` — стенд собирался прежней редакцией; на стенде из `setup_stand_v005.sh` они совпадают, `run_stage3.sh stand` это проверяет. В повторении memcached измерен: `data/rerun/memcached/` |
 | 7 | Системные вызовы на операцию | `syscall_count_v005.sh` — **этап 2**, на этапе 3 не запускался | `data/preliminary/syscalls-v005` |
 
 Пауза ВМ отслеживается `slab_heartbeat_v005.py` (два метронома, CLOCK_MONOTONIC_RAW); проверка CSV —

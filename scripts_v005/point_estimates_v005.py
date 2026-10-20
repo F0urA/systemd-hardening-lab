@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """point_estimates_v005.py RUN_DIR
 
-Descriptive point estimates for the accepted series of the v005 run
-(results_v005/run-20261012-v005): mean throughput, ratio to P0, mean CPU,
+Descriptive point estimates for the accepted series of a stage-3 package
+(data/main: the run of 2026-10-12..14; data/rerun: the repeat of 2026-10-19/20,
+chosen by the name of RUN_DIR): mean throughput, ratio to P0, mean CPU,
 geometric-mean cost increase per operation over P0 and CV of throughput.
 Pooled rows join a primary series with its single registered extension,
 pairing within blocks of each series. The admission bounds themselves come
@@ -17,19 +18,31 @@ from collections import defaultdict
 from pathlib import Path
 
 RUN = Path(sys.argv[1])
-SERIES = {
-    "R1": "nginx/benchmark-v005/20261012-175912",
-    "R1ext": "nginx/benchmark-v005/20261013-221436",
-    "R5": "nginx/benchmark-v005/20261013-204356",
-    "R2": "redis/benchmark-v005/20261012-194224",
-    "R3": "postgresql/benchmark-v005/20261013-193448",
-    "R3ext": "postgresql/benchmark-v005/20261013-233151",
+PACKAGES = {  # series directories relative to RUN_DIR
+    "main": {
+        "R1": "raw-vm/nginx/benchmark-v005/20261012-175912",
+        "R1ext": "raw-vm/nginx/benchmark-v005/20261013-221436",
+        "R5": "raw-vm/nginx/benchmark-v005/20261013-204356",
+        "R2": "raw-vm/redis/benchmark-v005/20261012-194224",
+        "R3": "raw-vm/postgresql/benchmark-v005/20261013-193448",
+        "R3ext": "raw-vm/postgresql/benchmark-v005/20261013-233151",
+    },
+    "rerun": {
+        "R1": "raw-vm/nginx/benchmark-v005/20261019-172537",
+        "R1ext": "raw-vm/nginx/benchmark-v005/20261019-222428",
+        "R5": "raw-vm/nginx/benchmark-v005/20261019-211626",
+        "R2": "raw-vm/redis/benchmark-v005/20261019-184311",
+        "R3": "raw-vm/postgresql/benchmark-v005/20261019-194432",
+        "R3ext": "raw-vm/postgresql/benchmark-v005/20261019-230632",
+        "MC": "memcached/results_v005/memcached/benchmark-v005/20261020T032709Z-138512",
+    },
 }
+SERIES = PACKAGES[RUN.resolve().name]
 POOLED = {"R1+R1ext": ("R1", "R1ext"), "R3+R3ext": ("R3", "R3ext")}
 
 
 def load(name):
-    rows = list(csv.DictReader(open(RUN / "raw-vm" / SERIES[name] / "results.csv", encoding="utf-8")))
+    rows = list(csv.DictReader(open(RUN / SERIES[name] / "results.csv", encoding="utf-8")))
     data = defaultdict(dict)
     for r in rows:
         x = float(r.get("rps") or r.get("tps"))

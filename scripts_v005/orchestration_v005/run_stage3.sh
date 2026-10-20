@@ -18,6 +18,19 @@
 #   - memcached may come with dependencies and need not be 1.6.42-alt1 if
 #     SLAB_ACCEPT_OTHER_MEMCACHED=1; the version is recorded either way.
 #
+# Corrections after the repeat of 2026-10-19/20 (data/rerun/README.md), where the
+# measurements finished but memcached was measured only by a separate addendum:
+#   - preflight starts lab-proc-target@{root,labweb,labredis,labpg}: these static
+#     units do not survive a restore of the VM from a snapshot, and without them
+#     the context stage stops with RC=2;
+#   - apt-get -s prints the ALT version with a suffix
+#     ("1.6.42-alt1:p11+418735.100.1.1@1779279920"): only the part before ':'
+#     is compared with 1.6.42-alt1;
+#   - memcached -V prints "1.6.42_alt1", which the executed
+#     memcached_stage3_v005.sh rejects ([a-zA-Z0-9.-] after the numbers):
+#     memcached runs from the copy frozen-memcached with "_" allowed in both
+#     version patterns, the diff and hashes are kept in driver/.
+#
 # Usage, as root on the VM, after deploy_stage3.sh:
 #   bash $SLAB_BASE/run_stage3.sh stand       # build the stand from scratch
 #   bash $SLAB_BASE/run_stage3.sh preflight   # contract, goals, probes (about 20 min)
@@ -31,6 +44,7 @@ export LC_ALL=C TZ=UTC
 BASE=$(readlink -m "${SLAB_BASE:-/root/systemd-hardening-lab}")
 export SLAB_BASE=$BASE
 HERE="$BASE/frozen-timing/v005/scripts_v005"
+MEMCACHED_HERE="$BASE/frozen-memcached/v005/scripts_v005"
 ANALYSIS="$BASE/post-analysis"
 MOUNT="$BASE/frozen-mount-states/scripts_v005"
 export SLAB_RESULTS_ROOT="$BASE/results_v005"
@@ -40,6 +54,7 @@ export SLAB_RESULTS_ROOT="$BASE/results_v005"
 DRIVER="$ROOT/driver"
 mkdir -p "$DRIVER"
 PHASE=${1:?usage: run_stage3.sh stand|preflight|primary|post|seal|all}
+TARGETS='root labweb labredis labpg'   # lab-proc-target@ instances of setup_stand_v005.sh
 # Fixed load parameters of RUN_PROTOCOL.md; NGINX_C changes only for R4.
 export PIN=1 SERVER_CPU=0 CLIENT_CPUS=1-3 KEEPALIVE=0 STALL_MS=500
 export NGINX_N=100000 NGINX_C=25 REDIS_N=3000000 REDIS_THREADS=3 PG_T=60
@@ -127,9 +142,21 @@ phase_stand() {
 }
 
 # ---------------------------------------------------------------- preflight
+start_targets() {  # static units: not running after a restore of the VM from a snapshot
+    local user
+    for user in $TARGETS; do
+        systemctl start "lab-proc-target@$user.service" || return 2
+        systemctl is-active --quiet "lab-proc-target@$user.service" || return 2
+        printf '%s lab-proc-target@%s active\n' "$(date -u -Is)" "$user"
+    done
+}
+
 phase_preflight() {
     rest
     clock_check preflight   # before the claim: a failed check can simply be repeated
+    start_targets > "$DRIVER/preflight-targets.txt" 2>&1 || {
+        echo "lab-proc-target units do not start; see $DRIVER/preflight-targets.txt"; exit 2;
+    }
     claim preflight
     local ledger="$DRIVER/preflight-ledger.csv"
     echo 'stage,start_guest_utc,end_guest_utc,exit_status' > "$ledger"
@@ -276,6 +303,9 @@ install_memcached() {  # only the new package, after every load series of the ol
     }
     version=$(sed -n 's/^Inst memcached (\([^ ]*\) .*/\1/p' "$plan")
     [ -n "$version" ] || return 2
+    echo "APT_VERSION=$version"
+    # ALT appends ":<branch>+<build>@<time>" to version-release.
+    version=${version%%:*}
     if [ "$version" != 1.6.42-alt1 ] && [ "${SLAB_ACCEPT_OTHER_MEMCACHED:-0}" != 1 ]; then
         echo "memcached $version differs from 1.6.42-alt1 of the executed run; SLAB_ACCEPT_OTHER_MEMCACHED=1 accepts it"
         return 2
@@ -294,25 +324,36 @@ install_memcached() {  # only the new package, after every load series of the ol
     rpm -q memcached
     return "$rc"
 }
+memcached_copy() {  # frozen-timing with "_" allowed in the two version patterns, nothing else
+    [ ! -e "$BASE/frozen-memcached" ] || { echo "$BASE/frozen-memcached exists; not overwritten"; return 2; }
+    mkdir -p "$BASE/frozen-memcached/v005"
+    cp -a "$HERE" "$HERE/../stand_v005" "$BASE/frozen-memcached/v005/"
+    sed -i 's/\[a-zA-Z0-9\.-\]\*\$/[a-zA-Z0-9._-]*$/' "$MEMCACHED_HERE/memcached_stage3_v005.sh"
+    diff -u "$HERE/memcached_stage3_v005.sh" "$MEMCACHED_HERE/memcached_stage3_v005.sh" \
+        > "$DRIVER/memcached-stage3.diff" || true
+    [ "$(grep -c '^+ ' "$DRIVER/memcached-stage3.diff")" = 2 ] || { echo 'Unexpected patch result'; return 2; }
+    sha256sum "$HERE/memcached_stage3_v005.sh" "$MEMCACHED_HERE/memcached_stage3_v005.sh"
+}
 memcached_load() {  # LOOK: one complete technical repeat of a failed look
     local look=$1 rc=0
     MEMCACHED_LOG="$DRIVER/post-memcached-load-$look.out"
-    run_logged "memcached-load-$look" bash "$HERE/memcached_stage3_v005.sh" measure "$REG" "$CONTRACT" "$look" || rc=$?
+    run_logged "memcached-load-$look" bash "$MEMCACHED_HERE/memcached_stage3_v005.sh" measure "$REG" "$CONTRACT" "$look" || rc=$?
     if [ "$rc" != 0 ]; then
         rc=0
         MEMCACHED_LOG="$DRIVER/post-memcached-load-$look-retry.out"
-        run_logged "memcached-load-$look-retry" bash "$HERE/memcached_stage3_v005.sh" measure "$REG" "$CONTRACT" "$look" || rc=$?
+        run_logged "memcached-load-$look-retry" bash "$MEMCACHED_HERE/memcached_stage3_v005.sh" measure "$REG" "$CONTRACT" "$look" || rc=$?
     fi
     return "$rc"
 }
 phase_memcached() {
     run_logged memcached-install install_memcached || return 0
-    run_logged memcached-register bash "$HERE/memcached_stage3_v005.sh" register || return 0
+    run_logged memcached-copy memcached_copy || return 0
+    run_logged memcached-register bash "$MEMCACHED_HERE/memcached_stage3_v005.sh" register || return 0
     REG=$(sed -n 's/^REGISTERED_PARAMETERS=//p' "$DRIVER/post-memcached-register.out" | tail -n 1)
     [[ "$REG" == "$ROOT/memcached-v005-registrations/"* ]] || exit 2
-    run_logged memcached-prepare bash "$HERE/memcached_stage3_v005.sh" prepare "$REG" || return 0
-    if run_logged memcached-functional bash "$HERE/memcached_stage3_v005.sh" check "$REG" \
-        && run_logged memcached-probe bash "$HERE/memcached_stage3_v005.sh" probe "$REG"; then
+    run_logged memcached-prepare bash "$MEMCACHED_HERE/memcached_stage3_v005.sh" prepare "$REG" || return 0
+    if run_logged memcached-functional bash "$MEMCACHED_HERE/memcached_stage3_v005.sh" check "$REG" \
+        && run_logged memcached-probe bash "$MEMCACHED_HERE/memcached_stage3_v005.sh" probe "$REG"; then
         CONTRACT=$(sed -n 's/^RESULT_DIR=//p' "$DRIVER/post-memcached-functional.out" | tail -n 1)
         local probe bench extension decision
         probe=$(sed -n 's/^RESULT_DIR=//p' "$DRIVER/post-memcached-probe.out" | tail -n 1)
@@ -337,7 +378,7 @@ PY
             fi
         fi
     fi
-    run_logged memcached-cleanup bash "$HERE/memcached_stage3_v005.sh" cleanup "$REG" || true
+    run_logged memcached-cleanup bash "$MEMCACHED_HERE/memcached_stage3_v005.sh" cleanup "$REG" || true
 }
 
 phase_post() {
@@ -409,16 +450,20 @@ for relative in sorted(names, key=lambda n: n.encode()):
 MANIFEST_PY
     mv "$BASE/SHA256-CLOSED-RESULTS.tmp" "$manifest"
     # The analyzers write next to themselves: first look, final analysis, the
-    # plan of the extension and the memcached analysis go into the same archive.
+    # plan of the extension and the memcached analysis go into the same archive,
+    # with the corrected copy that measured memcached.
     local outputs=() path
     for path in "$ANALYSIS"/analysis-* "$ANALYSIS"/memcached-analysis-* "$ANALYSIS"/extension-plan.json; do
         [ -e "$path" ] && outputs+=("post-analysis/${path#"$ANALYSIS"/}")
     done
+    [ -e "$BASE/frozen-memcached" ] && outputs+=(frozen-memcached)
     tar -czf - -C "$BASE" results_v005 "${outputs[@]}" > "$archive"
     ( cd "$BASE" && sha256sum "$(basename "$archive")" ) | tee "$archive.sha256"
     echo "SEALED: $(wc -l < "$manifest") files; copy $archive to the host"
 }
 
+# tests_v005/test_run_stage3.py sources the functions without running a phase
+[ "$PHASE" != library ] || return 0
 case "$PHASE" in
     stand) phase_stand ;;
     preflight) phase_preflight ;;

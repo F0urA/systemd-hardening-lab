@@ -1,0 +1,13 @@
+30dc9c65eb18eb721b967a5821eb4089efcbe238ded8601f2d5ba1121b97799e  /root/systemd-hardening-lab/frozen-memcached-addendum/v005/scripts_v005/memcached_stage3_v005.sh
+6124979406c2ecc286e6ffa6c8e481e6a19fa78ca97b3c9629de38052ea70d93  /root/systemd-hardening-lab/frozen-memcached-addendum/v005/scripts_v005/memcached_client_v005.py
+4afff4ff2eefbeec83e3e4049041ca8b74cda4f70f1f9fefc6ebe8cd96590c30  /root/systemd-hardening-lab/frozen-memcached-addendum/v005/scripts_v005/protocol_memcached_v005.txt
+cc835f167a72bb33f989526b8468eaa244655c4a5393f2947392f61cbe2df7cd  /root/systemd-hardening-lab/frozen-memcached-addendum/v005/scripts_v005/metric_summary_v005.py
+f7ee681182d7e81c78495b640f8eb51c88773a3a0a0d2a2e97acc89ad3ae08a2  /usr/bin/memcached
+489ca68e075bf0b4e7ecc789d6081b9862d2150feba856eb7622249cfa5fab3e  /usr/local/bin/lab-target
+4232d0c127433b773fa8a5cb7e45f5d6f05dfab74e21686dd01b0a06899b9e03  /usr/local/bin/uid-helper
+8d220d256eb92e5a6b1f46784bb20d47bd795107510c68be762efaa522012e86  /etc/systemd/system/lab-proc-target@.service
+303f904e1276a0d832230f56d5404fc8960d90961fb349683d1f29ab512797b6  /root/systemd-hardening-lab/frozen-memcached-addendum/v005/scripts_v005/slab_fp_v005.sh
+f080a096dc6e77987d3832be2db5cfccd72a868c41dbfc6670a0de2d9b6fea1f  /root/systemd-hardening-lab/frozen-memcached-addendum/v005/scripts_v005/slab_inservice_v005.sh
+eaf450808581c54bbc8b0e2c8c80797bf04fc71c48d41432056bbfdac9d55450  /root/systemd-hardening-lab/frozen-memcached-addendum/v005/scripts_v005/../stand_v005/probes/isolation_probe.py
+54eca1d42d3796a574a7740570ec9eec57d9914138cf299e73b347fdd96e8428  /root/systemd-hardening-lab/frozen-memcached-addendum/v005/scripts_v005/../stand_v005/probes/extended_probe.py
+5f85d32a5ed9d3a1e7213881913519080a62683eaf3c6be73a558ae211a267d2  /root/systemd-hardening-lab/frozen-memcached-addendum/v005/scripts_v005/../stand_v005/probes/ptrace_seize.py

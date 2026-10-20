@@ -1,0 +1,26 @@
+service,goal,dac,context,profile,outcome,detail
+redis,G1-app-guard,-,server,P4,INFO,default refuses CONFIG SET dir: ERR CONFIG SET failed (possibly related to argument 'dir') - can't set protected config
+redis,G1-write-outside-datadir,own,server,P0,ACHIEVED,config_set_dir=OK config_set_dbfilename=OK save=OK diagnostic=redis-P0-own.journal.txt server_pid=14263
+redis,G1-write-outside-datadir,own,process,P0,ACHIEVED,G_RESULT=ALLOWED via=direct uid=983
+redis,G1-write-outside-datadir,root,server,P0,BLOCKED,config_set_dir=OK config_set_dbfilename=OK save=ERR diagnostic=redis-P0-root.journal.txt server_pid=14263
+redis,G1-write-outside-datadir,root,process,P0,BLOCKED,G_RESULT=BLOCKED uid=983
+redis,G1-write-outside-datadir,own,server,P1,ACHIEVED,config_set_dir=OK config_set_dbfilename=OK save=OK diagnostic=redis-P1-own.journal.txt server_pid=14426
+redis,G1-write-outside-datadir,own,process,P1,ACHIEVED,G_RESULT=ALLOWED via=direct uid=983
+redis,G1-write-outside-datadir,root,server,P1,BLOCKED,config_set_dir=OK config_set_dbfilename=OK save=ERR diagnostic=redis-P1-root.journal.txt server_pid=14426
+redis,G1-write-outside-datadir,root,process,P1,BLOCKED,G_RESULT=BLOCKED uid=983
+redis,G1-write-outside-datadir,own,server,P2,ACHIEVED,config_set_dir=OK config_set_dbfilename=OK save=OK diagnostic=redis-P2-own.journal.txt server_pid=14594
+redis,G1-write-outside-datadir,own,process,P2,ACHIEVED,G_RESULT=ALLOWED via=direct uid=983
+redis,G1-write-outside-datadir,root,server,P2,BLOCKED,config_set_dir=OK config_set_dbfilename=OK save=ERR diagnostic=redis-P2-root.journal.txt server_pid=14594
+redis,G1-write-outside-datadir,root,process,P2,BLOCKED,G_RESULT=BLOCKED uid=983
+redis,G1-write-outside-datadir,own,server,P1d,BLOCKED,config_set_dir=OK config_set_dbfilename=OK save=ERR diagnostic=redis-P1d-own.journal.txt server_pid=14765
+redis,G1-write-outside-datadir,own,process,P1d,BLOCKED,G_RESULT=BLOCKED uid=983
+redis,G1-write-outside-datadir,root,server,P1d,BLOCKED,config_set_dir=OK config_set_dbfilename=OK save=ERR diagnostic=redis-P1d-root.journal.txt server_pid=14765
+redis,G1-write-outside-datadir,root,process,P1d,BLOCKED,G_RESULT=BLOCKED uid=983
+redis,G1-write-outside-datadir,own,server,P4,ACHIEVED,config_set_dir=OK config_set_dbfilename=OK save=OK diagnostic=redis-P4-own.journal.txt server_pid=14939
+redis,G1-write-outside-datadir,own,process,P4,ACHIEVED,G_RESULT=ALLOWED via=direct uid=983
+redis,G1-write-outside-datadir,root,server,P4,BLOCKED,config_set_dir=OK config_set_dbfilename=OK save=ERR diagnostic=redis-P4-root.journal.txt server_pid=14939
+redis,G1-write-outside-datadir,root,process,P4,BLOCKED,G_RESULT=BLOCKED uid=983
+redis,G1-write-outside-datadir,own,server,P6,BLOCKED,config_set_dir=OK config_set_dbfilename=OK save=ERR diagnostic=redis-P6-own.journal.txt server_pid=15109
+redis,G1-write-outside-datadir,own,process,P6,BLOCKED,G_RESULT=BLOCKED uid=983
+redis,G1-write-outside-datadir,root,server,P6,BLOCKED,config_set_dir=OK config_set_dbfilename=OK save=ERR diagnostic=redis-P6-root.journal.txt server_pid=15109
+redis,G1-write-outside-datadir,root,process,P6,BLOCKED,G_RESULT=BLOCKED uid=983

@@ -1,0 +1,8 @@
+20b526e98074e96aa1df378f007f9f14bb4f9a1c9b6f50f8ac5fa45a478d4947  ./driver/addendum-memcached-finished.txt
+77d905f2839a87e7b2b6df3dc9ee4a48792958b4ab4e5bb8a483002f42ca35c8  ./driver/addendum-memcached-install-plan.txt
+0c0405be501b13e6bba292fc11389505498ca479826ed14b123c12a18e72357f  ./driver/addendum-memcached-install.out
+9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa  ./driver/addendum-memcached-install.rc
+54dad87576667e4abb07999e0204a7c86a3b385a864396f50f9f3a2643c1653a  ./driver/addendum-memcached-register.out
+4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865  ./driver/addendum-memcached-register.rc
+8a3556bb1b804cc96a87e48660a87545ccc2c47ab9e4bfe412d4cfca694b176b  ./driver/addendum-memcached-source-sha256.txt
+a7e260373bcbf683c4aa620b2a35b220c3e5bcf372b7ff769179b341eb205aaa  ./driver/addendum-memcached-started.txt

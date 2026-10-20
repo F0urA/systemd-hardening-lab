@@ -1,0 +1,49 @@
+361 167 8:2 / / ro,nosuid,relatime master:1 - ext4 /dev/sda2 rw
+367 361 0:22 / /run rw,nosuid,relatime master:5 - tmpfs runfs rw,mode=755,inode64
+373 361 0:23 / /sys rw,nosuid,nodev,noexec,relatime master:7 - sysfs sysfs rw
+374 373 0:7 / /sys/kernel/security rw,nosuid,nodev,noexec,relatime master:8 - securityfs securityfs rw
+375 373 0:26 / /sys/fs/cgroup ro,nosuid,nodev,noexec,relatime master:9 - cgroup2 cgroup2 rw,nsdelegate,memory_recursiveprot
+376 373 0:27 / /sys/fs/pstore rw,nosuid,nodev,noexec,relatime master:10 - pstore pstore rw
+377 373 0:28 / /sys/fs/bpf ro,nosuid,nodev,noexec,relatime master:11 - bpf bpf rw,mode=700
+378 373 0:13 / /sys/kernel/tracing ro,nosuid,nodev,noexec,relatime master:13 - tracefs tracefs rw
+379 373 0:8 / /sys/kernel/debug ro,nosuid,nodev,noexec,relatime master:16 - debugfs debugfs rw
+380 373 0:33 / /sys/fs/fuse/connections rw,nosuid,nodev,noexec,relatime master:19 - fusectl fusectl rw
+381 373 0:20 / /sys/kernel/config rw,nosuid,nodev,noexec,relatime master:18 - configfs configfs rw
+382 361 0:35 / /tmp rw,nosuid,relatime master:44 - tmpfs tmpfs rw,inode64
+383 361 0:47 / /dev ro,nosuid,noexec - tmpfs tmpfs rw,size=4096k,nr_inodes=65536,mode=755,inode64
+384 383 0:25 / /dev/pts rw,nosuid,noexec,relatime master:4 - devpts devpts rw,gid=5,mode=620,ptmxmode=666
+385 383 0:24 / /dev/shm rw,nosuid,nodev master:3 - tmpfs tmpfs rw,inode64
+386 383 0:19 / /dev/mqueue rw,nosuid,nodev,noexec,relatime master:14 - mqueue mqueue rw
+387 383 0:30 / /dev/hugepages rw,nosuid,nodev,relatime master:15 - hugetlbfs hugetlbfs rw,pagesize=2M
+362 361 0:22 /systemd/inaccessible/reg /etc/systemd-lab/credential ro,nosuid,noexec,relatime master:5 - tmpfs runfs rw,mode=755,inode64
+363 361 0:22 /systemd/inaccessible/dir /home ro,nosuid,noexec,relatime master:5 - tmpfs runfs rw,mode=755,inode64
+364 361 0:48 / /proc rw,nosuid,nodev,noexec,relatime - proc proc rw,hidepid=invisible
+365 364 0:29 / /proc/sys/fs/binfmt_misc rw,nosuid,relatime master:12 - autofs systemd-1 rw,fd=36,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=2273
+366 364 0:48 /acpi /proc/acpi ro,nosuid,nodev,noexec,relatime - proc proc rw,hidepid=invisible
+371 364 0:48 /asound /proc/asound ro,nosuid,nodev,noexec,relatime - proc proc rw,hidepid=invisible
+372 364 0:48 /bus /proc/bus ro,nosuid,nodev,noexec,relatime - proc proc rw,hidepid=invisible
+388 364 0:48 /fs /proc/fs ro,nosuid,nodev,noexec,relatime - proc proc rw,hidepid=invisible
+389 364 0:48 /irq /proc/irq ro,nosuid,nodev,noexec,relatime - proc proc rw,hidepid=invisible
+390 364 0:22 /systemd/inaccessible/reg /proc/kallsyms ro,nosuid,noexec,relatime master:5 - tmpfs runfs rw,mode=755,inode64
+391 364 0:22 /systemd/inaccessible/reg /proc/kcore ro,nosuid,noexec,relatime master:5 - tmpfs runfs rw,mode=755,inode64
+392 364 0:22 /systemd/inaccessible/reg /proc/kmsg ro,nosuid,noexec,relatime master:5 - tmpfs runfs rw,mode=755,inode64
+393 364 0:48 /latency_stats /proc/latency_stats ro,nosuid,nodev,noexec,relatime - proc proc rw,hidepid=invisible
+394 364 0:48 /mtrr /proc/mtrr ro,nosuid,nodev,noexec,relatime - proc proc rw,hidepid=invisible
+395 364 0:48 /scsi /proc/scsi ro,nosuid,nodev,noexec,relatime - proc proc rw,hidepid=invisible
+396 364 0:48 /sys /proc/sys ro,nosuid,nodev,noexec,relatime - proc proc rw,hidepid=invisible
+397 396 0:29 / /proc/sys/fs/binfmt_misc rw,nosuid,relatime master:12 - autofs systemd-1 rw,fd=36,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=2273
+398 364 0:48 /sysrq-trigger /proc/sysrq-trigger ro,nosuid,nodev,noexec,relatime - proc proc rw,hidepid=invisible
+399 361 0:22 /systemd/inaccessible/dir /root ro,nosuid,noexec,relatime master:5 - tmpfs runfs rw,mode=755,inode64
+368 367 0:22 /systemd/inaccessible/dir /run/credentials ro,nosuid,noexec,relatime master:5 - tmpfs runfs rw,mode=755,inode64
+369 367 0:22 /systemd/propagate/slab-v005-mountstate-205c929daac371cf-late-p6-rootown-master.service /run/systemd/incoming ro,nosuid,relatime master:5 - tmpfs runfs rw,mode=755,inode64
+370 367 0:22 /systemd/inaccessible/dir /run/user ro,nosuid,noexec,relatime master:5 - tmpfs runfs rw,mode=755,inode64
+400 375 0:26 /system.slice/slab-v005-mountstate-205c929daac371cf-late-p6-rootown-master.service/memory.pressure /sys/fs/cgroup/system.slice/slab-v005-mountstate-205c929daac371cf-late-p6-rootown-master.service/memory.pressure rw,nosuid,nodev,noexec,relatime master:9 - cgroup2 cgroup2 rw,nsdelegate,memory_recursiveprot
+401 382 0:35 /systemd-private-a7e6a02b45124ea19bb7173d184b6461-slab-v005-mountstate-205c929daac371cf-late-p6-rootown-master.service-eHI4I6/tmp /tmp rw,nosuid,relatime master:44 - tmpfs tmpfs rw,inode64
+402 361 0:22 /systemd/inaccessible/dir /usr/lib/modules ro,nosuid,noexec,relatime master:5 - tmpfs runfs rw,mode=755,inode64
+403 361 8:2 /var/log/slab-nginx-error.log /var/log/slab-nginx-error.log rw,nosuid,relatime master:1 - ext4 /dev/sda2 rw
+404 361 8:2 /var/spool/nginx/tmp/client /var/spool/nginx/tmp/client rw,nosuid,relatime master:1 - ext4 /dev/sda2 rw
+405 361 8:2 /var/spool/nginx/tmp/fastcgi /var/spool/nginx/tmp/fastcgi rw,nosuid,relatime master:1 - ext4 /dev/sda2 rw
+406 361 8:2 /var/spool/nginx/tmp/proxy /var/spool/nginx/tmp/proxy rw,nosuid,relatime master:1 - ext4 /dev/sda2 rw
+407 361 8:2 /var/spool/nginx/tmp/scgi /var/spool/nginx/tmp/scgi rw,nosuid,relatime master:1 - ext4 /dev/sda2 rw
+408 361 8:2 /var/spool/nginx/tmp/uwsgi /var/spool/nginx/tmp/uwsgi rw,nosuid,relatime master:1 - ext4 /dev/sda2 rw
+409 361 8:2 /var/tmp/systemd-private-a7e6a02b45124ea19bb7173d184b6461-slab-v005-mountstate-205c929daac371cf-late-p6-rootown-master.service-lgVHHL/tmp /var/tmp rw,nosuid,relatime master:1 - ext4 /dev/sda2 rw

@@ -1,0 +1,1 @@
+d00059582a770928b74f46cca71c73242c66a874859e6171c29c2d747d1fd574  /root/systemd-hardening-lab/results_v005/nginx/profiles/P4.conf

@@ -1,0 +1,1 @@
+{"cell": "nested-P1c-labweb-worker", "errno": 1, "message": "[Errno 1] Operation not permitted: '/run/slab-mountstate-v005-205c929daac371cf/nested-P1c-labweb-worker/nested-t_fx9hrt'", "namespace": "mnt:[4026532250]", "phase": "bind", "pid": 134663, "raw_ns": 27791363883223, "result": "DENIED", "state_reproduced": false, "token": "205c929daac371cf", "uid": 984}

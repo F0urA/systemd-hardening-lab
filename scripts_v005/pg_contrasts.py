@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """pg_contrasts.py RUN_DIR [--out-csv FILE] [--plot FILE]
 
-PostgreSQL of the third stage (results_v005/run-20261012-v005): paired
+PostgreSQL of the third stage (data/main or data/rerun, by the name of RUN_DIR): paired
 block contrasts d_i = X(D, i) - 0.95 X(P0, i) and cost log ratios, their
 distribution, and a distribution-free check of the t-bounds used for admission.
 
@@ -15,8 +15,8 @@ The outcome (non-inferior / loss beyond the margin / no conclusion) and the
 cost condition are reported for both, so that a reader can see whether the
 admission decision depends on the normality assumption.
 
-Series: R3 (10 blocks) for P1 and P1d; R3 + R3ext (20 blocks) for P2, P4, P6,
-exactly as in the combined analysis. Needs numpy; matplotlib only for --plot.
+Series as in the combined analysis: data/main -- R3 (10 blocks) for P1 and P1d,
+R3 + R3ext (20 blocks) for P2, P4, P6; data/rerun -- R3 + R3ext for all five. Needs numpy; matplotlib only for --plot.
 """
 import argparse
 import csv
@@ -34,7 +34,12 @@ from audit_benchmark_csv_v005 import bounds, t_quantile  # noqa: E402
 ALPHA = 0.05 / (5 * 2)
 R3 = "postgresql/benchmark-v005/20261013-193448"
 R3EXT = "postgresql/benchmark-v005/20261013-233151"
-SOURCE = {"P1": (R3,), "P1d": (R3,), "P2": (R3, R3EXT), "P4": (R3, R3EXT), "P6": (R3, R3EXT)}
+RERUN_R3 = "postgresql/benchmark-v005/20261019-194432"
+RERUN_R3EXT = "postgresql/benchmark-v005/20261019-230632"
+PACKAGES = {
+    "main": {"P1": (R3,), "P1d": (R3,), "P2": (R3, R3EXT), "P4": (R3, R3EXT), "P6": (R3, R3EXT)},
+    "rerun": {p: (RERUN_R3, RERUN_R3EXT) for p in ("P1", "P1d", "P2", "P4", "P6")},
+}
 OUTCOME = {(True, False): "NON_INFERIOR", (False, True): "LOSS_EXCEEDS", (False, False): "INCONCLUSIVE"}
 
 
@@ -93,7 +98,7 @@ def main():
     a = ap.parse_args()
     rows, points = [], {}
     sign_cache = {}
-    for prof, series in SOURCE.items():
+    for prof, series in PACKAGES[a.run.resolve().name].items():
         data = blocks(a.run, series)
         n = len(data)
         s = sign_cache.setdefault(n, signs(n))

@@ -1,0 +1,1 @@
+{"checks": [{"check": "restart-loses-value", "detail": "verified present before restart, absent after restart (expected)", "result": "PASS"}]}

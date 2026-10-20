@@ -1,0 +1,2 @@
+{"family": 4, "looks_allowed": 2, "looks_used": 1, "needs_extension": false, "unresolved": [], "G": [], "note": "Empty file-path goals do not imply absence of security risk."}
+Analysis directory: /root/systemd-hardening-lab/post-analysis/memcached-analysis-first-look

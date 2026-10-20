@@ -1,0 +1,5 @@
+8c5569781bbfc2f64b3324c587c74d174e642cd370beac82a74f7d6304e277c7  /root/systemd-hardening-lab/results_v005/redis/profiles/P1.conf
+e1e43d00e4b94d11d05d00877222363c23ca86ebb1aac064937169762653b623  /root/systemd-hardening-lab/results_v005/redis/profiles/P2.conf
+8d5dd69997f62590370370129404dae1a8821d79e4a1c3ad5813078980534b04  /root/systemd-hardening-lab/results_v005/redis/profiles/P1d.conf
+d962b34490c610c1d6a0930ee316615608d0f1cdb678c37e5e89229f9296eadd  /root/systemd-hardening-lab/results_v005/redis/profiles/P4.conf
+0fc951fb31678527fde99840dc176be6d450d4dfe8e6d83541d591c227d409d0  /root/systemd-hardening-lab/results_v005/redis/profiles/P6.conf

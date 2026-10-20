@@ -1,0 +1,145 @@
+service,profile,check,result,detail,mandatory
+nginx,P0,start,PASS,,1
+nginx,P0,reopen-logs,PASS,log_owner_after=labweb,1
+nginx,P0,reload,PASS,workers=2,1
+nginx,P0,not-found-404,PASS,http=404,1
+nginx,P0,restart,PASS,,1
+nginx,P0,crash-recovery,PASS,killed_pid=1580,1
+nginx,P1,start,PASS,,1
+nginx,P1,reopen-logs,PASS,log_owner_after=labweb,1
+nginx,P1,reload,PASS,workers=2,1
+nginx,P1,not-found-404,PASS,http=404,1
+nginx,P1,restart,PASS,,1
+nginx,P1,crash-recovery,PASS,killed_pid=1798,1
+nginx,P2,start,PASS,,1
+nginx,P2,reopen-logs,PASS,log_owner_after=labweb,1
+nginx,P2,reload,PASS,workers=2,1
+nginx,P2,not-found-404,PASS,http=404,1
+nginx,P2,restart,PASS,,1
+nginx,P2,crash-recovery,PASS,killed_pid=1971,1
+nginx,P1r,start,PASS,,1
+nginx,P1r,reopen-logs,PASS,log_owner_after=labweb,1
+nginx,P1r,reload,PASS,workers=2,1
+nginx,P1r,not-found-404,PASS,http=404,1
+nginx,P1r,restart,PASS,,1
+nginx,P1r,crash-recovery,PASS,killed_pid=2142,1
+nginx,P1c,start,PASS,,1
+nginx,P1c,reopen-logs,PASS,log_owner_after=root,1
+nginx,P1c,reload,PASS,workers=2,1
+nginx,P1c,not-found-404,PASS,http=404,1
+nginx,P1c,restart,PASS,,1
+nginx,P1c,crash-recovery,PASS,killed_pid=2324,1
+nginx,P4,start,PASS,,1
+nginx,P4,reopen-logs,PASS,log_owner_after=root,1
+nginx,P4,reload,PASS,workers=2,1
+nginx,P4,not-found-404,PASS,http=404,1
+nginx,P4,restart,PASS,,1
+nginx,P4,crash-recovery,PASS,killed_pid=2498,1
+nginx,P5,start,PASS,,1
+nginx,P5,reopen-logs,PASS,log_owner_after=root,1
+nginx,P5,reload,PASS,workers=2,1
+nginx,P5,not-found-404,PASS,http=404,1
+nginx,P5,restart,PASS,,1
+nginx,P5,crash-recovery,PASS,killed_pid=2667,1
+nginx,P6,start,PASS,,1
+nginx,P6,reopen-logs,PASS,log_owner_after=root,1
+nginx,P6,reload,PASS,workers=2,1
+nginx,P6,not-found-404,PASS,http=404,1
+nginx,P6,restart,PASS,,1
+nginx,P6,crash-recovery,PASS,killed_pid=2852,1
+nginx,P0->P1c,migrate-reopen-operation,PASS,initial_profile=P0 main=2949,1
+nginx,P0->P1c,migrate-reopen-without-step,BLOCKED,log_owner_after_operation=labweb; BLOCKED means target did not start,1
+nginx,P0->P1c,migrate-reopen-with-step,PASS,explicit migration: log owner returned to root,1
+nginx,P0->P1c,migrate-reload-operation,PASS,initial_profile=P0 main=3160,1
+nginx,P0->P1c,migrate-reload-without-step,STARTED,log_owner_after_operation=root; BLOCKED means target did not start,1
+nginx,P0->P1c,migrate-reload-with-step,PASS,explicit migration: log owner returned to root,1
+nginx,P0->P1c,migrate-restart-operation,PASS,initial_profile=P0 main=3392,1
+nginx,P0->P1c,migrate-restart-without-step,STARTED,log_owner_after_operation=root; BLOCKED means target did not start,1
+nginx,P0->P1c,migrate-restart-with-step,PASS,explicit migration: log owner returned to root,1
+nginx,P0->P1c,migrate-crash-operation,PASS,initial_profile=P0 main=3617,1
+nginx,P0->P1c,migrate-crash-without-step,STARTED,log_owner_after_operation=root; BLOCKED means target did not start,1
+nginx,P0->P1c,migrate-crash-with-step,PASS,explicit migration: log owner returned to root,1
+nginx,P1->P1c,migrate-reopen-operation,PASS,initial_profile=P1 main=3836,1
+nginx,P1->P1c,migrate-reopen-without-step,BLOCKED,log_owner_after_operation=labweb; BLOCKED means target did not start,1
+nginx,P1->P1c,migrate-reopen-with-step,PASS,explicit migration: log owner returned to root,1
+nginx,P1->P1c,migrate-reload-operation,PASS,initial_profile=P1 main=4048,1
+nginx,P1->P1c,migrate-reload-without-step,STARTED,log_owner_after_operation=root; BLOCKED means target did not start,1
+nginx,P1->P1c,migrate-reload-with-step,PASS,explicit migration: log owner returned to root,1
+nginx,P1->P1c,migrate-restart-operation,PASS,initial_profile=P1 main=4280,1
+nginx,P1->P1c,migrate-restart-without-step,STARTED,log_owner_after_operation=root; BLOCKED means target did not start,1
+nginx,P1->P1c,migrate-restart-with-step,PASS,explicit migration: log owner returned to root,1
+nginx,P1->P1c,migrate-crash-operation,PASS,initial_profile=P1 main=4527,1
+nginx,P1->P1c,migrate-crash-without-step,STARTED,log_owner_after_operation=root; BLOCKED means target did not start,1
+nginx,P1->P1c,migrate-crash-with-step,PASS,explicit migration: log owner returned to root,1
+nginx-tls,P0,tls-start,PASS,separate unit; ports TLS=8443 upstream=18080,1
+nginx-tls,P0,https-proxy-response,PASS,verified synthetic CA and exact upstream payload,1
+nginx-tls,P0,tls-reload,PASS,workers=2; HTTPS payload rechecked,1
+nginx-tls,P1c,tls-start,PASS,separate unit; ports TLS=8443 upstream=18080,1
+nginx-tls,P1c,https-proxy-response,PASS,verified synthetic CA and exact upstream payload,1
+nginx-tls,P1c,tls-reload,PASS,workers=2; HTTPS payload rechecked,1
+redis,P0,start,PASS,,1
+redis,P0,bgsave,PASS,reply=Background saving started status=ok,1
+redis,P0,bgrewriteaof,PASS,reply=Background append only file rewriting started status=ok,1
+redis,P0,restart-keeps-value,PASS,,1
+redis,P0,crash-recovery,PASS,killed_pid=5121,0
+redis,P1,start,PASS,,1
+redis,P1,bgsave,PASS,reply=Background saving started status=ok,1
+redis,P1,bgrewriteaof,PASS,reply=Background append only file rewriting started status=ok,1
+redis,P1,restart-keeps-value,PASS,,1
+redis,P1,crash-recovery,PASS,killed_pid=5300,0
+redis,P2,start,PASS,,1
+redis,P2,bgsave,PASS,reply=Background saving started status=ok,1
+redis,P2,bgrewriteaof,PASS,reply=Background append only file rewriting started status=ok,1
+redis,P2,restart-keeps-value,PASS,,1
+redis,P2,crash-recovery,PASS,killed_pid=5532,0
+redis,P1d,start,PASS,,1
+redis,P1d,bgsave,PASS,reply=Background saving started status=ok,1
+redis,P1d,bgrewriteaof,PASS,reply=Background append only file rewriting started status=ok,1
+redis,P1d,restart-keeps-value,PASS,,1
+redis,P1d,crash-recovery,PASS,killed_pid=5723,0
+redis,P4,start,PASS,,1
+redis,P4,bgsave,PASS,reply=Background saving started status=ok,1
+redis,P4,bgrewriteaof,PASS,reply=Background append only file rewriting started status=ok,1
+redis,P4,restart-keeps-value,PASS,,1
+redis,P4,crash-recovery,PASS,killed_pid=5909,0
+redis,P6,start,PASS,,1
+redis,P6,bgsave,PASS,reply=Background saving started status=ok,1
+redis,P6,bgrewriteaof,PASS,reply=Background append only file rewriting started status=ok,1
+redis,P6,restart-keeps-value,PASS,,1
+redis,P6,crash-recovery,PASS,killed_pid=6095,0
+postgresql,P0,start,PASS,,1
+postgresql,P0,checkpoint,PASS,,1
+postgresql,P0,reload,PASS,,1
+postgresql,P0,query-with-jit,PASS,jit_used=no ,1
+postgresql,P0,restart,PASS,,1
+postgresql,P0,crash-recovery,PASS,killed_pid=6259,0
+postgresql,P1,start,PASS,,1
+postgresql,P1,checkpoint,PASS,,1
+postgresql,P1,reload,PASS,,1
+postgresql,P1,query-with-jit,PASS,jit_used=no ,1
+postgresql,P1,restart,PASS,,1
+postgresql,P1,crash-recovery,PASS,killed_pid=6453,0
+postgresql,P2,start,PASS,,1
+postgresql,P2,checkpoint,PASS,,1
+postgresql,P2,reload,PASS,,1
+postgresql,P2,query-with-jit,PASS,jit_used=no ,1
+postgresql,P2,restart,PASS,,1
+postgresql,P2,crash-recovery,PASS,killed_pid=6611,0
+postgresql,P1d,start,PASS,,1
+postgresql,P1d,checkpoint,PASS,,1
+postgresql,P1d,reload,PASS,,1
+postgresql,P1d,query-with-jit,PASS,jit_used=no ,1
+postgresql,P1d,restart,PASS,,1
+postgresql,P1d,crash-recovery,PASS,killed_pid=6826,0
+postgresql,P4,start,PASS,,1
+postgresql,P4,checkpoint,PASS,,1
+postgresql,P4,reload,PASS,,1
+postgresql,P4,query-with-jit,PASS,jit_used=no ,1
+postgresql,P4,restart,PASS,,1
+postgresql,P4,crash-recovery,PASS,killed_pid=6987,0
+postgresql,P6,start,PASS,,1
+postgresql,P6,checkpoint,PASS,,1
+postgresql,P6,reload,PASS,,1
+postgresql,P6,query-with-jit,PASS,jit_used=no ,1
+postgresql,P6,restart,PASS,,1
+postgresql,P6,crash-recovery,PASS,killed_pid=7197,0

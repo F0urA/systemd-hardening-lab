@@ -1,0 +1,6 @@
+service,profile,functional,exposure,n_directives
+memcached,P0,1,9.2,0
+memcached,P1,0,8.4,4
+memcached,P2,1,6.9,8
+memcached,P4,1,2.1,20
+memcached,P6,1,2.1,21

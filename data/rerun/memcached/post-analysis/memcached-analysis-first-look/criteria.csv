@@ -1,0 +1,7 @@
+# built by build_criteria_v005.py; cost_upper: CPU time per operation, % over P0
+service,profile,F,contract,L95,cost_upper,goals_blocked,cells_blocked,emicro,exposure,n_directives,U95d,status,goals_full,pairs,source
+memcached,P0,1,PASS,41186.479,0.000,0,0,0.000,9.2,0,41186.479,BASELINE,,20,20261020T032709Z-138512
+memcached,P1,0,FAIL,-1.000,0.000,0,0,0.278,8.4,4,-1.000,NOT_MEASURED,,0,-
+memcached,P2,1,PASS,26544.769,1.844,0,0,0.333,6.9,8,31454.868,NON_INFERIOR,,20,20261020T032709Z-138512
+memcached,P4,1,PASS,26878.167,1.800,0,0,0.722,2.1,20,31823.030,NON_INFERIOR,,20,20261020T032709Z-138512
+memcached,P6,1,PASS,26638.368,1.828,0,0,0.722,2.1,21,31651.942,NON_INFERIOR,,20,20261020T032709Z-138512

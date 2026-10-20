@@ -1,0 +1,16 @@
+service    profile  F pairs        L95       U95d  cost_up%  g  s  emicro  expos   n  status          series
+memcached  P0       1    20  41186.479  41186.479     0.000  0  0   0.000    9.2   0  BASELINE        20261020T032709Z-138512
+memcached  P1       0     0     -1.000     -1.000     0.000  0  0   0.278    8.4   4  NOT_MEASURED    -
+memcached  P2       1    20  26544.769  31454.868     1.844  0  0   0.333    6.9   8  NON_INFERIOR    20261020T032709Z-138512
+memcached  P4       1    20  26878.167  31823.030     1.800  0  0   0.722    2.1  20  NON_INFERIOR    20261020T032709Z-138512
+memcached  P6       1    20  26638.368  31651.942     1.828  0  0   0.722    2.1  21  NON_INFERIOR    20261020T032709Z-138512
+
+NOTE mandatory contracts: /root/systemd-hardening-lab/results_v005/memcached/functional-v005/20261020T032607Z-137386/contract.csv supplies 5 verdicts
+NOTE memcached: series 20261020T032709Z-138512 supplies P0 P2 P4 P6 (unless supplied by an earlier series); bounds at the level 0.00625
+NOTE memcached: 0 goals in 0 scenario cells are achievable under P0
+NOTE memcached P1: mandatory contract FAIL; F=0
+NOTE memcached P2: goals not blocked in every cell: -
+NOTE memcached P4: goals not blocked in every cell: -
+NOTE memcached P6: goals not blocked in every cell: -
+CSV=/root/systemd-hardening-lab/post-analysis/memcached-analysis-first-look/criteria.csv
+NEXT: python3 select_profile_v005.py /root/systemd-hardening-lab/post-analysis/memcached-analysis-first-look/criteria.csv --budgets 2,5,10,15

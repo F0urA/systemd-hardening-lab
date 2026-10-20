@@ -1,0 +1,794 @@
+
+===== SERVICE=nginx PROFILE=P0 =====
+
+----- CONTEXT=nginx-master PROFILE=P0 REAL_PID=7573 -----
+  TRANSIENT_RC=0
+  FIELD             REAL                       TRANSIENT                  VERDICT
+  Uid               0 0 0 0                    0 0 0 0                    MATCH
+  Gid               0 0 0 0                    0 0 0 0                    MATCH
+  Groups:                                                                 MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            000001ffffffffff           000001ffffffffff           MATCH
+  CapEff            000001ffffffffff           000001ffffffffff           MATCH
+  CapBnd            000001ffffffffff           000001ffffffffff           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        0                          0                          MATCH
+  Seccomp           0                          0                          MATCH
+  Seccomp_filters   0                          0                          MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026531841]           mnt:[4026531841]           MATCH
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=23 transient=23 differing_lines=0
+  FIELD             REAL                       INSERVICE                  VERDICT
+  Uid               0 0 0 0                    0 0 0 0                    MATCH
+  Gid               0 0 0 0                    0 0 0 0                    MATCH
+  Groups:                                                                 MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            000001ffffffffff           000001ffffffffff           MATCH
+  CapEff            000001ffffffffff           000001ffffffffff           MATCH
+  CapBnd            000001ffffffffff           000001ffffffffff           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        0                          0                          MATCH
+  Seccomp           0                          0                          MATCH
+  Seccomp_filters   0                          0                          MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026531841]           mnt:[4026531841]           MATCH
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=23 inservice=23 differing_lines=0
+  PROBE_STATUSES inservice_vs_transient=IDENTICAL (36 probes)
+
+----- CONTEXT=nginx-worker PROFILE=P0 REAL_PID=7578 -----
+  TRANSIENT_RC=0
+  FIELD             REAL                       TRANSIENT                  VERDICT
+  Uid               984 984 984 984            984 984 984 984            MATCH
+  Gid               963 963 963 963            963 963 963 963            MATCH
+  Groups            963                        963                        MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            0000000000000000           0000000000000000           MATCH
+  CapEff            0000000000000000           0000000000000000           MATCH
+  CapBnd            000001ffffffffff           000001ffffffffff           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        0                          0                          MATCH
+  Seccomp           0                          0                          MATCH
+  Seccomp_filters   0                          0                          MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026531841]           mnt:[4026531841]           MATCH
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=23 transient=23 differing_lines=0
+  FIELD             REAL                       INSERVICE                  VERDICT
+  Uid               984 984 984 984            984 984 984 984            MATCH
+  Gid               963 963 963 963            963 963 963 963            MATCH
+  Groups            963                        963                        MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            0000000000000000           0000000000000000           MATCH
+  CapEff            0000000000000000           0000000000000000           MATCH
+  CapBnd            000001ffffffffff           000001ffffffffff           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        0                          0                          MATCH
+  Seccomp           0                          0                          MATCH
+  Seccomp_filters   0                          0                          MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026531841]           mnt:[4026531841]           MATCH
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=23 inservice=23 differing_lines=0
+  PROBE_STATUSES inservice_vs_transient=IDENTICAL (36 probes)
+
+===== SERVICE=nginx PROFILE=P1 =====
+
+----- CONTEXT=nginx-master PROFILE=P1 REAL_PID=8028 -----
+  TRANSIENT_RC=0
+  FIELD             REAL                       TRANSIENT                  VERDICT
+  Uid               0 0 0 0                    0 0 0 0                    MATCH
+  Gid               0 0 0 0                    0 0 0 0                    MATCH
+  Groups:                                                                 MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            000001ffffffffff           000001ffffffffff           MATCH
+  CapEff            000001ffffffffff           000001ffffffffff           MATCH
+  CapBnd            000001ffffffffff           000001ffffffffff           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        1                          1                          MATCH
+  Seccomp           0                          0                          MATCH
+  Seccomp_filters   0                          0                          MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026532247]           mnt:[4026532250]           DIFF_EXPECTED
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=30 transient=30 differing_lines=2
+  FIELD             REAL                       INSERVICE                  VERDICT
+  Uid               0 0 0 0                    0 0 0 0                    MATCH
+  Gid               0 0 0 0                    0 0 0 0                    MATCH
+  Groups:                                                                 MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            000001ffffffffff           000001ffffffffff           MATCH
+  CapEff            000001ffffffffff           000001ffffffffff           MATCH
+  CapBnd            000001ffffffffff           000001ffffffffff           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        1                          1                          MATCH
+  Seccomp           0                          0                          MATCH
+  Seccomp_filters   0                          0                          MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026532247]           mnt:[4026532250]           DIFF_EXPECTED
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=30 inservice=30 differing_lines=0
+  PROBE_STATUSES inservice_vs_transient=IDENTICAL (36 probes)
+
+----- CONTEXT=nginx-worker PROFILE=P1 REAL_PID=8033 -----
+  TRANSIENT_RC=0
+  FIELD             REAL                       TRANSIENT                  VERDICT
+  Uid               984 984 984 984            984 984 984 984            MATCH
+  Gid               963 963 963 963            963 963 963 963            MATCH
+  Groups            963                        963                        MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            0000000000000000           0000000000000000           MATCH
+  CapEff            0000000000000000           0000000000000000           MATCH
+  CapBnd            000001ffffffffff           000001ffffffffff           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        1                          1                          MATCH
+  Seccomp           0                          0                          MATCH
+  Seccomp_filters   0                          0                          MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026532247]           mnt:[4026532250]           DIFF_EXPECTED
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=30 transient=30 differing_lines=2
+  FIELD             REAL                       INSERVICE                  VERDICT
+  Uid               984 984 984 984            984 984 984 984            MATCH
+  Gid               963 963 963 963            963 963 963 963            MATCH
+  Groups            963                        963                        MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            0000000000000000           0000000000000000           MATCH
+  CapEff            0000000000000000           0000000000000000           MATCH
+  CapBnd            000001ffffffffff           000001ffffffffff           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        1                          1                          MATCH
+  Seccomp           0                          0                          MATCH
+  Seccomp_filters   0                          0                          MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026532247]           mnt:[4026532250]           DIFF_EXPECTED
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=30 inservice=30 differing_lines=0
+  PROBE_STATUSES inservice_vs_transient=IDENTICAL (36 probes)
+
+===== SERVICE=nginx PROFILE=P1r =====
+
+----- CONTEXT=nginx-master PROFILE=P1r REAL_PID=8477 -----
+  TRANSIENT_RC=0
+  FIELD             REAL                       TRANSIENT                  VERDICT
+  Uid               0 0 0 0                    0 0 0 0                    MATCH
+  Gid               0 0 0 0                    0 0 0 0                    MATCH
+  Groups:                                                                 MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            000001ffffffffff           000001ffffffffff           MATCH
+  CapEff            000001ffffffffff           000001ffffffffff           MATCH
+  CapBnd            000001ffffffffff           000001ffffffffff           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        1                          1                          MATCH
+  Seccomp           0                          0                          MATCH
+  Seccomp_filters   0                          0                          MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026532247]           mnt:[4026532250]           DIFF_EXPECTED
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=31 transient=31 differing_lines=2
+  FIELD             REAL                       INSERVICE                  VERDICT
+  Uid               0 0 0 0                    0 0 0 0                    MATCH
+  Gid               0 0 0 0                    0 0 0 0                    MATCH
+  Groups:                                                                 MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            000001ffffffffff           000001ffffffffff           MATCH
+  CapEff            000001ffffffffff           000001ffffffffff           MATCH
+  CapBnd            000001ffffffffff           000001ffffffffff           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        1                          1                          MATCH
+  Seccomp           0                          0                          MATCH
+  Seccomp_filters   0                          0                          MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026532247]           mnt:[4026532250]           DIFF_EXPECTED
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=31 inservice=31 differing_lines=0
+  PROBE_STATUSES inservice_vs_transient=IDENTICAL (36 probes)
+
+----- CONTEXT=nginx-worker PROFILE=P1r REAL_PID=8483 -----
+  TRANSIENT_RC=0
+  FIELD             REAL                       TRANSIENT                  VERDICT
+  Uid               984 984 984 984            984 984 984 984            MATCH
+  Gid               963 963 963 963            963 963 963 963            MATCH
+  Groups            963                        963                        MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            0000000000000000           0000000000000000           MATCH
+  CapEff            0000000000000000           0000000000000000           MATCH
+  CapBnd            000001ffffffffff           000001ffffffffff           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        1                          1                          MATCH
+  Seccomp           0                          0                          MATCH
+  Seccomp_filters   0                          0                          MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026532247]           mnt:[4026532250]           DIFF_EXPECTED
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=31 transient=31 differing_lines=2
+  FIELD             REAL                       INSERVICE                  VERDICT
+  Uid               984 984 984 984            984 984 984 984            MATCH
+  Gid               963 963 963 963            963 963 963 963            MATCH
+  Groups            963                        963                        MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            0000000000000000           0000000000000000           MATCH
+  CapEff            0000000000000000           0000000000000000           MATCH
+  CapBnd            000001ffffffffff           000001ffffffffff           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        1                          1                          MATCH
+  Seccomp           0                          0                          MATCH
+  Seccomp_filters   0                          0                          MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026532247]           mnt:[4026532250]           DIFF_EXPECTED
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=31 inservice=31 differing_lines=0
+  PROBE_STATUSES inservice_vs_transient=IDENTICAL (36 probes)
+
+===== SERVICE=nginx PROFILE=P1c =====
+
+----- CONTEXT=nginx-master PROFILE=P1c REAL_PID=8928 -----
+  TRANSIENT_RC=0
+  FIELD             REAL                       TRANSIENT                  VERDICT
+  Uid               0 0 0 0                    0 0 0 0                    MATCH
+  Gid               0 0 0 0                    0 0 0 0                    MATCH
+  Groups:                                                                 MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            00000000000004c0           00000000000004c0           MATCH
+  CapEff            00000000000004c0           00000000000004c0           MATCH
+  CapBnd            00000000000004c0           00000000000004c0           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        1                          1                          MATCH
+  Seccomp           0                          0                          MATCH
+  Seccomp_filters   0                          0                          MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026532247]           mnt:[4026532250]           DIFF_EXPECTED
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=31 transient=31 differing_lines=2
+  FIELD             REAL                       INSERVICE                  VERDICT
+  Uid               0 0 0 0                    0 0 0 0                    MATCH
+  Gid               0 0 0 0                    0 0 0 0                    MATCH
+  Groups:                                                                 MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            00000000000004c0           00000000000004c0           MATCH
+  CapEff            00000000000004c0           00000000000004c0           MATCH
+  CapBnd            00000000000004c0           00000000000004c0           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        1                          1                          MATCH
+  Seccomp           0                          0                          MATCH
+  Seccomp_filters   0                          0                          MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026532247]           mnt:[4026532250]           DIFF_EXPECTED
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=31 inservice=31 differing_lines=0
+  PROBE_STATUSES inservice_vs_transient=IDENTICAL (36 probes)
+
+----- CONTEXT=nginx-worker PROFILE=P1c REAL_PID=8932 -----
+  TRANSIENT_RC=0
+  FIELD             REAL                       TRANSIENT                  VERDICT
+  Uid               984 984 984 984            984 984 984 984            MATCH
+  Gid               963 963 963 963            963 963 963 963            MATCH
+  Groups            963                        963                        MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            0000000000000000           0000000000000000           MATCH
+  CapEff            0000000000000000           0000000000000000           MATCH
+  CapBnd            00000000000004c0           00000000000004c0           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        1                          1                          MATCH
+  Seccomp           0                          0                          MATCH
+  Seccomp_filters   0                          0                          MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026532247]           mnt:[4026532250]           DIFF_EXPECTED
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=31 transient=31 differing_lines=2
+  FIELD             REAL                       INSERVICE                  VERDICT
+  Uid               984 984 984 984            984 984 984 984            MATCH
+  Gid               963 963 963 963            963 963 963 963            MATCH
+  Groups            963                        963                        MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            0000000000000000           0000000000000000           MATCH
+  CapEff            0000000000000000           0000000000000000           MATCH
+  CapBnd            00000000000004c0           00000000000004c0           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        1                          1                          MATCH
+  Seccomp           0                          0                          MATCH
+  Seccomp_filters   0                          0                          MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026532247]           mnt:[4026532250]           DIFF_EXPECTED
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=31 inservice=31 differing_lines=0
+  PROBE_STATUSES inservice_vs_transient=IDENTICAL (36 probes)
+
+===== SERVICE=nginx PROFILE=P4 =====
+
+----- CONTEXT=nginx-master PROFILE=P4 REAL_PID=9379 -----
+  TRANSIENT_RC=0
+  FIELD             REAL                       TRANSIENT                  VERDICT
+  Uid               0 0 0 0                    0 0 0 0                    MATCH
+  Gid               0 0 0 0                    0 0 0 0                    MATCH
+  Groups:                                                                 MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            00000000000004c0           00000000000004c0           MATCH
+  CapEff            00000000000004c0           00000000000004c0           MATCH
+  CapBnd            00000000000004c0           00000000000004c0           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        1                          1                          MATCH
+  Seccomp           2                          2                          MATCH
+  Seccomp_filters   28                         28                         MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026532247]           mnt:[4026532250]           DIFF_EXPECTED
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=46 transient=46 differing_lines=4
+  FIELD             REAL                       INSERVICE                  VERDICT
+  Uid               0 0 0 0                    0 0 0 0                    MATCH
+  Gid               0 0 0 0                    0 0 0 0                    MATCH
+  Groups:                                                                 MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            00000000000004c0           00000000000004c0           MATCH
+  CapEff            00000000000004c0           00000000000004c0           MATCH
+  CapBnd            00000000000004c0           00000000000004c0           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        1                          1                          MATCH
+  Seccomp           2                          2                          MATCH
+  Seccomp_filters   28                         28                         MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026532247]           mnt:[4026532250]           DIFF_EXPECTED
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=46 inservice=46 differing_lines=0
+  PROBE_STATUSES inservice_vs_transient=IDENTICAL (36 probes)
+
+----- CONTEXT=nginx-worker PROFILE=P4 REAL_PID=9382 -----
+  TRANSIENT_RC=0
+  FIELD             REAL                       TRANSIENT                  VERDICT
+  Uid               984 984 984 984            984 984 984 984            MATCH
+  Gid               963 963 963 963            963 963 963 963            MATCH
+  Groups            963                        963                        MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            0000000000000000           0000000000000000           MATCH
+  CapEff            0000000000000000           0000000000000000           MATCH
+  CapBnd            00000000000004c0           00000000000004c0           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        1                          1                          MATCH
+  Seccomp           2                          2                          MATCH
+  Seccomp_filters   28                         28                         MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026532247]           mnt:[4026532250]           DIFF_EXPECTED
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=46 transient=46 differing_lines=4
+  FIELD             REAL                       INSERVICE                  VERDICT
+  Uid               984 984 984 984            984 984 984 984            MATCH
+  Gid               963 963 963 963            963 963 963 963            MATCH
+  Groups            963                        963                        MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            0000000000000000           0000000000000000           MATCH
+  CapEff            0000000000000000           0000000000000000           MATCH
+  CapBnd            00000000000004c0           00000000000004c0           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        1                          1                          MATCH
+  Seccomp           2                          2                          MATCH
+  Seccomp_filters   28                         28                         MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026532247]           mnt:[4026532250]           DIFF_EXPECTED
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=46 inservice=46 differing_lines=0
+  PROBE_STATUSES inservice_vs_transient=IDENTICAL (36 probes)
+
+===== SERVICE=redis PROFILE=P0 =====
+
+----- CONTEXT=redis PROFILE=P0 REAL_PID=9825 -----
+  TRANSIENT_RC=0
+  FIELD             REAL                       TRANSIENT                  VERDICT
+  Uid               983 983 983 983            983 983 983 983            MATCH
+  Gid               962 962 962 962            962 962 962 962            MATCH
+  Groups            962                        962                        MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            0000000000000000           0000000000000000           MATCH
+  CapEff            0000000000000000           0000000000000000           MATCH
+  CapBnd            000001ffffffffff           000001ffffffffff           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        0                          0                          MATCH
+  Seccomp           0                          0                          MATCH
+  Seccomp_filters   0                          0                          MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026531841]           mnt:[4026531841]           MATCH
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=23 transient=23 differing_lines=0
+  INSERVICE=not available for this context
+
+===== SERVICE=redis PROFILE=P1 =====
+
+----- CONTEXT=redis PROFILE=P1 REAL_PID=9993 -----
+  TRANSIENT_RC=0
+  FIELD             REAL                       TRANSIENT                  VERDICT
+  Uid               983 983 983 983            983 983 983 983            MATCH
+  Gid               962 962 962 962            962 962 962 962            MATCH
+  Groups            962                        962                        MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            0000000000000000           0000000000000000           MATCH
+  CapEff            0000000000000000           0000000000000000           MATCH
+  CapBnd            000001ffffffffff           000001ffffffffff           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        1                          1                          MATCH
+  Seccomp           0                          0                          MATCH
+  Seccomp_filters   0                          0                          MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026532248]           mnt:[4026532250]           DIFF_EXPECTED
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=30 transient=30 differing_lines=2
+  INSERVICE=not available for this context
+
+===== SERVICE=redis PROFILE=P1r =====
+SKIP: /root/systemd-hardening-lab/results_v005/redis/profiles/P1r.conf does not exist for redis
+
+===== SERVICE=redis PROFILE=P1c =====
+SKIP: /root/systemd-hardening-lab/results_v005/redis/profiles/P1c.conf does not exist for redis
+
+===== SERVICE=redis PROFILE=P4 =====
+
+----- CONTEXT=redis PROFILE=P4 REAL_PID=10165 -----
+  TRANSIENT_RC=0
+  FIELD             REAL                       TRANSIENT                  VERDICT
+  Uid               983 983 983 983            983 983 983 983            MATCH
+  Gid               962 962 962 962            962 962 962 962            MATCH
+  Groups            962                        962                        MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            0000000000000000           0000000000000000           MATCH
+  CapEff            0000000000000000           0000000000000000           MATCH
+  CapBnd            0000000000000000           0000000000000000           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        1                          1                          MATCH
+  Seccomp           2                          2                          MATCH
+  Seccomp_filters   28                         28                         MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026532248]           mnt:[4026532250]           DIFF_EXPECTED
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=46 transient=46 differing_lines=4
+  INSERVICE=not available for this context
+
+===== SERVICE=postgresql PROFILE=P0 =====
+
+----- CONTEXT=postgresql PROFILE=P0 REAL_PID=10337 -----
+  TRANSIENT_RC=0
+  FIELD             REAL                       TRANSIENT                  VERDICT
+  Uid               982 982 982 982            982 982 982 982            MATCH
+  Gid               961 961 961 961            961 961 961 961            MATCH
+  Groups            961                        961                        MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            0000000000000000           0000000000000000           MATCH
+  CapEff            0000000000000000           0000000000000000           MATCH
+  CapBnd            000001ffffffffff           000001ffffffffff           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        0                          0                          MATCH
+  Seccomp           0                          0                          MATCH
+  Seccomp_filters   0                          0                          MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026531841]           mnt:[4026531841]           MATCH
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=23 transient=23 differing_lines=0
+  FIELD             REAL                       INSERVICE                  VERDICT
+  Uid               982 982 982 982            982 982 982 982            MATCH
+  Gid               961 961 961 961            961 961 961 961            MATCH
+  Groups            961                        961                        MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            0000000000000000           0000000000000000           MATCH
+  CapEff            0000000000000000           0000000000000000           MATCH
+  CapBnd            000001ffffffffff           000001ffffffffff           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        0                          0                          MATCH
+  Seccomp           0                          0                          MATCH
+  Seccomp_filters   0                          0                          MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026531841]           mnt:[4026531841]           MATCH
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=23 inservice=23 differing_lines=0
+  PROBE_STATUSES inservice_vs_transient=IDENTICAL (36 probes)
+
+===== SERVICE=postgresql PROFILE=P1 =====
+
+----- CONTEXT=postgresql PROFILE=P1 REAL_PID=10593 -----
+  TRANSIENT_RC=0
+  FIELD             REAL                       TRANSIENT                  VERDICT
+  Uid               982 982 982 982            982 982 982 982            MATCH
+  Gid               961 961 961 961            961 961 961 961            MATCH
+  Groups            961                        961                        MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            0000000000000000           0000000000000000           MATCH
+  CapEff            0000000000000000           0000000000000000           MATCH
+  CapBnd            000001ffffffffff           000001ffffffffff           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        1                          1                          MATCH
+  Seccomp           0                          0                          MATCH
+  Seccomp_filters   0                          0                          MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026532249]           mnt:[4026532250]           DIFF_EXPECTED
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=30 transient=30 differing_lines=2
+  FIELD             REAL                       INSERVICE                  VERDICT
+  Uid               982 982 982 982            982 982 982 982            MATCH
+  Gid               961 961 961 961            961 961 961 961            MATCH
+  Groups            961                        961                        MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            0000000000000000           0000000000000000           MATCH
+  CapEff            0000000000000000           0000000000000000           MATCH
+  CapBnd            000001ffffffffff           000001ffffffffff           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        1                          1                          MATCH
+  Seccomp           0                          0                          MATCH
+  Seccomp_filters   0                          0                          MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026532249]           mnt:[4026532249]           MATCH
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=30 inservice=30 differing_lines=0
+  PROBE_STATUSES inservice_vs_transient=IDENTICAL (36 probes)
+
+===== SERVICE=postgresql PROFILE=P1r =====
+SKIP: /root/systemd-hardening-lab/results_v005/postgresql/profiles/P1r.conf does not exist for postgresql
+
+===== SERVICE=postgresql PROFILE=P1c =====
+SKIP: /root/systemd-hardening-lab/results_v005/postgresql/profiles/P1c.conf does not exist for postgresql
+
+===== SERVICE=postgresql PROFILE=P4 =====
+
+----- CONTEXT=postgresql PROFILE=P4 REAL_PID=10856 -----
+  TRANSIENT_RC=0
+  FIELD             REAL                       TRANSIENT                  VERDICT
+  Uid               982 982 982 982            982 982 982 982            MATCH
+  Gid               961 961 961 961            961 961 961 961            MATCH
+  Groups            961                        961                        MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            0000000000000000           0000000000000000           MATCH
+  CapEff            0000000000000000           0000000000000000           MATCH
+  CapBnd            0000000000000000           0000000000000000           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        1                          1                          MATCH
+  Seccomp           2                          2                          MATCH
+  Seccomp_filters   28                         28                         MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026532249]           mnt:[4026532250]           DIFF_EXPECTED
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=46 transient=46 differing_lines=4
+  FIELD             REAL                       INSERVICE                  VERDICT
+  Uid               982 982 982 982            982 982 982 982            MATCH
+  Gid               961 961 961 961            961 961 961 961            MATCH
+  Groups            961                        961                        MATCH
+  CapInh            0000000000000000           0000000000000000           MATCH
+  CapPrm            0000000000000000           0000000000000000           MATCH
+  CapEff            0000000000000000           0000000000000000           MATCH
+  CapBnd            0000000000000000           0000000000000000           MATCH
+  CapAmb            0000000000000000           0000000000000000           MATCH
+  NoNewPrivs        1                          1                          MATCH
+  Seccomp           2                          2                          MATCH
+  Seccomp_filters   28                         28                         MATCH
+  ns_cgroup         cgroup:[4026531835]        cgroup:[4026531835]        MATCH
+  ns_ipc            ipc:[4026531839]           ipc:[4026531839]           MATCH
+  ns_mnt            mnt:[4026532249]           mnt:[4026532249]           MATCH
+  ns_net            net:[4026531840]           net:[4026531840]           MATCH
+  ns_pid            pid:[4026531836]           pid:[4026531836]           MATCH
+  ns_user           user:[4026531837]          user:[4026531837]          MATCH
+  ns_uts            uts:[4026531838]           uts:[4026531838]           MATCH
+  MOUNT_TABLE real=46 inservice=46 differing_lines=0
+  PROBE_STATUSES inservice_vs_transient=IDENTICAL (36 probes)
+
+===== METRICS: TRANSIENT RUNS =====
+========================================================================
+CONTEXT nginx-master
+  required by the service (reported, not hidden): PRIV-1 PRIV-2
+  PROF  ELIG36 BLK36  Emicro36  ELIG32x  BLK32x  Emicro32x  Eiso32x
+  P0        35     0     0.000       29       0      0.000    0.000
+  P1        35     5     0.143       29       5      0.172    0.156
+       still ALLOWED, required: PRIV-1 PRIV-2
+       still ALLOWED, other:    FS-3 DEV-3 DEV-4 KER-1 KER-2 KER-3 KER-4 PROC-1 PROC-2 PROC-3 PROC-4 PRIV-3 NS-1 NS-2 NS-3 NS-4 NET-1 NET-2 NET-3 NET-4 ADV-1 ADV-2 ADV-3 ADV-4 X1 X2 X3 X4
+  P1r       35     5     0.143       29       5      0.172    0.156
+       still ALLOWED, required: PRIV-1 PRIV-2
+       still ALLOWED, other:    FS-3 DEV-3 DEV-4 KER-1 KER-2 KER-3 KER-4 PROC-1 PROC-2 PROC-3 PROC-4 PRIV-3 NS-1 NS-2 NS-3 NS-4 NET-1 NET-2 NET-3 NET-4 ADV-1 ADV-2 ADV-3 ADV-4 X1 X2 X3 X4
+  P1c       35    19     0.543       29      17      0.586    0.625
+       still ALLOWED, required: PRIV-1 PRIV-2
+       still ALLOWED, other:    DEV-3 KER-1 KER-2 KER-4 PROC-2 NS-4 NET-2 NET-4 ADV-1 ADV-2 ADV-3 ADV-4 X3 X4
+  P4        35    29     0.829       29      27      0.931    0.938
+       still ALLOWED, required: PRIV-1 PRIV-2
+       still ALLOWED, other:    KER-4 PROC-2 X3 X4
+========================================================================
+CONTEXT nginx-worker
+  PROF  ELIG36 BLK36  Emicro36  ELIG32x  BLK32x  Emicro32x  Eiso32x
+  P0        18     0     0.000       16       0      0.000    0.000
+  P1        18     6     0.333       16       6      0.375    0.444
+       still ALLOWED, required: -
+       still ALLOWED, other:    DEV-3 PROC-1 PROC-2 PROC-3 NET-2 NET-4 ADV-1 ADV-2 ADV-3 ADV-4 X3 X4
+  P1r       18     6     0.333       16       6      0.375    0.444
+       still ALLOWED, required: -
+       still ALLOWED, other:    DEV-3 PROC-1 PROC-2 PROC-3 NET-2 NET-4 ADV-1 ADV-2 ADV-3 ADV-4 X3 X4
+  P1c       18     6     0.333       16       6      0.375    0.444
+       still ALLOWED, required: -
+       still ALLOWED, other:    DEV-3 PROC-1 PROC-2 PROC-3 NET-2 NET-4 ADV-1 ADV-2 ADV-3 ADV-4 X3 X4
+  P4        18    14     0.778       16      14      0.875    0.889
+       still ALLOWED, required: -
+       still ALLOWED, other:    PROC-2 PROC-3 X3 X4
+========================================================================
+CONTEXT postgresql
+  PROF  ELIG36 BLK36  Emicro36  ELIG32x  BLK32x  Emicro32x  Eiso32x
+  P0        18     0     0.000       16       0      0.000    0.000
+  P1        18     6     0.333       16       6      0.375    0.444
+       still ALLOWED, required: -
+       still ALLOWED, other:    DEV-3 PROC-1 PROC-2 PROC-3 NET-2 NET-4 ADV-1 ADV-2 ADV-3 ADV-4 X3 X4
+  P4        18    14     0.778       16      14      0.875    0.889
+       still ALLOWED, required: -
+       still ALLOWED, other:    PROC-2 PROC-3 X3 X4
+========================================================================
+CONTEXT redis
+  PROF  ELIG36 BLK36  Emicro36  ELIG32x  BLK32x  Emicro32x  Eiso32x
+  P0        18     0     0.000       16       0      0.000    0.000
+  P1        18     6     0.333       16       6      0.375    0.444
+       still ALLOWED, required: -
+       still ALLOWED, other:    DEV-3 PROC-1 PROC-2 PROC-3 NET-2 NET-4 ADV-1 ADV-2 ADV-3 ADV-4 X3 X4
+  P4        18    14     0.778       16      14      0.875    0.889
+       still ALLOWED, required: -
+       still ALLOWED, other:    PROC-2 PROC-3 X3 X4
+
+Legend: 36 = 32 basic + 4 extended probes, nothing excluded;
+        32x = 32 basic probes with service-required operations excluded
+              (the definition used for Emicro/Eiso in the earlier text).
+CSV=/root/systemd-hardening-lab/results_v005/context-v005/20261019-171452/transient/metrics.csv
+
+===== METRICS: IN-SERVICE RUNS =====
+========================================================================
+CONTEXT nginx-master
+  required by the service (reported, not hidden): PRIV-1 PRIV-2
+  PROF  ELIG36 BLK36  Emicro36  ELIG32x  BLK32x  Emicro32x  Eiso32x
+  P0        35     0     0.000       29       0      0.000    0.000
+  P1        35     5     0.143       29       5      0.172    0.156
+       still ALLOWED, required: PRIV-1 PRIV-2
+       still ALLOWED, other:    FS-3 DEV-3 DEV-4 KER-1 KER-2 KER-3 KER-4 PROC-1 PROC-2 PROC-3 PROC-4 PRIV-3 NS-1 NS-2 NS-3 NS-4 NET-1 NET-2 NET-3 NET-4 ADV-1 ADV-2 ADV-3 ADV-4 X1 X2 X3 X4
+  P1r       35     5     0.143       29       5      0.172    0.156
+       still ALLOWED, required: PRIV-1 PRIV-2
+       still ALLOWED, other:    FS-3 DEV-3 DEV-4 KER-1 KER-2 KER-3 KER-4 PROC-1 PROC-2 PROC-3 PROC-4 PRIV-3 NS-1 NS-2 NS-3 NS-4 NET-1 NET-2 NET-3 NET-4 ADV-1 ADV-2 ADV-3 ADV-4 X1 X2 X3 X4
+  P1c       35    19     0.543       29      17      0.586    0.625
+       still ALLOWED, required: PRIV-1 PRIV-2
+       still ALLOWED, other:    DEV-3 KER-1 KER-2 KER-4 PROC-2 NS-4 NET-2 NET-4 ADV-1 ADV-2 ADV-3 ADV-4 X3 X4
+  P4        35    29     0.829       29      27      0.931    0.938
+       still ALLOWED, required: PRIV-1 PRIV-2
+       still ALLOWED, other:    KER-4 PROC-2 X3 X4
+========================================================================
+CONTEXT nginx-worker
+  PROF  ELIG36 BLK36  Emicro36  ELIG32x  BLK32x  Emicro32x  Eiso32x
+  P0        18     0     0.000       16       0      0.000    0.000
+  P1        18     6     0.333       16       6      0.375    0.444
+       still ALLOWED, required: -
+       still ALLOWED, other:    DEV-3 PROC-1 PROC-2 PROC-3 NET-2 NET-4 ADV-1 ADV-2 ADV-3 ADV-4 X3 X4
+  P1r       18     6     0.333       16       6      0.375    0.444
+       still ALLOWED, required: -
+       still ALLOWED, other:    DEV-3 PROC-1 PROC-2 PROC-3 NET-2 NET-4 ADV-1 ADV-2 ADV-3 ADV-4 X3 X4
+  P1c       18     6     0.333       16       6      0.375    0.444
+       still ALLOWED, required: -
+       still ALLOWED, other:    DEV-3 PROC-1 PROC-2 PROC-3 NET-2 NET-4 ADV-1 ADV-2 ADV-3 ADV-4 X3 X4
+  P4        18    14     0.778       16      14      0.875    0.889
+       still ALLOWED, required: -
+       still ALLOWED, other:    PROC-2 PROC-3 X3 X4
+========================================================================
+CONTEXT postgresql
+  PROF  ELIG36 BLK36  Emicro36  ELIG32x  BLK32x  Emicro32x  Eiso32x
+  P0        18     0     0.000       16       0      0.000    0.000
+  P1        18     6     0.333       16       6      0.375    0.444
+       still ALLOWED, required: -
+       still ALLOWED, other:    DEV-3 PROC-1 PROC-2 PROC-3 NET-2 NET-4 ADV-1 ADV-2 ADV-3 ADV-4 X3 X4
+  P4        18    14     0.778       16      14      0.875    0.889
+       still ALLOWED, required: -
+       still ALLOWED, other:    PROC-2 PROC-3 X3 X4
+
+Legend: 36 = 32 basic + 4 extended probes, nothing excluded;
+        32x = 32 basic probes with service-required operations excluded
+              (the definition used for Emicro/Eiso in the earlier text).
+CSV=/root/systemd-hardening-lab/results_v005/context-v005/20261019-171452/inservice/metrics.csv
+
+===== CLEANUP AND RESTORE P4 =====
+RESTORE_P4 nginx=PASS
+RESTORE_P4 redis=PASS
+RESTORE_P4 postgresql=PASS
+RESULT_DIR=/root/systemd-hardening-lab/results_v005/context-v005/20261019-171452

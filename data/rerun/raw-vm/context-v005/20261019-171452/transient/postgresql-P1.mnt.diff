@@ -1,0 +1,2 @@
+/systemd/propagate/slab-postgresql.service /run/systemd/incoming ro,nosuid,relatime tmpfs
+	/systemd/propagate/slab-v005-postgresql-p1-7489.service /run/systemd/incoming ro,nosuid,relatime tmpfs

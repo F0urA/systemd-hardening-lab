@@ -1,0 +1,66 @@
+STAGE=functional RC=0 END=2026-10-19T17:14:52+00:00
+postgresql  P1       PASS
+postgresql  P2       PASS
+postgresql  P1d      PASS
+postgresql  P4       PASS
+postgresql  P6       PASS
+
+===== CLEANUP AND RESTORE P4 =====
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=cleanup
+RESTORE_P4 nginx=PASS
+RESTORE_P4 redis=PASS
+RESTORE_P4 postgresql=PASS
+RESULT_DIR=/root/systemd-hardening-lab/results_v005/functional-v005/20261019-170059
+STAGE=context RC=0 END=2026-10-19T17:16:08+00:00
+       still ALLOWED, other:    PROC-2 PROC-3 X3 X4
+
+Legend: 36 = 32 basic + 4 extended probes, nothing excluded;
+        32x = 32 basic probes with service-required operations excluded
+              (the definition used for Emicro/Eiso in the earlier text).
+CSV=/root/systemd-hardening-lab/results_v005/context-v005/20261019-171452/inservice/metrics.csv
+
+===== CLEANUP AND RESTORE P4 =====
+RESTORE_P4 nginx=PASS
+RESTORE_P4 redis=PASS
+RESTORE_P4 postgresql=PASS
+RESULT_DIR=/root/systemd-hardening-lab/results_v005/context-v005/20261019-171452
+STAGE=scenarios-diagnostic RC=0 END=2026-10-19T17:17:08+00:00
+postgresql,P1,1,8.4,5
+postgresql,P2,1,6.9,9
+postgresql,P1d,1,8.3,7
+postgresql,P4,1,2.1,21
+postgresql,P6,1,2.1,23
+
+===== CLEANUP AND RESTORE P4 =====
+REDIS_CONF_RESTORED
+RESTORE_P4 nginx=PASS
+RESTORE_P4 redis=PASS
+RESTORE_P4 postgresql=PASS
+RESULT_DIR=/root/systemd-hardening-lab/results_v005/scenarios-v005/20261019-171608
+STAGE=supplemental RC=0 END=2026-10-19T17:20:28+00:00
+RESULT method=inherited-fd profile=P6 dac=rootown context=fd-worker outcome=BLOCKED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P6 dac=labweb context=master outcome=BLOCKED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P6 dac=labweb context=fd-master outcome=BLOCKED
+FD_LAUNCH_RC=0
+RESULT method=inservice profile=P6 dac=labweb context=worker outcome=BLOCKED
+UNIT_START_RC=0
+RESULT method=inherited-fd profile=P6 dac=labweb context=fd-worker outcome=ACHIEVED
+FD_LAUNCH_RC=0
+RESTORE_P4 nginx=PASS
+RESULT_DIR=/root/systemd-hardening-lab/results_v005/supplement-goals-v005/20261019-171708
+STAGE=microprobes RC=0 END=2026-10-19T17:21:02+00:00
+  P6        18    14     0.778       16      14      0.875    0.889
+       still ALLOWED, required: -
+       still ALLOWED, other:    PROC-2 PROC-3 X3 X4
+  P1d       18     6     0.333       16       6      0.375    0.444
+       still ALLOWED, required: -
+       still ALLOWED, other:    DEV-3 PROC-1 PROC-2 PROC-3 NET-2 NET-4 ADV-1 ADV-2 ADV-3 ADV-4 X3 X4
+
+Legend: 36 = 32 basic + 4 extended probes, nothing excluded;
+        32x = 32 basic probes with service-required operations excluded
+              (the definition used for Emicro/Eiso in the earlier text).
+CSV=/root/systemd-hardening-lab/results_v005/probe-v005/20261019-172028/metrics.csv
+RESULT_DIR=/root/systemd-hardening-lab/results_v005/probe-v005/20261019-172028
+PREFLIGHT_FINISHED

@@ -1,0 +1,19 @@
+/root/systemd-hardening-lab/frozen-memcached-addendum/v005/scripts_v005/memcached_stage3_v005.sh: OK
+/root/systemd-hardening-lab/frozen-memcached-addendum/v005/scripts_v005/memcached_client_v005.py: OK
+/root/systemd-hardening-lab/frozen-memcached-addendum/v005/scripts_v005/protocol_memcached_v005.txt: OK
+/root/systemd-hardening-lab/frozen-memcached-addendum/v005/scripts_v005/metric_summary_v005.py: OK
+/usr/bin/memcached: OK
+/usr/local/bin/lab-target: OK
+/usr/local/bin/uid-helper: OK
+/etc/systemd/system/lab-proc-target@.service: OK
+/root/systemd-hardening-lab/frozen-memcached-addendum/v005/scripts_v005/slab_fp_v005.sh: OK
+/root/systemd-hardening-lab/frozen-memcached-addendum/v005/scripts_v005/slab_inservice_v005.sh: OK
+/root/systemd-hardening-lab/frozen-memcached-addendum/v005/scripts_v005/../stand_v005/probes/isolation_probe.py: OK
+/root/systemd-hardening-lab/frozen-memcached-addendum/v005/scripts_v005/../stand_v005/probes/extended_probe.py: OK
+/root/systemd-hardening-lab/frozen-memcached-addendum/v005/scripts_v005/../stand_v005/probes/ptrace_seize.py: OK
+parameters.json: OK
+platform.txt: OK
+target-unit.txt: OK
+PREPARED memcached: user/unit/profiles scoped; G=empty; loopback TCP11212; UDP disabled
+RESTORE_P4 memcached=PASS
+RESULT_DIR=/root/systemd-hardening-lab/results_v005/memcached/prepare-v005/20261020T032559Z-137163

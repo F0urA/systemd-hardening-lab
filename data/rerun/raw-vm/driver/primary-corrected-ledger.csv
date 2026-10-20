@@ -1,0 +1,10 @@
+stage,start_guest_utc,end_guest_utc,exit_status,result_directory
+R1-nginx,2026-10-19T17:25:37+00:00,2026-10-19T18:43:11+00:00,0,/root/systemd-hardening-lab/results_v005/nginx/benchmark-v005/20261019-172537
+R2-redis,2026-10-19T18:43:11+00:00,2026-10-19T19:44:32+00:00,0,/root/systemd-hardening-lab/results_v005/redis/benchmark-v005/20261019-184311
+R3-postgresql,2026-10-19T19:44:32+00:00,2026-10-19T21:16:26+00:00,0,/root/systemd-hardening-lab/results_v005/postgresql/benchmark-v005/20261019-194432
+R5-nginx-light,2026-10-19T21:16:26+00:00,2026-10-19T22:16:21+00:00,0,/root/systemd-hardening-lab/results_v005/nginx/benchmark-v005/20261019-211626
+R4-pilot-c1,2026-10-19T22:16:21+00:00,2026-10-19T22:18:30+00:00,0,/root/systemd-hardening-lab/results_v005/nginx/benchmark-v005/20261019-221621
+R4-pilot-c2,2026-10-19T22:18:30+00:00,2026-10-19T22:20:00+00:00,0,/root/systemd-hardening-lab/results_v005/nginx/benchmark-v005/20261019-221830
+R4-pilot-c4,2026-10-19T22:20:00+00:00,2026-10-19T22:21:32+00:00,0,/root/systemd-hardening-lab/results_v005/nginx/benchmark-v005/20261019-222000
+R4-pilot-c8,2026-10-19T22:21:32+00:00,2026-10-19T22:23:05+00:00,0,/root/systemd-hardening-lab/results_v005/nginx/benchmark-v005/20261019-222132
+R4-pilot-c16,2026-10-19T22:23:05+00:00,2026-10-19T22:24:26+00:00,0,/root/systemd-hardening-lab/results_v005/nginx/benchmark-v005/20261019-222305

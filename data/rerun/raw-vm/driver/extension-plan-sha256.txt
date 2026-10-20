@@ -1,0 +1,3 @@
+3aebdc118667281c09374c804667d158639c5f2b83eabbaa385d089c1c53236a  /root/systemd-hardening-lab/post-analysis/extension-plan.json
+bc1ee7a79a08ac7be77e0ea132da404604d1363d09f992ab3f58bacc85517faa  /root/systemd-hardening-lab/driver_extensions_v005.sh
+498b50c9ae2ba8b98a839b1608929532742a270074c802543ea7b2c05f2467f5  /root/systemd-hardening-lab/post-analysis/analyze_v005.py

@@ -1,0 +1,3 @@
+G_EMPTY=1; NETWORK_API_ALLOWANCE_IS_DIAGNOSTIC_NOT_A_GOAL_SCORE
+RESTORE_P4 memcached=PASS
+RESULT_DIR=/root/systemd-hardening-lab/results_v005/memcached/functional-v005/20261020T032607Z-137386

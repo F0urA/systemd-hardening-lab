@@ -1,0 +1,6 @@
+# built by build_criteria_v005.py; cost_upper: CPU time per operation, % over P0
+service,profile,F,contract,L95,cost_upper,goals_blocked,cells_blocked,emicro,exposure,n_directives,U95d,status,goals_full,pairs,source
+nginx,P0,1,PASS,877.716,0.000,0,0,0.000,9.6,0,877.716,BASELINE,,60,20261019-211626
+nginx,P1,1,PASS,806.621,0.424,0,0,0.333,8.7,5,915.543,NON_INFERIOR,,60,20261019-211626
+nginx,P2,1,PASS,549.289,1.960,0,0,0.389,7.3,9,654.644,NON_INFERIOR,,60,20261019-211626
+nginx,P1r,1,PASS,762.976,0.699,0,1,0.333,8.7,6,871.611,NON_INFERIOR,,60,20261019-211626

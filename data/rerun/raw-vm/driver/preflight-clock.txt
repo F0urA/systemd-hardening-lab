@@ -1,0 +1,14 @@
+Reference ID    : 5CFF7E16 (mskstd-ntp02c.ntppool.yandex.net)
+Stratum         : 3
+Ref time (UTC)  : Mon Oct 19 17:00:37 2026
+System time     : 0.000000000 seconds slow of NTP time
+Last offset     : -0.000110144 seconds
+RMS offset      : 0.000110144 seconds
+Frequency       : 17.591 ppm slow
+Residual freq   : -24.729 ppm
+Skew            : 12.922 ppm
+Root delay      : 0.005911054 seconds
+Root dispersion : 0.001893356 seconds
+Update interval : 1.6 seconds
+Leap status     : Normal
+2026-10-19T17:00:59+00:00

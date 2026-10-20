@@ -1,0 +1,21 @@
+========================================================================
+CONTEXT memcached
+  PROF  ELIG36 BLK36  Emicro36  ELIG32x  BLK32x  Emicro32x  Eiso32x
+  P0        18     0     0.000       16       0      0.000    0.000
+  P1        18     5     0.278       16       5      0.312    0.389
+       still ALLOWED, required: -
+       still ALLOWED, other:    FS-3 DEV-3 PROC-1 PROC-2 PROC-3 NET-2 NET-4 ADV-1 ADV-2 ADV-3 ADV-4 X3 X4
+  P2        18     6     0.333       16       6      0.375    0.444
+       still ALLOWED, required: -
+       still ALLOWED, other:    FS-3 PROC-1 PROC-2 PROC-3 NET-2 NET-4 ADV-1 ADV-2 ADV-3 ADV-4 X3 X4
+  P4        18    13     0.722       16      13      0.812    0.833
+       still ALLOWED, required: -
+       still ALLOWED, other:    FS-3 PROC-2 PROC-3 X3 X4
+  P6        18    13     0.722       16      13      0.812    0.833
+       still ALLOWED, required: -
+       still ALLOWED, other:    FS-3 PROC-2 PROC-3 X3 X4
+
+Legend: 36 = 32 basic + 4 extended probes, nothing excluded;
+        32x = 32 basic probes with service-required operations excluded
+              (the definition used for Emicro/Eiso in the earlier text).
+CSV=/root/systemd-hardening-lab/results_v005/memcached/probe-v005/20261020T032659Z-138037/metrics.csv

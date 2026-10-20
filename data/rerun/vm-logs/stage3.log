@@ -1,0 +1,22 @@
+PILOT_OK /root/systemd-hardening-lab/results_v005/nginx/benchmark-v005/20261019-172127
+STAGE=R1-nginx RC=0 RESULT_DIR=/root/systemd-hardening-lab/results_v005/nginx/benchmark-v005/20261019-172537
+STAGE=R2-redis RC=0 RESULT_DIR=/root/systemd-hardening-lab/results_v005/redis/benchmark-v005/20261019-184311
+STAGE=R3-postgresql RC=0 RESULT_DIR=/root/systemd-hardening-lab/results_v005/postgresql/benchmark-v005/20261019-194432
+STAGE=R5-nginx-light RC=0 RESULT_DIR=/root/systemd-hardening-lab/results_v005/nginx/benchmark-v005/20261019-211626
+STAGE=R4-pilot-c1 RC=0 RESULT_DIR=/root/systemd-hardening-lab/results_v005/nginx/benchmark-v005/20261019-221621
+STAGE=R4-pilot-c2 RC=0 RESULT_DIR=/root/systemd-hardening-lab/results_v005/nginx/benchmark-v005/20261019-221830
+STAGE=R4-pilot-c4 RC=0 RESULT_DIR=/root/systemd-hardening-lab/results_v005/nginx/benchmark-v005/20261019-222000
+STAGE=R4-pilot-c8 RC=0 RESULT_DIR=/root/systemd-hardening-lab/results_v005/nginx/benchmark-v005/20261019-222132
+STAGE=R4-pilot-c16 RC=0 RESULT_DIR=/root/systemd-hardening-lab/results_v005/nginx/benchmark-v005/20261019-222305
+PRIMARY_FINISHED: the first formal look is the post phase
+STAGE=first-look RC=0 UTC=2026-10-19T22:24:27+00:00
+STAGE=extensions RC=0 UTC=2026-10-20T00:36:52+00:00
+STAGE=final-analysis RC=0 UTC=2026-10-20T00:36:53+00:00
+STAGE=capability-contract RC=0 UTC=2026-10-20T00:41:51+00:00
+STAGE=capability-ablation RC=0 UTC=2026-10-20T00:42:17+00:00
+STAGE=mount-check RC=0 UTC=2026-10-20T00:42:17+00:00
+STAGE=mount-states RC=0 UTC=2026-10-20T00:43:25+00:00
+STAGE=memcached-install RC=2 UTC=2026-10-20T00:43:33+00:00
+POST_PRIMARY_FINISHED: verify raw data and hashes (verify_raw_v005.py) before the report
+50c6eb6daf29692f576ba35cb495437de380efb9be43b452c2d3fcce3c9061e6  results_v005-closed.tar.gz
+SEALED: 7178 files; copy /root/systemd-hardening-lab/results_v005-closed.tar.gz to the host

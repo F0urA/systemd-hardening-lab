@@ -66,6 +66,25 @@ svc_profiles() { echo "$ROOT/$1/profiles"; }
 require_rest_state() { echo "rest $*" >> "$SLAB_TEST_CALLS"; }
 require_files() { local f; for f in "$@"; do [ -e "$f" ] || return 1; done; }
 '''
+SYSTEMCTL = r'''#!/usr/bin/env bash
+echo "systemctl $*" >> "$SLAB_TEST_CALLS"
+case "$1 ${*: -1}" in
+    'show '*) echo not-found ;;
+    'is-active memcached.service') exit 3 ;;
+esac
+exit 0
+'''
+APT_GET = r'''#!/usr/bin/env bash
+echo "apt-get $*" >> "$SLAB_TEST_CALLS"
+[ "$1" = -s ] && cat "$SLAB_TEST_APT_PLAN"
+exit 0
+'''
+# The version patterns of the executed memcached_stage3_v005.sh, without '_'.
+MEMCACHED_STAGE3 = r'''#!/usr/bin/env bash
+    [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+[a-zA-Z0-9.-]*$ ]] || die 'invalid registered memcached version'
+    VERSION=$("$BINARY" -V 2>&1 | awk '{print $NF}')
+    [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+[a-zA-Z0-9.-]*$ ]] || die 'cannot identify installed memcached version'
+'''
 
 
 @unittest.skipUnless(BASH and RAW.is_dir(), 'bash and data/main/raw-vm are required')
@@ -89,6 +108,12 @@ class RunStage3Tests(unittest.TestCase):
         bin_dir.mkdir()
         (bin_dir / 'id').write_text('#!/usr/bin/env bash\necho 0\n', newline='\n')
         (bin_dir / 'pgrep').write_text('#!/usr/bin/env bash\nexit 1\n', newline='\n')
+        (bin_dir / 'rpm').write_text('#!/usr/bin/env bash\nexit 1\n', newline='\n')
+        (bin_dir / 'ss').write_text('#!/usr/bin/env bash\nexit 0\n', newline='\n')
+        (bin_dir / 'systemctl').write_text(SYSTEMCTL, newline='\n')
+        (bin_dir / 'apt-get').write_text(APT_GET, newline='\n')
+        (here / 'memcached_stage3_v005.sh').write_text(MEMCACHED_STAGE3, newline='\n')
+        (self.base / 'frozen-timing' / 'v005' / 'stand_v005').mkdir()
         (bin_dir / 'chronyc').write_text(
             '#!/usr/bin/env bash\necho "System time     : 0.000012 seconds fast of NTP time"\n', newline='\n')
         (bin_dir / 'python3').write_text(f'#!/usr/bin/env bash\nexec "{Path(sys.executable).as_posix()}" "$@"\n',
@@ -98,7 +123,9 @@ class RunStage3Tests(unittest.TestCase):
         self.ports.write_text('\n', newline='\n')
         series_map = tmp / 'map.tsv'
         series_map.write_text(''.join(f"{'|'.join(k)}\t{v}\n" for k, v in SERIES.items()), newline='\n')
+        self.apt_plan = tmp / 'apt-plan.txt'
         self.env = dict(os.environ, SLAB_BASE=self.base.as_posix(), SLAB_TEST_CALLS=self.calls.as_posix(),
+                        SLAB_TEST_APT_PLAN=self.apt_plan.as_posix(),
                         SLAB_TEST_RAW=RAW.as_posix(), SLAB_TEST_MAP=series_map.as_posix(),
                         SLAB_RESERVED_PORTS_FILE=self.ports.as_posix(),
                         PATH=bin_dir.as_posix() + os.pathsep + os.environ['PATH'])
@@ -108,6 +135,13 @@ class RunStage3Tests(unittest.TestCase):
 
     def run_phase(self, phase):
         return subprocess.run([BASH, (self.base / 'run_stage3.sh').as_posix(), phase],
+                              env=self.env, capture_output=True, text=True, encoding='utf-8')
+
+    def call(self, function):
+        """One function of run_stage3.sh, sourced without running a phase; called in a
+        list, as run_logged calls it, so that set -e does not apply inside."""
+        script = (self.base / 'run_stage3.sh').as_posix()
+        return subprocess.run([BASH, '-c', f'. "{script}" library && {{ {function} || exit $?; }}'],
                               env=self.env, capture_output=True, text=True, encoding='utf-8')
 
     def analyzer(self):
@@ -174,6 +208,46 @@ class RunStage3Tests(unittest.TestCase):
         again = self.run_phase('preflight')
         self.assertNotEqual(again.returncode, 0)
         self.assertIn('already started', again.stdout)
+
+    def test_preflight_starts_process_targets(self):
+        self.assertEqual(self.run_phase('preflight').returncode, 0)
+        calls = self.calls.read_text().splitlines()
+        for user in ('root', 'labweb', 'labredis', 'labpg'):
+            self.assertIn(f'systemctl start lab-proc-target@{user}.service', calls)
+        # the targets run before the first preflight stage
+        self.assertLess(calls.index('systemctl start lab-proc-target@labpg.service'),
+                        next(i for i, c in enumerate(calls) if c.startswith('functional_ext_v005.sh')))
+        self.assertEqual(len((self.root / 'driver' / 'preflight-targets.txt').read_text().splitlines()), 4)
+
+    def test_memcached_version_with_alt_suffix_is_accepted(self):
+        plan = 'Inst memcached (1.6.42-alt1:p11+418735.100.1.1@1779279920 ALT p11:p11/branch [x86_64])\n'
+        tail = '0 upgraded, 1 newly installed, 0 removed and 0 not upgraded.\n'
+        self.apt_plan.write_text(plan + tail, newline='\n')
+        result = self.call('install_memcached')
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn('apt-get -y install memcached', self.calls.read_text())
+        self.apt_plan.write_text(plan.replace('1.6.42-alt1:', '1.6.43-alt1:') + tail, newline='\n')
+        result = self.call('install_memcached')
+        self.assertEqual(result.returncode, 2)
+        self.assertIn('memcached 1.6.43-alt1 differs from 1.6.42-alt1', result.stdout)
+
+    def test_memcached_copy_allows_underscore_in_version(self):
+        result = self.call('memcached_copy')
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        diff = (self.root / 'driver' / 'memcached-stage3.diff').read_text().splitlines()
+        self.assertEqual([l[1:] for l in diff if l.startswith('+ ')],
+                         [l[1:].replace('a-zA-Z0-9.-', 'a-zA-Z0-9._-') for l in diff if l.startswith('- ')])
+        copy = self.base / 'frozen-memcached' / 'v005' / 'scripts_v005' / 'memcached_stage3_v005.sh'
+        patterns = [l.split('=~ ')[1].split(' ]]')[0] for l in copy.read_text().splitlines() if '=~' in l]
+        self.assertEqual(len(patterns), 2)
+        for version in ('1.6.42_alt1', '1.6.42-alt1'):
+            for pattern in patterns:
+                check = subprocess.run([BASH, '-c', f'[[ "{version}" =~ {pattern} ]]'])
+                self.assertEqual(check.returncode, 0, (version, pattern))
+        # the sealed frozen-timing copy is not changed, a second copy is refused
+        frozen = self.base / 'frozen-timing' / 'v005' / 'scripts_v005' / 'memcached_stage3_v005.sh'
+        self.assertEqual(frozen.read_text(), MEMCACHED_STAGE3)
+        self.assertEqual(self.call('memcached_copy').returncode, 2)
 
     def test_foreign_port_reservation_is_not_overwritten(self):
         self.assertEqual(self.run_phase('preflight').returncode, 0)

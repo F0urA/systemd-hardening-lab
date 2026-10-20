@@ -1,0 +1,402 @@
+===== SETUP START 2026-10-19T16:48:28+00:00 =====
+===== PACKAGES =====
+Get:1 http://ftp.altlinux.org p11/branch/x86_64 release [4210B]
+Get:2 http://ftp.altlinux.org p11/branch/x86_64-i586 release [1665B]
+Get:3 http://ftp.altlinux.org p11/branch/noarch release [2831B]
+Fetched 8706B in 0s (208kB/s)
+Hit http://ftp.altlinux.org p11/branch/x86_64/classic pkglist
+Hit http://ftp.altlinux.org p11/branch/x86_64/classic release
+Hit http://ftp.altlinux.org p11/branch/x86_64-i586/classic pkglist
+Hit http://ftp.altlinux.org p11/branch/x86_64-i586/classic release
+Hit http://ftp.altlinux.org p11/branch/noarch/classic pkglist
+Hit http://ftp.altlinux.org p11/branch/noarch/classic release
+Reading Package Lists...
+Building Dependency Tree...
+Reading Package Lists...
+Building Dependency Tree...
+The following extra packages will be installed:
+  binutils                   glibc-pthread          liblsan0
+  cpp                        glibc-timezones        libmpc3
+  cpp13                      glibc-utils            libmpfr6
+  gcc-common                 iconv                  libossp-uuid16
+  gcc13                      kernel-headers-common  libpq5-18
+  glibc                      libapr1                libsframe1
+  glibc-core                 libaprutil1            libssl3
+  glibc-devel                libasan8               libtsan2
+  glibc-gconv-modules        libatomic1             libubsan1
+  glibc-kernheaders          libcrypt-devel         libvtv0
+  glibc-kernheaders-generic  libcrypto3             monit-base
+  glibc-kernheaders-x86      libctf-nobfd0          openssl
+  glibc-locales              libhwasan0             postgresql-common
+  glibc-nss                  libicu74               postgresql14
+  glibc-preinstall           libitm1                redis-cli
+The following packages will be upgraded
+  glibc                glibc-locales     glibc-pthread    iconv       openssl
+  glibc-core           glibc-nss         glibc-timezones  libcrypto3
+  glibc-gconv-modules  glibc-preinstall  glibc-utils      libssl3
+The following NEW packages will be installed:
+  apache2-ab                 libaprutil1     libsframe1
+  binutils                   libasan8        libtsan2
+  cpp                        libatomic1      libubsan1
+  cpp13                      libcrypt-devel  libvtv0
+  gcc                        libctf-nobfd0   monit-base
+  gcc-common                 libhwasan0      nginx
+  gcc13                      libicu74        postgresql-common
+  glibc-devel                libitm1         postgresql14
+  glibc-kernheaders          liblsan0        postgresql14-contrib
+  glibc-kernheaders-generic  libmpc3         postgresql14-server
+  glibc-kernheaders-x86      libmpfr6        redis
+  kernel-headers-common      libossp-uuid16  redis-cli
+  libapr1                    libpq5-18
+13 upgraded, 38 newly installed, 0 removed and 151 not upgraded.
+Need to get 76.1MB of archives.
+After unpacking 205MB of additional disk space will be used.
+Get:1 http://ftp.altlinux.org p11/branch/x86_64/classic glibc-preinstall 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [281kB]
+Get:2 http://ftp.altlinux.org p11/branch/x86_64/classic glibc-core 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [1611kB]
+Get:3 http://ftp.altlinux.org p11/branch/x86_64/classic glibc-pthread 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [62.0kB]
+Get:4 http://ftp.altlinux.org p11/branch/x86_64/classic glibc-locales 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [14.1MB]
+Get:5 http://ftp.altlinux.org p11/branch/x86_64/classic glibc-gconv-modules 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [1144kB]
+Get:6 http://ftp.altlinux.org p11/branch/x86_64/classic iconv 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [77.9kB]
+Get:7 http://ftp.altlinux.org p11/branch/x86_64/classic glibc-timezones 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [82.7kB]
+Get:8 http://ftp.altlinux.org p11/branch/x86_64/classic glibc-utils 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [433kB]
+Get:9 http://ftp.altlinux.org p11/branch/x86_64/classic glibc-nss 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [73.0kB]
+Get:10 http://ftp.altlinux.org p11/branch/x86_64/classic glibc 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [46.7kB]
+Get:11 http://ftp.altlinux.org p11/branch/x86_64/classic libapr1 1.7.6-alt1:p11+402042.100.2.1@1765378188 [111kB]
+Get:12 http://ftp.altlinux.org p11/branch/x86_64/classic libaprutil1 1.6.4-alt1:p11+428920.100.2.1@1786694148 [81.6kB]
+Get:13 http://ftp.altlinux.org p11/branch/x86_64/classic openssl 3.5.7-alt1:p11+425333.200.5.1@1786471872 [1054kB]
+Get:14 http://ftp.altlinux.org p11/branch/x86_64/classic libssl3 3.5.7-alt1:p11+425333.200.5.1@1786471872 [377kB]
+Get:15 http://ftp.altlinux.org p11/branch/x86_64/classic libcrypto3 3.5.7-alt1:p11+425333.200.5.1@1786471872 [2004kB]
+Get:16 http://ftp.altlinux.org p11/branch/x86_64/classic apache2-ab 1:2.4.69-alt1:p11+435361.100.1.1@1791063328 [73.5kB]
+Get:17 http://ftp.altlinux.org p11/branch/x86_64/classic libctf-nobfd0 1:2.41-alt2:p11+425562.100.1.1@1784279362 [115kB]
+Get:18 http://ftp.altlinux.org p11/branch/x86_64/classic libsframe1 1:2.41-alt2:p11+425562.100.1.1@1784279362 [38.3kB]
+Get:19 http://ftp.altlinux.org p11/branch/x86_64/classic binutils 1:2.41-alt2:p11+425562.100.1.1@1784279362 [5007kB]
+Get:20 http://ftp.altlinux.org p11/branch/x86_64/classic gcc-common 1.4.28-alt1:sisyphus+348678.100.1.1@1716396142 [14.3kB]
+Get:21 http://ftp.altlinux.org p11/branch/x86_64/classic libmpfr6 4.2.1-alt1:sisyphus+327740.100.1.1@1692720847 [303kB]
+Get:22 http://ftp.altlinux.org p11/branch/x86_64/classic libmpc3 1.3.1-alt1:sisyphus+322962.200.2.1@1686691678 [58.1kB]
+Get:23 http://ftp.altlinux.org p11/branch/x86_64/classic cpp13 13.2.1-alt3:sisyphus+339335.100.1.1@1706563486 [10.0MB]
+Get:24 http://ftp.altlinux.org p11/branch/x86_64/classic cpp 13-alt1:sisyphus+323337.300.1.1@1687267966 [5411B]
+Get:25 http://ftp.altlinux.org p11/branch/noarch/classic glibc-kernheaders-generic 6.18-alt1:p11+413702.100.2.1@1775223363 [1506kB]
+Get:26 http://ftp.altlinux.org p11/branch/noarch/classic glibc-kernheaders-x86 6.18-alt1:p11+413702.100.2.1@1775223363 [62.6kB]
+Get:27 http://ftp.altlinux.org p11/branch/x86_64/classic glibc-kernheaders 6.18-alt1:p11+413702.100.2.1@1775223363 [17.3kB]
+Get:28 http://ftp.altlinux.org p11/branch/x86_64/classic kernel-headers-common 1.2.9-alt1:sisyphus+320648.100.1.1@1684309073 [14.2kB]
+Get:29 http://ftp.altlinux.org p11/branch/x86_64/classic libcrypt-devel 4.4.36-alt1:sisyphus+335411.100.1.1@1701329049 [18.6kB]
+Get:30 http://ftp.altlinux.org p11/branch/x86_64/classic glibc-devel 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [2172kB]
+Get:31 http://ftp.altlinux.org p11/branch/x86_64/classic libatomic1 13.2.1-alt3:sisyphus+339335.100.1.1@1706563486 [43.2kB]
+Get:32 http://ftp.altlinux.org p11/branch/x86_64/classic libasan8 13.2.1-alt3:sisyphus+339335.100.1.1@1706563486 [437kB]
+Get:33 http://ftp.altlinux.org p11/branch/x86_64/classic libtsan2 13.2.1-alt3:sisyphus+339335.100.1.1@1706563486 [385kB]
+Get:34 http://ftp.altlinux.org p11/branch/x86_64/classic libitm1 13.2.1-alt3:sisyphus+339335.100.1.1@1706563486 [59.8kB]
+Get:35 http://ftp.altlinux.org p11/branch/x86_64/classic libhwasan0 13.2.1-alt3:sisyphus+339335.100.1.1@1706563486 [218kB]
+Get:36 http://ftp.altlinux.org p11/branch/x86_64/classic liblsan0 13.2.1-alt3:sisyphus+339335.100.1.1@1706563486 [212kB]
+Get:37 http://ftp.altlinux.org p11/branch/x86_64/classic libubsan1 13.2.1-alt3:sisyphus+339335.100.1.1@1706563486 [200kB]
+Get:38 http://ftp.altlinux.org p11/branch/x86_64/classic libvtv0 13.2.1-alt3:sisyphus+339335.100.1.1@1706563486 [45.7kB]
+Get:39 http://ftp.altlinux.org p11/branch/x86_64/classic gcc13 13.2.1-alt3:sisyphus+339335.100.1.1@1706563486 [13.3MB]
+Get:40 http://ftp.altlinux.org p11/branch/x86_64/classic gcc 13-alt1:sisyphus+323337.300.1.1@1687267966 [7138B]
+Get:41 http://ftp.altlinux.org p11/branch/x86_64/classic libicu74 1:7.4.2-alt1:sisyphus+336372.200.1.1@1702423005 [9441kB]
+Get:42 http://ftp.altlinux.org p11/branch/x86_64/classic libossp-uuid16 1.6.2-alt2:sisyphus+335067.4400.2.2@1701150504 [24.0kB]
+Get:43 http://ftp.altlinux.org p11/branch/x86_64/classic libpq5-18 18.6-alt1:p11+429420.100.5.1@1787195913 [271kB]
+Get:44 http://ftp.altlinux.org p11/branch/noarch/classic monit-base 5.33.0-alt1:p11+349206.100.1.1@1716632670 [20.6kB]
+Get:45 http://ftp.altlinux.org p11/branch/noarch/classic postgresql-common 1.0-alt9:sisyphus+316872.700.2.1@1679053194 [4574B]
+Get:46 http://ftp.altlinux.org p11/branch/x86_64/classic postgresql14 14.24-alt1:p11+429420.200.5.1@1787196366 [1594kB]
+Get:47 http://ftp.altlinux.org p11/branch/x86_64/classic postgresql14-server 14.24-alt1:p11+429420.200.5.1@1787196366 [5606kB]
+Get:48 http://ftp.altlinux.org p11/branch/x86_64/classic postgresql14-contrib 14.24-alt1:p11+429420.200.5.1@1787196366 [603kB]
+Get:49 http://ftp.altlinux.org p11/branch/x86_64/classic redis-cli 8.6.6-alt1:p11+432889.100.2.1@1789753504 [489kB]
+Get:50 http://ftp.altlinux.org p11/branch/x86_64/classic nginx 1.30.5-alt1:p11+433158.100.2.1@1790175906 [732kB]
+Get:51 http://ftp.altlinux.org p11/branch/x86_64/classic redis 8.6.6-alt1:p11+432889.100.2.1@1789753504 [1436kB]
+Fetched 76.1MB in 20s (3771kB/s)
+Committing changes...
+Preparing...                            ################################# [100%]
+Updating / installing...
+ 1: glibc-kernheaders-generic-6.18-alt1 ################################# [  2%]
+ 2: glibc-kernheaders-x86-6.18-alt1     ################################# [  3%]
+ 3: glibc-kernheaders-6.18-alt1         ################################# [  5%]
+ 4: kernel-headers-common-1.2.9-alt1    ################################# [  6%]
+ 5: monit-base-5.33.0-alt1              ################################# [  8%]
+ 6: postgresql-common-1.0-alt9          ################################# [  9%]
+ 7: libubsan1-13.2.1-alt3               ################################# [ 11%]
+ 8: libcrypt-devel-4.4.36-alt1          ################################# [ 13%]
+ 9: glibc-preinstall-6:2.38.0.223.f053ff-alt1.p11.1 ################################# [ 14%]
+10: glibc-core-6:2.38.0.223.f053ff-alt1.p11.1 ################################# [ 16%]
+11: libcrypto3-3.5.7-alt1               ################################# [ 17%]
+12: libssl3-3.5.7-alt1                  ################################# [ 19%]
+13: glibc-pthread-6:2.38.0.223.f053ff-alt1.p11.1 ################################# [ 20%]
+14: libpq5-18-18.6-alt1                 ################################# [ 22%]
+15: glibc-locales-6:2.38.0.223.f053ff-alt1.p11.1 ################################# [ 23%]
+16: libapr1-1.7.6-alt1                  ################################# [ 25%]
+17: libmpfr6-4.2.1-alt1                 ################################# [ 27%]
+18: libmpc3-1.3.1-alt1                  ################################# [ 28%]
+19: libaprutil1-1.6.4-alt1              ################################# [ 30%]
+20: postgresql14-14.24-alt1             ################################# [ 31%]
+21: glibc-gconv-modules-6:2.38.0.223.f053ff-alt1.p11.1 ################################# [ 33%]
+22: iconv-6:2.38.0.223.f053ff-alt1.p11.1 ################################# [ 34%]
+23: glibc-timezones-6:2.38.0.223.f053ff-alt1.p11.1 ################################# [ 36%]
+24: glibc-utils-6:2.38.0.223.f053ff-alt1.p11.1 ################################# [ 38%]
+25: glibc-nss-6:2.38.0.223.f053ff-alt1.p11.1 ################################# [ 39%]
+26: glibc-6:2.38.0.223.f053ff-alt1.p11.1 ################################# [ 41%]
+27: glibc-devel-6:2.38.0.223.f053ff-alt1.p11.1 ################################# [ 42%]
+28: redis-cli-8.6.6-alt1                ################################# [ 44%]
+29: libctf-nobfd0-1:2.41-alt2           ################################# [ 45%]
+30: libsframe1-1:2.41-alt2              ################################# [ 47%]
+31: binutils-1:2.41-alt2                ################################# [ 48%]
+32: gcc-common-1.4.28-alt1              ################################# [ 50%]
+33: cpp13-13.2.1-alt3                   ################################# [ 52%]
+34: cpp-13-alt1                         ################################# [ 53%]
+35: libatomic1-13.2.1-alt3              ################################# [ 55%]
+36: libasan8-13.2.1-alt3                ################################# [ 56%]
+37: libtsan2-13.2.1-alt3                ################################# [ 58%]
+38: libitm1-13.2.1-alt3                 ################################# [ 59%]
+39: libhwasan0-13.2.1-alt3              ################################# [ 61%]
+40: liblsan0-13.2.1-alt3                ################################# [ 63%]
+41: libvtv0-13.2.1-alt3                 ################################# [ 64%]
+42: gcc13-13.2.1-alt3                   ################################# [ 66%]
+43: libicu74-1:7.4.2-alt1               ################################# [ 67%]
+44: postgresql14-server-14.24-alt1      ################################# [ 69%]
+45: libossp-uuid16-1.6.2-alt2           ################################# [ 70%]
+46: postgresql14-contrib-14.24-alt1     ################################# [ 72%]
+47: gcc-13-alt1                         ################################# [ 73%]
+48: redis-8.6.6-alt1                    ################################# [ 75%]
+49: apache2-ab-1:2.4.69-alt1            ################################# [ 77%]
+50: openssl-3.5.7-alt1                  ################################# [ 78%]
+51: nginx-1.30.5-alt1                   ################################# [ 80%]
+Cleaning up / removing...
+52: glibc-6:2.38.0.123.650a0-alt1       ################################# [ 81%]
+53: openssl-3.3.3-alt1                  ################################# [ 83%]
+54: libssl3-3.3.3-alt1                  ################################# [ 84%]
+55: libcrypto3-3.3.3-alt1               ################################# [ 86%]
+56: glibc-nss-6:2.38.0.123.650a0-alt1   ################################# [ 88%]
+57: glibc-locales-6:2.38.0.123.650a0-alt1 ################################# [ 89%]
+58: glibc-timezones-6:2.38.0.123.650a0-alt1 ################################# [ 91%]
+59: iconv-6:2.38.0.123.650a0-alt1       ################################# [ 92%]
+60: glibc-gconv-modules-6:2.38.0.123.650a0-alt1 ################################# [ 94%]
+61: glibc-utils-6:2.38.0.123.650a0-alt1 ################################# [ 95%]
+62: glibc-pthread-6:2.38.0.123.650a0-alt1 ################################# [ 97%]
+63: glibc-core-6:2.38.0.123.650a0-alt1  ################################# [ 98%]
+64: glibc-preinstall-6:2.38.0.123.650a0-alt1 ################################# [100%]
+Done.
+===== USERS =====
+uid=984(labweb) gid=963(labweb) groups=963(labweb)
+uid=983(labredis) gid=962(labredis) groups=962(labredis)
+uid=982(labpg) gid=961(labpg) groups=961(labpg)
+uid=981(labvictim) gid=960(labvictim) groups=960(labvictim)
+===== SYNTHETIC OBJECTS =====
+===== SERVICE DATA AND CONFIGURATION =====
+The files belonging to this database system will be owned by user "labpg".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "C".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/systemd-lab/postgresql ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... UTC
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+Success. You can now start the database server using:
+
+    service postgresql start
+or
+    /usr/bin/pg_ctl -D /var/lib/systemd-lab/postgresql -l logfile start
+
+===== PROBE PROGRAMS =====
+===== UNITS AND PROFILES =====
+lab-proc-target@labweb: active pid=3201
+lab-proc-target@labredis: active pid=3207
+lab-proc-target@labpg: active pid=3214
+lab-proc-target@root: active pid=3219
+===== START UNDER P0 AND FUNCTIONAL CONTRACT =====
+nginx P0: FUNCTIONAL CONTRACT PASS
+redis P0: FUNCTIONAL CONTRACT PASS
+NOTICE:  table "slab_contract" does not exist, skipping
+postgresql P0: FUNCTIONAL CONTRACT PASS
+CREATE DATABASE
+dropping old tables...
+NOTICE:  table "pgbench_accounts" does not exist, skipping
+NOTICE:  table "pgbench_branches" does not exist, skipping
+NOTICE:  table "pgbench_history" does not exist, skipping
+NOTICE:  table "pgbench_tellers" does not exist, skipping
+creating tables...
+generating data (client-side)...
+1000000 of 1000000 tuples (100%) done (elapsed 1.28 s, remaining 0.00 s)
+vacuuming...
+creating primary keys...
+done in 3.14 s (drop tables 0.00 s, create tables 0.01 s, client-side generate 1.93 s, vacuum 0.25 s, primary keys 0.95 s).
+===== START UNDER P4 AND FUNCTIONAL CONTRACT =====
+nginx P4: FUNCTIONAL CONTRACT PASS
+redis P4: FUNCTIONAL CONTRACT PASS
+NOTICE:  table "slab_contract" does not exist, skipping
+postgresql P4: FUNCTIONAL CONTRACT PASS
+===== STAND DESCRIPTION =====
+2026-10-19T16:49:41+00:00
+VERSION="11.1"
+PRETTY_NAME="ALT Server 11.1 (Mendelevium)"
+kernel=6.12.74-6.12-alt1
+systemd 257 (257.9-alt1)
+nginx version: nginx/1.30.5
+Redis server v=8.6.6 sha=00000000:0 malloc=jemalloc-5.3.0 bits=64 build=79c2959f7b6ebd5e
+postgres (PostgreSQL) 14.24
+Python 3.12.7
+x86_64-alt-linux-gcc (GCC) 13.2.1 20240128 (ALT Sisyphus 13.2.1-alt3)
+This is ApacheBench, Version 2.3 <$Revision$>
+nproc=4 mem_mb=3919
+cgroup=cgroup2fs
+lsm=lockdown,capability,landlock,yama,safesetid,bpf,kiosk,ima,evm
+kernel.yama.ptrace_scope = 1
+kernel.unprivileged_bpf_disabled = 2
+vm.unprivileged_userfaultfd = 0
+kernel.io_uring_disabled = 0
+net.ipv4.ip_unprivileged_port_start = 1024
+exposure_P4_nginx=2.8
+exposure_P4_redis=2.1
+exposure_P4_postgresql=2.1
+6040d6a0ca899d48f74e2f90211164b3c60403d033320625a3a47cf3e7a90f57  ./conf/nginx.conf
+dcecd2e40aad3d4a37ff796bdd870a4933e6f9f22f1c61907c8bf1f508562874  ./conf/redis.conf
+54eca1d42d3796a574a7740570ec9eec57d9914138cf299e73b347fdd96e8428  ./probes/extended_probe.py
+eaf450808581c54bbc8b0e2c8c80797bf04fc71c48d41432056bbfdac9d55450  ./probes/isolation_probe.py
+5736dbf424d1f24ce1c57f3b48ac66c3b490cc90f3ed06212e091b5f366f71c7  ./probes/lab_target.c
+5f85d32a5ed9d3a1e7213881913519080a62683eaf3c6be73a558ae211a267d2  ./probes/ptrace_seize.py
+a8ff54c30fe746f71ea427918494bb0d0a4fe4c7943f01adbe9c9546d3aa6064  ./probes/uid_helper.c
+8c5569781bbfc2f64b3324c587c74d174e642cd370beac82a74f7d6304e277c7  ./profiles/nginx/P1.conf
+182e58ffceade3d17ca92d8654602a19b18b6424e6f17d209c143fd12b246c60  ./profiles/nginx/P1c.conf
+043dc1ff3217b9835244843c56c7662449ed7566d16e50d665824d3271983b94  ./profiles/nginx/P1cADMIN.conf
+97eac75a8ee7252618f8c345c145329cdd35aee4f15b8eab817f40fb4c86fea9  ./profiles/nginx/P1cCHROOT.conf
+bdcbcb580f804b66c0b31d2ccc7cc7c8502d1beece683e1017348e5b19a3601e  ./profiles/nginx/P1cDAC.conf
+f8ab5132628a798b8cab6e41e1bb30dad070254cb7fae310ee3edf4fe0527a8c  ./profiles/nginx/P1cPTRACE.conf
+f0c836a19de59397ada08ebd7c701dcc1658141f86624f73ee828a6eb122ce15  ./profiles/nginx/P1r.conf
+e1e43d00e4b94d11d05d00877222363c23ca86ebb1aac064937169762653b623  ./profiles/nginx/P2.conf
+50c48a9604cbde6cb5eff5eeecfd0a7c95425b91675bb867454c6e9ab0ec86ec  ./profiles/nginx/P3.conf
+d00059582a770928b74f46cca71c73242c66a874859e6171c29c2d747d1fd574  ./profiles/nginx/P4.conf
+ca83303b90e11f262ca04b6b14bf2e6789dfae3f5d1e349a6838e03fb9311dd4  ./profiles/nginx/P5.conf
+493bc0f1dc6eca4e25de3cbf5b740b977d0f8958b028d7edd05ee2db26c64da8  ./profiles/nginx/P6.conf
+8c5569781bbfc2f64b3324c587c74d174e642cd370beac82a74f7d6304e277c7  ./profiles/postgresql/P1.conf
+627fb59087ad6c5c5f3cc313afd20f058e6f0c49594d39989ed87bf17014c88f  ./profiles/postgresql/P1d.conf
+e1e43d00e4b94d11d05d00877222363c23ca86ebb1aac064937169762653b623  ./profiles/postgresql/P2.conf
+d962b34490c610c1d6a0930ee316615608d0f1cdb678c37e5e89229f9296eadd  ./profiles/postgresql/P4.conf
+0daf6ffd9b40946b6b39ff48e53bb633566a75aee9d9517411ed3ebbf65f8b83  ./profiles/postgresql/P6.conf
+8c5569781bbfc2f64b3324c587c74d174e642cd370beac82a74f7d6304e277c7  ./profiles/redis/P1.conf
+8d5dd69997f62590370370129404dae1a8821d79e4a1c3ad5813078980534b04  ./profiles/redis/P1d.conf
+e1e43d00e4b94d11d05d00877222363c23ca86ebb1aac064937169762653b623  ./profiles/redis/P2.conf
+d962b34490c610c1d6a0930ee316615608d0f1cdb678c37e5e89229f9296eadd  ./profiles/redis/P4.conf
+0fc951fb31678527fde99840dc176be6d450d4dfe8e6d83541d591c227d409d0  ./profiles/redis/P6.conf
+020bcc075a29ae9756a9d55a8bfa1a04f172082cceded5e67d0e01a8d6fcb1ae  ./tls_v005/nginx.conf
+8d0b2a53eb8c6b39e09c5b8d2aea1d57c24aa99ba53ac456572801b94747a1fd  ./tls_v005/slab-nginx-ext-upstream.service
+b4f3d13b5284251d00314a00578acd70090b398b257561cbe102ea4c7f2501a7  ./tls_v005/slab-nginx-ext.service
+8d220d256eb92e5a6b1f46784bb20d47bd795107510c68be762efaa522012e86  ./units/lab-proc-target@.service
+5186e7f7b028089b00eed0822834f3f6fd81756b0554ee24fecdc3bf637dc4ab  ./units/slab-nginx.service
+6b65b2b879d8ce35cdafb4d9218c2c792eb42d955894afc475a04fbe7c57ee3c  ./units/slab-postgresql.service
+d6d6dc0d33d7ef6cbfafb53d287381e9276d9d32baa8fa9f2cb032e57939a25d  ./units/slab-redis.service
+===== SETUP COMPLETE 2026-10-19T16:49:41+00:00: stand is in its rest state (P4) =====
+Reading Package Lists...
+Building Dependency Tree...
+The following packages will be upgraded
+  strace
+1 upgraded, 0 newly installed, 0 removed and 150 not upgraded.
+Need to get 644kB of archives.
+After unpacking 46.3kB of additional disk space will be used.
+Get:1 http://ftp.altlinux.org p11/branch/x86_64/classic strace 7.0-alt1:p11+416538.100.1.1@1777310083 [644kB]
+Fetched 644kB in 0s (6509kB/s)
+Committing changes...
+Preparing...                            ################################# [100%]
+Updating / installing...
+1: strace-7.0-alt1                      ################################# [ 50%]
+Cleaning up / removing...
+2: strace-6.19-alt1                     ################################# [100%]
+Done.
+2026-10-19T16:49:45+00:00
+1
+KEEP /root/systemd-hardening-lab/results_v005/nginx/profiles/P6.conf (already exists, not overwritten)
+--- appended to P4 in /root/systemd-hardening-lab/results_v005/nginx/profiles/P6.conf:
+# v003: P6 = P4 + read-only file system with explicit write paths
+ProtectSystem=strict
+ReadWritePaths=/run -/var/log/slab-nginx-error.log -/var/spool/nginx/tmp/client -/var/spool/nginx/tmp/fastcgi -/var/spool/nginx/tmp/proxy -/var/spool/nginx/tmp/scgi -/var/spool/nginx/tmp/uwsgi
+d00059582a770928b74f46cca71c73242c66a874859e6171c29c2d747d1fd574  /root/systemd-hardening-lab/results_v005/nginx/profiles/P4.conf
+493bc0f1dc6eca4e25de3cbf5b740b977d0f8958b028d7edd05ee2db26c64da8  /root/systemd-hardening-lab/results_v005/nginx/profiles/P6.conf
+
+KEEP /root/systemd-hardening-lab/results_v005/redis/profiles/P6.conf (already exists, not overwritten)
+--- appended to P4 in /root/systemd-hardening-lab/results_v005/redis/profiles/P6.conf:
+# v003: P6 = P4 + read-only file system with explicit write paths
+ProtectSystem=strict
+ReadWritePaths=/var/lib/systemd-lab/redis
+d962b34490c610c1d6a0930ee316615608d0f1cdb678c37e5e89229f9296eadd  /root/systemd-hardening-lab/results_v005/redis/profiles/P4.conf
+0fc951fb31678527fde99840dc176be6d450d4dfe8e6d83541d591c227d409d0  /root/systemd-hardening-lab/results_v005/redis/profiles/P6.conf
+
+KEEP /root/systemd-hardening-lab/results_v005/postgresql/profiles/P6.conf (already exists, not overwritten)
+--- appended to P4 in /root/systemd-hardening-lab/results_v005/postgresql/profiles/P6.conf:
+# v003: P6 = P4 + read-only file system with explicit write paths
+ProtectSystem=strict
+ReadWritePaths=/var/lib/systemd-lab/postgresql
+d962b34490c610c1d6a0930ee316615608d0f1cdb678c37e5e89229f9296eadd  /root/systemd-hardening-lab/results_v005/postgresql/profiles/P4.conf
+0daf6ffd9b40946b6b39ff48e53bb633566a75aee9d9517411ed3ebbf65f8b83  /root/systemd-hardening-lab/results_v005/postgresql/profiles/P6.conf
+
+KEEP /root/systemd-hardening-lab/results_v005/nginx/profiles/P1r.conf (already exists, not overwritten)
+--- appended to P1 in /root/systemd-hardening-lab/results_v005/nginx/profiles/P1r.conf:
+# v004: P1r = P1 + read-only web directory
+ReadOnlyPaths=/var/lib/systemd-lab/nginx-www
+8c5569781bbfc2f64b3324c587c74d174e642cd370beac82a74f7d6304e277c7  /root/systemd-hardening-lab/results_v005/nginx/profiles/P1.conf
+f0c836a19de59397ada08ebd7c701dcc1658141f86624f73ee828a6eb122ce15  /root/systemd-hardening-lab/results_v005/nginx/profiles/P1r.conf
+
+KEEP /root/systemd-hardening-lab/results_v005/nginx/profiles/P1c.conf (already exists, not overwritten)
+--- appended to P1r in /root/systemd-hardening-lab/results_v005/nginx/profiles/P1c.conf:
+# v004: P1c = P1r + the capability set of P4
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_SETUID CAP_SETGID
+f0c836a19de59397ada08ebd7c701dcc1658141f86624f73ee828a6eb122ce15  /root/systemd-hardening-lab/results_v005/nginx/profiles/P1r.conf
+182e58ffceade3d17ca92d8654602a19b18b6424e6f17d209c143fd12b246c60  /root/systemd-hardening-lab/results_v005/nginx/profiles/P1c.conf
+
+KEEP /root/systemd-hardening-lab/results_v005/redis/profiles/P1.conf (already exists, not overwritten)
+8c5569781bbfc2f64b3324c587c74d174e642cd370beac82a74f7d6304e277c7  /root/systemd-hardening-lab/results_v005/redis/profiles/P1.conf
+KEEP /root/systemd-hardening-lab/results_v005/redis/profiles/P2.conf (already exists, not overwritten)
+e1e43d00e4b94d11d05d00877222363c23ca86ebb1aac064937169762653b623  /root/systemd-hardening-lab/results_v005/redis/profiles/P2.conf
+KEEP /root/systemd-hardening-lab/results_v005/postgresql/profiles/P1.conf (already exists, not overwritten)
+8c5569781bbfc2f64b3324c587c74d174e642cd370beac82a74f7d6304e277c7  /root/systemd-hardening-lab/results_v005/postgresql/profiles/P1.conf
+KEEP /root/systemd-hardening-lab/results_v005/postgresql/profiles/P2.conf (already exists, not overwritten)
+e1e43d00e4b94d11d05d00877222363c23ca86ebb1aac064937169762653b623  /root/systemd-hardening-lab/results_v005/postgresql/profiles/P2.conf
+KEEP /root/systemd-hardening-lab/results_v005/redis/profiles/P1d.conf (already exists, not overwritten)
+--- appended to P1 in /root/systemd-hardening-lab/results_v005/redis/profiles/P1d.conf:
+# v005: P1d = P1 + write path for the data directory
+ProtectSystem=strict
+ReadWritePaths=/var/lib/systemd-lab/redis
+8c5569781bbfc2f64b3324c587c74d174e642cd370beac82a74f7d6304e277c7  /root/systemd-hardening-lab/results_v005/redis/profiles/P1.conf
+8d5dd69997f62590370370129404dae1a8821d79e4a1c3ad5813078980534b04  /root/systemd-hardening-lab/results_v005/redis/profiles/P1d.conf
+
+KEEP /root/systemd-hardening-lab/results_v005/postgresql/profiles/P1d.conf (already exists, not overwritten)
+--- appended to P1 in /root/systemd-hardening-lab/results_v005/postgresql/profiles/P1d.conf:
+# v005: P1d = P1 + write path for the data directory
+ProtectSystem=strict
+ReadWritePaths=/var/lib/systemd-lab/postgresql
+8c5569781bbfc2f64b3324c587c74d174e642cd370beac82a74f7d6304e277c7  /root/systemd-hardening-lab/results_v005/postgresql/profiles/P1.conf
+627fb59087ad6c5c5f3cc313afd20f058e6f0c49594d39989ed87bf17014c88f  /root/systemd-hardening-lab/results_v005/postgresql/profiles/P1d.conf
+
+DONE. Candidates are not applied to any service by this script.
+=== capability ablation of P1c (base set = the three capabilities of P4) ===
+KEEP /root/systemd-hardening-lab/results_v005/nginx/profiles/P1cADMIN.conf (already exists, not overwritten)
+  CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_SETUID CAP_SETGID CAP_SYS_ADMIN
+043dc1ff3217b9835244843c56c7662449ed7566d16e50d665824d3271983b94  /root/systemd-hardening-lab/results_v005/nginx/profiles/P1cADMIN.conf
+KEEP /root/systemd-hardening-lab/results_v005/nginx/profiles/P1cPTRACE.conf (already exists, not overwritten)
+  CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_SETUID CAP_SETGID CAP_SYS_PTRACE
+f8ab5132628a798b8cab6e41e1bb30dad070254cb7fae310ee3edf4fe0527a8c  /root/systemd-hardening-lab/results_v005/nginx/profiles/P1cPTRACE.conf
+KEEP /root/systemd-hardening-lab/results_v005/nginx/profiles/P1cDAC.conf (already exists, not overwritten)
+  CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_SETUID CAP_SETGID CAP_DAC_OVERRIDE
+bdcbcb580f804b66c0b31d2ccc7cc7c8502d1beece683e1017348e5b19a3601e  /root/systemd-hardening-lab/results_v005/nginx/profiles/P1cDAC.conf
+KEEP /root/systemd-hardening-lab/results_v005/nginx/profiles/P1cCHROOT.conf (already exists, not overwritten)
+  CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_SETUID CAP_SETGID CAP_SYS_CHROOT
+97eac75a8ee7252618f8c345c145329cdd35aee4f15b8eab817f40fb4c86fea9  /root/systemd-hardening-lab/results_v005/nginx/profiles/P1cCHROOT.conf
+
+DONE. Profiles are not applied to any service by this script.
+NEXT: NGINX_PROFILES='P1r P1c P1cADMIN P1cPTRACE P1cDAC P1cCHROOT' ./scenarios_v005.sh nginx
+PREPARATION_COMPLETE
+executed: ALT Server 11.1, Linux 6.12.74-6.12-alt1, systemd 257.9-alt1, nginx 1.30.4,
+          Redis 8.6.5, PostgreSQL 14.24, Python 3.12.7, strace 6.19-alt1
+this stand: ALT Server 11.1 (Mendelevium), Linux 6.12.74-6.12-alt1
+systemd 257 (257.9-alt1)
+nginx version: nginx/1.30.5
+Redis server v=8.6.6 sha=00000000:0 malloc=jemalloc-5.3.0 bits=64 build=79c2959f7b6ebd5e
+postgres (PostgreSQL) 14.24
+Python 3.12.7
+strace -- version 7.0-alt1
+STAND_READY

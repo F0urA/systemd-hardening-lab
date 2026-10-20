@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Standalone stage 26. register -> prepare -> check/probe -> measure -> cleanup.
 # Package installation belongs to the operator. Never source slab_common here.
+# '_' is allowed in the version patterns: memcached -V on ALT prints 1.6.42_alt1,
+# which the executed edition rejected (data/rerun/README.md).
 set -Eeuo pipefail
 export LC_ALL=C TZ=UTC
 HERE=$(dirname "$(readlink -f "$0")")
@@ -64,7 +66,7 @@ registration() {
     VERSION=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["expected_version"])' "$REG/parameters.json")
     BINARY=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["binary"])' "$REG/parameters.json")
     SEED=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["randomization_seed"])' "$REG/parameters.json")
-    [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+[a-zA-Z0-9.-]*$ ]] || die 'invalid registered memcached version'
+    [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+[a-zA-Z0-9._-]*$ ]] || die 'invalid registered memcached version'
     [[ "$BINARY" == /* ]] && [ -x "$BINARY" ] || die 'registered executable is unavailable'
 }
 
@@ -148,7 +150,7 @@ if [ "$MODE" = register ]; then
     helpers verify
     BINARY=$(readlink -f "$(command -v memcached)")
     VERSION=$("$BINARY" -V 2>&1 | awk '{print $NF}')
-    [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+[a-zA-Z0-9.-]*$ ]] || die 'cannot identify installed memcached version'
+    [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+[a-zA-Z0-9._-]*$ ]] || die 'cannot identify installed memcached version'
     SEED=$(python3 -c 'import secrets; print(secrets.token_hex(16))')
     REG="$REG_BASE/$(date -u +%Y%m%dT%H%M%SZ)-$$"
     mkdir -p "$REG"

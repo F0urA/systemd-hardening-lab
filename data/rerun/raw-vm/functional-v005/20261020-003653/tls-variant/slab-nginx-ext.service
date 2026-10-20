@@ -1,0 +1,10 @@
+[Unit]
+Description=v005 separate Nginx TLS and local upstream functional variant
+After=slab-nginx-ext-upstream.service
+[Service]
+Type=simple
+ExecStartPre=/usr/sbin/nginx -t -c /etc/systemd-lab/nginx-ext-v005/nginx.conf
+ExecStart=/usr/sbin/nginx -c /etc/systemd-lab/nginx-ext-v005/nginx.conf -g 'daemon off;'
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGQUIT
+Restart=no

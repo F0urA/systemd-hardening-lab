@@ -1,0 +1,4 @@
+block,order,profile,attempt,throughput,max_gap_ms,reason
+12,2,P6,1,16582.612,1012.8,stall
+15,2,P4,1,16346.022,766.8,stall
+59,1,P6,1,16700.300,3085.7,stall

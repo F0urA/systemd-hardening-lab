@@ -1,0 +1,59 @@
+===== BENCHMARK DATA AUDIT v005 =====
+SOURCE=/root/systemd-hardening-lab/results_v005/redis/benchmark-v005/20261019-184311/results.csv
+SHA256=6c34f36c30f1fe32c4664071337015654f354ea4a96c35abcab4a0aa7da900c5
+CSV_DATA_ROWS=120
+ALL_PROFILES={'P0': 20, 'P1': 20, 'P1d': 20, 'P2': 20, 'P4': 20, 'P6': 20}
+THROUGHPUT_COLUMN=rps
+BASELINE=P0 CANDIDATE=P6
+
+===== EACH PAIRED BLOCK =====
+BLOCK ORDER_P0 ORDER_P6 P0_rps P6_rps D=P6-0.95*P0 CPU_DELTA_PP CPU_PER_OP_RATIO
+    1        6        5   114163.940   110067.510     1611.767       -0.535           1.0316
+    2        3        5   113173.380   110071.550     2556.839       +0.282           1.0311
+    3        3        2   113088.050   110063.470     2629.823       -0.340           1.0239
+    4        3        5   113173.380   112015.530     4500.819       +0.363           1.0140
+    5        2        3   113079.530   109970.670     2545.117       +0.289           1.0312
+    6        1        6   113083.800   110996.010     3566.400       -0.159           1.0172
+    7        4        2   114259.590   111090.540     2543.929       -0.211           1.0264
+    8        6        1   113186.200   109970.670     2443.780       +0.308           1.0324
+    9        1        4   113083.800   109970.670     2541.060       -0.030           1.0280
+   10        1        5   113177.650   109974.710     2455.943       -0.486           1.0241
+   11        1        5   114242.200   109966.640     1436.550       -0.391           1.0347
+   12        3        2   112116.010   110987.790     4477.580       +0.290           1.0131
+   13        4        1   112032.270   109067.110     2636.454       -0.309           1.0239
+   14        5        3   114259.590   109970.670     1424.060       -0.362           1.0352
+   15        3        1   114246.540   111086.420     2552.207       +0.245           1.0310
+   16        4        5   112032.270   110067.510     3636.853       -0.569           1.0120
+   17        2        6   114168.280   109970.670     1510.804       +0.024           1.0384
+   18        5        2   113190.460   109974.710     2443.773       +0.150           1.0308
+   19        3        5   114142.220   109974.710     1539.601       -0.206           1.0358
+   20        3        4   113092.320   111090.540     3652.836       +0.214           1.0202
+
+===== VERIFIED SUMMARY =====
+PAIRS=20
+STUDENT_T_QUANTILES_DF_19=one_sided_95:1.729133 two_sided_95:2.093024
+MEAN_P0_rps=113349.574000
+MEAN_P6_rps=110317.405000
+RATIO_OF_ARITHMETIC_MEANS=0.973249401 (97.32494%)
+PRIMARY_PAIRED_CONTRAST_MEAN=2635.309700 rps
+PRIMARY_PAIRED_CONTRAST_SD=927.371881 rps
+STUDENT_T_ONE_SIDED_95_LOWER_FOR_CONTRAST=2276.745210 rps
+PRIMARY_NONINFERIORITY_95=PASS_CONDITIONAL
+SENSITIVITY_GEOMETRIC_MEAN_PAIRED_RATIO=0.97325281
+SENSITIVITY_GEOMETRIC_RATIO_ONE_SIDED_95_LOWER=0.97005800
+CPU_MEAN_P0=99.331950 %_one_core
+CPU_MEAN_P6=99.260300 %_one_core
+CPU_PAIRED_DELTA_MEAN=-0.071650 percentage_points
+CPU_PAIRED_DELTA_TWO_SIDED_95_CI=[-0.221750,+0.078450] percentage_points
+CPU_PAIRED_DELTA_ONE_SIDED_95_UPPER=+0.052354 percentage_points
+
+===== COST CRITERION: CPU TIME PER OPERATION =====
+COST_SOURCE=cpu_us_per_op column
+CPU_PER_OP_GEOMETRIC_MEAN_INCREASE=+2.6724 %
+CPU_PER_OP_ONE_SIDED_95_UPPER_INCREASE=+2.9812 %
+CPU_BUDGET_H=2%: NOT_ESTABLISHED
+CPU_BUDGET_H=5%: PASS_CONDITIONAL
+CPU_BUDGET_H=10%: PASS_CONDITIONAL
+CPU_BUDGET_H=15%: PASS_CONDITIONAL
+NOTE=One-sided t inference assumes approximately normal, independent block contrasts.
+NOTE=Do not replace source observations, including outliers, in the primary analysis.

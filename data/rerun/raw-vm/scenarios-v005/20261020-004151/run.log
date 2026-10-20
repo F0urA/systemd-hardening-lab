@@ -1,0 +1,114 @@
+
+===== SERVICE=nginx CANDIDATE=P0 =====
+FUNCTIONAL=1 EXPOSURE=9.6 DIRECTIVES=0
+RESULT service=nginx goal=G1-replace-document dac=rootown context=worker profile=P0 outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=rootown context=master profile=P0 outcome=ACHIEVED detail=http=200 G_RESULT=ALLOWED via=direct uid=0
+RESULT service=nginx goal=G1-replace-document dac=labweb context=worker profile=P0 outcome=ACHIEVED detail=http=200 G_RESULT=ALLOWED via=direct uid=984
+RESULT service=nginx goal=G1-replace-document dac=labweb context=master profile=P0 outcome=ACHIEVED detail=http=200 G_RESULT=ALLOWED via=direct uid=0
+RESULT service=nginx goal=G2-read-app-secret dac=needed-by-app context=worker profile=P0 outcome=ACHIEVED detail=G_RESULT=ALLOWED uid=984
+RESULT service=nginx goal=G2-read-app-secret dac=needed-by-app context=master profile=P0 outcome=ACHIEVED detail=G_RESULT=ALLOWED uid=0
+RESULT service=nginx goal=G3-replace-config dac=rootown context=worker profile=P0 outcome=BLOCKED detail=G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G3-replace-config dac=rootown context=master profile=P0 outcome=ACHIEVED detail=G_RESULT=ALLOWED via=direct uid=0
+RESULT service=nginx goal=G4-write-logdir dac=rootown context=worker profile=P0 outcome=BLOCKED detail=G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G4-write-logdir dac=rootown context=master profile=P0 outcome=ACHIEVED detail=G_RESULT=ALLOWED via=direct uid=0
+
+===== SERVICE=nginx CANDIDATE=P1r =====
+FUNCTIONAL=1 EXPOSURE=8.7 DIRECTIVES=6
+RESULT service=nginx goal=G1-replace-document dac=rootown context=worker profile=P1r outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=rootown context=master profile=P1r outcome=ACHIEVED detail=http=200 G_RESULT=ALLOWED via=proc1root+remount uid=0
+RESULT service=nginx goal=G1-replace-document dac=labweb context=worker profile=P1r outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=labweb context=master profile=P1r outcome=ACHIEVED detail=http=200 G_RESULT=ALLOWED via=proc1root+remount uid=0
+RESULT service=nginx goal=G2-read-app-secret dac=needed-by-app context=worker profile=P1r outcome=ACHIEVED detail=G_RESULT=ALLOWED uid=984
+RESULT service=nginx goal=G2-read-app-secret dac=needed-by-app context=master profile=P1r outcome=ACHIEVED detail=G_RESULT=ALLOWED uid=0
+RESULT service=nginx goal=G3-replace-config dac=rootown context=worker profile=P1r outcome=BLOCKED detail=G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G3-replace-config dac=rootown context=master profile=P1r outcome=ACHIEVED detail=G_RESULT=ALLOWED via=proc1root+remount uid=0
+RESULT service=nginx goal=G4-write-logdir dac=rootown context=worker profile=P1r outcome=BLOCKED detail=G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G4-write-logdir dac=rootown context=master profile=P1r outcome=ACHIEVED detail=G_RESULT=ALLOWED via=direct uid=0
+
+===== SERVICE=nginx CANDIDATE=P1c =====
+FUNCTIONAL=1 EXPOSURE=6.6 DIRECTIVES=7
+RESULT service=nginx goal=G1-replace-document dac=rootown context=worker profile=P1c outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=rootown context=master profile=P1c outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=labweb context=worker profile=P1c outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=labweb context=master profile=P1c outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G2-read-app-secret dac=needed-by-app context=worker profile=P1c outcome=ACHIEVED detail=G_RESULT=ALLOWED uid=984
+RESULT service=nginx goal=G2-read-app-secret dac=needed-by-app context=master profile=P1c outcome=ACHIEVED detail=G_RESULT=ALLOWED uid=0
+RESULT service=nginx goal=G3-replace-config dac=rootown context=worker profile=P1c outcome=BLOCKED detail=G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G3-replace-config dac=rootown context=master profile=P1c outcome=BLOCKED detail=G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G4-write-logdir dac=rootown context=worker profile=P1c outcome=BLOCKED detail=G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G4-write-logdir dac=rootown context=master profile=P1c outcome=ACHIEVED detail=G_RESULT=ALLOWED via=direct uid=0
+
+===== SERVICE=nginx CANDIDATE=P1cADMIN =====
+FUNCTIONAL=1 EXPOSURE=6.9 DIRECTIVES=7
+RESULT service=nginx goal=G1-replace-document dac=rootown context=worker profile=P1cADMIN outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=rootown context=master profile=P1cADMIN outcome=ACHIEVED detail=http=200 G_RESULT=ALLOWED via=remount uid=0
+RESULT service=nginx goal=G1-replace-document dac=labweb context=worker profile=P1cADMIN outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=labweb context=master profile=P1cADMIN outcome=ACHIEVED detail=http=200 G_RESULT=ALLOWED via=direct uid=984
+RESULT service=nginx goal=G2-read-app-secret dac=needed-by-app context=worker profile=P1cADMIN outcome=ACHIEVED detail=G_RESULT=ALLOWED uid=984
+RESULT service=nginx goal=G2-read-app-secret dac=needed-by-app context=master profile=P1cADMIN outcome=ACHIEVED detail=G_RESULT=ALLOWED uid=0
+RESULT service=nginx goal=G3-replace-config dac=rootown context=worker profile=P1cADMIN outcome=BLOCKED detail=G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G3-replace-config dac=rootown context=master profile=P1cADMIN outcome=ACHIEVED detail=G_RESULT=ALLOWED via=remount uid=0
+RESULT service=nginx goal=G4-write-logdir dac=rootown context=worker profile=P1cADMIN outcome=BLOCKED detail=G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G4-write-logdir dac=rootown context=master profile=P1cADMIN outcome=ACHIEVED detail=G_RESULT=ALLOWED via=direct uid=0
+
+===== SERVICE=nginx CANDIDATE=P1cPTRACE =====
+FUNCTIONAL=1 EXPOSURE=6.9 DIRECTIVES=7
+RESULT service=nginx goal=G1-replace-document dac=rootown context=worker profile=P1cPTRACE outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=rootown context=master profile=P1cPTRACE outcome=ACHIEVED detail=http=200 G_RESULT=ALLOWED via=proc1root uid=0
+RESULT service=nginx goal=G1-replace-document dac=labweb context=worker profile=P1cPTRACE outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=labweb context=master profile=P1cPTRACE outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G2-read-app-secret dac=needed-by-app context=worker profile=P1cPTRACE outcome=ACHIEVED detail=G_RESULT=ALLOWED uid=984
+RESULT service=nginx goal=G2-read-app-secret dac=needed-by-app context=master profile=P1cPTRACE outcome=ACHIEVED detail=G_RESULT=ALLOWED uid=0
+RESULT service=nginx goal=G3-replace-config dac=rootown context=worker profile=P1cPTRACE outcome=BLOCKED detail=G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G3-replace-config dac=rootown context=master profile=P1cPTRACE outcome=ACHIEVED detail=G_RESULT=ALLOWED via=proc1root uid=0
+RESULT service=nginx goal=G4-write-logdir dac=rootown context=worker profile=P1cPTRACE outcome=BLOCKED detail=G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G4-write-logdir dac=rootown context=master profile=P1cPTRACE outcome=ACHIEVED detail=G_RESULT=ALLOWED via=direct uid=0
+
+===== SERVICE=nginx CANDIDATE=P1cDAC =====
+FUNCTIONAL=1 EXPOSURE=6.8 DIRECTIVES=7
+RESULT service=nginx goal=G1-replace-document dac=rootown context=worker profile=P1cDAC outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=rootown context=master profile=P1cDAC outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=labweb context=worker profile=P1cDAC outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=labweb context=master profile=P1cDAC outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G2-read-app-secret dac=needed-by-app context=worker profile=P1cDAC outcome=ACHIEVED detail=G_RESULT=ALLOWED uid=984
+RESULT service=nginx goal=G2-read-app-secret dac=needed-by-app context=master profile=P1cDAC outcome=ACHIEVED detail=G_RESULT=ALLOWED uid=0
+RESULT service=nginx goal=G3-replace-config dac=rootown context=worker profile=P1cDAC outcome=BLOCKED detail=G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G3-replace-config dac=rootown context=master profile=P1cDAC outcome=BLOCKED detail=G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G4-write-logdir dac=rootown context=worker profile=P1cDAC outcome=BLOCKED detail=G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G4-write-logdir dac=rootown context=master profile=P1cDAC outcome=ACHIEVED detail=G_RESULT=ALLOWED via=direct uid=0
+
+===== SERVICE=nginx CANDIDATE=P1cCHROOT =====
+FUNCTIONAL=1 EXPOSURE=6.6 DIRECTIVES=7
+RESULT service=nginx goal=G1-replace-document dac=rootown context=worker profile=P1cCHROOT outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=rootown context=master profile=P1cCHROOT outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=labweb context=worker profile=P1cCHROOT outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G1-replace-document dac=labweb context=master profile=P1cCHROOT outcome=BLOCKED detail=http=200 G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G2-read-app-secret dac=needed-by-app context=worker profile=P1cCHROOT outcome=ACHIEVED detail=G_RESULT=ALLOWED uid=984
+RESULT service=nginx goal=G2-read-app-secret dac=needed-by-app context=master profile=P1cCHROOT outcome=ACHIEVED detail=G_RESULT=ALLOWED uid=0
+RESULT service=nginx goal=G3-replace-config dac=rootown context=worker profile=P1cCHROOT outcome=BLOCKED detail=G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G3-replace-config dac=rootown context=master profile=P1cCHROOT outcome=BLOCKED detail=G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G4-write-logdir dac=rootown context=worker profile=P1cCHROOT outcome=BLOCKED detail=G_RESULT=BLOCKED uid=984
+RESULT service=nginx goal=G4-write-logdir dac=rootown context=master profile=P1cCHROOT outcome=ACHIEVED detail=G_RESULT=ALLOWED via=direct uid=0
+
+===== GOALS BLOCKED PER CANDIDATE (rows with outcome INFO are not counted) =====
+nginx,P0 blocked=3 of 10 unexpected=0
+nginx,P1c blocked=7 of 10 unexpected=0
+nginx,P1cADMIN blocked=4 of 10 unexpected=0
+nginx,P1cCHROOT blocked=7 of 10 unexpected=0
+nginx,P1cDAC blocked=7 of 10 unexpected=0
+nginx,P1cPTRACE blocked=5 of 10 unexpected=0
+nginx,P1r blocked=4 of 10 unexpected=0
+
+===== CANDIDATES =====
+service,profile,functional,exposure,n_directives
+nginx,P0,1,9.6,0
+nginx,P1r,1,8.7,6
+nginx,P1c,1,6.6,7
+nginx,P1cADMIN,1,6.9,7
+nginx,P1cPTRACE,1,6.9,7
+nginx,P1cDAC,1,6.8,7
+nginx,P1cCHROOT,1,6.6,7
+
+===== CLEANUP AND RESTORE P4 =====
+RESTORE_P4 nginx=PASS
+RESULT_DIR=/root/systemd-hardening-lab/results_v005/scenarios-v005/20261020-004151

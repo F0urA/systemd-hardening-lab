@@ -1,0 +1,6 @@
+service,profile,contract
+memcached,P0,PASS
+memcached,P1,FAIL
+memcached,P2,PASS
+memcached,P4,PASS
+memcached,P6,PASS

@@ -1,0 +1,73 @@
+service,profile,check,result,detail,mandatory
+nginx,P0,start,PASS,,1
+nginx,P0,reopen-logs,PASS,log_owner_after=labweb,1
+nginx,P0,reload,PASS,workers=2,1
+nginx,P0,not-found-404,PASS,http=404,1
+nginx,P0,restart,PASS,,1
+nginx,P0,crash-recovery,PASS,killed_pid=126733,1
+nginx,P1r,start,PASS,,1
+nginx,P1r,reopen-logs,PASS,log_owner_after=labweb,1
+nginx,P1r,reload,FAIL,workers=3,1
+nginx,P1r,not-found-404,PASS,http=404,1
+nginx,P1r,restart,PASS,,1
+nginx,P1r,crash-recovery,PASS,killed_pid=126891,1
+nginx,P1c,start,PASS,,1
+nginx,P1c,reopen-logs,PASS,log_owner_after=root,1
+nginx,P1c,reload,PASS,workers=2,1
+nginx,P1c,not-found-404,PASS,http=404,1
+nginx,P1c,restart,PASS,,1
+nginx,P1c,crash-recovery,PASS,killed_pid=127059,1
+nginx,P1cADMIN,start,PASS,,1
+nginx,P1cADMIN,reopen-logs,PASS,log_owner_after=root,1
+nginx,P1cADMIN,reload,PASS,workers=2,1
+nginx,P1cADMIN,not-found-404,PASS,http=404,1
+nginx,P1cADMIN,restart,PASS,,1
+nginx,P1cADMIN,crash-recovery,PASS,killed_pid=127224,1
+nginx,P1cPTRACE,start,PASS,,1
+nginx,P1cPTRACE,reopen-logs,PASS,log_owner_after=root,1
+nginx,P1cPTRACE,reload,PASS,workers=2,1
+nginx,P1cPTRACE,not-found-404,PASS,http=404,1
+nginx,P1cPTRACE,restart,PASS,,1
+nginx,P1cPTRACE,crash-recovery,PASS,killed_pid=127388,1
+nginx,P1cDAC,start,PASS,,1
+nginx,P1cDAC,reopen-logs,PASS,log_owner_after=root,1
+nginx,P1cDAC,reload,PASS,workers=2,1
+nginx,P1cDAC,not-found-404,PASS,http=404,1
+nginx,P1cDAC,restart,PASS,,1
+nginx,P1cDAC,crash-recovery,PASS,killed_pid=127552,1
+nginx,P1cCHROOT,start,PASS,,1
+nginx,P1cCHROOT,reopen-logs,PASS,log_owner_after=root,1
+nginx,P1cCHROOT,reload,PASS,workers=2,1
+nginx,P1cCHROOT,not-found-404,PASS,http=404,1
+nginx,P1cCHROOT,restart,PASS,,1
+nginx,P1cCHROOT,crash-recovery,PASS,killed_pid=127831,1
+nginx,P0->P1c,migrate-reopen-operation,PASS,initial_profile=P0 main=127925,1
+nginx,P0->P1c,migrate-reopen-without-step,BLOCKED,log_owner_after_operation=labweb; BLOCKED means target did not start,1
+nginx,P0->P1c,migrate-reopen-with-step,PASS,explicit migration: log owner returned to root,1
+nginx,P0->P1c,migrate-reload-operation,PASS,initial_profile=P0 main=128125,1
+nginx,P0->P1c,migrate-reload-without-step,STARTED,log_owner_after_operation=root; BLOCKED means target did not start,1
+nginx,P0->P1c,migrate-reload-with-step,PASS,explicit migration: log owner returned to root,1
+nginx,P0->P1c,migrate-restart-operation,PASS,initial_profile=P0 main=128349,1
+nginx,P0->P1c,migrate-restart-without-step,STARTED,log_owner_after_operation=root; BLOCKED means target did not start,1
+nginx,P0->P1c,migrate-restart-with-step,PASS,explicit migration: log owner returned to root,1
+nginx,P0->P1c,migrate-crash-operation,PASS,initial_profile=P0 main=128572,1
+nginx,P0->P1c,migrate-crash-without-step,STARTED,log_owner_after_operation=root; BLOCKED means target did not start,1
+nginx,P0->P1c,migrate-crash-with-step,PASS,explicit migration: log owner returned to root,1
+nginx,P1->P1c,migrate-reopen-operation,PASS,initial_profile=P1 main=128780,1
+nginx,P1->P1c,migrate-reopen-without-step,BLOCKED,log_owner_after_operation=labweb; BLOCKED means target did not start,1
+nginx,P1->P1c,migrate-reopen-with-step,PASS,explicit migration: log owner returned to root,1
+nginx,P1->P1c,migrate-reload-operation,PASS,initial_profile=P1 main=128986,1
+nginx,P1->P1c,migrate-reload-without-step,STARTED,log_owner_after_operation=root; BLOCKED means target did not start,1
+nginx,P1->P1c,migrate-reload-with-step,PASS,explicit migration: log owner returned to root,1
+nginx,P1->P1c,migrate-restart-operation,PASS,initial_profile=P1 main=129210,1
+nginx,P1->P1c,migrate-restart-without-step,STARTED,log_owner_after_operation=root; BLOCKED means target did not start,1
+nginx,P1->P1c,migrate-restart-with-step,PASS,explicit migration: log owner returned to root,1
+nginx,P1->P1c,migrate-crash-operation,PASS,initial_profile=P1 main=129441,1
+nginx,P1->P1c,migrate-crash-without-step,STARTED,log_owner_after_operation=root; BLOCKED means target did not start,1
+nginx,P1->P1c,migrate-crash-with-step,PASS,explicit migration: log owner returned to root,1
+nginx-tls,P0,tls-start,PASS,separate unit; ports TLS=8443 upstream=18080,1
+nginx-tls,P0,https-proxy-response,PASS,verified synthetic CA and exact upstream payload,1
+nginx-tls,P0,tls-reload,PASS,workers=2; HTTPS payload rechecked,1
+nginx-tls,P1c,tls-start,PASS,separate unit; ports TLS=8443 upstream=18080,1
+nginx-tls,P1c,https-proxy-response,PASS,verified synthetic CA and exact upstream payload,1
+nginx-tls,P1c,tls-reload,PASS,workers=2; HTTPS payload rechecked,1

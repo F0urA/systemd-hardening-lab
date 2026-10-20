@@ -1,0 +1,7 @@
+service,profile,functional,exposure,n_directives
+redis,P0,1,9.2,0
+redis,P1,1,8.4,5
+redis,P2,1,6.9,9
+redis,P1d,1,8.3,7
+redis,P4,1,2.1,21
+redis,P6,1,2.1,23

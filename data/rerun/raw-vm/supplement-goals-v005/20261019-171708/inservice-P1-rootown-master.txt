@@ -1,0 +1,23 @@
+Stopping slab-nginx.service - systemd hardening experiment Nginx...
+slab-nginx.service: Deactivated successfully.
+Stopped slab-nginx.service - systemd hardening experiment Nginx.
+Starting slab-nginx.service - systemd hardening experiment Nginx...
+nginx: the configuration file /etc/systemd-lab/nginx.conf syntax is ok
+nginx: configuration file /etc/systemd-lab/nginx.conf test is successful
+G_RESULT=ALLOWED via=direct uid=984
+Started slab-nginx.service - systemd hardening experiment Nginx.
+Stopping slab-nginx.service - systemd hardening experiment Nginx...
+slab-nginx.service: Deactivated successfully.
+Stopped slab-nginx.service - systemd hardening experiment Nginx.
+Starting slab-nginx.service - systemd hardening experiment Nginx...
+nginx: the configuration file /etc/systemd-lab/nginx.conf syntax is ok
+nginx: configuration file /etc/systemd-lab/nginx.conf test is successful
+Started slab-nginx.service - systemd hardening experiment Nginx.
+Stopping slab-nginx.service - systemd hardening experiment Nginx...
+slab-nginx.service: Deactivated successfully.
+Stopped slab-nginx.service - systemd hardening experiment Nginx.
+Starting slab-nginx.service - systemd hardening experiment Nginx...
+nginx: the configuration file /etc/systemd-lab/nginx.conf syntax is ok
+nginx: configuration file /etc/systemd-lab/nginx.conf test is successful
+G_RESULT=ALLOWED via=direct uid=0
+Started slab-nginx.service - systemd hardening experiment Nginx.

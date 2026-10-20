@@ -1,0 +1,41 @@
+service,profile,check,result,detail,mandatory
+memcached,P0,start,PASS,version endpoint ready,1
+memcached,P0,version,PASS,VERSION 1.6.42_alt1,1
+memcached,P0,set,PASS,exact response verified,1
+memcached,P0,get,PASS,exact response verified,1
+memcached,P0,delete,PASS,exact response verified,1
+memcached,P0,expiration,PASS,"TTL=2s; present before wait, absent after 3.2s",1
+memcached,P0,restart-value-prepared,PASS,exact response verified,1
+memcached,P0,restart-loses-value,PASS,"verified present before restart, absent after restart (expected)",1
+memcached,P1,start,PASS,version endpoint ready,1
+memcached,P1,version,PASS,VERSION 1.6.42_alt1,1
+memcached,P1,set,PASS,exact response verified,1
+memcached,P1,get,PASS,exact response verified,1
+memcached,P1,delete,PASS,exact response verified,1
+memcached,P1,expiration,FAIL,key remains after predeclared expiration wait,1
+memcached,P1,restart-value-prepared,PASS,exact response verified,1
+memcached,P1,restart-loses-value,PASS,"verified present before restart, absent after restart (expected)",1
+memcached,P2,start,PASS,version endpoint ready,1
+memcached,P2,version,PASS,VERSION 1.6.42_alt1,1
+memcached,P2,set,PASS,exact response verified,1
+memcached,P2,get,PASS,exact response verified,1
+memcached,P2,delete,PASS,exact response verified,1
+memcached,P2,expiration,PASS,"TTL=2s; present before wait, absent after 3.2s",1
+memcached,P2,restart-value-prepared,PASS,exact response verified,1
+memcached,P2,restart-loses-value,PASS,"verified present before restart, absent after restart (expected)",1
+memcached,P4,start,PASS,version endpoint ready,1
+memcached,P4,version,PASS,VERSION 1.6.42_alt1,1
+memcached,P4,set,PASS,exact response verified,1
+memcached,P4,get,PASS,exact response verified,1
+memcached,P4,delete,PASS,exact response verified,1
+memcached,P4,expiration,PASS,"TTL=2s; present before wait, absent after 3.2s",1
+memcached,P4,restart-value-prepared,PASS,exact response verified,1
+memcached,P4,restart-loses-value,PASS,"verified present before restart, absent after restart (expected)",1
+memcached,P6,start,PASS,version endpoint ready,1
+memcached,P6,version,PASS,VERSION 1.6.42_alt1,1
+memcached,P6,set,PASS,exact response verified,1
+memcached,P6,get,PASS,exact response verified,1
+memcached,P6,delete,PASS,exact response verified,1
+memcached,P6,expiration,PASS,"TTL=2s; present before wait, absent after 3.2s",1
+memcached,P6,restart-value-prepared,PASS,exact response verified,1
+memcached,P6,restart-loses-value,PASS,"verified present before restart, absent after restart (expected)",1

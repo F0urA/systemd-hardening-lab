@@ -1,0 +1,404 @@
+2026-10-20T03:27:09.254478+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:27:11.761027+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:27:11.761328+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:27:11.773362+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:27:16.911091+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:27:17.953246+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:27:17.953551+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:27:17.953612+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.673s CPU time, 4.8M memory peak.
+2026-10-20T03:27:18.501250+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:27:22.617287+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:27:23.602117+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:27:23.602422+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:27:23.602485+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.623s CPU time, 4.5M memory peak.
+2026-10-20T03:27:23.831287+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:27:28.996082+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:27:30.601887+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:27:30.602242+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:27:30.602293+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.721s CPU time, 4.8M memory peak.
+2026-10-20T03:27:30.749639+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:27:36.002279+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:27:36.938510+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:27:36.938822+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:27:36.938904+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.696s CPU time, 4.9M memory peak.
+2026-10-20T03:27:36.947081+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:27:42.073732+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:27:43.190938+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:27:43.191235+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:27:43.191293+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.674s CPU time, 4.8M memory peak.
+2026-10-20T03:27:43.232681+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:27:48.355251+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:27:49.493298+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:27:49.493597+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:27:49.493662+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.689s CPU time, 4.7M memory peak.
+2026-10-20T03:27:49.501189+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:27:54.616786+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:27:55.892661+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:27:55.892954+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:27:55.893028+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.588s CPU time, 6.7M memory peak.
+2026-10-20T03:27:55.900190+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:28:01.186986+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:28:02.045371+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:28:02.045675+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:28:02.045738+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.671s CPU time, 4.8M memory peak.
+2026-10-20T03:28:02.854490+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:28:08.320727+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:28:08.920385+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:28:08.920666+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:28:08.920725+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.678s CPU time, 4.9M memory peak.
+2026-10-20T03:28:08.927395+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:28:15.119766+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:28:15.343428+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:28:15.343733+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:28:15.343810+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.692s CPU time, 4.9M memory peak.
+2026-10-20T03:28:15.413787+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:28:19.534460+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:28:20.693207+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:28:20.693488+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:28:20.693544+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.603s CPU time, 4.7M memory peak.
+2026-10-20T03:28:20.701514+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:28:26.024774+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:28:26.946076+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:28:26.946366+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:28:26.946429+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.687s CPU time, 4.8M memory peak.
+2026-10-20T03:28:26.981259+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:28:32.898461+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:28:33.237563+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:28:33.237888+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:28:33.237954+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.671s CPU time, 4.7M memory peak.
+2026-10-20T03:28:33.917951+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:28:39.194405+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:28:40.080342+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:28:40.080749+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:28:40.080810+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.664s CPU time, 4.8M memory peak.
+2026-10-20T03:28:40.160171+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:28:45.257106+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:28:46.244551+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:28:46.244903+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:28:46.244961+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.660s CPU time, 4.8M memory peak.
+2026-10-20T03:28:46.266325+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:28:50.314570+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:28:50.316097+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:28:50.316309+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:28:50.316348+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.594s CPU time, 4.6M memory peak.
+2026-10-20T03:28:50.350293+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:28:55.561857+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:28:56.447662+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:28:56.448007+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:28:56.448068+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.679s CPU time, 4.7M memory peak.
+2026-10-20T03:28:56.465386+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:29:01.608413+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:29:02.698596+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:29:02.698896+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:29:02.698987+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.688s CPU time, 4.7M memory peak.
+2026-10-20T03:29:02.758807+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:29:07.890403+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:29:08.881999+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:29:08.882303+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:29:08.882365+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.676s CPU time, 4.8M memory peak.
+2026-10-20T03:29:08.910208+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:29:12.971706+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:29:12.973208+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:29:12.973446+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:29:12.973488+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.602s CPU time, 4.6M memory peak.
+2026-10-20T03:29:13.318501+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:29:18.375113+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:29:18.406068+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:29:18.406306+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:29:18.406359+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.593s CPU time, 4.6M memory peak.
+2026-10-20T03:29:18.430304+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:29:23.699953+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:29:24.726068+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:29:24.726396+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:29:24.726448+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.677s CPU time, 4.8M memory peak.
+2026-10-20T03:29:31.674541+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:29:37.087295+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:29:37.895616+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:29:37.895946+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:29:37.896011+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.681s CPU time, 4.8M memory peak.
+2026-10-20T03:29:37.903264+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:29:47.090530+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:29:48.127623+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:29:48.127953+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:29:48.128001+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.674s CPU time, 4.7M memory peak.
+2026-10-20T03:29:48.134223+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:29:52.233574+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:29:53.224764+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:29:53.225009+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:29:53.225059+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.621s CPU time, 4.5M memory peak.
+2026-10-20T03:29:53.393236+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:30:00.431408+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:30:00.772279+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:30:00.772572+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:30:00.772637+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.691s CPU time, 5.5M memory peak.
+2026-10-20T03:30:00.779113+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:30:06.216764+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:30:06.218391+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:30:06.218670+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:30:06.218710+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.668s CPU time, 5.2M memory peak.
+2026-10-20T03:30:06.756943+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:30:12.888656+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:30:13.017600+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:30:13.017879+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:30:13.017940+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.678s CPU time, 4.8M memory peak.
+2026-10-20T03:30:13.038309+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:30:18.557773+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:30:19.172546+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:30:19.172843+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:30:19.172907+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.667s CPU time, 4.8M memory peak.
+2026-10-20T03:30:19.834323+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:30:25.087315+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:30:26.105552+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:30:26.105906+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:30:26.105987+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.694s CPU time, 4.7M memory peak.
+2026-10-20T03:30:26.760381+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:30:33.909399+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:30:34.090206+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:30:34.090486+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:30:34.090546+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.614s CPU time, 4.6M memory peak.
+2026-10-20T03:30:34.103315+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:30:39.259474+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:30:40.272008+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:30:40.272314+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:30:40.272356+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.681s CPU time, 4.8M memory peak.
+2026-10-20T03:30:40.297551+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:30:44.457413+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:30:45.376856+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:30:45.377136+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:30:45.377192+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.602s CPU time, 4.5M memory peak.
+2026-10-20T03:30:45.395421+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:30:50.780534+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:30:51.598646+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:30:51.598953+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:30:51.599031+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.707s CPU time, 4.8M memory peak.
+2026-10-20T03:31:11.204421+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:31:16.660957+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:31:17.386378+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:31:17.386661+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:31:17.386725+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.665s CPU time, 4.7M memory peak.
+2026-10-20T03:31:17.407140+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:31:25.645103+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:31:26.420564+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:31:26.420870+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:31:26.420926+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.669s CPU time, 5.5M memory peak.
+2026-10-20T03:31:50.040328+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:31:55.159241+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:31:56.279705+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:31:56.279987+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:31:56.280044+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.680s CPU time, 4.8M memory peak.
+2026-10-20T03:31:56.591298+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:32:04.707065+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:32:05.034021+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:32:05.034294+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:32:05.034379+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.702s CPU time, 7.1M memory peak.
+2026-10-20T03:32:05.064625+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:32:09.317831+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:32:10.223707+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:32:10.223970+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:32:10.224013+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.621s CPU time, 4.5M memory peak.
+2026-10-20T03:32:10.293294+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:32:15.458751+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:32:16.625702+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:32:16.625995+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:32:16.626054+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.687s CPU time, 4.8M memory peak.
+2026-10-20T03:32:16.708764+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:32:21.916475+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:32:23.064573+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:32:23.064896+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:32:23.064951+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.685s CPU time, 4.7M memory peak.
+2026-10-20T03:32:23.335451+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:32:31.516428+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:32:31.749902+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:32:31.750171+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:32:31.750262+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.673s CPU time, 4.8M memory peak.
+2026-10-20T03:32:31.759170+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:32:36.948084+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:32:37.908622+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:32:37.909011+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:32:37.909070+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.706s CPU time, 4.7M memory peak.
+2026-10-20T03:32:37.917359+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:32:41.953621+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:32:43.145677+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:32:43.145974+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:32:43.146022+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.586s CPU time, 4.5M memory peak.
+2026-10-20T03:32:43.288377+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:32:48.452898+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:32:49.643482+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:32:49.643777+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:32:49.643855+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.612s CPU time, 4.6M memory peak.
+2026-10-20T03:32:49.672051+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:32:54.860731+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:32:55.778573+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:32:55.778987+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:32:55.779050+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.678s CPU time, 4.6M memory peak.
+2026-10-20T03:32:55.852268+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:33:00.973362+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:33:01.948995+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:33:01.949297+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:33:01.949357+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.671s CPU time, 4.8M memory peak.
+2026-10-20T03:33:01.958371+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:33:07.191148+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:33:08.148014+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:33:08.148314+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:33:08.148369+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.670s CPU time, 4.8M memory peak.
+2026-10-20T03:33:08.155115+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:33:13.651034+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:33:14.674765+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:33:14.675106+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:33:14.675167+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.717s CPU time, 4.6M memory peak.
+2026-10-20T03:33:14.694652+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:33:19.840514+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:33:21.068554+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:33:21.068855+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:33:21.068916+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.678s CPU time, 4.8M memory peak.
+2026-10-20T03:33:21.346536+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:33:25.392126+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:33:26.432240+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:33:26.432528+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:33:26.432589+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.586s CPU time, 4.6M memory peak.
+2026-10-20T03:33:29.247316+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:33:34.593795+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:33:35.385953+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:33:35.386272+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:33:35.386332+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.671s CPU time, 4.8M memory peak.
+2026-10-20T03:33:35.399181+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:33:40.589067+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:33:41.604776+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:33:41.605083+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:33:41.605137+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.683s CPU time, 4.8M memory peak.
+2026-10-20T03:33:41.624693+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:33:46.798381+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:33:47.882278+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:33:47.882565+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:33:47.882630+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.703s CPU time, 4.8M memory peak.
+2026-10-20T03:33:48.096603+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:33:54.226417+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:33:55.017492+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:33:55.017775+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:33:55.017912+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.649s CPU time, 4.8M memory peak.
+2026-10-20T03:33:55.039309+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:33:59.116317+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:34:00.311645+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:34:00.311943+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:34:00.312033+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.571s CPU time, 4.5M memory peak.
+2026-10-20T03:34:00.675436+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:34:06.244846+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:34:06.862352+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:34:06.862629+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:34:06.862693+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.673s CPU time, 4.9M memory peak.
+2026-10-20T03:34:06.954269+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:34:12.214692+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:34:13.185656+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:34:13.185970+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:34:13.186033+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.674s CPU time, 4.8M memory peak.
+2026-10-20T03:34:13.198168+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:34:17.251263+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:34:18.586927+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:34:18.587248+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:34:18.587310+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.594s CPU time, 4.6M memory peak.
+2026-10-20T03:34:37.484296+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:34:42.721160+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:34:43.659219+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:34:43.659542+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:34:43.659601+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.663s CPU time, 4.7M memory peak.
+2026-10-20T03:34:43.810595+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:34:47.854747+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:34:49.173237+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:34:49.173518+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:34:49.173567+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.587s CPU time, 4.6M memory peak.
+2026-10-20T03:34:49.184092+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:34:55.009392+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:34:55.532424+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:34:55.532695+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:34:55.532790+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.683s CPU time, 4.8M memory peak.
+2026-10-20T03:34:55.542105+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:35:00.676497+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:35:01.999158+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:35:01.999472+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:35:01.999537+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.674s CPU time, 4.8M memory peak.
+2026-10-20T03:35:02.088715+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:35:07.524739+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:35:08.527081+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:35:08.527349+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:35:08.527391+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.680s CPU time, 4.7M memory peak.
+2026-10-20T03:35:08.534133+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:35:16.711791+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:35:17.553827+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:35:17.554124+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:35:17.554188+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.673s CPU time, 5.7M memory peak.
+2026-10-20T03:35:17.737762+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:35:21.761029+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:35:21.769392+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:35:21.769664+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:35:21.769721+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.593s CPU time, 4.6M memory peak.
+2026-10-20T03:35:21.779126+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:35:27.011725+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:35:27.980147+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:35:27.980433+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:35:27.980493+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.689s CPU time, 4.7M memory peak.
+2026-10-20T03:35:44.642405+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:35:49.772635+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:35:51.112755+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:35:51.113204+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:35:51.113284+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.665s CPU time, 4.8M memory peak.
+2026-10-20T03:35:51.124409+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:35:59.317298+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:35:59.325203+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:35:59.325474+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:35:59.325527+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.694s CPU time, 4.7M memory peak.
+2026-10-20T03:35:59.340175+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:36:04.692274+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:36:05.459163+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:36:05.459439+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:36:05.459499+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.676s CPU time, 4.8M memory peak.
+2026-10-20T03:36:05.499295+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:36:10.980466+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:36:11.826369+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:36:11.826658+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:36:11.826737+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.687s CPU time, 4.8M memory peak.
+2026-10-20T03:36:11.834159+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:36:15.986620+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:36:16.980404+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:36:16.980713+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:36:16.980763+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.603s CPU time, 4.6M memory peak.
+2026-10-20T03:36:17.570291+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:36:21.964750+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:36:22.997896+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:36:22.998195+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:36:22.998259+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.635s CPU time, 4.5M memory peak.
+2026-10-20T03:36:23.043969+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:36:30.039104+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:36:30.414562+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:36:30.414831+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:36:30.414893+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.684s CPU time, 4.8M memory peak.
+2026-10-20T03:36:30.447223+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:36:35.725922+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:36:36.723698+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:36:36.724068+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:36:36.724132+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.694s CPU time, 4.6M memory peak.
+2026-10-20T03:36:36.739105+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:36:42.227634+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:36:42.989743+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:36:42.990050+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:36:42.990135+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.695s CPU time, 4.8M memory peak.
+2026-10-20T03:36:43.004071+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:36:48.276035+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:36:49.306453+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:36:49.306780+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:36:49.306845+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.700s CPU time, 4.8M memory peak.
+2026-10-20T03:36:49.323261+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:36:54.464468+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:36:55.685040+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:36:55.685357+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:36:55.685411+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.683s CPU time, 4.7M memory peak.
+2026-10-20T03:37:00.723814+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:37:04.811751+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:37:05.914229+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:37:05.914495+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:37:05.914555+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.615s CPU time, 4.6M memory peak.
+2026-10-20T03:37:07.076392+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:37:14.015401+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:37:14.431348+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:37:14.431612+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:37:14.431692+00:00 host-15 systemd[1]: slab-memcached-v005.service: Consumed 3.684s CPU time, 4.8M memory peak.
+2026-10-20T03:37:14.642574+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).

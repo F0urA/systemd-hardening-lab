@@ -1,0 +1,7 @@
+82cfdaa4104c46781d9ee977ec72e744a756f3083adcc4eefbb2c5e05c74586e  ./journal.txt
+faf16a8e34ac0a99a8fa98a3525876feab5debf60a9667c201bec843f1715651  ./registration/code.sha256
+667d641b61db8c43e082c1d90f5f9db80fe1d3ab20055f31ba557b495e23835f  ./registration/parameters.json
+aa69d346fa9fcf570226fcba5d58253928f1e21895b61f1b6767b6298216fa3b  ./registration/platform.txt
+a85f9ae66bd2d497eed844a39d51af7a68d483858320c3b7c6dce4c06bef0534  ./registration/registration.sha256
+c4ff5a88f7806651a06c6ec80303ba7a0c490eb202321ae94e4549338deed16e  ./registration/target-unit.txt
+d4defbcfa030aa8fde34f6e21007f8db60c790c187745558189f014c4296f389  ./source.txt

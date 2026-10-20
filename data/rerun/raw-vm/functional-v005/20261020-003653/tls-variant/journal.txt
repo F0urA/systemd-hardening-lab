@@ -1,0 +1,26 @@
+2026-10-20T00:41:34.392271+00:00 host-15 systemd[1]: Started slab-nginx-ext-upstream.service - v005 loopback HTTP upstream for the Nginx functional variant.
+2026-10-20T00:41:34.654172+00:00 host-15 systemd[1]: Starting slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant...
+2026-10-20T00:41:34.660224+00:00 host-15 nginx[129694]: nginx: the configuration file /etc/systemd-lab/nginx-ext-v005/nginx.conf syntax is ok
+2026-10-20T00:41:34.660443+00:00 host-15 nginx[129694]: nginx: configuration file /etc/systemd-lab/nginx-ext-v005/nginx.conf test is successful
+2026-10-20T00:41:34.667231+00:00 host-15 systemd[1]: Started slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant.
+2026-10-20T00:41:34.689184+00:00 host-15 python3[129654]: 127.0.0.1 - - [20/Oct/2026 03:41:34] "GET / HTTP/1.1" 200 -
+2026-10-20T00:41:34.714357+00:00 host-15 systemd[1]: Reloading slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant...
+2026-10-20T00:41:34.716131+00:00 host-15 systemd[1]: Reloaded slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant.
+2026-10-20T00:41:37.537944+00:00 host-15 python3[129654]: 127.0.0.1 - - [20/Oct/2026 03:41:37] "GET / HTTP/1.1" 200 -
+2026-10-20T00:41:37.763997+00:00 host-15 systemd[1]: Stopping slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant...
+2026-10-20T00:41:37.790371+00:00 host-15 systemd[1]: slab-nginx-ext.service: Deactivated successfully.
+2026-10-20T00:41:37.790636+00:00 host-15 systemd[1]: Stopped slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant.
+2026-10-20T00:41:37.799165+00:00 host-15 systemd[1]: Starting slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant...
+2026-10-20T00:41:37.813787+00:00 host-15 nginx[129782]: nginx: the configuration file /etc/systemd-lab/nginx-ext-v005/nginx.conf syntax is ok
+2026-10-20T00:41:37.814033+00:00 host-15 nginx[129782]: nginx: configuration file /etc/systemd-lab/nginx-ext-v005/nginx.conf test is successful
+2026-10-20T00:41:37.815632+00:00 host-15 systemd[1]: Started slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant.
+2026-10-20T00:41:38.844667+00:00 host-15 python3[129654]: 127.0.0.1 - - [20/Oct/2026 03:41:38] "GET / HTTP/1.1" 200 -
+2026-10-20T00:41:38.870134+00:00 host-15 systemd[1]: Reloading slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant...
+2026-10-20T00:41:38.879669+00:00 host-15 systemd[1]: Reloaded slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant.
+2026-10-20T00:41:46.928718+00:00 host-15 python3[129654]: 127.0.0.1 - - [20/Oct/2026 03:41:46] "GET / HTTP/1.1" 200 -
+2026-10-20T00:41:46.961674+00:00 host-15 systemd[1]: Stopping slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant...
+2026-10-20T00:41:46.995441+00:00 host-15 systemd[1]: slab-nginx-ext.service: Deactivated successfully.
+2026-10-20T00:41:46.995709+00:00 host-15 systemd[1]: Stopped slab-nginx-ext.service - v005 separate Nginx TLS and local upstream functional variant.
+2026-10-20T00:41:47.002947+00:00 host-15 systemd[1]: Stopping slab-nginx-ext-upstream.service - v005 loopback HTTP upstream for the Nginx functional variant...
+2026-10-20T00:41:47.004863+00:00 host-15 systemd[1]: slab-nginx-ext-upstream.service: Deactivated successfully.
+2026-10-20T00:41:47.005113+00:00 host-15 systemd[1]: Stopped slab-nginx-ext-upstream.service - v005 loopback HTTP upstream for the Nginx functional variant.

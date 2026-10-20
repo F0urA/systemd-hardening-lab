@@ -1,0 +1,49 @@
+214 116 8:2 / / rw,relatime shared:125 master:1 - ext4 /dev/sda2 rw
+221 214 0:22 / /run rw,relatime shared:155 master:5 - tmpfs runfs rw,mode=755,inode64
+238 214 0:23 / /sys rw,nosuid,nodev,noexec,relatime shared:165 master:7 - sysfs sysfs rw
+239 238 0:7 / /sys/kernel/security rw,nosuid,nodev,noexec,relatime shared:166 master:8 - securityfs securityfs rw
+240 238 0:26 / /sys/fs/cgroup ro,nosuid,nodev,noexec,relatime shared:167 master:9 - cgroup2 cgroup2 rw,nsdelegate,memory_recursiveprot
+241 238 0:27 / /sys/fs/pstore rw,nosuid,nodev,noexec,relatime shared:169 master:10 - pstore pstore rw
+242 238 0:28 / /sys/fs/bpf ro,nosuid,nodev,noexec,relatime shared:170 master:11 - bpf bpf rw,mode=700
+243 238 0:13 / /sys/kernel/tracing ro,nosuid,nodev,noexec,relatime shared:171 master:13 - tracefs tracefs rw
+244 238 0:8 / /sys/kernel/debug ro,nosuid,nodev,noexec,relatime shared:172 master:16 - debugfs debugfs rw
+245 238 0:33 / /sys/fs/fuse/connections rw,nosuid,nodev,noexec,relatime shared:173 master:19 - fusectl fusectl rw
+246 238 0:20 / /sys/kernel/config rw,nosuid,nodev,noexec,relatime shared:174 master:18 - configfs configfs rw
+247 214 0:35 / /tmp rw,nosuid,relatime shared:175 master:44 - tmpfs tmpfs rw,inode64
+248 214 8:2 /boot /boot ro,nosuid,relatime shared:177 master:1 - ext4 /dev/sda2 rw
+249 214 0:44 / /dev ro,nosuid,noexec shared:178 - tmpfs tmpfs rw,size=4096k,nr_inodes=65536,mode=755,inode64
+250 249 0:25 / /dev/pts rw,nosuid,noexec,relatime shared:179 master:4 - devpts devpts rw,gid=5,mode=620,ptmxmode=666
+255 249 0:24 / /dev/shm rw,nosuid,nodev shared:180 master:3 - tmpfs tmpfs rw,inode64
+260 249 0:19 / /dev/mqueue rw,nosuid,nodev,noexec,relatime shared:181 master:14 - mqueue mqueue rw
+261 249 0:30 / /dev/hugepages rw,nosuid,nodev,relatime shared:182 master:15 - hugetlbfs hugetlbfs rw,pagesize=2M
+215 214 8:2 /etc /etc ro,nosuid,relatime shared:183 master:1 - ext4 /dev/sda2 rw
+216 215 0:22 /systemd/inaccessible/reg /etc/systemd-lab/credential ro,nosuid,noexec,relatime shared:184 master:5 - tmpfs runfs rw,mode=755,inode64
+217 214 0:22 /systemd/inaccessible/dir /home ro,nosuid,noexec,relatime shared:185 master:5 - tmpfs runfs rw,mode=755,inode64
+218 214 0:46 / /proc rw,nosuid,nodev,noexec,relatime shared:186 - proc proc rw,hidepid=invisible
+219 218 0:29 / /proc/sys/fs/binfmt_misc rw,nosuid,relatime shared:188 master:12 - autofs systemd-1 rw,fd=36,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=2273
+230 218 0:46 /acpi /proc/acpi ro,nosuid,nodev,noexec,relatime shared:202 - proc proc rw,hidepid=invisible
+231 218 0:46 /asound /proc/asound ro,nosuid,nodev,noexec,relatime shared:230 - proc proc rw,hidepid=invisible
+335 218 0:46 /bus /proc/bus ro,nosuid,nodev,noexec,relatime shared:231 - proc proc rw,hidepid=invisible
+336 218 0:46 /fs /proc/fs ro,nosuid,nodev,noexec,relatime shared:232 - proc proc rw,hidepid=invisible
+337 218 0:46 /irq /proc/irq ro,nosuid,nodev,noexec,relatime shared:237 - proc proc rw,hidepid=invisible
+338 218 0:22 /systemd/inaccessible/reg /proc/kallsyms ro,nosuid,noexec,relatime shared:279 master:5 - tmpfs runfs rw,mode=755,inode64
+339 218 0:22 /systemd/inaccessible/reg /proc/kcore ro,nosuid,noexec,relatime shared:280 master:5 - tmpfs runfs rw,mode=755,inode64
+340 218 0:22 /systemd/inaccessible/reg /proc/kmsg ro,nosuid,noexec,relatime shared:281 master:5 - tmpfs runfs rw,mode=755,inode64
+341 218 0:46 /latency_stats /proc/latency_stats ro,nosuid,nodev,noexec,relatime shared:282 - proc proc rw,hidepid=invisible
+342 218 0:46 /mtrr /proc/mtrr ro,nosuid,nodev,noexec,relatime shared:283 - proc proc rw,hidepid=invisible
+343 218 0:46 /scsi /proc/scsi ro,nosuid,nodev,noexec,relatime shared:284 - proc proc rw,hidepid=invisible
+344 218 0:46 /sys /proc/sys ro,nosuid,nodev,noexec,relatime shared:285 - proc proc rw,hidepid=invisible
+345 344 0:29 / /proc/sys/fs/binfmt_misc rw,nosuid,relatime shared:286 master:12 - autofs systemd-1 rw,fd=36,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=2273
+346 218 0:46 /sysrq-trigger /proc/sysrq-trigger ro,nosuid,nodev,noexec,relatime shared:287 - proc proc rw,hidepid=invisible
+347 214 0:22 /systemd/inaccessible/dir /root ro,nosuid,noexec,relatime shared:288 master:5 - tmpfs runfs rw,mode=755,inode64
+222 221 0:22 /systemd/inaccessible/dir /run/credentials ro,nosuid,noexec,relatime shared:156 master:5 - tmpfs runfs rw,mode=755,inode64
+228 221 0:22 /systemd/propagate/slab-nginx.service /run/systemd/incoming ro,nosuid,relatime master:5 - tmpfs runfs rw,mode=755,inode64
+229 221 0:22 /systemd/inaccessible/dir /run/user ro,nosuid,noexec,relatime shared:164 master:5 - tmpfs runfs rw,mode=755,inode64
+348 240 0:26 /system.slice/slab-nginx.service/memory.pressure /sys/fs/cgroup/system.slice/slab-nginx.service/memory.pressure rw,nosuid,nodev,noexec,relatime shared:168 master:9 - cgroup2 cgroup2 rw,nsdelegate,memory_recursiveprot
+349 247 0:35 /systemd-private-a7e6a02b45124ea19bb7173d184b6461-slab-nginx.service-3KL9DK/tmp /tmp rw,nosuid,relatime shared:176 master:44 - tmpfs tmpfs rw,inode64
+350 214 8:2 /usr /usr ro,nosuid,relatime shared:289 master:1 - ext4 /dev/sda2 rw
+351 350 0:22 /systemd/inaccessible/dir /usr/lib/modules ro,nosuid,noexec,relatime shared:290 master:5 - tmpfs runfs rw,mode=755,inode64
+352 214 8:2 /var/lib/systemd-lab/nginx-www /var/lib/systemd-lab/nginx-www ro,nosuid,relatime shared:291 master:1 - ext4 /dev/sda2 rw
+357 214 8:2 /var/tmp/systemd-private-a7e6a02b45124ea19bb7173d184b6461-slab-nginx.service-1afxi0/tmp /var/tmp rw,nosuid,relatime shared:300 master:1 - ext4 /dev/sda2 rw
+172 214 8:2 /var/lib/systemd-lab/mountstate-v005/late-P5-rootown-worker /var/lib/systemd-lab/nginx-www/mountstate-v005-205c929daac371cf-late-P5-rootown-worker rw,relatime shared:163 master:1 - ext4 /dev/sda2 rw
+174 352 8:2 /var/lib/systemd-lab/mountstate-v005/late-P5-rootown-worker /var/lib/systemd-lab/nginx-www/mountstate-v005-205c929daac371cf-late-P5-rootown-worker rw,relatime shared:301 master:1 - ext4 /dev/sda2 rw

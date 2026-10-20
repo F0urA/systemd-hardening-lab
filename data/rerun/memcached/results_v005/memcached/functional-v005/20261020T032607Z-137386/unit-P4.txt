@@ -1,0 +1,36 @@
+# /etc/systemd/system/slab-memcached-v005.service
+[Unit]
+Description=v005 independently registered memcached fixture (loopback only)
+After=network.target
+[Service]
+Type=simple
+User=labmemcachev005
+Group=labmemcachev005
+ExecStart=/usr/bin/memcached -l 127.0.0.1 -p 11212 -U 0 -m 64 -t 1 -B ascii
+Restart=no
+CPUAccounting=yes
+MemoryAccounting=yes
+CPUAffinity=0
+
+# /etc/systemd/system/slab-memcached-v005.service.d/90-hardening.conf
+[Service]
+PrivateTmp=yes
+ProtectHome=yes
+ProtectSystem=full
+NoNewPrivileges=yes
+PrivateDevices=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectKernelLogs=yes
+ProtectControlGroups=yes
+ProtectProc=invisible
+PrivateMounts=yes
+RestrictNamespaces=yes
+RestrictAddressFamilies=AF_UNIX AF_INET
+CapabilityBoundingSet=
+SystemCallFilter=~@mount @reboot @swap @module @raw-io @debug
+SystemCallErrorNumber=EPERM
+MemoryDenyWriteExecute=yes
+LockPersonality=yes
+RestrictRealtime=yes
+RestrictSUIDSGID=yes

@@ -1,0 +1,1 @@
+{"completed": 5000, "connections": 50, "errors": [], "failed": 0, "ops": 5000, "payload_bytes": 128, "pipeline": 32, "rps_client": 626472.2881862738, "threads": 3, "wall_ns_client": 7981199, "workers": [{"completed": 1700, "error": null, "thread": 0}, {"completed": 1700, "error": null, "thread": 1}, {"completed": 1600, "error": null, "thread": 2}]}

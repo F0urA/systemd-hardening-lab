@@ -1,0 +1,9 @@
+executed: ALT Server 11.1, Linux 6.12.74-6.12-alt1, systemd 257.9-alt1, nginx 1.30.4,
+          Redis 8.6.5, PostgreSQL 14.24, Python 3.12.7, strace 6.19-alt1
+this stand: ALT Server 11.1 (Mendelevium), Linux 6.12.74-6.12-alt1
+systemd 257 (257.9-alt1)
+nginx version: nginx/1.30.5
+Redis server v=8.6.6 sha=00000000:0 malloc=jemalloc-5.3.0 bits=64 build=79c2959f7b6ebd5e
+postgres (PostgreSQL) 14.24
+Python 3.12.7
+strace -- version 7.0-alt1

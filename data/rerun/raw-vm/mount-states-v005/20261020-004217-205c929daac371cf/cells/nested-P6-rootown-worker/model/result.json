@@ -1,0 +1,1 @@
+{"cell": "nested-P6-rootown-worker", "errno": 1, "message": "[Errno 1] Operation not permitted: '/run/slab-mountstate-v005-205c929daac371cf/nested-P6-rootown-worker/nested-ohjebum0'", "namespace": "mnt:[4026532250]", "phase": "bind", "pid": 135069, "raw_ns": 27802835712460, "result": "DENIED", "state_reproduced": false, "token": "205c929daac371cf", "uid": 984}

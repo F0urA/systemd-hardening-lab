@@ -1,0 +1,7 @@
+service,profile,functional,exposure,n_directives
+postgresql,P0,1,9.2,0
+postgresql,P1,1,8.4,5
+postgresql,P2,1,6.9,9
+postgresql,P1d,1,8.3,7
+postgresql,P4,1,2.1,21
+postgresql,P6,1,2.1,23

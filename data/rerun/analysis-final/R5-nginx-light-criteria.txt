@@ -1,0 +1,17 @@
+service    profile  F pairs        L95       U95d  cost_up%  g  s  emicro  expos   n  status          series
+nginx      P0       1    60    877.716    877.716     0.000  0  0   0.000    9.6   0  BASELINE        20261019-211626
+nginx      P1       1    60    806.621    915.543     0.424  0  0   0.333    8.7   5  NON_INFERIOR    20261019-211626
+nginx      P2       1    60    549.289    654.644     1.960  0  0   0.389    7.3   9  NON_INFERIOR    20261019-211626
+nginx      P1r      1    60    762.976    871.611     0.699  0  1   0.333    8.7   6  NON_INFERIOR    20261019-211626
+
+NOTE mandatory contracts: /root/systemd-hardening-lab/post-analysis/raw-vm/functional-v005/20261019-170059/contract.csv supplies 22 verdicts
+NOTE nginx: series 20261019-211626 supplies P0 P1 P1r P2 (unless supplied by an earlier series); bounds at the level 0.00833333
+NOTE nginx: 4 goals in 7 scenario cells are achievable under P0
+NOTE nginx P1: master context emicro_36=0.143, required and still allowed: PRIV-1 PRIV-2
+NOTE nginx P1: goals not blocked in every cell: G1-replace-document G2-read-app-secret G3-replace-config G4-write-logdir
+NOTE nginx P2: master context emicro_36=0.286, required and still allowed: PRIV-1 PRIV-2
+NOTE nginx P2: goals not blocked in every cell: G1-replace-document G2-read-app-secret G3-replace-config G4-write-logdir
+NOTE nginx P1r: master context emicro_36=0.143, required and still allowed: PRIV-1 PRIV-2
+NOTE nginx P1r: goals not blocked in every cell: G1-replace-document G2-read-app-secret G3-replace-config G4-write-logdir
+CSV=/root/systemd-hardening-lab/post-analysis/analysis-final/R5-nginx-light-criteria.csv
+NEXT: python3 select_profile_v005.py /root/systemd-hardening-lab/post-analysis/analysis-final/R5-nginx-light-criteria.csv --budgets 2,5,10,15

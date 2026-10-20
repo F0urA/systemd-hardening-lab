@@ -1,0 +1,19 @@
+service    profile  F pairs        L95       U95d  cost_up%  g  s  emicro  expos   n  status          series
+postgresql P0       1    20     37.957     37.957     0.000  0  0   0.000    9.2   0  BASELINE        20261019-194432+20261019-230632
+postgresql P1       1    20    -16.146     81.640     0.425  0  0   0.333    8.4   5  INCONCLUSIVE    20261019-194432+20261019-230632
+postgresql P2       1    20    -42.744     68.564     1.886  0  0   0.389    6.9   9  INCONCLUSIVE    20261019-194432+20261019-230632
+postgresql P1d      1    20    -24.780    100.551     1.622  1  2   0.333    8.3   7  INCONCLUSIVE    20261019-194432+20261019-230632
+postgresql P4       1    20    -27.174     95.405     1.470  0  0   0.778    2.1  21  INCONCLUSIVE    20261019-194432+20261019-230632
+postgresql P6       1    20      8.346    142.669     1.860  1  2   0.778    2.1  23  NON_INFERIOR    20261019-194432+20261019-230632
+
+NOTE mandatory contracts: /root/systemd-hardening-lab/post-analysis/raw-vm/functional-v005/20261019-170059/contract.csv supplies 22 verdicts
+NOTE postgresql: series 20261019-194432+20261019-230632 supplies P0 P1 P2 P1d P4 P6; bounds at the level 0.005
+NOTE postgresql: series 20261019-194432 supplies P0 P1 P1d P2 P4 P6 (unless supplied by an earlier series); bounds at the level 0.005
+NOTE postgresql: 2 goals in 3 scenario cells are achievable under P0
+NOTE postgresql P1: goals not blocked in every cell: G1-write-outside-datadir G2-run-program
+NOTE postgresql P2: goals not blocked in every cell: G1-write-outside-datadir G2-run-program
+NOTE postgresql P1d: goals not blocked in every cell: G2-run-program
+NOTE postgresql P4: goals not blocked in every cell: G1-write-outside-datadir G2-run-program
+NOTE postgresql P6: goals not blocked in every cell: G2-run-program
+CSV=/root/systemd-hardening-lab/post-analysis/analysis-final/R3-postgresql-criteria.csv
+NEXT: python3 select_profile_v005.py /root/systemd-hardening-lab/post-analysis/analysis-final/R3-postgresql-criteria.csv --budgets 2,5,10,15

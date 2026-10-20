@@ -1,0 +1,106 @@
+2026-10-19T16:49:46+00:00
+NAME="ALT Server"
+VERSION="11.1"
+ID=altlinux
+VERSION_ID=11.1
+PRETTY_NAME="ALT Server 11.1 (Mendelevium)"
+ANSI_COLOR="1;33"
+CPE_NAME="cpe:/o:alt:server:11.1"
+BUILD_ID="ALT Server 11.1"
+ALT_BRANCH_ID="p11"
+HOME_URL="https://basealt.ru/"
+BUG_REPORT_URL="https://bugs.altlinux.org/"
+DOCUMENTATION_URL="https://docs.altlinux.org/"
+SUPPORT_URL="https://support.basealt.ru/"
+VARIANT_ID=edition_server
+VARIANT="ALT Server"
+LOGO=alt-server-logo
+Linux host-15 6.12.74-6.12-alt1 #1 SMP PREEMPT_DYNAMIC Fri Mar  6 13:49:54 UTC 2026 x86_64 GNU/Linux
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           48 bits physical, 48 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  4
+On-line CPU(s) list:                     0-3
+Vendor ID:                               AuthenticAMD
+Model name:                              AMD Ryzen 5 3600 6-Core Processor
+BIOS Model name:                           CPU @ 0.0GHz
+BIOS CPU family:                         0
+CPU family:                              23
+Model:                                   113
+Thread(s) per core:                      1
+Core(s) per socket:                      4
+Socket(s):                               1
+Stepping:                                0
+BogoMIPS:                                7186.49
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy cr8_legacy abm sse4a misalignsse 3dnowprefetch ssbd vmmcall fsgsbase bmi1 avx2 bmi2 rdseed adx clflushopt sha_ni arat
+Hypervisor vendor:                       KVM
+Virtualization type:                     full
+L1d cache:                               128 KiB (4 instances)
+L1i cache:                               128 KiB (4 instances)
+L2 cache:                                2 MiB (4 instances)
+L3 cache:                                128 MiB (4 instances)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0-3
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Indirect target selection: Not affected
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Not affected
+Vulnerability Mmio stale data:           Not affected
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Mitigation; untrained return thunk; SMT disabled
+Vulnerability Spec rstack overflow:      Vulnerable: Safe RET, no microcode
+Vulnerability Spec store bypass:         Not affected
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; Retpolines; STIBP disabled; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Not affected
+systemd 257 (257.9-alt1)
++PAM +AUDIT +SELINUX -APPARMOR +IMA +IPE +SMACK +SECCOMP +GCRYPT +GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +IPTC +KMOD +LIBCRYPTSETUP +LIBCRYPTSETUP_PLUGINS +LIBFDISK +PCRE2 -PWQUALITY +P11KIT +QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD -BPF_FRAMEWORK -BTF +XKBCOMMON +UTMP +SYSVINIT +LIBARCHIVE
+nginx version: nginx/1.30.5
+Redis server v=8.6.6 sha=00000000:0 malloc=jemalloc-5.3.0 bits=64 build=79c2959f7b6ebd5e
+postgres (PostgreSQL) 14.24
+Python 3.12.7
+strace -- version 7.0-alt1
+Copyright (c) 1991-2025 The strace developers <https://strace.io>.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Optional features enabled: stack-trace=libdw stack-demangle m32-mpers mx32-mpers secontext
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda2        46G  2.8G   41G   7% /
+/dev/sda2        46G  2.8G   41G   7% /
+  UNIT                             LOAD   ACTIVE SUB     DESCRIPTION
+  chronyd.service                  loaded active running NTP client/server
+  crond.service                    loaded active running Vixie Cron Daemon
+  dbus.service                     loaded active running D-Bus System Message Bus
+  getty@tty1.service               loaded active running Getty on tty1
+  lab-proc-target@labpg.service    loaded active running systemd hardening same-UID PROC target for labpg
+  lab-proc-target@labredis.service loaded active running systemd hardening same-UID PROC target for labredis
+  lab-proc-target@labweb.service   loaded active running systemd hardening same-UID PROC target for labweb
+  lab-proc-target@root.service     loaded active running systemd hardening same-UID PROC target for root
+  multipathd.service               loaded active running Device-Mapper Multipath Device Controller
+  network.service                  loaded active running Network Connectivity
+  postfix.service                  loaded active running Postfix Mail Transport Agent
+  rpcbind.service                  loaded active running RPC Bind
+  slab-nginx.service               loaded active running systemd hardening experiment Nginx
+  slab-postgresql.service          loaded active running systemd hardening experiment PostgreSQL
+  slab-redis.service               loaded active running systemd hardening experiment Redis
+  slab-stand.service               loaded active running [systemd-run] /bin/bash /root/systemd-hardening-lab/run_stage3.sh stand
+  sshd.service                     loaded active running OpenSSH server daemon
+  systemd-journald.service         loaded active running Journal Service
+  systemd-logind.service           loaded active running User Login Management
+  systemd-udevd.service            loaded active running Rule-based Manager for Device Events and Files
+  systemd-userdbd.service          loaded active running User Database Manager
+  user@1000.service                loaded active running User Manager for UID 1000
+
+Legend: LOAD   -> Reflects whether the unit definition was properly loaded.
+        ACTIVE -> The high-level unit activation state, i.e. generalization of SUB.
+        SUB    -> The low-level unit activation state, values depend on unit type.
+
+22 loaded units listed.
+/root/systemd-lab-results

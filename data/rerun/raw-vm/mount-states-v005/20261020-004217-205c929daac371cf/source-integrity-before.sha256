@@ -1,0 +1,12 @@
+e81763b8af5f44f25b99be22929f542dd64f8d193f888753fe3431a67bb5f7e6  /root/systemd-hardening-lab/frozen-mount-states/scripts_v005/mount_state_helper_v005.py
+0a2b1bcf5fc0c3d18f739ae78d56720ffc31e1efd2919625ed4805c1f6f9dcd6  /root/systemd-hardening-lab/frozen-mount-states/scripts_v005/protocol_mount_states_v005.md
+5f4705e47fee411324e9ed7ebd4e45dbce8d9f562c7b0cc4f7824a94d29328e3  /root/systemd-hardening-lab/frozen-mount-states/scripts_v005/slab_common_v005.sh
+19eb782e3be6e5667dc851eddba4704e97c13ffeaf79160328b5fd8e46a23d0d  /root/systemd-hardening-lab/frozen-mount-states/scripts_v005/supplement_mount_states_v005.sh
+6040d6a0ca899d48f74e2f90211164b3c60403d033320625a3a47cf3e7a90f57  /etc/systemd-lab/nginx.conf
+5186e7f7b028089b00eed0822834f3f6fd81756b0554ee24fecdc3bf637dc4ab  /etc/systemd/system/slab-nginx.service
+a11a74f5e5b7cd560fb6f472457bbca39ce21a000649f0c594977149a3dac31d  /var/lib/systemd-lab/nginx-www/index.html
+f0c836a19de59397ada08ebd7c701dcc1658141f86624f73ee828a6eb122ce15  /root/systemd-hardening-lab/results_v005/nginx/profiles/P1r.conf
+182e58ffceade3d17ca92d8654602a19b18b6424e6f17d209c143fd12b246c60  /root/systemd-hardening-lab/results_v005/nginx/profiles/P1c.conf
+d00059582a770928b74f46cca71c73242c66a874859e6171c29c2d747d1fd574  /root/systemd-hardening-lab/results_v005/nginx/profiles/P4.conf
+ca83303b90e11f262ca04b6b14bf2e6789dfae3f5d1e349a6838e03fb9311dd4  /root/systemd-hardening-lab/results_v005/nginx/profiles/P5.conf
+493bc0f1dc6eca4e25de3cbf5b740b977d0f8958b028d7edd05ee2db26c64da8  /root/systemd-hardening-lab/results_v005/nginx/profiles/P6.conf

@@ -1,0 +1,4 @@
+759e9bec9e198e5a757530d906bb8ea0eab869354076b3f6ec428b93712de3aa  /root/systemd-hardening-lab/memcached_addendum2.sh
+4822bedf0623d561d0e938dec837f1b485bb43963f4f58791d991c4038edc016  /root/systemd-hardening-lab/frozen-timing/v005/scripts_v005/memcached_stage3_v005.sh
+30dc9c65eb18eb721b967a5821eb4089efcbe238ded8601f2d5ba1121b97799e  /root/systemd-hardening-lab/frozen-memcached-addendum/v005/scripts_v005/memcached_stage3_v005.sh
+5d84e138b6d39f3b6ceb9a9dbd380e4754b8af933fcef273f083e135273b53be  /root/systemd-hardening-lab/post-analysis/analyze_memcached_v005.py

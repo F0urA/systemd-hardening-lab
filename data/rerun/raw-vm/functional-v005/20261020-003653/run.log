@@ -1,0 +1,212 @@
+
+===== SERVICE=nginx CANDIDATE=P0 =====
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=contract-initial-P0
+CHECK service=nginx profile=P0 check=start result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P0 check=reopen-logs result=PASS mandatory=1 detail=log_owner_after=labweb
+CHECK service=nginx profile=P0 check=reload result=PASS mandatory=1 detail=workers=2
+CHECK service=nginx profile=P0 check=not-found-404 result=PASS mandatory=1 detail=http=404
+CHECK service=nginx profile=P0 check=restart result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P0 check=crash-recovery result=PASS mandatory=1 detail=killed_pid=126733
+
+===== SERVICE=nginx CANDIDATE=P1r =====
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=contract-initial-P1r
+CHECK service=nginx profile=P1r check=start result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P1r check=reopen-logs result=PASS mandatory=1 detail=log_owner_after=labweb
+CHECK service=nginx profile=P1r check=reload result=FAIL mandatory=1 detail=workers=3
+CHECK service=nginx profile=P1r check=not-found-404 result=PASS mandatory=1 detail=http=404
+CHECK service=nginx profile=P1r check=restart result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P1r check=crash-recovery result=PASS mandatory=1 detail=killed_pid=126891
+
+===== SERVICE=nginx CANDIDATE=P1c =====
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=contract-initial-P1c
+CHECK service=nginx profile=P1c check=start result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P1c check=reopen-logs result=PASS mandatory=1 detail=log_owner_after=root
+CHECK service=nginx profile=P1c check=reload result=PASS mandatory=1 detail=workers=2
+CHECK service=nginx profile=P1c check=not-found-404 result=PASS mandatory=1 detail=http=404
+CHECK service=nginx profile=P1c check=restart result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P1c check=crash-recovery result=PASS mandatory=1 detail=killed_pid=127059
+
+===== SERVICE=nginx CANDIDATE=P1cADMIN =====
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=contract-initial-P1cADMIN
+CHECK service=nginx profile=P1cADMIN check=start result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P1cADMIN check=reopen-logs result=PASS mandatory=1 detail=log_owner_after=root
+CHECK service=nginx profile=P1cADMIN check=reload result=PASS mandatory=1 detail=workers=2
+CHECK service=nginx profile=P1cADMIN check=not-found-404 result=PASS mandatory=1 detail=http=404
+CHECK service=nginx profile=P1cADMIN check=restart result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P1cADMIN check=crash-recovery result=PASS mandatory=1 detail=killed_pid=127224
+
+===== SERVICE=nginx CANDIDATE=P1cPTRACE =====
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=contract-initial-P1cPTRACE
+CHECK service=nginx profile=P1cPTRACE check=start result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P1cPTRACE check=reopen-logs result=PASS mandatory=1 detail=log_owner_after=root
+CHECK service=nginx profile=P1cPTRACE check=reload result=PASS mandatory=1 detail=workers=2
+CHECK service=nginx profile=P1cPTRACE check=not-found-404 result=PASS mandatory=1 detail=http=404
+CHECK service=nginx profile=P1cPTRACE check=restart result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P1cPTRACE check=crash-recovery result=PASS mandatory=1 detail=killed_pid=127388
+
+===== SERVICE=nginx CANDIDATE=P1cDAC =====
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=contract-initial-P1cDAC
+CHECK service=nginx profile=P1cDAC check=start result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P1cDAC check=reopen-logs result=PASS mandatory=1 detail=log_owner_after=root
+CHECK service=nginx profile=P1cDAC check=reload result=PASS mandatory=1 detail=workers=2
+CHECK service=nginx profile=P1cDAC check=not-found-404 result=PASS mandatory=1 detail=http=404
+CHECK service=nginx profile=P1cDAC check=restart result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P1cDAC check=crash-recovery result=PASS mandatory=1 detail=killed_pid=127552
+
+===== SERVICE=nginx CANDIDATE=P1cCHROOT =====
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=contract-initial-P1cCHROOT
+CHECK service=nginx profile=P1cCHROOT check=start result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P1cCHROOT check=reopen-logs result=PASS mandatory=1 detail=log_owner_after=root
+CHECK service=nginx profile=P1cCHROOT check=reload result=PASS mandatory=1 detail=workers=2
+CHECK service=nginx profile=P1cCHROOT check=not-found-404 result=PASS mandatory=1 detail=http=404
+CHECK service=nginx profile=P1cCHROOT check=restart result=PASS mandatory=1 detail=
+CHECK service=nginx profile=P1cCHROOT check=crash-recovery result=PASS mandatory=1 detail=killed_pid=127831
+
+===== NGINX MIGRATION TO P1c =====
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-initial-P0-reopen
+CHECK service=nginx profile=P0->P1c check=migrate-reopen-operation result=PASS mandatory=1 detail=initial_profile=P0 main=127925
+Job for slab-nginx.service failed because the control process exited with error code.
+See "systemctl status slab-nginx.service" and "journalctl -xeu slab-nginx.service" for details.
+CHECK service=nginx profile=P0->P1c check=migrate-reopen-without-step result=BLOCKED mandatory=1 detail=log_owner_after_operation=labweb; BLOCKED means target did not start
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-explicit-step-P0-reopen
+CHECK service=nginx profile=P0->P1c check=migrate-reopen-with-step result=PASS mandatory=1 detail=explicit migration: log owner returned to root
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-initial-P0-reload
+CHECK service=nginx profile=P0->P1c check=migrate-reload-operation result=PASS mandatory=1 detail=initial_profile=P0 main=128125
+CHECK service=nginx profile=P0->P1c check=migrate-reload-without-step result=STARTED mandatory=1 detail=log_owner_after_operation=root; BLOCKED means target did not start
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-explicit-step-P0-reload
+CHECK service=nginx profile=P0->P1c check=migrate-reload-with-step result=PASS mandatory=1 detail=explicit migration: log owner returned to root
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-initial-P0-restart
+CHECK service=nginx profile=P0->P1c check=migrate-restart-operation result=PASS mandatory=1 detail=initial_profile=P0 main=128349
+CHECK service=nginx profile=P0->P1c check=migrate-restart-without-step result=STARTED mandatory=1 detail=log_owner_after_operation=root; BLOCKED means target did not start
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-explicit-step-P0-restart
+CHECK service=nginx profile=P0->P1c check=migrate-restart-with-step result=PASS mandatory=1 detail=explicit migration: log owner returned to root
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-initial-P0-crash
+CHECK service=nginx profile=P0->P1c check=migrate-crash-operation result=PASS mandatory=1 detail=initial_profile=P0 main=128572
+CHECK service=nginx profile=P0->P1c check=migrate-crash-without-step result=STARTED mandatory=1 detail=log_owner_after_operation=root; BLOCKED means target did not start
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-explicit-step-P0-crash
+CHECK service=nginx profile=P0->P1c check=migrate-crash-with-step result=PASS mandatory=1 detail=explicit migration: log owner returned to root
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-initial-P1-reopen
+CHECK service=nginx profile=P1->P1c check=migrate-reopen-operation result=PASS mandatory=1 detail=initial_profile=P1 main=128780
+Job for slab-nginx.service failed because the control process exited with error code.
+See "systemctl status slab-nginx.service" and "journalctl -xeu slab-nginx.service" for details.
+CHECK service=nginx profile=P1->P1c check=migrate-reopen-without-step result=BLOCKED mandatory=1 detail=log_owner_after_operation=labweb; BLOCKED means target did not start
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-explicit-step-P1-reopen
+CHECK service=nginx profile=P1->P1c check=migrate-reopen-with-step result=PASS mandatory=1 detail=explicit migration: log owner returned to root
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-initial-P1-reload
+CHECK service=nginx profile=P1->P1c check=migrate-reload-operation result=PASS mandatory=1 detail=initial_profile=P1 main=128986
+CHECK service=nginx profile=P1->P1c check=migrate-reload-without-step result=STARTED mandatory=1 detail=log_owner_after_operation=root; BLOCKED means target did not start
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-explicit-step-P1-reload
+CHECK service=nginx profile=P1->P1c check=migrate-reload-with-step result=PASS mandatory=1 detail=explicit migration: log owner returned to root
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-initial-P1-restart
+CHECK service=nginx profile=P1->P1c check=migrate-restart-operation result=PASS mandatory=1 detail=initial_profile=P1 main=129210
+CHECK service=nginx profile=P1->P1c check=migrate-restart-without-step result=STARTED mandatory=1 detail=log_owner_after_operation=root; BLOCKED means target did not start
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-explicit-step-P1-restart
+CHECK service=nginx profile=P1->P1c check=migrate-restart-with-step result=PASS mandatory=1 detail=explicit migration: log owner returned to root
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-initial-P1-crash
+CHECK service=nginx profile=P1->P1c check=migrate-crash-operation result=PASS mandatory=1 detail=initial_profile=P1 main=129441
+CHECK service=nginx profile=P1->P1c check=migrate-crash-without-step result=STARTED mandatory=1 detail=log_owner_after_operation=root; BLOCKED means target did not start
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-explicit-step-P1-crash
+CHECK service=nginx profile=P1->P1c check=migrate-crash-with-step result=PASS mandatory=1 detail=explicit migration: log owner returned to root
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=migration-cleanup
+
+===== SEPARATE NGINX TLS / LOCAL UPSTREAM VARIANT =====
+===== SEPARATE TLS VARIANT PROFILE=P0 (benchmark port 808 unchanged) =====
+CHECK service=nginx-tls profile=P0 check=tls-start result=PASS mandatory=1 detail=separate unit; ports TLS=8443 upstream=18080
+CHECK service=nginx-tls profile=P0 check=https-proxy-response result=PASS mandatory=1 detail=verified synthetic CA and exact upstream payload
+CHECK service=nginx-tls profile=P0 check=tls-reload result=PASS mandatory=1 detail=workers=2; HTTPS payload rechecked
+===== SEPARATE TLS VARIANT PROFILE=P1c (benchmark port 808 unchanged) =====
+CHECK service=nginx-tls profile=P1c check=tls-start result=PASS mandatory=1 detail=separate unit; ports TLS=8443 upstream=18080
+CHECK service=nginx-tls profile=P1c check=https-proxy-response result=PASS mandatory=1 detail=verified synthetic CA and exact upstream payload
+CHECK service=nginx-tls profile=P1c check=tls-reload result=PASS mandatory=1 detail=workers=2; HTTPS payload rechecked
+TLS_FIXTURE_CLEANUP=PASS
+
+===== SUMMARY: operation x candidate =====
+nginx       P0     start                  PASS
+nginx       P0     reopen-logs            PASS
+nginx       P0     reload                 PASS
+nginx       P0     not-found-404          PASS
+nginx       P0     restart                PASS
+nginx       P0     crash-recovery         PASS
+nginx       P1r    start                  PASS
+nginx       P1r    reopen-logs            PASS
+nginx       P1r    reload                 FAIL
+nginx       P1r    not-found-404          PASS
+nginx       P1r    restart                PASS
+nginx       P1r    crash-recovery         PASS
+nginx       P1c    start                  PASS
+nginx       P1c    reopen-logs            PASS
+nginx       P1c    reload                 PASS
+nginx       P1c    not-found-404          PASS
+nginx       P1c    restart                PASS
+nginx       P1c    crash-recovery         PASS
+nginx       P1cADMIN start                  PASS
+nginx       P1cADMIN reopen-logs            PASS
+nginx       P1cADMIN reload                 PASS
+nginx       P1cADMIN not-found-404          PASS
+nginx       P1cADMIN restart                PASS
+nginx       P1cADMIN crash-recovery         PASS
+nginx       P1cPTRACE start                  PASS
+nginx       P1cPTRACE reopen-logs            PASS
+nginx       P1cPTRACE reload                 PASS
+nginx       P1cPTRACE not-found-404          PASS
+nginx       P1cPTRACE restart                PASS
+nginx       P1cPTRACE crash-recovery         PASS
+nginx       P1cDAC start                  PASS
+nginx       P1cDAC reopen-logs            PASS
+nginx       P1cDAC reload                 PASS
+nginx       P1cDAC not-found-404          PASS
+nginx       P1cDAC restart                PASS
+nginx       P1cDAC crash-recovery         PASS
+nginx       P1cCHROOT start                  PASS
+nginx       P1cCHROOT reopen-logs            PASS
+nginx       P1cCHROOT reload                 PASS
+nginx       P1cCHROOT not-found-404          PASS
+nginx       P1cCHROOT restart                PASS
+nginx       P1cCHROOT crash-recovery         PASS
+nginx       P0->P1c migrate-reopen-operation PASS
+nginx       P0->P1c migrate-reopen-without-step BLOCKED
+nginx       P0->P1c migrate-reopen-with-step PASS
+nginx       P0->P1c migrate-reload-operation PASS
+nginx       P0->P1c migrate-reload-without-step STARTED
+nginx       P0->P1c migrate-reload-with-step PASS
+nginx       P0->P1c migrate-restart-operation PASS
+nginx       P0->P1c migrate-restart-without-step STARTED
+nginx       P0->P1c migrate-restart-with-step PASS
+nginx       P0->P1c migrate-crash-operation PASS
+nginx       P0->P1c migrate-crash-without-step STARTED
+nginx       P0->P1c migrate-crash-with-step PASS
+nginx       P1->P1c migrate-reopen-operation PASS
+nginx       P1->P1c migrate-reopen-without-step BLOCKED
+nginx       P1->P1c migrate-reopen-with-step PASS
+nginx       P1->P1c migrate-reload-operation PASS
+nginx       P1->P1c migrate-reload-without-step STARTED
+nginx       P1->P1c migrate-reload-with-step PASS
+nginx       P1->P1c migrate-restart-operation PASS
+nginx       P1->P1c migrate-restart-without-step STARTED
+nginx       P1->P1c migrate-restart-with-step PASS
+nginx       P1->P1c migrate-crash-operation PASS
+nginx       P1->P1c migrate-crash-without-step STARTED
+nginx       P1->P1c migrate-crash-with-step PASS
+nginx-tls   P0     tls-start              PASS
+nginx-tls   P0     https-proxy-response   PASS
+nginx-tls   P0     tls-reload             PASS
+nginx-tls   P1c    tls-start              PASS
+nginx-tls   P1c    https-proxy-response   PASS
+nginx-tls   P1c    tls-reload             PASS
+
+===== MANDATORY CONTRACT PER CANDIDATE (FAIL = excluded by the gate) =====
+service    profile    contract
+nginx      P0         PASS
+nginx      P1r        FAIL
+nginx      P1c        PASS
+nginx      P1cADMIN   PASS
+nginx      P1cPTRACE  PASS
+nginx      P1cDAC     PASS
+nginx      P1cCHROOT  PASS
+nginx-tls  P0         PASS
+nginx-tls  P1c        PASS
+
+===== CLEANUP AND RESTORE P4 =====
+NGINX_LOG_INITIAL_STATE owner=root mode=0644 phase=cleanup
+RESTORE_P4 nginx=PASS
+RESULT_DIR=/root/systemd-hardening-lab/results_v005/functional-v005/20261020-003653

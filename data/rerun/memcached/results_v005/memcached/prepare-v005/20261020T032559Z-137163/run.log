@@ -1,0 +1,3 @@
+PREPARED memcached: user/unit/profiles scoped; G=empty; loopback TCP11212; UDP disabled
+RESTORE_P4 memcached=PASS
+RESULT_DIR=/root/systemd-hardening-lab/results_v005/memcached/prepare-v005/20261020T032559Z-137163

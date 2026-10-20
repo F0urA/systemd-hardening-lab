@@ -1,0 +1,98 @@
+## BEGIN inservice-postgresql
+## FINGERPRINT
+Uid: 982 982 982 982
+Gid: 961 961 961 961
+Groups: 961
+CapInh: 0000000000000000
+CapPrm: 0000000000000000
+CapEff: 0000000000000000
+CapBnd: 000001ffffffffff
+CapAmb: 0000000000000000
+NoNewPrivs: 1
+Seccomp: 0
+Seccomp_filters: 0
+ns_cgroup: cgroup:[4026531835]
+ns_ipc: ipc:[4026531839]
+ns_mnt: mnt:[4026532249]
+ns_net: net:[4026531840]
+ns_pid: pid:[4026531836]
+ns_user: user:[4026531837]
+ns_uts: uts:[4026531838]
+## MOUNTS
+/ / rw,relatime ext4
+/ /dev rw,relatime devtmpfs
+/ /dev/hugepages rw,nosuid,nodev,relatime hugetlbfs
+/ /dev/mqueue rw,nosuid,nodev,noexec,relatime mqueue
+/ /dev/pts rw,nosuid,noexec,relatime devpts
+/ /dev/shm rw,nosuid,nodev tmpfs
+/ /proc rw,nosuid,noexec,relatime proc
+/ /proc/sys/fs/binfmt_misc rw,relatime autofs
+/ /run rw,relatime tmpfs
+/ /sys rw,nosuid,nodev,noexec,relatime sysfs
+/ /sys/fs/bpf rw,nosuid,nodev,noexec,relatime bpf
+/ /sys/fs/cgroup rw,nosuid,nodev,noexec,relatime cgroup2
+/ /sys/fs/fuse/connections rw,nosuid,nodev,noexec,relatime fusectl
+/ /sys/fs/pstore rw,nosuid,nodev,noexec,relatime pstore
+/ /sys/kernel/config rw,nosuid,nodev,noexec,relatime configfs
+/ /sys/kernel/debug rw,nosuid,nodev,noexec,relatime debugfs
+/ /sys/kernel/security rw,nosuid,nodev,noexec,relatime securityfs
+/ /sys/kernel/tracing rw,nosuid,nodev,noexec,relatime tracefs
+/ /tmp rw,nosuid,relatime tmpfs
+/boot /boot ro,nosuid,relatime ext4
+/etc /etc ro,nosuid,relatime ext4
+/systemd-private-X/tmp /tmp rw,nosuid,relatime tmpfs
+/systemd/inaccessible/dir /home ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/dir /root ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/dir /run/credentials ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/dir /run/user ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/reg /etc/systemd-lab/credential ro,nosuid,noexec,relatime tmpfs
+/systemd/propagate/slab-postgresql.service /run/systemd/incoming ro,nosuid,relatime tmpfs
+/usr /usr ro,nosuid,relatime ext4
+/var/tmp/systemd-private-X/tmp /var/tmp rw,nosuid,relatime ext4
+## ISOLATION
+CONTEXT=inservice-postgresql UID=982 EUID=982 GID=961 TARGET_PID=1352
+ID	STATUS	DETAIL
+FS-1	BLOCKED	errno=13 Permission denied
+FS-2	BLOCKED	errno=13 Permission denied
+FS-3	BLOCKED	errno=13 Permission denied
+FS-4	BLOCKED	errno=30 Read-only file system
+DEV-1	BLOCKED	errno=2 No such file or directory
+DEV-2	BLOCKED	errno=2 No such file or directory
+DEV-3	ALLOWED	/dev/systemd-lab-null
+DEV-4	BLOCKED	errno=1 Operation not permitted
+KER-1	BLOCKED	errno=13 Permission denied
+KER-2	BLOCKED	errno=13 Permission denied
+KER-3	BLOCKED	errno=1 Operation not permitted
+KER-4	BLOCKED	errno=13 Permission denied
+PROC-1	ALLOWED	pid=1352
+PROC-2	ALLOWED	pid=1352
+PROC-3	ALLOWED	/proc/1352/environ
+PROC-4	BLOCKED	errno=1 Operation not permitted
+PRIV-1	BLOCKED	errno=1 Operation not permitted
+PRIV-2	BLOCKED	errno=1 Operation not permitted
+PRIV-3	BLOCKED	errno=1 Operation not permitted
+PRIV-4	BLOCKED	ruid=982 euid=982 rgid=961 egid=961
+NS-1	BLOCKED	errno=1 Operation not permitted
+NS-2	BLOCKED	errno=1 Operation not permitted
+NS-3	BLOCKED	errno=1 Operation not permitted
+NS-4	BLOCKED	errno=13 Permission denied
+NET-1	BLOCKED	errno=1 Operation not permitted
+NET-2	ALLOWED	AF_NETLINK/NETLINK_ROUTE
+NET-3	BLOCKED	errno=1 Operation not permitted
+NET-4	ALLOWED	AF_INET6/SOCK_STREAM
+ADV-1	ALLOWED	RWX mmap
+ADV-2	ALLOWED	mprotect RW->RX
+ADV-3	ALLOWED	personality 0x0->0x40000
+ADV-4	ALLOWED	mode=4755
+SUMMARY	ALLOWED=10 BLOCKED=22 N/A=0 ERROR=0
+ISOLATION_RC=0
+## EXTENDED
+ARCH=x86_64 UID=982 EUID=982 GID=961
+ID	STATUS	DETAIL
+X1	BLOCKED	errno=1 Operation not permitted
+X2	BLOCKED	errno=1 Operation not permitted
+X3	ALLOWED	io_uring fd=4
+X4	ALLOWED	session keyring serial=1021983850
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0
+EXTENDED_RC=0
+## END inservice-postgresql

@@ -1,0 +1,98 @@
+## BEGIN nginx-master-p1
+## FINGERPRINT
+Uid: 0 0 0 0
+Gid: 0 0 0 0
+Groups:
+CapInh: 0000000000000000
+CapPrm: 000001ffffffffff
+CapEff: 000001ffffffffff
+CapBnd: 000001ffffffffff
+CapAmb: 0000000000000000
+NoNewPrivs: 1
+Seccomp: 0
+Seccomp_filters: 0
+ns_cgroup: cgroup:[4026531835]
+ns_ipc: ipc:[4026531839]
+ns_mnt: mnt:[4026532250]
+ns_net: net:[4026531840]
+ns_pid: pid:[4026531836]
+ns_user: user:[4026531837]
+ns_uts: uts:[4026531838]
+## MOUNTS
+/ / rw,relatime ext4
+/ /dev rw,relatime devtmpfs
+/ /dev/hugepages rw,nosuid,nodev,relatime hugetlbfs
+/ /dev/mqueue rw,nosuid,nodev,noexec,relatime mqueue
+/ /dev/pts rw,nosuid,noexec,relatime devpts
+/ /dev/shm rw,nosuid,nodev tmpfs
+/ /proc rw,nosuid,noexec,relatime proc
+/ /proc/sys/fs/binfmt_misc rw,relatime autofs
+/ /run rw,relatime tmpfs
+/ /sys rw,nosuid,nodev,noexec,relatime sysfs
+/ /sys/fs/bpf rw,nosuid,nodev,noexec,relatime bpf
+/ /sys/fs/cgroup rw,nosuid,nodev,noexec,relatime cgroup2
+/ /sys/fs/fuse/connections rw,nosuid,nodev,noexec,relatime fusectl
+/ /sys/fs/pstore rw,nosuid,nodev,noexec,relatime pstore
+/ /sys/kernel/config rw,nosuid,nodev,noexec,relatime configfs
+/ /sys/kernel/debug rw,nosuid,nodev,noexec,relatime debugfs
+/ /sys/kernel/security rw,nosuid,nodev,noexec,relatime securityfs
+/ /sys/kernel/tracing rw,nosuid,nodev,noexec,relatime tracefs
+/ /tmp rw,nosuid,relatime tmpfs
+/boot /boot ro,nosuid,relatime ext4
+/etc /etc ro,nosuid,relatime ext4
+/systemd-private-X/tmp /tmp rw,nosuid,relatime tmpfs
+/systemd/inaccessible/dir /home ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/dir /root ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/dir /run/credentials ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/dir /run/user ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/reg /etc/systemd-lab/credential ro,nosuid,noexec,relatime tmpfs
+/systemd/propagate/slab-v005-nginx-master-p1-7489.service /run/systemd/incoming ro,nosuid,relatime tmpfs
+/usr /usr ro,nosuid,relatime ext4
+/var/tmp/systemd-private-X/tmp /var/tmp rw,nosuid,relatime ext4
+## ISOLATION
+CONTEXT=nginx-master-p1 UID=0 EUID=0 GID=0 TARGET_PID=1343
+ID	STATUS	DETAIL
+FS-1	BLOCKED	errno=2 No such file or directory
+FS-2	BLOCKED	errno=2 No such file or directory
+FS-3	ALLOWED	/etc/systemd-lab/credential
+FS-4	BLOCKED	errno=30 Read-only file system
+DEV-1	BLOCKED	errno=2 No such file or directory
+DEV-2	BLOCKED	errno=2 No such file or directory
+DEV-3	ALLOWED	/dev/systemd-lab-null
+DEV-4	ALLOWED	mknod char 1:3
+KER-1	ALLOWED	/proc/sys/kernel/hostname
+KER-2	ALLOWED	/proc/sysrq-trigger
+KER-3	ALLOWED	size=131072
+KER-4	ALLOWED	/sys/module/printk/parameters/time
+PROC-1	ALLOWED	pid=1343
+PROC-2	ALLOWED	pid=1343
+PROC-3	ALLOWED	/proc/1343/environ
+PROC-4	ALLOWED	SCHED_FIFO priority=1
+PRIV-1	ALLOWED	uid=981
+PRIV-2	ALLOWED	gid=960
+PRIV-3	ALLOWED	chroot succeeded
+PRIV-4	N/A	root context already has euid=0
+NS-1	ALLOWED	0x10000000
+NS-2	ALLOWED	0x40000000
+NS-3	ALLOWED	0x20000
+NS-4	ALLOWED	/sys/fs/cgroup/cgroup.procs
+NET-1	ALLOWED	AF_PACKET/SOCK_RAW
+NET-2	ALLOWED	AF_NETLINK/NETLINK_ROUTE
+NET-3	ALLOWED	AF_INET/SOCK_RAW/IPPROTO_ICMP
+NET-4	ALLOWED	AF_INET6/SOCK_STREAM
+ADV-1	ALLOWED	RWX mmap
+ADV-2	ALLOWED	mprotect RW->RX
+ADV-3	ALLOWED	personality 0x0->0x40000
+ADV-4	ALLOWED	mode=4755
+SUMMARY	ALLOWED=26 BLOCKED=5 N/A=1 ERROR=0
+ISOLATION_RC=0
+## EXTENDED
+ARCH=x86_64 UID=0 EUID=0 GID=0
+ID	STATUS	DETAIL
+X1	ALLOWED	BPF_MAP_CREATE fd=3
+X2	ALLOWED	userfaultfd fd=3
+X3	ALLOWED	io_uring fd=3
+X4	ALLOWED	session keyring serial=127057278
+SUMMARY ALLOWED=4 BLOCKED=0 N/A=0 ERROR=0
+EXTENDED_RC=0
+## END nginx-master-p1

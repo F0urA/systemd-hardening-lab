@@ -1,0 +1,10 @@
+Stopping slab-nginx.service - systemd hardening experiment Nginx...
+slab-nginx.service: Deactivated successfully.
+Stopped slab-nginx.service - systemd hardening experiment Nginx.
+Starting slab-nginx.service - systemd hardening experiment Nginx...
+nginx: [alert] could not open error log file: open() "/var/log/nginx/nginx.error.log" failed (30: Read-only file system)
+nginx: the configuration file /etc/systemd-lab/nginx.conf syntax is ok
+nginx: configuration file /etc/systemd-lab/nginx.conf test is successful
+nginx: [alert] could not open error log file: open() "/var/log/nginx/nginx.error.log" failed (30: Read-only file system)
+G_RESULT=BLOCKED uid=984
+Started slab-nginx.service - systemd hardening experiment Nginx.

@@ -1,0 +1,4 @@
+Completed validated series: R1-nginx, R2-redis, R3-postgresql, R5-nginx-light
+Planned extension cells: [{"stage": "R1-nginx", "service": "nginx", "blocks": 60, "profiles": ["P4", "P6"], "family": 7, "nginx_c": "25"}, {"stage": "R3-postgresql", "service": "postgresql", "blocks": 10, "profiles": ["P1", "P2", "P1d", "P4", "P6"], "family": 5, "nginx_c": "25"}]
+Analysis scope: INCOMPLETE_SCOPE; limitations: {"scope": "INCOMPLETE_SCOPE", "looks_planned": 2, "combined_nginx_family": 7, "failed_primary": ["R4-nginx-nonsaturated"], "failed_extension": [], "native_count_limitations": {"R2-redis": ["COUNTS_NOT_EXPOSED_BY_QUIET_OUTPUT"], "R3-postgresql": ["PG_FAILED_COUNT_NOT_EXPOSED"]}, "third_look_permitted": false, "failed_extension_policy": "retain first-look bounds/status; terminal NO_VALID_EXTENSION; affected inference unfinished"}
+Analysis directory: /root/systemd-hardening-lab/post-analysis/analysis-final

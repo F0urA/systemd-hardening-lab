@@ -1,0 +1,49 @@
+# /etc/systemd/system/slab-postgresql.service
+[Unit]
+Description=systemd hardening experiment PostgreSQL
+After=network.target
+
+[Service]
+Type=simple
+User=labpg
+Group=labpg
+ExecStart=/usr/bin/postgres -D /var/lib/systemd-lab/postgresql
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGINT
+TimeoutStopSec=60
+Restart=no
+CPUAccounting=yes
+MemoryAccounting=yes
+
+[Install]
+WantedBy=multi-user.target
+
+# /etc/systemd/system/slab-postgresql.service.d/90-hardening.conf
+[Service]
+PrivateTmp=yes
+ProtectHome=yes
+ProtectSystem=full
+NoNewPrivileges=yes
+InaccessiblePaths=/etc/systemd-lab/credential
+
+PrivateDevices=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectKernelLogs=yes
+
+ProtectControlGroups=yes
+ProtectProc=invisible
+PrivateMounts=yes
+RestrictNamespaces=yes
+
+RestrictAddressFamilies=AF_UNIX AF_INET
+
+CapabilityBoundingSet=
+
+SystemCallFilter=~@mount @reboot @swap @module @raw-io @debug
+SystemCallErrorNumber=EPERM
+
+MemoryDenyWriteExecute=yes
+LockPersonality=yes
+RestrictRealtime=yes
+RestrictSUIDSGID=yes

@@ -1,0 +1,8 @@
+alpha per bound = 0.0050 (M=5, K=2); exact sign-flip over all 2^n sign vectors
+prof   n   mean d   median   skew  neg |      t L      t U  t cost     t outcome |   perm L   perm U  p cost  perm outcome | admit H2 H5 t/perm
+P1    20     32.7     37.5   0.69    8 |    -16.1     81.6   0.42%  INCONCLUSIVE |    -14.4     82.7   0.42%  INCONCLUSIVE | 00 00
+P1d   20     37.9     33.4   0.43    6 |    -24.8    100.6   1.62%  INCONCLUSIVE |    -23.3    101.4   1.63%  INCONCLUSIVE | 00 00
+P2    20     12.9     18.9  -0.79    9 |    -42.7     68.6   1.89%  INCONCLUSIVE |    -43.6     65.9   1.81%  INCONCLUSIVE | 00 00
+P4    20     34.1     27.8   1.28    9 |    -27.2     95.4   1.47%  INCONCLUSIVE |    -21.6     97.1   1.44%  INCONCLUSIVE | 00 00
+P6    20     75.5     56.3   0.27    3 |      8.3    142.7   1.86%  NON_INFERIOR |      8.8    143.6   1.83%  NON_INFERIOR | 11 11
+ADMISSION_DECISIONS_AGREE

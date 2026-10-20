@@ -1,0 +1,3 @@
+8c5569781bbfc2f64b3324c587c74d174e642cd370beac82a74f7d6304e277c7  /root/systemd-hardening-lab/results_v005/nginx/profiles/P1.conf
+e1e43d00e4b94d11d05d00877222363c23ca86ebb1aac064937169762653b623  /root/systemd-hardening-lab/results_v005/nginx/profiles/P2.conf
+f0c836a19de59397ada08ebd7c701dcc1658141f86624f73ee828a6eb122ce15  /root/systemd-hardening-lab/results_v005/nginx/profiles/P1r.conf

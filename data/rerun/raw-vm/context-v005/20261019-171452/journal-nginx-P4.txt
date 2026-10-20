@@ -1,0 +1,236 @@
+Stopping slab-nginx.service - systemd hardening experiment Nginx...
+slab-nginx.service: Deactivated successfully.
+Stopped slab-nginx.service - systemd hardening experiment Nginx.
+slab-nginx.service: Consumed 2.392s CPU time, 19.5M memory peak.
+Starting slab-nginx.service - systemd hardening experiment Nginx...
+nginx: the configuration file /etc/systemd-lab/nginx.conf syntax is ok
+nginx: configuration file /etc/systemd-lab/nginx.conf test is successful
+## BEGIN inservice-nginx-master
+## FINGERPRINT
+Uid: 0 0 0 0
+Gid: 0 0 0 0
+Groups:
+CapInh: 0000000000000000
+CapPrm: 00000000000004c0
+CapEff: 00000000000004c0
+CapBnd: 00000000000004c0
+CapAmb: 0000000000000000
+NoNewPrivs: 1
+Seccomp: 2
+Seccomp_filters: 28
+ns_cgroup: cgroup:[4026531835]
+ns_ipc: ipc:[4026531839]
+ns_mnt: mnt:[4026532250]
+ns_net: net:[4026531840]
+ns_pid: pid:[4026531836]
+ns_user: user:[4026531837]
+ns_uts: uts:[4026531838]
+## MOUNTS
+/ / rw,relatime ext4
+/ /dev ro,nosuid,noexec tmpfs
+/ /dev/hugepages rw,nosuid,nodev,relatime hugetlbfs
+/ /dev/mqueue rw,nosuid,nodev,noexec,relatime mqueue
+/ /dev/pts rw,nosuid,noexec,relatime devpts
+/ /dev/shm rw,nosuid,nodev tmpfs
+/ /proc rw,nosuid,nodev,noexec,relatime proc
+/ /proc/sys/fs/binfmt_misc rw,nosuid,relatime autofs
+/ /proc/sys/fs/binfmt_misc rw,nosuid,relatime autofs
+/ /run rw,relatime tmpfs
+/ /sys rw,nosuid,nodev,noexec,relatime sysfs
+/ /sys/fs/bpf ro,nosuid,nodev,noexec,relatime bpf
+/ /sys/fs/cgroup ro,nosuid,nodev,noexec,relatime cgroup2
+/ /sys/fs/fuse/connections rw,nosuid,nodev,noexec,relatime fusectl
+/ /sys/fs/pstore rw,nosuid,nodev,noexec,relatime pstore
+/ /sys/kernel/config rw,nosuid,nodev,noexec,relatime configfs
+/ /sys/kernel/debug ro,nosuid,nodev,noexec,relatime debugfs
+/ /sys/kernel/security rw,nosuid,nodev,noexec,relatime securityfs
+/ /sys/kernel/tracing ro,nosuid,nodev,noexec,relatime tracefs
+/ /tmp rw,nosuid,relatime tmpfs
+/acpi /proc/acpi ro,nosuid,nodev,noexec,relatime proc
+/asound /proc/asound ro,nosuid,nodev,noexec,relatime proc
+/boot /boot ro,nosuid,relatime ext4
+/bus /proc/bus ro,nosuid,nodev,noexec,relatime proc
+/etc /etc ro,nosuid,relatime ext4
+/fs /proc/fs ro,nosuid,nodev,noexec,relatime proc
+/irq /proc/irq ro,nosuid,nodev,noexec,relatime proc
+/latency_stats /proc/latency_stats ro,nosuid,nodev,noexec,relatime proc
+/mtrr /proc/mtrr ro,nosuid,nodev,noexec,relatime proc
+/scsi /proc/scsi ro,nosuid,nodev,noexec,relatime proc
+/sys /proc/sys ro,nosuid,nodev,noexec,relatime proc
+/sysrq-trigger /proc/sysrq-trigger ro,nosuid,nodev,noexec,relatime proc
+/system.slice/slab-nginx.service/memory.pressure /sys/fs/cgroup/system.slice/slab-nginx.service/memory.pressure rw,nosuid,nodev,noexec,relatime cgroup2
+/systemd-private-X/tmp /tmp rw,nosuid,relatime tmpfs
+/systemd/inaccessible/dir /home ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/dir /root ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/dir /run/credentials ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/dir /run/user ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/dir /usr/lib/modules ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/reg /etc/systemd-lab/credential ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/reg /proc/kallsyms ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/reg /proc/kcore ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/reg /proc/kmsg ro,nosuid,noexec,relatime tmpfs
+/systemd/propagate/slab-nginx.service /run/systemd/incoming ro,nosuid,relatime tmpfs
+/usr /usr ro,nosuid,relatime ext4
+/var/tmp/systemd-private-X/tmp /var/tmp rw,nosuid,relatime ext4
+## ISOLATION
+CONTEXT=inservice-nginx-master UID=0 EUID=0 GID=0 TARGET_PID=1343
+ID	STATUS	DETAIL
+FS-1	BLOCKED	errno=13 Permission denied
+FS-2	BLOCKED	errno=13 Permission denied
+FS-3	BLOCKED	errno=13 Permission denied
+FS-4	BLOCKED	errno=30 Read-only file system
+DEV-1	BLOCKED	errno=2 No such file or directory
+DEV-2	BLOCKED	errno=2 No such file or directory
+DEV-3	BLOCKED	errno=2 No such file or directory
+DEV-4	BLOCKED	errno=1 Operation not permitted
+KER-1	BLOCKED	errno=30 Read-only file system
+KER-2	BLOCKED	errno=30 Read-only file system
+KER-3	BLOCKED	errno=1 Operation not permitted
+KER-4	ALLOWED	/sys/module/printk/parameters/time
+PROC-1	BLOCKED	errno=1 Operation not permitted
+PROC-2	ALLOWED	pid=1343
+PROC-3	BLOCKED	errno=13 Permission denied
+PROC-4	BLOCKED	errno=1 Operation not permitted
+PRIV-1	ALLOWED	uid=981
+PRIV-2	ALLOWED	gid=960
+PRIV-3	BLOCKED	errno=1 Operation not permitted
+PRIV-4	N/A	root context already has euid=0
+NS-1	BLOCKED	errno=1 Operation not permitted
+NS-2	BLOCKED	errno=1 Operation not permitted
+NS-3	BLOCKED	errno=1 Operation not permitted
+NS-4	BLOCKED	errno=30 Read-only file system
+NET-1	BLOCKED	errno=97 Address family not supported by protocol
+NET-2	BLOCKED	errno=97 Address family not supported by protocol
+NET-3	BLOCKED	errno=1 Operation not permitted
+NET-4	BLOCKED	errno=97 Address family not supported by protocol
+ADV-1	BLOCKED	errno=13 Permission denied
+ADV-2	BLOCKED	errno=13 Permission denied
+ADV-3	BLOCKED	errno=1 Operation not permitted
+ADV-4	BLOCKED	errno=1 Operation not permitted
+SUMMARY	ALLOWED=4 BLOCKED=27 N/A=1 ERROR=0
+ISOLATION_RC=0
+## EXTENDED
+ARCH=x86_64 UID=0 EUID=0 GID=0
+ID	STATUS	DETAIL
+X1	BLOCKED	errno=1 Operation not permitted
+X2	BLOCKED	errno=1 Operation not permitted
+X3	ALLOWED	io_uring fd=3
+X4	ALLOWED	session keyring serial=993906248
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0
+EXTENDED_RC=0
+## END inservice-nginx-master
+## BEGIN inservice-nginx-worker
+## FINGERPRINT
+Uid: 984 984 984 984
+Gid: 963 963 963 963
+Groups: 963
+CapInh: 0000000000000000
+CapPrm: 0000000000000000
+CapEff: 0000000000000000
+CapBnd: 00000000000004c0
+CapAmb: 0000000000000000
+NoNewPrivs: 1
+Seccomp: 2
+Seccomp_filters: 28
+ns_cgroup: cgroup:[4026531835]
+ns_ipc: ipc:[4026531839]
+ns_mnt: mnt:[4026532250]
+ns_net: net:[4026531840]
+ns_pid: pid:[4026531836]
+ns_user: user:[4026531837]
+ns_uts: uts:[4026531838]
+## MOUNTS
+/ / rw,relatime ext4
+/ /dev ro,nosuid,noexec tmpfs
+/ /dev/hugepages rw,nosuid,nodev,relatime hugetlbfs
+/ /dev/mqueue rw,nosuid,nodev,noexec,relatime mqueue
+/ /dev/pts rw,nosuid,noexec,relatime devpts
+/ /dev/shm rw,nosuid,nodev tmpfs
+/ /proc rw,nosuid,nodev,noexec,relatime proc
+/ /proc/sys/fs/binfmt_misc rw,nosuid,relatime autofs
+/ /proc/sys/fs/binfmt_misc rw,nosuid,relatime autofs
+/ /run rw,relatime tmpfs
+/ /sys rw,nosuid,nodev,noexec,relatime sysfs
+/ /sys/fs/bpf ro,nosuid,nodev,noexec,relatime bpf
+/ /sys/fs/cgroup ro,nosuid,nodev,noexec,relatime cgroup2
+/ /sys/fs/fuse/connections rw,nosuid,nodev,noexec,relatime fusectl
+/ /sys/fs/pstore rw,nosuid,nodev,noexec,relatime pstore
+/ /sys/kernel/config rw,nosuid,nodev,noexec,relatime configfs
+/ /sys/kernel/debug ro,nosuid,nodev,noexec,relatime debugfs
+/ /sys/kernel/security rw,nosuid,nodev,noexec,relatime securityfs
+/ /sys/kernel/tracing ro,nosuid,nodev,noexec,relatime tracefs
+/ /tmp rw,nosuid,relatime tmpfs
+/acpi /proc/acpi ro,nosuid,nodev,noexec,relatime proc
+/asound /proc/asound ro,nosuid,nodev,noexec,relatime proc
+/boot /boot ro,nosuid,relatime ext4
+/bus /proc/bus ro,nosuid,nodev,noexec,relatime proc
+/etc /etc ro,nosuid,relatime ext4
+/fs /proc/fs ro,nosuid,nodev,noexec,relatime proc
+/irq /proc/irq ro,nosuid,nodev,noexec,relatime proc
+/latency_stats /proc/latency_stats ro,nosuid,nodev,noexec,relatime proc
+/mtrr /proc/mtrr ro,nosuid,nodev,noexec,relatime proc
+/scsi /proc/scsi ro,nosuid,nodev,noexec,relatime proc
+/sys /proc/sys ro,nosuid,nodev,noexec,relatime proc
+/sysrq-trigger /proc/sysrq-trigger ro,nosuid,nodev,noexec,relatime proc
+/system.slice/slab-nginx.service/memory.pressure /sys/fs/cgroup/system.slice/slab-nginx.service/memory.pressure rw,nosuid,nodev,noexec,relatime cgroup2
+/systemd-private-X/tmp /tmp rw,nosuid,relatime tmpfs
+/systemd/inaccessible/dir /home ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/dir /root ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/dir /run/credentials ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/dir /run/user ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/dir /usr/lib/modules ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/reg /etc/systemd-lab/credential ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/reg /proc/kallsyms ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/reg /proc/kcore ro,nosuid,noexec,relatime tmpfs
+/systemd/inaccessible/reg /proc/kmsg ro,nosuid,noexec,relatime tmpfs
+/systemd/propagate/slab-nginx.service /run/systemd/incoming ro,nosuid,relatime tmpfs
+/usr /usr ro,nosuid,relatime ext4
+/var/tmp/systemd-private-X/tmp /var/tmp rw,nosuid,relatime ext4
+## ISOLATION
+CONTEXT=inservice-nginx-worker UID=984 EUID=984 GID=963 TARGET_PID=1346
+ID	STATUS	DETAIL
+FS-1	BLOCKED	errno=13 Permission denied
+FS-2	BLOCKED	errno=13 Permission denied
+FS-3	BLOCKED	errno=13 Permission denied
+FS-4	BLOCKED	errno=30 Read-only file system
+DEV-1	BLOCKED	errno=2 No such file or directory
+DEV-2	BLOCKED	errno=2 No such file or directory
+DEV-3	BLOCKED	errno=2 No such file or directory
+DEV-4	BLOCKED	errno=1 Operation not permitted
+KER-1	BLOCKED	errno=13 Permission denied
+KER-2	BLOCKED	errno=13 Permission denied
+KER-3	BLOCKED	errno=1 Operation not permitted
+KER-4	BLOCKED	errno=13 Permission denied
+PROC-1	BLOCKED	errno=1 Operation not permitted
+PROC-2	ALLOWED	pid=1346
+PROC-3	ALLOWED	/proc/1346/environ
+PROC-4	BLOCKED	errno=1 Operation not permitted
+PRIV-1	BLOCKED	errno=1 Operation not permitted
+PRIV-2	BLOCKED	errno=1 Operation not permitted
+PRIV-3	BLOCKED	errno=1 Operation not permitted
+PRIV-4	BLOCKED	ruid=984 euid=984 rgid=963 egid=963
+NS-1	BLOCKED	errno=1 Operation not permitted
+NS-2	BLOCKED	errno=1 Operation not permitted
+NS-3	BLOCKED	errno=1 Operation not permitted
+NS-4	BLOCKED	errno=13 Permission denied
+NET-1	BLOCKED	errno=97 Address family not supported by protocol
+NET-2	BLOCKED	errno=97 Address family not supported by protocol
+NET-3	BLOCKED	errno=1 Operation not permitted
+NET-4	BLOCKED	errno=97 Address family not supported by protocol
+ADV-1	BLOCKED	errno=13 Permission denied
+ADV-2	BLOCKED	errno=13 Permission denied
+ADV-3	BLOCKED	errno=1 Operation not permitted
+ADV-4	BLOCKED	errno=1 Operation not permitted
+SUMMARY	ALLOWED=2 BLOCKED=30 N/A=0 ERROR=0
+ISOLATION_RC=0
+## EXTENDED
+ARCH=x86_64 UID=984 EUID=984 GID=963
+ID	STATUS	DETAIL
+X1	BLOCKED	errno=1 Operation not permitted
+X2	BLOCKED	errno=1 Operation not permitted
+X3	ALLOWED	io_uring fd=3
+X4	ALLOWED	session keyring serial=71229517
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0
+EXTENDED_RC=0
+## END inservice-nginx-worker
+Started slab-nginx.service - systemd hardening experiment Nginx.

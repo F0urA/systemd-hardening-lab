@@ -1,0 +1,1 @@
+PARTIAL_PROCEDURE: P1 F=0; the one-step minimal relaxation of procedure section 2 was not performed; frozen finite family remains M=4

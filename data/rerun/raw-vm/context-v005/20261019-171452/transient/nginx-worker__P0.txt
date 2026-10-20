@@ -1,0 +1,91 @@
+## BEGIN nginx-worker-p0
+## FINGERPRINT
+Uid: 984 984 984 984
+Gid: 963 963 963 963
+Groups: 963
+CapInh: 0000000000000000
+CapPrm: 0000000000000000
+CapEff: 0000000000000000
+CapBnd: 000001ffffffffff
+CapAmb: 0000000000000000
+NoNewPrivs: 0
+Seccomp: 0
+Seccomp_filters: 0
+ns_cgroup: cgroup:[4026531835]
+ns_ipc: ipc:[4026531839]
+ns_mnt: mnt:[4026531841]
+ns_net: net:[4026531840]
+ns_pid: pid:[4026531836]
+ns_user: user:[4026531837]
+ns_uts: uts:[4026531838]
+## MOUNTS
+/ / rw,relatime ext4
+/ /dev rw,relatime devtmpfs
+/ /dev/hugepages rw,nosuid,nodev,relatime hugetlbfs
+/ /dev/mqueue rw,nosuid,nodev,noexec,relatime mqueue
+/ /dev/pts rw,nosuid,noexec,relatime devpts
+/ /dev/shm rw,nosuid,nodev tmpfs
+/ /proc rw,nosuid,noexec,relatime proc
+/ /proc/sys/fs/binfmt_misc rw,relatime autofs
+/ /run rw,relatime tmpfs
+/ /run/credentials/getty@tty1.service ro,nosuid,nodev,noexec,relatime,nosymfollow tmpfs
+/ /run/credentials/systemd-journald.service ro,nosuid,nodev,noexec,relatime,nosymfollow tmpfs
+/ /run/user/0 rw,nosuid,nodev,relatime tmpfs
+/ /run/user/1000 rw,nosuid,nodev,relatime tmpfs
+/ /sys rw,nosuid,nodev,noexec,relatime sysfs
+/ /sys/fs/bpf rw,nosuid,nodev,noexec,relatime bpf
+/ /sys/fs/cgroup rw,nosuid,nodev,noexec,relatime cgroup2
+/ /sys/fs/fuse/connections rw,nosuid,nodev,noexec,relatime fusectl
+/ /sys/fs/pstore rw,nosuid,nodev,noexec,relatime pstore
+/ /sys/kernel/config rw,nosuid,nodev,noexec,relatime configfs
+/ /sys/kernel/debug rw,nosuid,nodev,noexec,relatime debugfs
+/ /sys/kernel/security rw,nosuid,nodev,noexec,relatime securityfs
+/ /sys/kernel/tracing rw,nosuid,nodev,noexec,relatime tracefs
+/ /tmp rw,nosuid,relatime tmpfs
+## ISOLATION
+CONTEXT=nginx-worker-p0 UID=984 EUID=984 GID=963 TARGET_PID=1346
+ID	STATUS	DETAIL
+FS-1	ALLOWED	/home/systemd-lab/marker
+FS-2	BLOCKED	errno=13 Permission denied
+FS-3	ALLOWED	/etc/systemd-lab/credential
+FS-4	ALLOWED	create+unlink
+DEV-1	ALLOWED	/tmp/systemd-lab-marker
+DEV-2	ALLOWED	/var/tmp/systemd-lab-marker
+DEV-3	ALLOWED	/dev/systemd-lab-null
+DEV-4	BLOCKED	errno=1 Operation not permitted
+KER-1	BLOCKED	errno=13 Permission denied
+KER-2	BLOCKED	errno=13 Permission denied
+KER-3	BLOCKED	errno=1 Operation not permitted
+KER-4	BLOCKED	errno=13 Permission denied
+PROC-1	ALLOWED	pid=1346
+PROC-2	ALLOWED	pid=1346
+PROC-3	ALLOWED	/proc/1346/environ
+PROC-4	BLOCKED	errno=1 Operation not permitted
+PRIV-1	BLOCKED	errno=1 Operation not permitted
+PRIV-2	BLOCKED	errno=1 Operation not permitted
+PRIV-3	BLOCKED	errno=1 Operation not permitted
+PRIV-4	ALLOWED	ruid=984 euid=0 rgid=963 egid=963
+NS-1	BLOCKED	errno=1 Operation not permitted
+NS-2	BLOCKED	errno=1 Operation not permitted
+NS-3	BLOCKED	errno=1 Operation not permitted
+NS-4	BLOCKED	errno=13 Permission denied
+NET-1	BLOCKED	errno=1 Operation not permitted
+NET-2	ALLOWED	AF_NETLINK/NETLINK_ROUTE
+NET-3	BLOCKED	errno=1 Operation not permitted
+NET-4	ALLOWED	AF_INET6/SOCK_STREAM
+ADV-1	ALLOWED	RWX mmap
+ADV-2	ALLOWED	mprotect RW->RX
+ADV-3	ALLOWED	personality 0x0->0x40000
+ADV-4	ALLOWED	mode=4755
+SUMMARY	ALLOWED=16 BLOCKED=16 N/A=0 ERROR=0
+ISOLATION_RC=0
+## EXTENDED
+ARCH=x86_64 UID=984 EUID=984 GID=963
+ID	STATUS	DETAIL
+X1	BLOCKED	errno=1 Operation not permitted
+X2	BLOCKED	errno=1 Operation not permitted
+X3	ALLOWED	io_uring fd=3
+X4	ALLOWED	session keyring serial=48855584
+SUMMARY ALLOWED=2 BLOCKED=2 N/A=0 ERROR=0
+EXTENDED_RC=0
+## END nginx-worker-p0

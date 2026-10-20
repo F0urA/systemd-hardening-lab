@@ -1,0 +1,41 @@
+service,goal,dac,context,profile,outcome,detail
+nginx,G1-replace-document,rootown,worker,P0,BLOCKED,http=200 G_RESULT=BLOCKED uid=984
+nginx,G1-replace-document,rootown,master,P0,ACHIEVED,http=200 G_RESULT=ALLOWED via=direct uid=0
+nginx,G1-replace-document,labweb,worker,P0,ACHIEVED,http=200 G_RESULT=ALLOWED via=direct uid=984
+nginx,G1-replace-document,labweb,master,P0,ACHIEVED,http=200 G_RESULT=ALLOWED via=direct uid=0
+nginx,G2-read-app-secret,needed-by-app,worker,P0,ACHIEVED,G_RESULT=ALLOWED uid=984
+nginx,G2-read-app-secret,needed-by-app,master,P0,ACHIEVED,G_RESULT=ALLOWED uid=0
+nginx,G3-replace-config,rootown,worker,P0,BLOCKED,G_RESULT=BLOCKED uid=984
+nginx,G3-replace-config,rootown,master,P0,ACHIEVED,G_RESULT=ALLOWED via=direct uid=0
+nginx,G4-write-logdir,rootown,worker,P0,BLOCKED,G_RESULT=BLOCKED uid=984
+nginx,G4-write-logdir,rootown,master,P0,ACHIEVED,G_RESULT=ALLOWED via=direct uid=0
+nginx,G1-replace-document,rootown,worker,P1,BLOCKED,http=200 G_RESULT=BLOCKED uid=984
+nginx,G1-replace-document,rootown,master,P1,ACHIEVED,http=200 G_RESULT=ALLOWED via=direct uid=0
+nginx,G1-replace-document,labweb,worker,P1,ACHIEVED,http=200 G_RESULT=ALLOWED via=direct uid=984
+nginx,G1-replace-document,labweb,master,P1,ACHIEVED,http=200 G_RESULT=ALLOWED via=direct uid=0
+nginx,G2-read-app-secret,needed-by-app,worker,P1,ACHIEVED,G_RESULT=ALLOWED uid=984
+nginx,G2-read-app-secret,needed-by-app,master,P1,ACHIEVED,G_RESULT=ALLOWED uid=0
+nginx,G3-replace-config,rootown,worker,P1,BLOCKED,G_RESULT=BLOCKED uid=984
+nginx,G3-replace-config,rootown,master,P1,ACHIEVED,G_RESULT=ALLOWED via=proc1root+remount uid=0
+nginx,G4-write-logdir,rootown,worker,P1,BLOCKED,G_RESULT=BLOCKED uid=984
+nginx,G4-write-logdir,rootown,master,P1,ACHIEVED,G_RESULT=ALLOWED via=direct uid=0
+nginx,G1-replace-document,rootown,worker,P2,BLOCKED,http=200 G_RESULT=BLOCKED uid=984
+nginx,G1-replace-document,rootown,master,P2,ACHIEVED,http=200 G_RESULT=ALLOWED via=direct uid=0
+nginx,G1-replace-document,labweb,worker,P2,ACHIEVED,http=200 G_RESULT=ALLOWED via=direct uid=984
+nginx,G1-replace-document,labweb,master,P2,ACHIEVED,http=200 G_RESULT=ALLOWED via=direct uid=0
+nginx,G2-read-app-secret,needed-by-app,worker,P2,ACHIEVED,G_RESULT=ALLOWED uid=984
+nginx,G2-read-app-secret,needed-by-app,master,P2,ACHIEVED,G_RESULT=ALLOWED uid=0
+nginx,G3-replace-config,rootown,worker,P2,BLOCKED,G_RESULT=BLOCKED uid=984
+nginx,G3-replace-config,rootown,master,P2,ACHIEVED,G_RESULT=ALLOWED via=proc1root+remount uid=0
+nginx,G4-write-logdir,rootown,worker,P2,BLOCKED,G_RESULT=BLOCKED uid=984
+nginx,G4-write-logdir,rootown,master,P2,ACHIEVED,G_RESULT=ALLOWED via=direct uid=0
+nginx,G1-replace-document,rootown,worker,P1r,BLOCKED,http=200 G_RESULT=BLOCKED uid=984
+nginx,G1-replace-document,rootown,master,P1r,ACHIEVED,http=200 G_RESULT=ALLOWED via=proc1root+remount uid=0
+nginx,G1-replace-document,labweb,worker,P1r,BLOCKED,http=200 G_RESULT=BLOCKED uid=984
+nginx,G1-replace-document,labweb,master,P1r,ACHIEVED,http=200 G_RESULT=ALLOWED via=proc1root+remount uid=0
+nginx,G2-read-app-secret,needed-by-app,worker,P1r,ACHIEVED,G_RESULT=ALLOWED uid=984
+nginx,G2-read-app-secret,needed-by-app,master,P1r,ACHIEVED,G_RESULT=ALLOWED uid=0
+nginx,G3-replace-config,rootown,worker,P1r,BLOCKED,G_RESULT=BLOCKED uid=984
+nginx,G3-replace-config,rootown,master,P1r,ACHIEVED,G_RESULT=ALLOWED via=proc1root+remount uid=0
+nginx,G4-write-logdir,rootown,worker,P1r,BLOCKED,G_RESULT=BLOCKED uid=984
+nginx,G4-write-logdir,rootown,master,P1r,ACHIEVED,G_RESULT=ALLOWED via=direct uid=0

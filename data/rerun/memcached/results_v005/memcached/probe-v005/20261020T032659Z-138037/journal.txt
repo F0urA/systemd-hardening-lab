@@ -1,0 +1,4 @@
+2026-10-20T03:27:07.714843+00:00 host-15 systemd[1]: Stopping slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only)...
+2026-10-20T03:27:07.739750+00:00 host-15 systemd[1]: slab-memcached-v005.service: Deactivated successfully.
+2026-10-20T03:27:07.740037+00:00 host-15 systemd[1]: Stopped slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).
+2026-10-20T03:27:07.831227+00:00 host-15 systemd[1]: Started slab-memcached-v005.service - v005 independently registered memcached fixture (loopback only).

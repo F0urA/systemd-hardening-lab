@@ -1,0 +1,18 @@
+service    profile  F pairs        L95       U95d  cost_up%  g  s  emicro  expos   n  status          series
+redis      P0       1    20   5667.479   5667.479     0.000  0  0   0.000    9.2   0  BASELINE        20261019-184311
+redis      P1       1    20   4934.140   6250.172     0.633  0  0   0.333    8.4   5  NON_INFERIOR    20261019-184311
+redis      P2       1    20   2391.243   3396.128     3.078  0  0   0.389    6.9   9  NON_INFERIOR    20261019-184311
+redis      P1d      1    20   4855.628   5913.244     0.666  1  2   0.333    8.3   7  NON_INFERIOR    20261019-184311
+redis      P4       1    20   2488.578   3579.182     2.905  0  0   0.778    2.1  21  NON_INFERIOR    20261019-184311
+redis      P6       1    20   2042.047   3228.572     3.184  1  2   0.778    2.1  23  NON_INFERIOR    20261019-184311
+
+NOTE mandatory contracts: /root/systemd-hardening-lab/post-analysis/raw-vm/functional-v005/20261019-170059/contract.csv supplies 22 verdicts
+NOTE redis: series 20261019-184311 supplies P0 P1 P1d P2 P4 P6 (unless supplied by an earlier series); bounds at the level 0.005
+NOTE redis: 1 goals in 2 scenario cells are achievable under P0
+NOTE redis P1: goals not blocked in every cell: G1-write-outside-datadir
+NOTE redis P2: goals not blocked in every cell: G1-write-outside-datadir
+NOTE redis P1d: goals not blocked in every cell: -
+NOTE redis P4: goals not blocked in every cell: G1-write-outside-datadir
+NOTE redis P6: goals not blocked in every cell: -
+CSV=/root/systemd-hardening-lab/post-analysis/analysis-final/R2-redis-criteria.csv
+NEXT: python3 select_profile_v005.py /root/systemd-hardening-lab/post-analysis/analysis-final/R2-redis-criteria.csv --budgets 2,5,10,15

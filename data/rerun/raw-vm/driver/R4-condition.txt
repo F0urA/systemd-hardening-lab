@@ -1,0 +1,1 @@
+R4=FAILED: none of C=1,2,4,8,16 met CPU(P0)=40-70% in every pilot block.
