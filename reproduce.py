@@ -325,7 +325,7 @@ def step_provenance_rerun(pkg):
 def step_criteria(pkg, tmp):
     combined = tmp / "combined.csv"
     run([SCRIPTS / "build_criteria_v005.py", *pkg.base, "--scenarios", pkg.scenarios, *pkg.combined, "--out", combined])
-    report("combined criteria (table 13)", table(combined) == table(pkg.final / "combined-criteria-INCOMPLETE_SCOPE.csv"))
+    report("combined criteria (table 10)", table(combined) == table(pkg.final / "combined-criteria-INCOMPLETE_SCOPE.csv"))
     for name, (service, family, bench) in pkg.families.items():
         out = tmp / f"{name}.csv"
         run([SCRIPTS / "build_criteria_v005.py", *pkg.base, "--scenarios", pkg.final / f"{name}-candidate-scope",
@@ -336,7 +336,7 @@ def step_criteria(pkg, tmp):
 
 def step_selection(pkg, combined):
     text = run([SCRIPTS / "select_profile_v005.py", combined])
-    report("selection, rules A / A+ / B (table 16)",
+    report("selection, rules A / A+ / B (table 11)",
            body(text) == body((pkg.final / "combined-selection-INCOMPLETE_SCOPE.txt").read_text(encoding="utf-8")))
     rows = []
     for service, crit in read_criteria(combined).items():
@@ -344,7 +344,7 @@ def step_selection(pkg, combined):
             cands = restricted(admissible(crit, budget))
             for policy in itertools.permutations(["s", "emicro", "exposure", "n"]):
                 rows.append((service, str(budget), ";".join(policy), pick(cands, lex(["g", *policy]))))
-    report("24 operator policies (table 17)", [("service", "budget", "policy", "outcome"), *rows]
+    report("24 operator policies (table S6)", [("service", "budget", "policy", "outcome"), *rows]
            == table(pkg.final / "policy24.csv"))
     text = run([SCRIPTS / "order_sensitivity_v005.py", combined])
     report("order sensitivity", body(text) == body((pkg.final / "order-sensitivity.txt").read_text(encoding="utf-8")))
@@ -362,14 +362,14 @@ def step_descriptive(pkg):
            body(text) == body((pkg.final / "R1-robustness-descriptive.txt").read_text(encoding="utf-8")))
     text = run([SCRIPTS / "point_estimates_v005.py", pkg.run])
     saved = "point_estimates_v005.txt" if pkg is MAIN else "point_estimates.txt"
-    report("point estimates (table 13, sections 6.8, 6.10)",
+    report("point estimates (table 10, sections 6.8, 6.10)",
            text.split() == (pkg.saved / saved).read_text(encoding="utf-8").split())
 
 
 def step_postgresql(pkg, tmp):
     out = tmp / "pg.csv"
     run([SCRIPTS / "pg_contrasts.py", pkg.run, "--out-csv", out])
-    report("PostgreSQL t-bounds vs permutation bounds (table 14)",
+    report("PostgreSQL t-bounds vs permutation bounds (table S4)",
            table(out) == table(pkg.saved / "pg_contrasts.csv"))
 
 
@@ -391,9 +391,9 @@ def step_memcached(tmp):
     out = tmp / "memcached.csv"
     run([SCRIPTS / "build_criteria_v005.py", "--probe", probe, "--scenarios", functional, "--contract", functional,
          "--bench", f"memcached={bench}", "--level", "0.05", "--family", "memcached=4", "--looks", "2", "--out", out])
-    report("memcached criteria (tables 7, 13)", table(out) == table(saved / "criteria.csv"))
+    report("memcached criteria (tables 5, 10)", table(out) == table(saved / "criteria.csv"))
     text = run([SCRIPTS / "select_profile_v005.py", out])
-    report("memcached selection (table 16)", body(text) == body((saved / "selection.txt").read_text(encoding="utf-8")))
+    report("memcached selection (table 11)", body(text) == body((saved / "selection.txt").read_text(encoding="utf-8")))
 
 
 def step_ttl(tmp):

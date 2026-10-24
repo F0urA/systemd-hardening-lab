@@ -8,6 +8,9 @@
   `data/rerun/`, данные статьи. Его каталоги по разделам статьи, хронология и отступления —
   `data/rerun/README.md`; скрипты и параметры те же, что в таблице ниже, порядок — `run_stage3.sh`.
 
+Номера таблиц — по окончательной редакции статьи (в ней числа — по `data/rerun/`); табл. S1–S7 и рис. S1 —
+`docs/SUPPLEMENT.md`.
+
 ## Исполнявшиеся версии и эта редакция
 
 Точные версии, которые исполнялись на стенде, лежат в пакете результатов: архивы фиксации
@@ -67,23 +70,23 @@
 
 | Раздел статьи | Измерение | Скрипт и параметры | Результат в `raw-vm/` |
 |---|---|---|---|
-| 6.1, табл. 2, 7 | Обязательный контракт, TLS, миграция P0/P1→P1c | `functional_ext_v005.sh` (из `driver_preflight_v005.sh`) | `functional-v005/20261012-104934` |
-| 6.2, табл. 8 | 36 микропроверок | `probe_all_v005.sh`; пробы `stand_v005/probes/*` | `probe-v005/20261012-110043` |
+| 6.1, табл. 2, 5 | Обязательный контракт, TLS, миграция P0/P1→P1c | `functional_ext_v005.sh` (из `driver_preflight_v005.sh`) | `functional-v005/20261012-104934` |
+| 6.2, табл. 6 | 36 микропроверок | `probe_all_v005.sh`; пробы `stand_v005/probes/*` | `probe-v005/20261012-110043` |
 | 6.3 | Реальный и модельный процесс, проверки изнутри unit | `PROFILES='P0 P1 P1r P1c P4' context_compare_v005.sh`; `slab_inservice_v005.sh`, `slab_fp_v005.sh`, `slab_dropuser_v005.py` | `context-v005/20261012-105616` |
-| 6.4, табл. 9, 10 | Цели G1–G4 (диагностический повтор) | `scenarios_v005.sh` (версия из `v005-goal-diagnostic-frozen.zip`, совпадает с текущей) | `scenarios-v005/20261012-110837` |
+| 6.4, табл. 7, 8 | Цели G1–G4 (диагностический повтор) | `scenarios_v005.sh` (версия из `v005-goal-diagnostic-frozen.zip`, совпадает с текущей) | `scenarios-v005/20261012-110837` |
 | 6.3, 6.6 | G1 изнутри unit и унаследованный дескриптор | `supplement_goals_v005.sh`, `inherited_fd_v005.py` | `supplement-goals-v005/20261012-105904` |
-| 6.5, табл. 11 | Абляция capabilities | `NGINX_PROFILES='P0 P1r P1c P1cADMIN P1cPTRACE P1cDAC P1cCHROOT'` → `functional_ext_v005.sh nginx`, `scenarios_v005.sh nginx` (`driver_post_primary_resume_v005.sh`) | `functional-v005/20261014-002104`, `scenarios-v005/20261014-002436` |
-| 6.6, табл. 12 | Монтирование после запуска | `supplement_mount_states_v005.sh check`, затем `run`; `mount_state_helper_v005.py`; протокол `protocol_mount_states_v005.md` | `mount-states-v005/20261014-002458-…` |
+| 6.5, табл. 9 | Абляция capabilities | `NGINX_PROFILES='P0 P1r P1c P1cADMIN P1cPTRACE P1cDAC P1cCHROOT'` → `functional_ext_v005.sh nginx`, `scenarios_v005.sh nginx` (`driver_post_primary_resume_v005.sh`) | `functional-v005/20261014-002104`, `scenarios-v005/20261014-002436` |
+| 6.6, табл. S3 | Монтирование после запуска | `supplement_mount_states_v005.sh check`, затем `run`; `mount_state_helper_v005.py`; протокол `protocol_mount_states_v005.md` | `mount-states-v005/20261014-002458-…` |
 | 5.5 | Пилот P0/P4, 10 пар | `benchmark_v005.sh nginx 10 P4` | `nginx/benchmark-v005/20261012-175204` |
-| 6.7, табл. 13 | R1: Nginx P0/P1c/P4/P5/P6, 60 блоков | `NGINX_N=100000 NGINX_C=25 KEEPALIVE=0 PIN=1 STALL_MS=500 benchmark_v005.sh nginx 60 P1c P4 P5 P6` | `nginx/benchmark-v005/20261012-175912` |
+| 6.7, табл. 10 | R1: Nginx P0/P1c/P4/P5/P6, 60 блоков | `NGINX_N=100000 NGINX_C=25 KEEPALIVE=0 PIN=1 STALL_MS=500 benchmark_v005.sh nginx 60 P1c P4 P5 P6` | `nginx/benchmark-v005/20261012-175912` |
 | 6.7 | R2: Redis, 20 блоков | `REDIS_N=3000000 REDIS_THREADS=3 benchmark_v005.sh redis 20 P1 P2 P1d P4 P6` | `redis/benchmark-v005/20261012-194224` |
 | 6.7 | R3: PostgreSQL, 10 блоков (полный повтор) | `PG_T=60 benchmark_v005.sh postgresql 10 P1 P2 P1d P4 P6` (`driver_primary_resume_v005.sh`, порт — `resume_transport_v005.py`) | `postgresql/benchmark-v005/20261013-193448` |
 | 6.7 | R5: Nginx P0/P1/P2/P1r, 60 блоков | `benchmark_v005.sh nginx 60 P1 P2 P1r` (`driver_primary_resume_v005.sh`) | `nginx/benchmark-v005/20261013-204356` |
-| 6.8, табл. 15 | Пилоты R4, C = 1…16 | `NGINX_C=$C benchmark_v005.sh nginx 3 P4` (`driver_primary_resume_v005.sh`) | `nginx/benchmark-v005/20261013-220413` … `-221223` |
+| 6.8, табл. S5 | Пилоты R4, C = 1…16 | `NGINX_C=$C benchmark_v005.sh nginx 3 P4` (`driver_primary_resume_v005.sh`) | `nginx/benchmark-v005/20261013-220413` … `-221223` |
 | 6.7 | Анализ, добор R1д/R3д, окончательный анализ | `analyze_v005.py`, затем `driver_extensions_v005.sh` по `extension-plan.json`, затем `analyze_v005.py --final` (`driver_post_primary_resume_v005.sh`) | `nginx/…/20261013-221436`, `postgresql/…/20261013-233151`; анализ — `data/main/analysis-first-look/`, `data/main/analysis-final/` |
-| 6.9, табл. 16, 17 | Выбор, 24 политики, обязательные цели | `build_criteria_v005.py`, `select_profile_v005.py` (`--require nginx=G2-read-app-secret`), `order_sensitivity_v005.py` | `data/main/analysis-final/`, `data/derived/selection_required_g2_v005.txt` |
+| 6.9, табл. 11, S6 | Выбор, 24 политики, обязательные цели | `build_criteria_v005.py`, `select_profile_v005.py` (`--require nginx=G2-read-app-secret`), `order_sensitivity_v005.py` | `data/main/analysis-final/`, `data/derived/selection_required_g2_v005.txt` |
 | 6.7 | Точечные оценки | `point_estimates_v005.py data/main` (после эксперимента, только чтение CSV) | `data/derived/point_estimates_v005.txt` |
-| 6.7, рис. 1, табл. 14 | PostgreSQL: распределение контрастов, t-границы и перестановочные границы | `pg_contrasts.py data/main` (после эксперимента) | `data/derived/pg_contrasts.csv` |
+| 6.7, рис. S1, табл. S4 | PostgreSQL: распределение контрастов, t-границы и перестановочные границы | `pg_contrasts.py data/main` (после эксперимента) | `data/derived/pg_contrasts.csv` |
 | 7, 8 | Новая служба memcached | `memcached_stage3_v005.sh register/prepare/check/probe/measure`, `memcached_client_v005.py`, `analyze_memcached_v005.py`; протокол `protocol_memcached_v005.txt` | исполнение остановилось на `register` (`driver/post-memcached-register.out`): установленный на стенде `/usr/local/bin/ptrace_seize.py` отличался от `stand_v005/probes/ptrace_seize.py` — стенд собирался прежней редакцией; на стенде из `setup_stand_v005.sh` они совпадают, `run_stage3.sh stand` это проверяет. В повторении memcached измерен: `data/rerun/memcached/` |
 | 5.6, 6.7, 7, 8 | Измерения, повторённые из-за паузы ВМ, и границы по первым попыткам | `stall_sensitivity.py data/main`, `stall_sensitivity.py data/rerun` (после эксперимента, только чтение CSV) | `data/derived/stall_sensitivity.txt`, `data/rerun/derived/stall_sensitivity.txt` |
 | 6.1, 8 | Диагностика отказа P1 memcached по истечению срока (после эксперимента, в выбор не входит) | `memcached_ttl_diagnostic.sh` на ВМ повторения, помощник `memcached_ttl_diagnostic.py`; протокол `protocol_memcached_ttl.md` зафиксирован коммитом до запуска | `data/rerun/memcached-ttl-diagnostic/` (24.10.2026, исход `UNCLASSIFIED`: отказов P1 нет) |
