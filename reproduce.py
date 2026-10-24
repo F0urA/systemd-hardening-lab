@@ -12,7 +12,8 @@ Without an argument both are checked.
 
   1. raw data      every file against its closed manifest (skipped by --quick):
                    main  -- raw-vm/SHA256-CLOSED-RESULTS.txt;
-                   rerun -- the same, the two memcached addenda and the archives
+                   rerun -- the same, the two memcached addenda, the TTL diagnostic
+                   and the archives
      provenance    main  -- the frozen archives of the executed sources against the
                    hashes recorded before the measurements (for the archives whose local
                    paths were removed, through SANITIZATION.md), and the executed copies
@@ -35,6 +36,8 @@ Without an argument both are checked.
  10. memcached     rerun only: criteria and selection of analyze_memcached_v005.py
  11. repeats       stall_sensitivity.py: the measurements repeated after a VM pause and the
                    lower bounds with the first attempts or without the repeated blocks
+ 12. ttl           rerun only: the summary of the memcached TTL diagnostic (after the
+                   experiment, scripts_v005/protocol_memcached_ttl.md) from its rows.csv
 
 Every step prints PASS or DIFF; the exit code is 0 only if all steps pass.
 Needs Python 3.9+; step 9 also needs numpy.
@@ -102,12 +105,14 @@ RERUN = Package(
      "R2-redis": ("redis", 5, ["{R2}"]),
      "R3-postgresql": ("postgresql", 5, ["{R3}+{R3EXT}:P0,P1,P2,P1d,P4,P6", "{R3}"])},
     ["raw-vm/SHA256-CLOSED-RESULTS.txt", "memcached/results_v005/SHA256-ADDENDUM2-MEMCACHED.txt",
-     "memcached-attempt1/results_v005/SHA256-ADDENDUM-MEMCACHED.txt"])
+     "memcached-attempt1/results_v005/SHA256-ADDENDUM-MEMCACHED.txt",
+     "memcached-ttl-diagnostic/20261024T163835Z/sha256-all.txt"])
 PACKAGES = {"main": MAIN, "rerun": RERUN}
 
 RERUN_COMMIT = "6eb755e48c43625964c5a202f8e5eaa59393cccc"   # cloned on the stand of the repeat
 MEMCACHED = RERUN.run / "memcached"
 MEMCACHED_RAW = MEMCACHED / "results_v005" / "memcached"
+TTL_DIAGNOSTIC = RERUN.run / "memcached-ttl-diagnostic" / "20261024T163835Z"
 results = []
 
 
@@ -391,6 +396,15 @@ def step_memcached(tmp):
     report("memcached selection (table 16)", body(text) == body((saved / "selection.txt").read_text(encoding="utf-8")))
 
 
+def step_ttl(tmp):
+    """The verdict of memcached_ttl_diagnostic.py summarize, recomputed from the rows of the run."""
+    (tmp / "rows.csv").write_bytes((TTL_DIAGNOSTIC / "rows.csv").read_bytes())
+    run([SCRIPTS / "memcached_ttl_diagnostic.py", "summarize", "--dir", tmp])
+    report("memcached TTL diagnostic summary",
+           (tmp / "summary.txt").read_text(encoding="utf-8").split()
+           == (TTL_DIAGNOSTIC / "summary.txt").read_text(encoding="utf-8").split())
+
+
 def check(pkg, quick):
     print(f"package: {pkg.run.relative_to(ROOT).as_posix()}")
     if not quick:
@@ -405,6 +419,7 @@ def check(pkg, quick):
         step_repeats(pkg, tmp)
         if pkg is RERUN:
             step_memcached(tmp)
+            step_ttl(tmp)
 
 
 def main():

@@ -1,0 +1,8 @@
+checks 150; pause threshold 1000 ms, quiet below 500 ms
+profile  checks  fail fail quiet max gap ms expiry min  median    max  quiet out of range
+P0           30     0          0       2744       0.36    1.66   2.55                   2
+P1           30     0          0       2794       1.26    1.81   1.98                   0
+P2           30     0          0       5257       1.07    1.77   2.04                   0
+P4           30     0          0        986       1.12    1.73   1.98                   0
+P6           30     0          0      10306       0.74    1.71   6.69                   1
+VERDICT=UNCLASSIFIED
