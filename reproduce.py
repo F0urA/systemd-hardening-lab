@@ -33,6 +33,8 @@ Without an argument both are checked.
   8. points        point_estimates_v005.py (point estimates quoted in the text)
   9. postgresql    pg_contrasts.py: t-bounds against exact permutation bounds
  10. memcached     rerun only: criteria and selection of analyze_memcached_v005.py
+ 11. repeats       stall_sensitivity.py: the measurements repeated after a VM pause and the
+                   lower bounds with the first attempts or without the repeated blocks
 
 Every step prints PASS or DIFF; the exit code is 0 only if all steps pass.
 Needs Python 3.9+; step 9 also needs numpy.
@@ -366,6 +368,15 @@ def step_postgresql(pkg, tmp):
            table(out) == table(pkg.saved / "pg_contrasts.csv"))
 
 
+def step_repeats(pkg, tmp):
+    out = tmp / "stalls.csv"
+    text = run([SCRIPTS / "stall_sensitivity.py", pkg.run, "--out-csv", out])
+    saved = pkg.saved / "stall_sensitivity.txt"
+    report("repeated measurements and their effect on the bounds",
+           text.split() == saved.read_text(encoding="utf-8").split()
+           and table(out) == table(pkg.saved / "stall_sensitivity.csv"))
+
+
 def step_memcached(tmp):
     """The call of analyze_memcached_v005.py: contract and goals from the functional run."""
     functional = next((MEMCACHED_RAW / "functional-v005").iterdir())
@@ -391,6 +402,7 @@ def check(pkg, quick):
         step_selection(pkg, combined)
         step_descriptive(pkg)
         step_postgresql(pkg, tmp)
+        step_repeats(pkg, tmp)
         if pkg is RERUN:
             step_memcached(tmp)
 

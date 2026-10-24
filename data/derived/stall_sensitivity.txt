@@ -1,0 +1,37 @@
+== nginx: M=7, alpha=0.00357; series R1, R1EXT, R5
+accepted 780, repeated 41 (5.0 % of attempts), longest pause 5203 ms
+server CPU load 98.0-98.6 %, mean 98.4 %; r(throughput, load) = 0.202; P0: CV throughput 4.3 %, CV CPU per operation 4.3 %
+repeated by profile: P0 0, P1 4, P2 6, P1r 6, P1c 2, P4 10, P5 7, P6 6
+profile    n  L accepted       outcome |    n   L first       outcome |    n   L clean       outcome
+P1        60       505.9  NON_INFERIOR |   60     512.9  NON_INFERIOR |   47     477.2  NON_INFERIOR
+P2        60       374.5  NON_INFERIOR |   60     383.6  NON_INFERIOR |   47     347.4  NON_INFERIOR
+P1r       60       465.5  NON_INFERIOR |   60     453.9  NON_INFERIOR |   47     399.6  NON_INFERIOR
+P1c       60       371.5  NON_INFERIOR |   60     377.8  NON_INFERIOR |   48     344.0  NON_INFERIOR
+P4       120      -151.8  INCONCLUSIVE |  120    -155.8  INCONCLUSIVE |  100    -174.0  INCONCLUSIVE
+P5       120      -250.1  LOSS_EXCEEDS |  120    -233.6  LOSS_EXCEEDS |  100    -276.2  LOSS_EXCEEDS
+P6       120      -141.4  INCONCLUSIVE |  120    -141.7  INCONCLUSIVE |  100    -153.2  INCONCLUSIVE
+OUTCOMES_ROBUST
+
+== redis: M=5, alpha=0.00500; series R2
+accepted 120, repeated 6 (4.8 % of attempts), longest pause 797 ms
+server CPU load 98.8-99.7 %, mean 99.2 %; r(throughput, load) = 0.408; P0: CV throughput 2.7 %, CV CPU per operation 2.5 %
+repeated by profile: P0 2, P1 0, P2 2, P1d 0, P4 1, P6 1
+profile    n  L accepted       outcome |    n   L first       outcome |    n   L clean       outcome
+P1        20      2955.3  NON_INFERIOR |   20    2890.9  NON_INFERIOR |   14    2488.6  NON_INFERIOR
+P2        20      1232.6  NON_INFERIOR |   20    1091.8  NON_INFERIOR |   14    1245.9  NON_INFERIOR
+P1d       20      3068.5  NON_INFERIOR |   20    2977.9  NON_INFERIOR |   14    2541.9  NON_INFERIOR
+P4        20      1803.9  NON_INFERIOR |   20    1556.5  NON_INFERIOR |   14    1972.9  NON_INFERIOR
+P6        20       831.6  NON_INFERIOR |   20     717.8  NON_INFERIOR |   14    1013.9  NON_INFERIOR
+OUTCOMES_ROBUST
+
+== postgresql: M=5, alpha=0.00500; series R3, R3EXT
+accepted 100, repeated 4 (3.8 % of attempts), longest pause 685 ms
+server CPU load 29.6-97.3 %, mean 71.9 %; r(throughput, load) = 0.944; P0: CV throughput 28.6 %, CV CPU per operation 8.3 %
+repeated by profile: P0 1, P1 0, P1d 0, P2 0, P4 0, P6 3
+profile    n  L accepted       outcome |    n   L first       outcome |    n   L clean       outcome
+P1        10         2.9  NON_INFERIOR |   10       2.9  NON_INFERIOR |    9      -8.5  INCONCLUSIVE
+P1d       10        16.8  NON_INFERIOR |   10      16.8  NON_INFERIOR |    9      12.8  NON_INFERIOR
+P2        20         5.0  NON_INFERIOR |   20       5.8  NON_INFERIOR |   16       8.4  NON_INFERIOR
+P4        20       -77.3  INCONCLUSIVE |   20     -76.5  INCONCLUSIVE |   16    -118.7  INCONCLUSIVE
+P6        20       -32.5  INCONCLUSIVE |   20     -25.0  INCONCLUSIVE |   16     -59.0  INCONCLUSIVE
+OUTCOMES_DEPEND_ON_REPEATS: P1
